@@ -3,43 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-  <title>JOO — Creative Video Editor &amp; AI Creator</title>
-  <meta name="description" content="Portfolio of JOO — Professional Video Editor and AI Video Creator crafting 4K cinematic visuals and viral commercial edits." />
+  <title>JOO — Video Editor &amp; AI Creator</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
 
   <style>
-    /* =========================================================
-       AGENCY-GRADE MIDNIGHT NAVY & ELECTRIC CYAN DESIGN SYSTEM
-       ========================================================= */
     :root {
-      --bg-dark: #02040a;
-      --bg-navy-deep: #050c1e;
-      --bg-glass: rgba(8, 18, 44, 0.65);
-      --bg-glass-hover: rgba(13, 27, 64, 0.85);
-      
-      --cyan-neon: #38bdf8;
-      --cyan-bright: #00f0ff;
-      --blue-electric: #2563eb;
-      --border-subtle: rgba(56, 189, 248, 0.16);
-      --border-glow: rgba(56, 189, 248, 0.6);
-
+      --bg-dark: #02050e;
+      --bg-card: rgba(8, 17, 43, 0.75);
+      --bg-card-hover: rgba(14, 28, 68, 0.95);
+      --cyan: #38bdf8;
+      --cyan-glow: rgba(56, 189, 248, 0.35);
+      --border-blue: rgba(56, 189, 248, 0.22);
+      --border-active: rgba(56, 189, 248, 0.7);
       --text-white: #ffffff;
-      --text-muted: #94a3b8;
-      --text-dim: #64748b;
-
-      --font-heading: 'Syne', sans-serif;
+      --text-gray: #94a3b8;
+      --font-head: 'Syne', sans-serif;
       --font-body: 'Plus Jakarta Sans', sans-serif;
-
-      --radius-sm: 10px;
-      --radius-md: 16px;
-      --radius-lg: 24px;
-      --radius-full: 9999px;
-      
-      --ease-cinema: cubic-bezier(0.16, 1, 0.3, 1);
+      --radius: 16px;
     }
 
     *, *::before, *::after {
@@ -49,150 +33,98 @@
       -webkit-tap-highlight-color: transparent;
     }
 
-    html {
-      scroll-behavior: smooth;
-      color-scheme: dark;
-    }
+    html { scroll-behavior: smooth; color-scheme: dark; }
 
     body {
       background-color: var(--bg-dark);
       color: var(--text-white);
       font-family: var(--font-body);
-      font-size: 16px;
       line-height: 1.6;
       overflow-x: hidden;
       background-image: 
-        radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.22) 0%, transparent 60%),
-        radial-gradient(circle at 100% 30%, rgba(56, 189, 248, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 0% 75%, rgba(29, 78, 216, 0.14) 0%, transparent 55%);
+        radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.25) 0%, transparent 60%),
+        radial-gradient(circle at 100% 40%, rgba(56, 189, 248, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 0% 75%, rgba(29, 78, 216, 0.15) 0%, transparent 55%);
       background-attachment: fixed;
-    }
-
-    ::selection {
-      background: var(--cyan-neon);
-      color: #02040a;
-    }
-
-    /* Ambient Pulsing Glow */
-    .ambient-sphere {
-      position: fixed;
-      top: -20%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100vw;
-      max-width: 950px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, rgba(2, 4, 10, 0) 70%);
-      pointer-events: none;
-      z-index: 0;
-      filter: blur(90px);
-      animation: ambientPulse 8s ease-in-out infinite alternate;
-    }
-
-    @keyframes ambientPulse {
-      0% { transform: translateX(-50%) scale(0.92); opacity: 0.5; }
-      100% { transform: translateX(-50%) scale(1.15); opacity: 0.9; }
     }
 
     .container {
       width: 100%;
-      max-width: 1100px;
+      max-width: 1060px;
       margin: 0 auto;
       padding: 0 20px;
-      position: relative;
-      z-index: 1;
     }
 
-    h1, h2, h3, h4 {
-      font-family: var(--font-heading);
-      font-weight: 800;
-      letter-spacing: -0.02em;
-    }
-
+    h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 800; }
     a { text-decoration: none; color: inherit; }
 
-    /* =========================================================
-       AGENCY PILL BUTTONS
-       ========================================================= */
+    /* Buttons */
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
-      min-height: 52px;
-      padding: 12px 30px;
-      border-radius: var(--radius-full);
+      min-height: 50px;
+      padding: 12px 28px;
+      border-radius: 9999px;
       font-size: 0.95rem;
       font-weight: 700;
       cursor: pointer;
-      transition: all 0.35s var(--ease-cinema);
+      transition: all 0.3s ease;
       border: 1px solid transparent;
       outline: none;
-      position: relative;
-      overflow: hidden;
     }
 
     .btn-primary {
       background: linear-gradient(135deg, #38bdf8 0%, #1d4ed8 100%);
-      color: #ffffff;
-      box-shadow: 0 10px 30px -5px rgba(56, 189, 248, 0.5);
+      color: #fff;
+      box-shadow: 0 10px 25px -5px rgba(56, 189, 248, 0.5);
     }
-
     .btn-primary:active { transform: scale(0.96); }
 
     .btn-secondary {
-      background: rgba(255, 255, 255, 0.04);
-      color: var(--text-white);
-      border: 1px solid var(--border-subtle);
-      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.05);
+      color: #fff;
+      border: 1px solid var(--border-blue);
     }
 
-    .btn-secondary:active { transform: scale(0.96); background: rgba(56, 189, 248, 0.1); }
-
-    /* Sound Wave Badge */
-    .badge-wave {
+    /* Equalizer Badge */
+    .badge-wrap {
       display: inline-flex;
       align-items: center;
       gap: 10px;
       padding: 6px 18px;
-      border-radius: var(--radius-full);
+      border-radius: 9999px;
       background: rgba(56, 189, 248, 0.08);
-      border: 1px solid var(--border-subtle);
-      box-shadow: 0 0 20px rgba(56, 189, 248, 0.15);
-      margin-bottom: 22px;
-      animation: floatBadge 3.5s ease-in-out infinite alternate;
+      border: 1px solid var(--border-blue);
+      margin-bottom: 20px;
     }
 
-    @keyframes floatBadge {
-      0% { transform: translateY(0); }
-      100% { transform: translateY(-4px); }
-    }
-
-    .equalizer-bars {
+    .equalizer {
       display: flex;
       align-items: center;
       gap: 3px;
       height: 14px;
     }
 
-    .equalizer-bars span {
+    .equalizer span {
       width: 2.5px;
       height: 100%;
-      background: var(--cyan-neon);
+      background: var(--cyan);
       border-radius: 2px;
-      animation: equalize 1.2s ease-in-out infinite alternate;
+      animation: wave 1.2s ease-in-out infinite alternate;
     }
-    .equalizer-bars span:nth-child(2) { animation-delay: 0.25s; height: 60%; }
-    .equalizer-bars span:nth-child(3) { animation-delay: 0.45s; height: 90%; }
-    .equalizer-bars span:nth-child(4) { animation-delay: 0.15s; height: 40%; }
+    .equalizer span:nth-child(2) { animation-delay: 0.2s; height: 60%; }
+    .equalizer span:nth-child(3) { animation-delay: 0.4s; height: 85%; }
+    .equalizer span:nth-child(4) { animation-delay: 0.15s; height: 40%; }
 
-    @keyframes equalize {
+    @keyframes wave {
       0% { transform: scaleY(0.3); }
       100% { transform: scaleY(1); }
     }
 
     .badge-text {
-      color: var(--cyan-neon);
+      color: var(--cyan);
       font-size: 0.78rem;
       font-weight: 700;
       text-transform: uppercase;
@@ -212,133 +144,85 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 10px 22px;
-      border-radius: var(--radius-full);
+      padding: 10px 20px;
+      border-radius: 9999px;
       background: rgba(5, 12, 30, 0.85);
-      border: 1px solid var(--border-subtle);
+      border: 1px solid var(--border-blue);
       backdrop-filter: blur(20px);
-      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.75);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
     }
 
-    .brand-logo {
-      font-family: var(--font-heading);
-      font-size: 1.45rem;
-      font-weight: 800;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
+    .brand { font-family: var(--font-head); font-size: 1.4rem; font-weight: 800; color: #fff; }
+    .brand span { color: var(--cyan); }
 
-    .brand-glow {
-      color: var(--cyan-neon);
-      text-shadow: 0 0 15px rgba(56, 189, 248, 0.7);
-    }
+    .nav-links { display: flex; align-items: center; gap: 24px; list-style: none; }
+    .nav-link { font-size: 0.9rem; font-weight: 600; color: var(--text-gray); transition: color 0.2s; }
+    .nav-link:hover { color: var(--cyan); }
 
-    .nav-desktop-links {
-      display: flex;
-      align-items: center;
-      gap: 26px;
-      list-style: none;
-    }
-
-    .nav-link {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      transition: color 0.3s ease;
-    }
-
-    .nav-link:hover { color: var(--cyan-neon); }
-
-    /* =========================================================
-       HERO SECTION WITH SHIMMERING AGENCY LOGO
-       ========================================================= */
+    /* Hero */
     .hero {
-      padding: 145px 0 65px 0;
+      padding: 140px 0 60px 0;
       text-align: center;
-      position: relative;
     }
 
     .hero-title {
-      font-size: clamp(4.2rem, 18vw, 7.5rem);
-      margin-bottom: 8px;
+      font-size: clamp(4rem, 16vw, 7rem);
       line-height: 0.95;
       text-transform: uppercase;
       background: linear-gradient(135deg, #ffffff 0%, #38bdf8 50%, #1d4ed8 100%);
-      background-size: 200% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      animation: textShine 4s linear infinite;
-      filter: drop-shadow(0 0 40px rgba(56, 189, 248, 0.4));
-    }
-
-    @keyframes textShine {
-      to { background-position: 200% center; }
+      margin-bottom: 8px;
     }
 
     .hero-subtitle {
-      font-size: clamp(1.05rem, 4vw, 1.35rem);
-      color: var(--text-muted);
-      margin-bottom: 32px;
-      padding: 0 10px;
+      font-size: clamp(1rem, 3.8vw, 1.3rem);
+      color: var(--text-gray);
+      margin-bottom: 30px;
     }
 
-    .hero-subtitle span {
-      color: var(--cyan-neon);
-      font-weight: 600;
-      font-style: italic;
-    }
+    .hero-subtitle span { color: var(--cyan); font-weight: 600; font-style: italic; }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
       justify-content: center;
       gap: 14px;
-      margin-bottom: 50px;
+      margin-bottom: 45px;
     }
 
-    /* =========================================================
-       MAIN SHOWREEL CARD (LIVE 4K LOOPING VIDEO BACKGROUND)
-       ========================================================= */
-    .showreel-card {
+    /* Main Showreel Card */
+    .showreel-box {
       position: relative;
       width: 100%;
-      max-width: 1020px;
-      margin: 0 auto;
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border-glow);
+      border-radius: 20px;
+      border: 1px solid var(--border-active);
       background: #000;
       overflow: hidden;
-      box-shadow: 0 25px 70px -15px rgba(0, 0, 0, 0.95), 0 0 45px rgba(56, 189, 248, 0.25);
+      box-shadow: 0 20px 60px -15px rgba(0, 0, 0, 0.95), 0 0 35px var(--cyan-glow);
       cursor: pointer;
     }
 
-    .showreel-frame {
+    .video-aspect {
       position: relative;
       width: 100%;
       padding-top: 56.25%;
-      background: #040814;
+      background: #04091a;
       overflow: hidden;
     }
 
-    /* Real Looping Video In Background (Like Twist Marketing) */
-    .bg-video-loop {
+    .video-aspect video {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      opacity: 0.85;
-      transition: transform 0.6s var(--ease-cinema), opacity 0.4s ease;
+      opacity: 0.88;
+      transition: transform 0.5s ease;
     }
 
-    .showreel-card:hover .bg-video-loop {
-      transform: scale(1.04);
-      opacity: 0.95;
-    }
+    .showreel-box:hover .video-aspect video { transform: scale(1.04); opacity: 1; }
 
     .showreel-overlay {
       position: absolute;
@@ -347,116 +231,68 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background: radial-gradient(circle at center, rgba(6, 13, 31, 0.15) 0%, rgba(2, 4, 10, 0.75) 100%);
+      background: radial-gradient(circle at center, rgba(6, 13, 31, 0.1) 0%, rgba(2, 5, 14, 0.75) 100%);
       z-index: 2;
     }
 
-    .play-btn-circle {
-      width: 82px;
-      height: 82px;
+    .play-circle {
+      width: 80px;
+      height: 80px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #38bdf8 0%, #2563eb 100%);
+      background: linear-gradient(135deg, #38bdf8 0%, #1d4ed8 100%);
       border: 3px solid rgba(255, 255, 255, 0.7);
       display: flex;
       align-items: center;
       justify-content: center;
       color: #fff;
-      box-shadow: 0 0 40px rgba(56, 189, 248, 0.65);
-      animation: pulsePlay 2s infinite;
-      transition: transform 0.3s ease;
+      box-shadow: 0 0 35px rgba(56, 189, 248, 0.6);
+      transition: transform 0.3s;
     }
 
-    @keyframes pulsePlay {
-      0% { transform: scale(1); box-shadow: 0 0 25px rgba(56, 189, 248, 0.5); }
-      50% { transform: scale(1.08); box-shadow: 0 0 50px rgba(56, 189, 248, 0.85); }
-      100% { transform: scale(1); box-shadow: 0 0 25px rgba(56, 189, 248, 0.5); }
-    }
+    .play-circle svg { transform: translateX(3px); width: 32px; height: 32px; }
+    .showreel-box:hover .play-circle { transform: scale(1.08); }
 
-    .play-btn-circle svg {
-      transform: translateX(3px);
-      width: 34px;
-      height: 34px;
-    }
-
-    .showreel-text {
-      margin-top: 16px;
+    .showreel-caption {
+      margin-top: 14px;
       font-size: 0.85rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       font-weight: 700;
       color: #fff;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.9);
     }
 
-    /* Agency Pillars Strip */
-    .pillars-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 16px;
-      margin-top: 45px;
-      padding: 24px;
-      border-radius: var(--radius-md);
-      background: var(--bg-glass);
-      border: 1px solid var(--border-subtle);
-      backdrop-filter: blur(12px);
-      text-align: left;
-    }
-
-    .pillar-title {
-      font-family: var(--font-display);
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--cyan-neon);
-      margin-bottom: 4px;
-    }
-
-    .pillar-desc {
-      font-size: 0.84rem;
-      color: var(--text-muted);
-      line-height: 1.45;
-    }
-
-    /* =========================================================
-       SELECTED WORKS (LOOPING 4K VIDEO CARDS)
-       ========================================================= */
-    .portfolio-section { padding: 95px 0; }
-
-    .section-header {
+    /* Section Headers */
+    .section-head {
       text-align: center;
-      max-width: 650px;
-      margin: 0 auto 50px auto;
+      margin: 80px 0 40px 0;
     }
+    .section-head h2 { font-size: clamp(2rem, 5vw, 2.8rem); margin-bottom: 8px; }
+    .section-head p { color: var(--text-gray); font-size: 0.95rem; }
 
-    .section-header h2 {
-      font-size: clamp(2rem, 6vw, 3rem);
-      margin-bottom: 12px;
-    }
-
-    .portfolio-grid {
+    /* Selected Works Grid */
+    .works-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 26px;
+      gap: 24px;
     }
 
-    .project-card {
-      background: var(--bg-glass);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-md);
+    .work-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-blue);
+      border-radius: var(--radius);
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      transition: all 0.4s var(--ease-cinema);
-      position: relative;
-      backdrop-filter: blur(16px);
+      transition: all 0.35s ease;
     }
 
-    .project-card:hover {
-      transform: translateY(-8px);
-      border-color: var(--cyan-neon);
-      box-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.85), 0 0 35px rgba(56, 189, 248, 0.3);
+    .work-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--cyan);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.8), 0 0 30px rgba(56, 189, 248, 0.25);
     }
 
-    .project-thumbnail {
+    .card-thumb {
       position: relative;
       width: 100%;
       padding-top: 56.25%;
@@ -465,187 +301,115 @@
       overflow: hidden;
     }
 
-    .project-thumbnail video {
+    .card-thumb video {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.6s var(--ease-cinema);
-      opacity: 0.88;
+      opacity: 0.85;
+      transition: transform 0.5s ease;
     }
 
-    .project-card:hover .project-thumbnail video {
-      transform: scale(1.08);
-      opacity: 1;
-    }
+    .work-card:hover .card-thumb video { transform: scale(1.06); opacity: 1; }
 
-    .project-tag {
+    .card-tag {
       position: absolute;
-      top: 14px;
-      left: 14px;
-      padding: 5px 14px;
-      border-radius: var(--radius-full);
-      background: rgba(2, 4, 10, 0.85);
-      border: 1px solid var(--border-subtle);
-      backdrop-filter: blur(8px);
+      top: 12px;
+      left: 12px;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      background: rgba(2, 5, 14, 0.85);
+      border: 1px solid var(--border-blue);
       font-size: 0.72rem;
       font-weight: 700;
-      text-transform: uppercase;
-      color: var(--cyan-neon);
-      letter-spacing: 0.05em;
+      color: var(--cyan);
       z-index: 3;
     }
 
-    .project-play {
+    .card-play-btn {
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%) scale(0.95);
-      width: 58px;
-      height: 58px;
+      transform: translate(-50%, -50%);
+      width: 54px;
+      height: 54px;
       border-radius: 50%;
       background: linear-gradient(135deg, #38bdf8 0%, #1d4ed8 100%);
       color: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
+      box-shadow: 0 0 25px rgba(56, 189, 248, 0.5);
       z-index: 3;
-      box-shadow: 0 0 30px rgba(56, 189, 248, 0.6);
-      transition: transform 0.3s ease;
+      transition: transform 0.2s;
     }
 
-    .project-card:hover .project-play {
-      transform: translate(-50%, -50%) scale(1.1);
-      background: #fff;
-      color: #02040a;
-    }
+    .work-card:hover .card-play-btn { transform: translate(-50%, -50%) scale(1.1); }
 
-    .project-body {
-      padding: 24px;
+    .card-body {
+      padding: 22px;
       display: flex;
       flex-direction: column;
       flex-grow: 1;
     }
 
-    .project-title {
-      font-size: 1.25rem;
-      margin-bottom: 6px;
-      color: #fff;
-    }
+    .card-title { font-size: 1.25rem; margin-bottom: 6px; }
+    .card-desc { font-size: 0.88rem; color: var(--text-gray); margin-bottom: 16px; flex-grow: 1; }
 
-    .project-desc {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      margin-bottom: 18px;
-      flex-grow: 1;
-      line-height: 1.5;
-    }
-
-    .watch-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
+    .play-link {
       font-size: 0.9rem;
       font-weight: 700;
-      color: var(--cyan-neon);
+      color: var(--cyan);
       background: transparent;
       border: none;
       cursor: pointer;
-      transition: transform 0.2s ease;
-    }
-
-    .watch-btn:hover { transform: translateX(4px); }
-
-    /* =========================================================
-       SERVICES (BENTO AGENCY STYLE)
-       ========================================================= */
-    .services-section { padding: 90px 0; }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 22px;
-    }
-
-    .service-card {
-      background: var(--bg-glass);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-md);
-      padding: 28px 22px;
-      transition: all 0.35s var(--ease-cinema);
-      backdrop-filter: blur(16px);
-    }
-
-    .service-card:hover {
-      border-color: var(--cyan-neon);
-      transform: translateY(-6px);
-      background: var(--bg-glass-hover);
-    }
-
-    .service-title {
-      font-size: 1.2rem;
-      margin-bottom: 8px;
-      color: var(--cyan-neon);
-    }
-
-    .service-desc {
-      font-size: 0.88rem;
-      line-height: 1.55;
-      color: var(--text-muted);
-    }
-
-    /* =========================================================
-       ABOUT SECTION WITH YOUR REAL PHOTO CARD
-       ========================================================= */
-    .about-section { padding: 90px 0; }
-    
-    .about-grid {
-      display: grid;
-      grid-template-columns: 340px 1fr;
-      gap: 40px;
+      display: inline-flex;
       align-items: center;
-      background: var(--bg-glass);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-lg);
-      padding: 40px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-      backdrop-filter: blur(20px);
+      gap: 6px;
     }
 
-    .about-photo-wrapper {
+    /* About Section with Real Photo */
+    .about-wrap {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 36px;
+      align-items: center;
+      background: var(--bg-card);
+      border: 1px solid var(--border-blue);
+      border-radius: 20px;
+      padding: 36px;
+      margin-top: 60px;
+    }
+
+    .photo-frame {
       position: relative;
       width: 100%;
-      height: 380px;
-      border-radius: var(--radius-md);
+      height: 360px;
+      border-radius: var(--radius);
       overflow: hidden;
-      border: 1px solid var(--border-glow);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(56, 189, 248, 0.2);
+      border: 1px solid var(--border-active);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 25px var(--cyan-glow);
     }
 
-    .about-photo-img {
+    .photo-frame img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.5s ease;
     }
 
-    .about-photo-wrapper:hover .about-photo-img {
-      transform: scale(1.04);
-    }
-
-    .profile-badge {
+    .status-badge {
       position: absolute;
-      bottom: 14px;
-      left: 14px;
+      bottom: 12px;
+      left: 12px;
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 6px 14px;
-      border-radius: var(--radius-full);
-      background: rgba(2, 4, 10, 0.85);
-      border: 1px solid var(--cyan-neon);
-      backdrop-filter: blur(8px);
+      padding: 5px 12px;
+      border-radius: 9999px;
+      background: rgba(2, 5, 14, 0.85);
+      border: 1px solid var(--cyan);
     }
 
     .green-dot {
@@ -656,76 +420,68 @@
       box-shadow: 0 0 8px #22c55e;
     }
 
-    .profile-badge span {
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: #fff;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
+    .status-badge span { font-size: 0.72rem; font-weight: 700; color: #fff; text-transform: uppercase; }
 
-    .about-content h2 {
-      font-size: 2.2rem;
-      margin-bottom: 12px;
-      color: #fff;
-    }
+    .about-text h2 { font-size: 2rem; margin-bottom: 12px; }
+    .about-text p { color: var(--text-gray); line-height: 1.7; margin-bottom: 16px; }
 
-    .about-content p {
-      color: var(--text-muted);
-      line-height: 1.7;
-      margin-bottom: 16px;
-    }
-
-    /* =========================================================
-       CONTACT SECTION
-       ========================================================= */
-    .contact-section { padding: 90px 0 110px 0; }
-    .contact-card-wrap {
+    /* Contact Section with Prominent WhatsApp & Instagram */
+    .contact-card {
       background: radial-gradient(circle at 100% 0%, rgba(56, 189, 248, 0.12) 0%, rgba(5, 12, 30, 0.95) 70%);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-blue);
+      border-radius: 20px;
       padding: 40px 24px;
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+      margin: 80px 0 100px 0;
       text-align: center;
     }
 
-    .contact-channels {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 14px;
+    .channels-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
       margin-top: 28px;
     }
 
-    .channel-btn {
-      display: inline-flex;
+    .channel-box {
+      display: flex;
       align-items: center;
-      gap: 10px;
-      padding: 14px 24px;
+      gap: 16px;
+      padding: 16px 20px;
       background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-full);
-      font-weight: 700;
-      font-size: 0.95rem;
-      color: #fff;
-      transition: all 0.3s ease;
+      border: 1px solid var(--border-blue);
+      border-radius: var(--radius);
+      transition: all 0.3s;
+      text-align: left;
     }
 
-    .channel-btn:hover {
-      border-color: var(--cyan-neon);
-      background: rgba(56, 189, 248, 0.1);
-      transform: translateY(-2px);
+    .channel-box:hover {
+      border-color: var(--cyan);
+      background: rgba(56, 189, 248, 0.08);
+      transform: translateY(-3px);
     }
 
-    /* =========================================================
-       NATIVE FULLSCREEN VIDEO PLAYER MODAL
-       ========================================================= */
-    .native-modal {
+    .channel-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: rgba(56, 189, 248, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--cyan);
+      flex-shrink: 0;
+    }
+
+    .channel-info small { display: block; font-size: 0.75rem; color: var(--text-gray); text-transform: uppercase; }
+    .channel-info strong { font-size: 1rem; color: #fff; }
+
+    /* Fullscreen Native Video Modal */
+    .video-modal {
       position: fixed;
       inset: 0;
       z-index: 9999;
-      background: rgba(2, 6, 18, 0.96);
-      backdrop-filter: blur(25px);
+      background: rgba(2, 5, 14, 0.96);
+      backdrop-filter: blur(20px);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -735,35 +491,31 @@
       transition: all 0.3s ease;
     }
 
-    .native-modal.active { opacity: 1; visibility: visible; }
+    .video-modal.active { opacity: 1; visibility: visible; }
 
-    .native-modal-content {
+    .modal-box {
       position: relative;
       width: 100%;
       max-width: 950px;
       background: #000;
-      border-radius: var(--radius-md);
+      border-radius: var(--radius);
       overflow: hidden;
-      border: 1px solid var(--border-glow);
-      box-shadow: 0 0 60px rgba(56, 189, 248, 0.35);
+      border: 1px solid var(--border-active);
+      box-shadow: 0 0 50px rgba(56, 189, 248, 0.35);
     }
 
-    .modal-bar {
+    .modal-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 12px 18px;
-      background: #060c1d;
+      background: #04091a;
       border-bottom: 1px solid rgba(56, 189, 248, 0.2);
     }
 
-    .modal-title {
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: var(--cyan-neon);
-    }
+    .modal-title { font-size: 0.9rem; font-weight: 700; color: var(--cyan); }
 
-    .modal-close-btn {
+    .modal-close {
       width: 36px;
       height: 36px;
       border-radius: 50%;
@@ -777,8 +529,7 @@
       font-size: 1.1rem;
     }
 
-    .video-holder {
-      position: relative;
+    .video-frame {
       width: 100%;
       background: #000;
       display: flex;
@@ -786,7 +537,7 @@
       justify-content: center;
     }
 
-    .video-holder video {
+    .video-frame video {
       width: 100%;
       max-height: 75vh;
       display: block;
@@ -794,40 +545,33 @@
     }
 
     .site-footer {
-      border-top: 1px solid var(--border-subtle);
+      border-top: 1px solid var(--border-blue);
       padding: 30px 0;
       text-align: center;
       font-size: 0.85rem;
-      color: var(--text-dim);
+      color: var(--text-gray);
     }
 
-    @media (max-width: 850px) {
-      .about-grid { grid-template-columns: 1fr; gap: 30px; padding: 26px; }
-      .about-photo-wrapper { height: 340px; }
-      .nav-desktop-links { display: none; }
+    @media (max-width: 800px) {
+      .about-wrap { grid-template-columns: 1fr; padding: 24px; }
+      .photo-frame { height: 320px; }
+      .nav-links { display: none; }
     }
   </style>
 </head>
 <body>
 
-  <div class="ambient-sphere"></div>
-
   <!-- Navbar -->
   <header class="site-nav">
     <div class="container">
       <div class="nav-inner">
-        <a href="#hero" class="brand-logo">
-          <span>JOO</span><span class="brand-glow">.</span>
-        </a>
-
-        <ul class="nav-desktop-links">
+        <a href="#hero" class="brand">JOO<span>.</span></a>
+        <ul class="nav-links">
           <li><a href="#hero" class="nav-link">Home</a></li>
           <li><a href="#work" class="nav-link">Work</a></li>
-          <li><a href="#services" class="nav-link">Services</a></li>
           <li><a href="#about" class="nav-link">About</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
-
         <a href="#contact" class="btn btn-primary" style="min-height: 40px; padding: 6px 18px; font-size: 0.85rem;">Let's Talk</a>
       </div>
     </div>
@@ -836,137 +580,199 @@
   <!-- Hero Section -->
   <section id="hero" class="hero">
     <div class="container">
-      
-      <div class="badge-wave">
-        <div class="equalizer-bars">
+      <div class="badge-wrap">
+        <div class="equalizer">
           <span></span><span></span><span></span><span></span>
         </div>
-        <span class="badge-text">Video Editor &bull; AI Video Creator</span>
+        <span class="badge-text">Video Editor &bull; AI Creator</span>
       </div>
 
       <h1 class="hero-title">JOO</h1>
-      <p class="hero-subtitle">
-        I turn raw ideas into <span>cinematic visual reality.</span>
-      </p>
+      <p class="hero-subtitle">I turn raw ideas into <span>cinematic visual reality.</span></p>
 
       <div class="hero-actions">
         <a href="#work" class="btn btn-primary">View Portfolio</a>
         <a href="#contact" class="btn btn-secondary">Contact Me</a>
       </div>
 
-      <!-- Main Showreel Video (Live Looping Preview) -->
-      <div class="showreel-card" onclick="playVideo('showreel.mp4', 'Official Showreel 2026')">
-        <div class="showreel-frame">
-          <video class="bg-video-loop" autoplay muted loop playsinline preload="auto">
-            <source src="showreel.mp4" type="video/mp4" />
+      <!-- Main Showreel Video Card -->
+      <div class="showreel-box" onclick="openVideo('showreel.mp4', 'Official Showreel 2026')">
+        <div class="video-aspect">
+          <video autoplay muted loop playsinline preload="auto">
+            <source src="showreel.mp4" type="video/mp4" onerror="this.src='assets/showreel.mp4'" />
           </video>
           <div class="showreel-overlay">
-            <div class="play-btn-circle">
+            <div class="play-circle">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
             </div>
-            <span class="showreel-text">Play Official Showreel</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Pillars -->
-      <div class="pillars-grid">
-        <div>
-          <div class="pillar-title">Frame Precision</div>
-          <div class="pillar-desc">Pacing, transient beat sync, audio mastering &amp; retention.</div>
-        </div>
-        <div>
-          <div class="pillar-title">AI Video Creation</div>
-          <div class="pillar-desc">Runway Gen-3, Midjourney &amp; generative visual VFX.</div>
-        </div>
-        <div>
-          <div class="pillar-title">Studio Color</div>
-          <div class="pillar-desc">DaVinci Resolve film print emulation and custom palettes.</div>
-        </div>
-        <div>
-          <div class="pillar-title">Direct Delivery</div>
-          <div class="pillar-desc">Fast revisions and studio-ready master exports.</div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Selected Works (Your Real 4K Videos Looping in Cards) -->
-  <section id="work" class="portfolio-section">
-    <div class="container">
-      <div class="section-header">
-        <div class="badge-wave"><span class="badge-text">Selected Portfolio</span></div>
-        <h2>Curated Works</h2>
-        <p>Tap on any project to watch in full-screen with sound.</p>
-      </div>
-
-      <div class="portfolio-grid">
-        <!-- Project 1 -->
-        <div class="project-card">
-          <div class="project-thumbnail" onclick="playVideo('project-1.mp4', 'Project 01 — AI Motion Cut')">
-            <video autoplay muted loop playsinline preload="auto">
-              <source src="project-1.mp4" type="video/mp4" />
-            </video>
-            <div class="project-tag">AI &amp; Visuals</div>
-            <div class="project-play">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-            </div>
-          </div>
-          <div class="project-body">
-            <h3 class="project-title">Project 01 — AI Motion Cut</h3>
-            <p class="project-desc">High-impact visual cut blending generative video concepts with dynamic sound design.</p>
-            <button class="watch-btn" onclick="playVideo('project-1.mp4', 'Project 01 — AI Motion Cut')">
-              Watch Film →
-            </button>
-          </div>
-        </div>
-
-        <!-- Project 2 -->
-        <div class="project-card">
-          <div class="project-thumbnail" onclick="playVideo('project-2.mp4', 'Project 02 — Retention Reel')">
-            <video autoplay muted loop playsinline preload="auto">
-              <source src="project-2.mp4" type="video/mp4" />
-            </video>
-            <div class="project-tag">Viral Reel</div>
-            <div class="project-play">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-            </div>
-          </div>
-          <div class="project-body">
-            <h3 class="project-title">Project 02 — Retention Reel</h3>
-            <p class="project-desc">Fast-paced video edit built for high retention, kinetic transitions, and audio sync.</p>
-            <button class="watch-btn" onclick="playVideo('project-2.mp4', 'Project 02 — Retention Reel')">
-              Watch Film →
-            </button>
+            <span class="showreel-caption">Play Official Showreel</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Capabilities -->
-  <section id="services" class="services-section">
-    <div class="container">
-      <div class="section-header">
-        <div class="badge-wave"><span class="badge-text">Capabilities</span></div>
-        <h2>Editing Services</h2>
-        <p>Complete post-production workflows tailored for human engagement.</p>
+  <!-- Selected Works -->
+  <section id="work" class="container">
+    <div class="section-head">
+      <h2>Selected Works</h2>
+      <p>Tap on any project to watch in full screen with sound.</p>
+    </div>
+
+    <div class="works-grid">
+      <!-- Project 1 -->
+      <div class="work-card">
+        <div class="card-thumb" onclick="openVideo('project-1.mp4', 'Project 01 — AI Motion Cut')">
+          <video autoplay muted loop playsinline preload="auto">
+            <source src="project-1.mp4" type="video/mp4" onerror="this.src='assets/project-1.mp4'" />
+          </video>
+          <div class="card-tag">AI &amp; Visuals</div>
+          <div class="card-play-btn">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Project 01 — AI Motion Cut</h3>
+          <p class="card-desc">High-impact visual cut blending generative video concepts with dynamic sound design.</p>
+          <button class="play-link" onclick="openVideo('project-1.mp4', 'Project 01 — AI Motion Cut')">Watch Film →</button>
+        </div>
       </div>
 
-      <div class="services-grid">
-        <div class="service-card">
-          <h3 class="service-title">Video Editing</h3>
-          <p class="service-desc">Complete narrative structuring, clean timing, audio mastering, and SFX.</p>
+      <!-- Project 2 -->
+      <div class="work-card">
+        <div class="card-thumb" onclick="openVideo('project-2.mp4', 'Project 02 — Retention Reel')">
+          <video autoplay muted loop playsinline preload="auto">
+            <source src="project-2.mp4" type="video/mp4" onerror="this.src='assets/project-2.mp4'" />
+          </video>
+          <div class="card-tag">Viral Reel</div>
+          <div class="card-play-btn">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          </div>
         </div>
-        <div class="service-card">
-          <h3 class="service-title">AI Video Creation</h3>
-          <p class="service-desc">Generative workflows with Runway Gen-3 and Midjourney for modern concepts.</p>
+        <div class="card-body">
+          <h3 class="card-title">Project 02 — Retention Reel</h3>
+          <p class="card-desc">Fast-paced video edit built for high retention, kinetic transitions, and audio sync.</p>
+          <button class="play-link" onclick="openVideo('project-2.mp4', 'Project 02 — Retention Reel')">Watch Film →</button>
         </div>
-        <div class="service-card">
-          <h3 class="service-title">Social Media Reels</h3>
-          <p class="service-desc">High-retention vertical short-form for Instagram Reels, TikTok, and Shorts.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section With Real Photo -->
+  <section id="about" class="container">
+    <div class="about-wrap">
+      <div class="photo-frame">
+        <img src="profile.jpg" alt="JOO" onerror="if(!this.src.includes('assets/'))this.src='assets/profile.jpg';" />
+        <div class="status-badge">
+          <div class="green-dot"></div>
+          <span>Available for Work</span>
         </div>
-        <div class="service-card">
-          <h3 class="service-title">Color Grading</h3>
-          <p class="service-desc">DaVinci Resolve studio grading, film print emulation, and skin-ton
+      </div>
+
+      <div class="about-text">
+        <h2>Behind The Monitor</h2>
+        <p style="color:#fff; font-size:1.15rem; margin-bottom:12px;">Hey, I'm <strong>JOO</strong> — Video Editor &amp; AI Video Creator.</p>
+        <p>
+          I focus on human storytelling amplified with generative AI video models. Every frame is timed with precision, audio hits are synced to transients, and visuals are sculpted to hold attention from the first second.
+        </p>
+        <a href="#contact" class="btn btn-primary" style="margin-top:10px;">Start a Project</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section With Explicit Details -->
+  <section id="contact" class="container">
+    <div class="contact-card">
+      <h2>Let's Work Together</h2>
+      <p style="color:var(--text-gray); margin-top:8px;">Ready to collaborate? Reach out directly via WhatsApp, Instagram, or Email.</p>
+
+      <div class="channels-grid">
+        <!-- WhatsApp -->
+        <a href="https://wa.me/201143081231?text=Hi%20JOO,%20I%20saw%20your%20portfolio%20and%20want%20to%20collaborate!" target="_blank" rel="noopener noreferrer" class="channel-box">
+          <div class="channel-icon">
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          </div>
+          <div class="channel-info">
+            <small>WhatsApp Direct</small>
+            <strong>+20 114 308 1231</strong>
+          </div>
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://instagram.com/joeny_7" target="_blank" rel="noopener noreferrer" class="channel-box">
+          <div class="channel-icon">
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </div>
+          <div class="channel-info">
+            <small>Instagram Profile</small>
+            <strong>@joeny_7</strong>
+          </div>
+        </a>
+
+        <!-- Email -->
+        <a href="mailto:youssefjoeyhmhh@gmail.com?subject=Project%20Inquiry%20for%20JOO" class="channel-box">
+          <div class="channel-icon">
+            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+          </div>
+          <div class="channel-info">
+            <small>Email Me</small>
+            <strong>youssefjoeyhmhh@gmail.com</strong>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      &copy; 2026 <strong>JOO</strong> — Video Editor &amp; AI Video Creator.
+    </div>
+  </footer>
+
+  <!-- Native Fullscreen Video Modal -->
+  <div class="video-modal" id="videoModal" onclick="if(event.target===this)closeVideo()">
+    <div class="modal-box">
+      <div class="modal-header">
+        <span class="modal-title" id="modalTitle">Project Playback</span>
+        <button class="modal-close" onclick="closeVideo()">✕</button>
+      </div>
+      <div class="video-frame">
+        <video id="player" controls playsinline preload="auto"></video>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById("videoModal");
+    const player = document.getElementById("player");
+    const titleEl = document.getElementById("modalTitle");
+
+    function openVideo(src, title) {
+      titleEl.textContent = title;
+      player.src = src;
+      modal.classList.add("active");
+      document.body.style.overflow = "hidden";
+      player.play().catch(e => {});
+
+      player.onerror = function() {
+        if (!player.src.includes("assets/")) {
+          player.src = "assets/" + src;
+          player.play().catch(e => {});
+        }
+      };
+    }
+
+    function closeVideo() {
+      modal.classList.remove("active");
+      player.pause();
+      player.src = "";
+      document.body.style.overflow = "auto";
+    }
+
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeVideo();
+    });
+  </script>
+</body>
+</html>
