@@ -4,38 +4,42 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   <title>JOO — Video Editor &amp; AI Video Creator</title>
-  
-  <!-- Fonts -->
+  <meta name="description" content="Portfolio of JOO — Professional Video Editor and AI Video Creator crafting cinematic visuals and high-retention edits." />
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
 
   <style>
     /* =========================================================
-       MINIMALIST MIDNIGHT NAVY & ELECTRIC BLUE TOKENS
+       1. ELITE MIDNIGHT SAPPHIRE & ELECTRIC CYAN SYSTEM
        ========================================================= */
     :root {
-      --bg-dark: #020617;
-      --bg-surface: #070f26;
-      --bg-card: rgba(10, 21, 51, 0.6);
-      --bg-card-hover: rgba(15, 31, 75, 0.9);
+      --bg-void: #02040a;
+      --bg-navy: #050c1e;
+      --bg-card: rgba(8, 18, 44, 0.7);
+      --bg-card-hover: rgba(14, 28, 66, 0.95);
       
       --cyan-bright: #38bdf8;
-      --blue-accent: #2563eb;
-      --border-line: rgba(56, 189, 248, 0.18);
-      --border-glow: rgba(56, 189, 248, 0.6);
-      
+      --cyan-glow: #00f0ff;
+      --blue-electric: #2563eb;
+      --border-blue: rgba(56, 189, 248, 0.2);
+      --border-glow: rgba(56, 189, 248, 0.65);
+
       --text-white: #ffffff;
       --text-gray: #94a3b8;
-      --text-muted: #64748b;
-      
-      --font-heading: 'Syne', sans-serif;
-      --font-body: 'Plus Jakarta Sans', sans-serif;
-      
+      --text-dim: #64748b;
+
+      --font-display: 'Syne', sans-serif;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+
       --radius-sm: 8px;
       --radius-md: 14px;
-      --radius-lg: 20px;
+      --radius-lg: 22px;
       --radius-full: 9999px;
+      
+      --ease-cinema: cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     *, *::before, *::after {
@@ -51,55 +55,87 @@
     }
 
     body {
-      background-color: var(--bg-dark);
+      background-color: var(--bg-void);
       color: var(--text-white);
-      font-family: var(--font-body);
+      font-family: var(--font-sans);
       font-size: 16px;
       line-height: 1.6;
       overflow-x: hidden;
       background-image: 
-        radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.22) 0%, transparent 50%),
-        radial-gradient(circle at 100% 40%, rgba(56, 189, 248, 0.08) 0%, transparent 40%),
-        radial-gradient(circle at 0% 80%, rgba(29, 78, 216, 0.12) 0%, transparent 50%);
+        radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.2) 0%, transparent 60%),
+        radial-gradient(circle at 100% 35%, rgba(56, 189, 248, 0.09) 0%, transparent 50%),
+        radial-gradient(circle at 0% 75%, rgba(29, 78, 216, 0.12) 0%, transparent 55%);
       background-attachment: fixed;
+    }
+
+    ::selection {
+      background: var(--cyan-bright);
+      color: #02040a;
+    }
+
+    /* Ambient Pulsing Aura */
+    .ambient-sphere {
+      position: fixed;
+      top: -20%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100vw;
+      max-width: 900px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.14) 0%, rgba(2, 4, 10, 0) 70%);
+      pointer-events: none;
+      z-index: 0;
+      filter: blur(90px);
+      animation: ambientPulse 8s ease-in-out infinite alternate;
+    }
+
+    @keyframes ambientPulse {
+      0% { transform: translateX(-50%) scale(0.92); opacity: 0.5; }
+      100% { transform: translateX(-50%) scale(1.15); opacity: 0.9; }
     }
 
     .container {
       width: 100%;
-      max-width: 1060px;
+      max-width: 1080px;
       margin: 0 auto;
       padding: 0 20px;
+      position: relative;
+      z-index: 1;
     }
 
     h1, h2, h3, h4 {
-      font-family: var(--font-heading);
+      font-family: var(--font-display);
       font-weight: 800;
       letter-spacing: -0.02em;
     }
 
     a { text-decoration: none; color: inherit; }
 
-    /* Buttons */
+    /* =========================================================
+       2. BUTTONS & MICRO-INTERACTIONS
+       ========================================================= */
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
-      min-height: 48px;
+      min-height: 50px;
       padding: 12px 28px;
       border-radius: var(--radius-full);
       font-size: 0.95rem;
       font-weight: 700;
       cursor: pointer;
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: all 0.35s var(--ease-cinema);
       border: 1px solid transparent;
       outline: none;
+      position: relative;
+      overflow: hidden;
     }
 
     .btn-primary {
       background: linear-gradient(135deg, #38bdf8 0%, #1d4ed8 100%);
       color: #ffffff;
-      box-shadow: 0 10px 25px -5px rgba(56, 189, 248, 0.45);
+      box-shadow: 0 10px 30px -5px rgba(56, 189, 248, 0.5);
     }
 
     .btn-primary:active { transform: scale(0.96); }
@@ -107,33 +143,55 @@
     .btn-secondary {
       background: rgba(255, 255, 255, 0.04);
       color: var(--text-white);
-      border: 1px solid var(--border-line);
-      backdrop-filter: blur(10px);
+      border: 1px solid var(--border-blue);
+      backdrop-filter: blur(12px);
     }
 
     .btn-secondary:active { transform: scale(0.96); background: rgba(56, 189, 248, 0.1); }
 
-    /* Badge */
-    .tag-badge {
+    /* Equalizer Badge */
+    .badge-wave {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 6px 16px;
+      gap: 10px;
+      padding: 6px 18px;
       border-radius: var(--radius-full);
       background: rgba(56, 189, 248, 0.08);
-      border: 1px solid var(--border-line);
-      margin-bottom: 20px;
+      border: 1px solid var(--border-blue);
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.15);
+      margin-bottom: 22px;
+      animation: floatBadge 3.5s ease-in-out infinite alternate;
     }
 
-    .tag-dot {
-      width: 7px;
-      height: 7px;
+    @keyframes floatBadge {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-4px); }
+    }
+
+    .equalizer-bars {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      height: 14px;
+    }
+
+    .equalizer-bars span {
+      width: 2.5px;
+      height: 100%;
       background: var(--cyan-bright);
-      border-radius: 50%;
-      box-shadow: 0 0 10px var(--cyan-bright);
+      border-radius: 2px;
+      animation: equalize 1.2s ease-in-out infinite alternate;
+    }
+    .equalizer-bars span:nth-child(2) { animation-delay: 0.25s; height: 60%; }
+    .equalizer-bars span:nth-child(3) { animation-delay: 0.45s; height: 90%; }
+    .equalizer-bars span:nth-child(4) { animation-delay: 0.15s; height: 40%; }
+
+    @keyframes equalize {
+      0% { transform: scaleY(0.3); }
+      100% { transform: scaleY(1); }
     }
 
-    .tag-text {
+    .badge-text {
       color: var(--cyan-bright);
       font-size: 0.78rem;
       font-weight: 700;
@@ -141,7 +199,9 @@
       letter-spacing: 0.08em;
     }
 
-    /* Navbar */
+    /* =========================================================
+       3. NAVIGATION
+       ========================================================= */
     .site-nav {
       position: fixed;
       top: 14px;
@@ -154,47 +214,55 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 10px 20px;
+      padding: 10px 22px;
       border-radius: var(--radius-full);
-      background: rgba(7, 15, 38, 0.85);
-      border: 1px solid var(--border-line);
+      background: rgba(5, 12, 30, 0.85);
+      border: 1px solid var(--border-blue);
       backdrop-filter: blur(20px);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.75);
     }
 
-    .brand {
-      font-family: var(--font-heading);
-      font-size: 1.4rem;
+    .brand-logo {
+      font-family: var(--font-display);
+      font-size: 1.45rem;
       font-weight: 800;
       color: #fff;
-    }
-
-    .brand span { color: var(--cyan-bright); }
-
-    .nav-links {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: 6px;
+    }
+
+    .brand-glow {
+      color: var(--cyan-bright);
+      text-shadow: 0 0 15px rgba(56, 189, 248, 0.7);
+    }
+
+    .nav-desktop-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
       list-style: none;
     }
 
     .nav-link {
-      font-size: 0.88rem;
+      font-size: 0.9rem;
       font-weight: 600;
       color: var(--text-gray);
-      transition: color 0.2s ease;
+      transition: color 0.3s ease;
     }
 
     .nav-link:hover { color: var(--cyan-bright); }
 
-    /* Hero Section */
+    /* =========================================================
+       4. HERO SECTION WITH SHIMMERING TITLE
+       ========================================================= */
     .hero {
-      padding: 140px 0 60px 0;
+      padding: 145px 0 65px 0;
       text-align: center;
       position: relative;
     }
 
-    .hero-name {
+    .hero-title {
       font-size: clamp(4.2rem, 18vw, 7.5rem);
       margin-bottom: 8px;
       line-height: 0.95;
@@ -203,16 +271,22 @@
       background-size: 200% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      filter: drop-shadow(0 0 35px rgba(56, 189, 248, 0.35));
+      animation: textShine 4s linear infinite;
+      filter: drop-shadow(0 0 40px rgba(56, 189, 248, 0.4));
     }
 
-    .hero-role {
-      font-size: clamp(1.05rem, 4vw, 1.3rem);
+    @keyframes textShine {
+      to { background-position: 200% center; }
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.05rem, 4vw, 1.35rem);
       color: var(--text-gray);
-      margin-bottom: 30px;
+      margin-bottom: 32px;
+      padding: 0 10px;
     }
 
-    .hero-role span {
+    .hero-subtitle span {
       color: var(--cyan-bright);
       font-weight: 600;
       font-style: italic;
@@ -223,59 +297,64 @@
       flex-wrap: wrap;
       align-items: center;
       justify-content: center;
-      gap: 12px;
-      margin-bottom: 45px;
+      gap: 14px;
+      margin-bottom: 50px;
     }
 
-    /* Main Showreel Frame */
-    .showreel-block {
+    /* Main Showreel Block */
+    .showreel-card {
       position: relative;
       width: 100%;
+      max-width: 1000px;
+      margin: 0 auto;
       border-radius: var(--radius-lg);
       border: 1px solid var(--border-glow);
       background: #000;
       overflow: hidden;
-      box-shadow: 0 20px 60px -15px rgba(0, 0, 0, 0.9), 0 0 40px rgba(56, 189, 248, 0.2);
+      box-shadow: 0 25px 70px -15px rgba(0, 0, 0, 0.95), 0 0 45px rgba(56, 189, 248, 0.25);
     }
 
     .showreel-frame {
       position: relative;
       width: 100%;
       padding-top: 56.25%;
-      background: #050b1c;
+      background: linear-gradient(145deg, #06112c 0%, #020512 100%);
       cursor: pointer;
     }
 
-    .showreel-poster {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0.85;
-      transition: transform 0.5s ease;
-    }
-
-    .showreel-block:hover .showreel-poster {
-      transform: scale(1.03);
-      opacity: 0.95;
-    }
-
-    .showreel-overlay {
+    /* High-End Cinema Slate Graphic */
+    .cinema-slate {
       position: absolute;
       inset: 0;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background: radial-gradient(circle at center, rgba(7, 15, 38, 0.15) 0%, rgba(2, 6, 23, 0.8) 100%);
-      z-index: 2;
+      justify-content: space-between;
+      padding: 24px;
+      background: radial-gradient(circle at center, rgba(14, 28, 66, 0.35) 0%, rgba(2, 4, 10, 0.85) 100%);
+      border: 1px dashed rgba(56, 189, 248, 0.2);
     }
 
-    .play-btn {
-      width: 78px;
-      height: 78px;
+    .slate-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      color: var(--cyan-bright);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .slate-center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .play-btn-circle {
+      width: 82px;
+      height: 82px;
       border-radius: 50%;
       background: linear-gradient(135deg, #38bdf8 0%, #2563eb 100%);
       border: 3px solid rgba(255, 255, 255, 0.7);
@@ -283,22 +362,25 @@
       align-items: center;
       justify-content: center;
       color: #fff;
-      box-shadow: 0 0 35px rgba(56, 189, 248, 0.6);
+      box-shadow: 0 0 40px rgba(56, 189, 248, 0.65);
+      animation: pulsePlay 2s infinite;
       transition: transform 0.3s ease;
     }
 
-    .play-btn svg {
+    @keyframes pulsePlay {
+      0% { transform: scale(1); box-shadow: 0 0 25px rgba(56, 189, 248, 0.5); }
+      50% { transform: scale(1.08); box-shadow: 0 0 50px rgba(56, 189, 248, 0.85); }
+      100% { transform: scale(1); box-shadow: 0 0 25px rgba(56, 189, 248, 0.5); }
+    }
+
+    .play-btn-circle svg {
       transform: translateX(3px);
-      width: 32px;
-      height: 32px;
+      width: 34px;
+      height: 34px;
     }
 
-    .showreel-frame:hover .play-btn {
-      transform: scale(1.08);
-    }
-
-    .showreel-title {
-      margin-top: 14px;
+    .showreel-text {
+      margin-top: 16px;
       font-size: 0.85rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
@@ -306,189 +388,246 @@
       color: #fff;
     }
 
-    /* Section Title */
-    .section-head {
-      text-align: center;
-      margin: 80px 0 40px 0;
+    .slate-footer {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      font-family: monospace;
     }
 
-    .section-head h2 {
-      font-size: clamp(2rem, 5vw, 2.6rem);
-      margin-bottom: 10px;
+    /* Production Standards Strip */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 45px;
+      padding: 24px;
+      border-radius: var(--radius-md);
+      background: rgba(8, 18, 44, 0.65);
+      border: 1px solid var(--border-blue);
+      backdrop-filter: blur(12px);
+      text-align: left;
     }
 
-    .section-head p {
+    .pillar-title {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--cyan-bright);
+      margin-bottom: 4px;
+    }
+
+    .pillar-desc {
+      font-size: 0.84rem;
       color: var(--text-gray);
-      font-size: 0.95rem;
+      line-height: 1.45;
     }
 
-    /* Selected Work Cards (Strictly 2 Projects) */
-    .work-grid {
+    /* =========================================================
+       5. SELECTED WORKS (STRICTLY 2 PROJECTS)
+       ========================================================= */
+    .portfolio-section { padding: 95px 0; }
+
+    .section-header {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 50px auto;
+    }
+
+    .section-header h2 {
+      font-size: clamp(2rem, 6vw, 3rem);
+      margin-bottom: 12px;
+    }
+
+    .portfolio-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 24px;
+      gap: 26px;
     }
 
-    .work-card {
+    .project-card {
       background: var(--bg-card);
-      border: 1px solid var(--border-line);
+      border: 1px solid var(--border-blue);
       border-radius: var(--radius-md);
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      transition: all 0.35s ease;
+      transition: all 0.4s var(--ease-cinema);
+      position: relative;
     }
 
-    .work-card:hover {
-      transform: translateY(-6px);
+    .project-card:hover {
+      transform: translateY(-8px);
       border-color: var(--cyan-bright);
-      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.8), 0 0 30px rgba(56, 189, 248, 0.25);
+      box-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.85), 0 0 35px rgba(56, 189, 248, 0.3);
     }
 
-    .work-thumb {
+    .project-thumbnail {
       position: relative;
       width: 100%;
       padding-top: 56.25%;
-      background: #070e24;
+      background: #04091a;
       cursor: pointer;
       overflow: hidden;
     }
 
-    .work-thumb img {
+    .card-slate {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 18px;
+      background: linear-gradient(135deg, #081330 0%, #030612 100%);
     }
 
-    .work-card:hover .work-thumb img {
-      transform: scale(1.05);
+    .card-slate-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
-    .work-badge {
-      position: absolute;
-      top: 12px;
-      left: 12px;
+    .project-tag {
       padding: 4px 12px;
       border-radius: var(--radius-full);
-      background: rgba(2, 6, 23, 0.85);
-      border: 1px solid var(--border-line);
+      background: rgba(2, 4, 10, 0.8);
+      border: 1px solid var(--border-blue);
       font-size: 0.72rem;
       font-weight: 700;
+      text-transform: uppercase;
       color: var(--cyan-bright);
-      z-index: 3;
+      letter-spacing: 0.05em;
     }
 
-    .work-play-badge {
+    .project-play {
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);
-      width: 52px;
-      height: 52px;
+      transform: translate(-50%, -50%) scale(0.95);
+      width: 54px;
+      height: 54px;
       border-radius: 50%;
       background: linear-gradient(135deg, #38bdf8 0%, #1d4ed8 100%);
       color: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
       z-index: 3;
+      box-shadow: 0 0 25px rgba(56, 189, 248, 0.5);
+      transition: transform 0.3s ease;
     }
 
-    .work-body {
+    .project-card:hover .project-play {
+      transform: translate(-50%, -50%) scale(1.08);
+      background: #fff;
+      color: #02040a;
+    }
+
+    .project-body {
       padding: 22px;
       display: flex;
       flex-direction: column;
       flex-grow: 1;
     }
 
-    .work-title {
-      font-size: 1.2rem;
+    .project-title {
+      font-size: 1.25rem;
       margin-bottom: 6px;
+      color: #fff;
     }
 
-    .work-desc {
+    .project-desc {
       font-size: 0.88rem;
       color: var(--text-gray);
-      margin-bottom: 16px;
+      margin-bottom: 18px;
       flex-grow: 1;
+      line-height: 1.5;
     }
 
-    .watch-link {
+    .watch-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
       font-size: 0.9rem;
       font-weight: 700;
       color: var(--cyan-bright);
       background: transparent;
       border: none;
       cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
+      transition: transform 0.2s ease;
     }
 
-    /* Capabilities / Services */
+    .watch-btn:hover { transform: translateX(4px); }
+
+    /* =========================================================
+       6. SERVICES SECTION
+       ========================================================= */
+    .services-section { padding: 90px 0; }
     .services-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 18px;
+      gap: 22px;
     }
 
-    .service-box {
+    .service-card {
       background: var(--bg-card);
-      border: 1px solid var(--border-line);
+      border: 1px solid var(--border-blue);
       border-radius: var(--radius-md);
-      padding: 24px;
-      transition: all 0.3s ease;
+      padding: 28px 22px;
+      transition: all 0.35s var(--ease-cinema);
     }
 
-    .service-box:hover {
+    .service-card:hover {
       border-color: var(--cyan-bright);
+      transform: translateY(-6px);
       background: var(--bg-card-hover);
     }
 
     .service-title {
-      font-size: 1.15rem;
-      margin-bottom: 6px;
+      font-size: 1.2rem;
+      margin-bottom: 8px;
       color: var(--cyan-bright);
     }
 
     .service-desc {
-      font-size: 0.85rem;
+      font-size: 0.88rem;
+      line-height: 1.55;
       color: var(--text-gray);
-      line-height: 1.5;
     }
 
-    /* About Section */
-    .about-box {
+    /* =========================================================
+       7. ABOUT ME SECTION
+       ========================================================= */
+    .about-section { padding: 90px 0; }
+    .about-card {
       background: var(--bg-card);
-      border: 1px solid var(--border-line);
+      border: 1px solid var(--border-blue);
       border-radius: var(--radius-lg);
-      padding: 36px 24px;
-      margin-top: 60px;
+      padding: 40px 28px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
     }
 
-    .about-title {
-      font-size: 1.8rem;
+    .about-card h2 {
+      font-size: 2rem;
       margin-bottom: 12px;
     }
 
-    .about-p {
+    .about-card p {
       color: var(--text-gray);
       line-height: 1.7;
-      margin-bottom: 16px;
     }
 
-    /* Contact Section */
-    .contact-card {
-      background: radial-gradient(circle at 100% 0%, rgba(56, 189, 248, 0.12) 0%, rgba(7, 15, 38, 0.95) 70%);
-      border: 1px solid var(--border-line);
+    /* =========================================================
+       8. CONTACT SECTION
+       ========================================================= */
+    .contact-section { padding: 90px 0 110px 0; }
+    .contact-card-wrap {
+      background: radial-gradient(circle at 100% 0%, rgba(56, 189, 248, 0.12) 0%, rgba(5, 12, 30, 0.95) 70%);
+      border: 1px solid var(--border-blue);
       border-radius: var(--radius-lg);
-      padding: 36px 24px;
-      margin: 80px 0 100px 0;
+      padding: 40px 24px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
       text-align: center;
     }
 
@@ -497,7 +636,7 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 14px;
-      margin-top: 24px;
+      margin-top: 28px;
     }
 
     .channel-btn {
@@ -506,7 +645,7 @@
       gap: 10px;
       padding: 14px 24px;
       background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--border-line);
+      border: 1px solid var(--border-blue);
       border-radius: var(--radius-full);
       font-weight: 700;
       font-size: 0.95rem;
@@ -520,12 +659,14 @@
       transform: translateY(-2px);
     }
 
-    /* Video Player Modal */
-    .modal-overlay {
+    /* =========================================================
+       9. FULLSCREEN VIDEO PLAYER MODAL
+       ========================================================= */
+    .video-modal {
       position: fixed;
       inset: 0;
       z-index: 9999;
-      background: rgba(2, 6, 23, 0.96);
+      background: rgba(2, 4, 10, 0.96);
       backdrop-filter: blur(20px);
       display: flex;
       align-items: center;
@@ -536,9 +677,9 @@
       transition: all 0.3s ease;
     }
 
-    .modal-overlay.active { opacity: 1; visibility: visible; }
+    .video-modal.active { opacity: 1; visibility: visible; }
 
-    .modal-box {
+    .video-modal-box {
       position: relative;
       width: 100%;
       max-width: 960px;
@@ -546,6 +687,7 @@
       border-radius: var(--radius-md);
       overflow: hidden;
       border: 1px solid var(--border-glow);
+      box-shadow: 0 0 50px rgba(56, 189, 248, 0.35);
     }
 
     .modal-bar {
@@ -553,7 +695,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 12px 18px;
-      background: #060e22;
+      background: #04091a;
       border-bottom: 1px solid rgba(56, 189, 248, 0.2);
     }
 
@@ -577,14 +719,14 @@
       font-size: 1.1rem;
     }
 
-    .video-frame-wrap {
+    .video-frame-container {
       position: relative;
       width: 100%;
       padding-top: 56.25%;
       background: #000;
     }
 
-    .video-frame-wrap iframe {
+    .video-frame-container iframe {
       position: absolute;
       top: 0;
       left: 0;
@@ -593,29 +735,32 @@
       border: none;
     }
 
-    /* Footer */
-    .footer {
-      border-top: 1px solid var(--border-line);
+    .site-footer {
+      border-top: 1px solid var(--border-blue);
       padding: 30px 0;
       text-align: center;
       font-size: 0.85rem;
-      color: var(--text-muted);
+      color: var(--text-dim);
     }
 
     @media (max-width: 768px) {
-      .nav-links { display: none; }
+      .nav-desktop-links { display: none; }
     }
   </style>
 </head>
 <body>
 
+  <div class="ambient-sphere"></div>
+
   <!-- Navbar -->
   <header class="site-nav">
     <div class="container">
       <div class="nav-inner">
-        <a href="#hero" class="brand">JOO<span>.</span></a>
+        <a href="#hero" class="brand-logo">
+          <span>JOO</span><span class="brand-glow">.</span>
+        </a>
 
-        <ul class="nav-links">
+        <ul class="nav-desktop-links">
           <li><a href="#hero" class="nav-link">Home</a></li>
           <li><a href="#work" class="nav-link">Work</a></li>
           <li><a href="#services" class="nav-link">Services</a></li>
@@ -631,13 +776,16 @@
   <!-- Hero Section -->
   <section id="hero" class="hero">
     <div class="container">
-      <div class="tag-badge">
-        <div class="tag-dot"></div>
-        <span class="tag-text">Video Editor &bull; AI Creator</span>
+      
+      <div class="badge-wave">
+        <div class="equalizer-bars">
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <span class="badge-text">Video Editor &bull; AI Video Creator</span>
       </div>
 
-      <h1 class="hero-name">JOO</h1>
-      <p class="hero-role">
+      <h1 class="hero-title">JOO</h1>
+      <p class="hero-subtitle">
         I turn raw ideas into <span>cinematic visual reality.</span>
       </p>
 
@@ -647,138 +795,196 @@
       </div>
 
       <!-- Main Showreel Video Block -->
-      <div class="showreel-block" onclick="openVideo('https://drive.google.com/file/d/1Tmp-E1IsLOjFlM_pxJmzgWTmrQE9fxS3/preview', 'Official Showreel')">
+      <div class="showreel-card" onclick="openVideoPlayer('https://drive.google.com/file/d/1Tmp-E1IsLOjFlM_pxJmzgWTmrQE9fxS3/preview', 'Official Showreel 2026')">
         <div class="showreel-frame">
-          <img class="showreel-poster" src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1200&q=80" alt="Showreel Cover" />
-          <div class="showreel-overlay">
-            <div class="play-btn">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          <div class="cinema-slate">
+            <div class="slate-header">
+              <span>JOO STUDIOS &bull; REEL 01</span>
+              <span>4K MASTER &bull; 60 FPS</span>
             </div>
-            <span class="showreel-title">Play Official Showreel</span>
+            <div class="slate-center">
+              <div class="play-btn-circle">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <span class="showreel-text">Play Official Showreel</span>
+            </div>
+            <div class="slate-footer">
+              <span>TIME: 00:01:45:12</span>
+              <span>AUDIO: MASTER 5.1</span>
+            </div>
           </div>
         </div>
       </div>
+
+      <!-- Pillars -->
+      <div class="pillars-grid">
+        <div>
+          <div class="pillar-title">Frame Precision</div>
+          <div class="pillar-desc">Pacing, transient beat sync, audio mastering &amp; retention.</div>
+        </div>
+        <div>
+          <div class="pillar-title">AI Video Creation</div>
+          <div class="pillar-desc">Runway Gen-3, Midjourney &amp; generative visual VFX.</div>
+        </div>
+        <div>
+          <div class="pillar-title">Studio Color</div>
+          <div class="pillar-desc">DaVinci Resolve film print emulation and custom palettes.</div>
+        </div>
+        <div>
+          <div class="pillar-title">Direct Delivery</div>
+          <div class="pillar-desc">Fast revisions and studio-ready master exports.</div>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- Selected Works (Strictly Your 2 Projects) -->
-  <section id="work" class="container">
-    <div class="section-head">
-      <h2>Selected Works</h2>
-      <p>Tap to play projects in full screen HD.</p>
-    </div>
-
-    <div class="work-grid">
-      <!-- Project 1 -->
-      <div class="work-card">
-        <div class="work-thumb" onclick="openVideo('https://drive.google.com/file/d/1apnWtbqqDnYO7UbQemo4ayGB3iosDQHH/preview', 'Featured Project 01')">
-          <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" alt="Project 1" />
-          <div class="work-badge">AI &amp; Visuals</div>
-          <div class="work-play-badge">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-          </div>
-        </div>
-        <div class="work-body">
-          <h3 class="work-title">Featured Project 01</h3>
-          <p class="work-desc">High-impact visual cut blending generative video concepts with dynamic sound design.</p>
-          <button class="watch-link" onclick="openVideo('https://drive.google.com/file/d/1apnWtbqqDnYO7UbQemo4ayGB3iosDQHH/preview', 'Featured Project 01')">
-            Watch Video →
-          </button>
-        </div>
+  <!-- Selected Works (Strictly 2 Projects) -->
+  <section id="work" class="portfolio-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge-wave"><span class="badge-text">Selected Portfolio</span></div>
+        <h2>Curated Works</h2>
+        <p>Tap on any project to watch in full screen HD.</p>
       </div>
 
-      <!-- Project 2 -->
-      <div class="work-card">
-        <div class="work-thumb" onclick="openVideo('https://drive.google.com/file/d/1Zu84NTYg7Ihlu8iIKP_V1MEr6qaguav4/preview', 'Featured Project 02')">
-          <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80" alt="Project 2" />
-          <div class="work-badge">Viral Reel</div>
-          <div class="work-play-badge">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      <div class="portfolio-grid">
+        <!-- Project 1 -->
+        <div class="project-card">
+          <div class="project-thumbnail" onclick="openVideoPlayer('https://drive.google.com/file/d/1apnWtbqqDnYO7UbQemo4ayGB3iosDQHH/preview', 'Project 01 — AI Motion')">
+            <div class="card-slate">
+              <div class="card-slate-top">
+                <span class="project-tag">AI &amp; Visuals</span>
+                <span style="font-size:0.75rem; color:var(--text-dim); font-family:monospace;">4K UHD</span>
+              </div>
+              <div class="project-play">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <div style="font-size:0.75rem; color:var(--cyan-bright); font-family:monospace;">SCENE 01 / TAKE 04</div>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Project 01 — AI Motion Cut</h3>
+            <p class="project-desc">High-impact visual cut blending generative video concepts with dynamic sound design.</p>
+            <button class="watch-btn" onclick="openVideoPlayer('https://drive.google.com/file/d/1apnWtbqqDnYO7UbQemo4ayGB3iosDQHH/preview', 'Project 01 — AI Motion')">
+              Watch Video →
+            </button>
           </div>
         </div>
-        <div class="work-body">
-          <h3 class="work-title">Featured Project 02</h3>
-          <p class="work-desc">Paced video edit built for high retention, kinetic transitions, and audio sync.</p>
-          <button class="watch-link" onclick="openVideo('https://drive.google.com/file/d/1Zu84NTYg7Ihlu8iIKP_V1MEr6qaguav4/preview', 'Featured Project 02')">
-            Watch Video →
-          </button>
+
+        <!-- Project 2 -->
+        <div class="project-card">
+          <div class="project-thumbnail" onclick="openVideoPlayer('https://drive.google.com/file/d/1Zu84NTYg7Ihlu8iIKP_V1MEr6qaguav4/preview', 'Project 02 — Retention Reel')">
+            <div class="card-slate">
+              <div class="card-slate-top">
+                <span class="project-tag">Viral Reel</span>
+                <span style="font-size:0.75rem; color:var(--text-dim); font-family:monospace;">9:16 VERTICAL</span>
+              </div>
+              <div class="project-play">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              </div>
+              <div style="font-size:0.75rem; color:var(--cyan-bright); font-family:monospace;">SCENE 02 / TAKE 01</div>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Project 02 — Retention Reel</h3>
+            <p class="project-desc">Fast-paced video edit built for high retention, kinetic transitions, and audio sync.</p>
+            <button class="watch-btn" onclick="openVideoPlayer('https://drive.google.com/file/d/1Zu84NTYg7Ihlu8iIKP_V1MEr6qaguav4/preview', 'Project 02 — Retention Reel')">
+              Watch Video →
+            </button>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Capabilities -->
-  <section id="services" class="container">
-    <div class="section-head">
-      <h2>Capabilities</h2>
-      <p>End-to-end post-production services.</p>
-    </div>
+  <section id="services" class="services-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge-wave"><span class="badge-text">Capabilities</span></div>
+        <h2>Editing Services</h2>
+        <p>Complete post-production workflows tailored for human attention.</p>
+      </div>
 
-    <div class="services-grid">
-      <div class="service-box">
-        <h3 class="service-title">Video Editing</h3>
-        <p class="service-desc">Complete narrative structuring, clean timing, audio mastering, and SFX.</p>
-      </div>
-      <div class="service-box">
-        <h3 class="service-title">AI Video Creation</h3>
-        <p class="service-desc">Generative workflows with Runway Gen-3 and Midjourney for impossible visuals.</p>
-      </div>
-      <div class="service-box">
-        <h3 class="service-title">Social Media Reels</h3>
-        <p class="service-desc">High-retention vertical short-form for Instagram Reels, TikTok, and Shorts.</p>
-      </div>
-      <div class="service-box">
-        <h3 class="service-title">Color Grading</h3>
-        <p class="service-desc">DaVinci Resolve studio color grading and film print emulation.</p>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3 class="service-title">Video Editing</h3>
+          <p class="service-desc">Complete narrative structuring, clean timing, audio mastering, and SFX.</p>
+        </div>
+        <div class="service-card">
+          <h3 class="service-title">AI Video Creation</h3>
+          <p class="service-desc">Generative workflows with Runway Gen-3 and Midjourney for modern concepts.</p>
+        </div>
+        <div class="service-card">
+          <h3 class="service-title">Social Media Reels</h3>
+          <p class="service-desc">High-retention vertical short-form for Instagram Reels, TikTok, and Shorts.</p>
+        </div>
+        <div class="service-card">
+          <h3 class="service-title">Color Grading</h3>
+          <p class="service-desc">DaVinci Resolve studio grading, film print emulation, and skin-tone balance.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- About -->
-  <section id="about" class="container">
-    <div class="about-box">
-      <h2 class="about-title">Behind The Monitor</h2>
-      <p class="about-p">
-        Hey, I'm <strong>JOO</strong> — Video Editor &amp; AI Video Creator. I focus on human storytelling amplified with generative AI video models. Every frame is timed with precision, audio hits are synced to transients, and visuals are sculpted to hold attention from the first second.
-      </p>
+  <section id="about" class="about-section">
+    <div class="container">
+      <div class="about-card">
+        <div class="badge-wave"><span class="badge-text">Behind The Monitor</span></div>
+        <h2>I turn complex concepts into cinematic reality.</h2>
+        <p style="color:#fff; font-size:1.15rem; margin: 12px 0 14px 0;">Hey, I'm <strong>JOO</strong> — Video Editor &amp; AI Video Creator.</p>
+        <p>
+          I focus on human storytelling amplified with generative AI video models. Every frame is timed with precision, audio hits are synced to transients, and visuals are sculpted to hold human attention from the first second.
+        </p>
+      </div>
     </div>
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="container">
-    <div class="contact-card">
-      <h2>Let's Work Together</h2>
-      <p style="color:var(--text-gray); margin-top:8px;">Ready to collaborate on your next video? Reach out directly below.</p>
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div class="contact-card-wrap">
+        <div class="badge-wave"><span class="badge-text">Let's Connect</span></div>
+        <h2>Let's Work Together</h2>
+        <p style="color:var(--text-gray); margin-top:10px;">Ready to collaborate on your next project? Reach out directly below.</p>
 
-      <div class="contact-channels">
-        <a href="https://wa.me/201143081231?text=Hi%20JOO,%20I%20saw%20your%20portfolio%20and%20want%20to%20collaborate!" target="_blank" rel="noopener noreferrer" class="channel-btn">
-          <span>WhatsApp Chat</span>
-        </a>
-        <a href="https://instagram.com/joeny_7" target="_blank" rel="noopener noreferrer" class="channel-btn">
-          <span>Instagram Profile</span>
-        </a>
-        <a href="mailto:youssefjoeyhmhh@gmail.com?subject=Project%20Inquiry%20for%20JOO" class="channel-btn">
-          <span>Send Email</span>
-        </a>
+        <div class="contact-channels">
+          <!-- WhatsApp Direct -->
+          <a href="https://wa.me/201143081231?text=Hi%20JOO,%20I%20saw%20your%20portfolio%20and%20want%20to%20collaborate!" target="_blank" rel="noopener noreferrer" class="channel-btn">
+            <span>WhatsApp (+20 114 308 1231)</span>
+          </a>
+
+          <!-- Instagram Profile -->
+          <a href="https://instagram.com/joeny_7" target="_blank" rel="noopener noreferrer" class="channel-btn">
+            <span>Instagram (@joeny_7)</span>
+          </a>
+
+          <!-- Email -->
+          <a href="mailto:youssefjoeyhmhh@gmail.com?subject=Project%20Inquiry%20for%20JOO" class="channel-btn">
+            <span>Email Me</span>
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="footer">
+  <footer class="site-footer">
     <div class="container">
       &copy; 2026 <strong>JOO</strong> — Video Editor &amp; AI Video Creator.
     </div>
   </footer>
 
-  <!-- Clean Video Lightbox -->
-  <div class="modal-overlay" id="videoModal" onclick="if(event.target===this)closeVideo()">
-    <div class="modal-box">
+  <!-- Fullscreen Video Lightbox Modal -->
+  <div class="video-modal" id="videoModal" onclick="if(event.target===this)closeVideoPlayer()">
+    <div class="video-modal-box">
       <div class="modal-bar">
         <span class="modal-title" id="modalTitle">Project Playback</span>
-        <button class="modal-close" onclick="closeVideo()">✕</button>
+        <button class="modal-close" onclick="closeVideoPlayer()" aria-label="Close">✕</button>
       </div>
-      <div class="video-frame-wrap" id="videoWrapper"></div>
+      <div class="video-frame-container" id="videoWrapper"></div>
     </div>
   </div>
 
@@ -787,21 +993,21 @@
     const wrapper = document.getElementById("videoWrapper");
     const titleEl = document.getElementById("modalTitle");
 
-    function openVideo(url, title) {
+    function openVideoPlayer(url, title) {
       titleEl.textContent = title;
-      wrapper.innerHTML = `<iframe src="${url}" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
+      wrapper.innerHTML = `<iframe src="${url}" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
       modal.classList.add("active");
       document.body.style.overflow = "hidden";
     }
 
-    function closeVideo() {
+    function closeVideoPlayer() {
       modal.classList.remove("active");
       wrapper.innerHTML = "";
       document.body.style.overflow = "auto";
     }
 
     window.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeVideo();
+      if (e.key === "Escape") closeVideoPlayer();
     });
   </script>
 </body>
