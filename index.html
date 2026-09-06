@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-  <title>JOO — Video Editor &amp; AI Video Creator</title>
-  <meta name="description" content="Portfolio of JOO — Professional Video Editor and AI Video Creator crafting cinematic visuals and high-retention edits." />
+  <title>JOO — Creative Video Editor &amp; AI Creator</title>
+  <meta name="description" content="Portfolio of JOO — Professional Video Editor and AI Video Creator crafting 4K cinematic visuals and viral commercial edits." />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,30 +13,30 @@
 
   <style>
     /* =========================================================
-       ELITE MIDNIGHT SAPPHIRE & ELECTRIC CYAN SYSTEM
+       AGENCY-GRADE MIDNIGHT NAVY & ELECTRIC CYAN DESIGN SYSTEM
        ========================================================= */
     :root {
-      --bg-void: #02040a;
-      --bg-navy: #050c1e;
-      --bg-card: rgba(8, 18, 44, 0.72);
-      --bg-card-hover: rgba(14, 28, 66, 0.95);
+      --bg-dark: #02040a;
+      --bg-navy-deep: #050c1e;
+      --bg-glass: rgba(8, 18, 44, 0.65);
+      --bg-glass-hover: rgba(13, 27, 64, 0.85);
       
-      --cyan-bright: #38bdf8;
-      --cyan-glow: #00f0ff;
+      --cyan-neon: #38bdf8;
+      --cyan-bright: #00f0ff;
       --blue-electric: #2563eb;
-      --border-blue: rgba(56, 189, 248, 0.2);
-      --border-glow: rgba(56, 189, 248, 0.65);
+      --border-subtle: rgba(56, 189, 248, 0.16);
+      --border-glow: rgba(56, 189, 248, 0.6);
 
       --text-white: #ffffff;
-      --text-gray: #94a3b8;
+      --text-muted: #94a3b8;
       --text-dim: #64748b;
 
-      --font-display: 'Syne', sans-serif;
-      --font-sans: 'Plus Jakarta Sans', sans-serif;
+      --font-heading: 'Syne', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
 
-      --radius-sm: 8px;
-      --radius-md: 14px;
-      --radius-lg: 22px;
+      --radius-sm: 10px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
       --radius-full: 9999px;
       
       --ease-cinema: cubic-bezier(0.16, 1, 0.3, 1);
@@ -55,34 +55,34 @@
     }
 
     body {
-      background-color: var(--bg-void);
+      background-color: var(--bg-dark);
       color: var(--text-white);
-      font-family: var(--font-sans);
+      font-family: var(--font-body);
       font-size: 16px;
       line-height: 1.6;
       overflow-x: hidden;
       background-image: 
-        radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.2) 0%, transparent 60%),
-        radial-gradient(circle at 100% 35%, rgba(56, 189, 248, 0.09) 0%, transparent 50%),
-        radial-gradient(circle at 0% 75%, rgba(29, 78, 216, 0.12) 0%, transparent 55%);
+        radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.22) 0%, transparent 60%),
+        radial-gradient(circle at 100% 30%, rgba(56, 189, 248, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 0% 75%, rgba(29, 78, 216, 0.14) 0%, transparent 55%);
       background-attachment: fixed;
     }
 
     ::selection {
-      background: var(--cyan-bright);
+      background: var(--cyan-neon);
       color: #02040a;
     }
 
-    /* Ambient Pulsing Aura */
+    /* Ambient Pulsing Glow */
     .ambient-sphere {
       position: fixed;
       top: -20%;
       left: 50%;
       transform: translateX(-50%);
       width: 100vw;
-      max-width: 900px;
+      max-width: 950px;
       height: 600px;
-      background: radial-gradient(circle, rgba(56, 189, 248, 0.14) 0%, rgba(2, 4, 10, 0) 70%);
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, rgba(2, 4, 10, 0) 70%);
       pointer-events: none;
       z-index: 0;
       filter: blur(90px);
@@ -96,7 +96,7 @@
 
     .container {
       width: 100%;
-      max-width: 1080px;
+      max-width: 1100px;
       margin: 0 auto;
       padding: 0 20px;
       position: relative;
@@ -104,21 +104,23 @@
     }
 
     h1, h2, h3, h4 {
-      font-family: var(--font-display);
+      font-family: var(--font-heading);
       font-weight: 800;
       letter-spacing: -0.02em;
     }
 
     a { text-decoration: none; color: inherit; }
 
-    /* Buttons */
+    /* =========================================================
+       AGENCY PILL BUTTONS
+       ========================================================= */
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
-      min-height: 50px;
-      padding: 12px 28px;
+      min-height: 52px;
+      padding: 12px 30px;
       border-radius: var(--radius-full);
       font-size: 0.95rem;
       font-weight: 700;
@@ -141,13 +143,13 @@
     .btn-secondary {
       background: rgba(255, 255, 255, 0.04);
       color: var(--text-white);
-      border: 1px solid var(--border-blue);
+      border: 1px solid var(--border-subtle);
       backdrop-filter: blur(12px);
     }
 
     .btn-secondary:active { transform: scale(0.96); background: rgba(56, 189, 248, 0.1); }
 
-    /* Equalizer Badge */
+    /* Sound Wave Badge */
     .badge-wave {
       display: inline-flex;
       align-items: center;
@@ -155,7 +157,7 @@
       padding: 6px 18px;
       border-radius: var(--radius-full);
       background: rgba(56, 189, 248, 0.08);
-      border: 1px solid var(--border-blue);
+      border: 1px solid var(--border-subtle);
       box-shadow: 0 0 20px rgba(56, 189, 248, 0.15);
       margin-bottom: 22px;
       animation: floatBadge 3.5s ease-in-out infinite alternate;
@@ -176,7 +178,7 @@
     .equalizer-bars span {
       width: 2.5px;
       height: 100%;
-      background: var(--cyan-bright);
+      background: var(--cyan-neon);
       border-radius: 2px;
       animation: equalize 1.2s ease-in-out infinite alternate;
     }
@@ -190,7 +192,7 @@
     }
 
     .badge-text {
-      color: var(--cyan-bright);
+      color: var(--cyan-neon);
       font-size: 0.78rem;
       font-weight: 700;
       text-transform: uppercase;
@@ -213,13 +215,13 @@
       padding: 10px 22px;
       border-radius: var(--radius-full);
       background: rgba(5, 12, 30, 0.85);
-      border: 1px solid var(--border-blue);
+      border: 1px solid var(--border-subtle);
       backdrop-filter: blur(20px);
       box-shadow: 0 12px 35px rgba(0, 0, 0, 0.75);
     }
 
     .brand-logo {
-      font-family: var(--font-display);
+      font-family: var(--font-heading);
       font-size: 1.45rem;
       font-weight: 800;
       color: #fff;
@@ -229,7 +231,7 @@
     }
 
     .brand-glow {
-      color: var(--cyan-bright);
+      color: var(--cyan-neon);
       text-shadow: 0 0 15px rgba(56, 189, 248, 0.7);
     }
 
@@ -243,13 +245,15 @@
     .nav-link {
       font-size: 0.9rem;
       font-weight: 600;
-      color: var(--text-gray);
+      color: var(--text-muted);
       transition: color 0.3s ease;
     }
 
-    .nav-link:hover { color: var(--cyan-bright); }
+    .nav-link:hover { color: var(--cyan-neon); }
 
-    /* Hero Section */
+    /* =========================================================
+       HERO SECTION WITH SHIMMERING AGENCY LOGO
+       ========================================================= */
     .hero {
       padding: 145px 0 65px 0;
       text-align: center;
@@ -275,13 +279,13 @@
 
     .hero-subtitle {
       font-size: clamp(1.05rem, 4vw, 1.35rem);
-      color: var(--text-gray);
+      color: var(--text-muted);
       margin-bottom: 32px;
       padding: 0 10px;
     }
 
     .hero-subtitle span {
-      color: var(--cyan-bright);
+      color: var(--cyan-neon);
       font-weight: 600;
       font-style: italic;
     }
@@ -295,17 +299,20 @@
       margin-bottom: 50px;
     }
 
-    /* Main Showreel Frame with Animated Cover */
+    /* =========================================================
+       MAIN SHOWREEL CARD (LIVE 4K LOOPING VIDEO BACKGROUND)
+       ========================================================= */
     .showreel-card {
       position: relative;
       width: 100%;
-      max-width: 1000px;
+      max-width: 1020px;
       margin: 0 auto;
       border-radius: var(--radius-lg);
       border: 1px solid var(--border-glow);
       background: #000;
       overflow: hidden;
       box-shadow: 0 25px 70px -15px rgba(0, 0, 0, 0.95), 0 0 45px rgba(56, 189, 248, 0.25);
+      cursor: pointer;
     }
 
     .showreel-frame {
@@ -313,23 +320,23 @@
       width: 100%;
       padding-top: 56.25%;
       background: #040814;
-      cursor: pointer;
       overflow: hidden;
     }
 
-    .showreel-poster-img {
+    /* Real Looping Video In Background (Like Twist Marketing) */
+    .bg-video-loop {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      opacity: 0.82;
+      opacity: 0.85;
       transition: transform 0.6s var(--ease-cinema), opacity 0.4s ease;
     }
 
-    .showreel-card:hover .showreel-poster-img {
-      transform: scale(1.06);
+    .showreel-card:hover .bg-video-loop {
+      transform: scale(1.04);
       opacity: 0.95;
     }
 
@@ -340,7 +347,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background: radial-gradient(circle at center, rgba(6, 13, 31, 0.2) 0%, rgba(2, 4, 10, 0.8) 100%);
+      background: radial-gradient(circle at center, rgba(6, 13, 31, 0.15) 0%, rgba(2, 4, 10, 0.75) 100%);
       z-index: 2;
     }
 
@@ -381,7 +388,7 @@
       text-shadow: 0 2px 10px rgba(0,0,0,0.9);
     }
 
-    /* Pillars */
+    /* Agency Pillars Strip */
     .pillars-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -389,8 +396,8 @@
       margin-top: 45px;
       padding: 24px;
       border-radius: var(--radius-md);
-      background: rgba(8, 18, 44, 0.65);
-      border: 1px solid var(--border-blue);
+      background: var(--bg-glass);
+      border: 1px solid var(--border-subtle);
       backdrop-filter: blur(12px);
       text-align: left;
     }
@@ -399,18 +406,18 @@
       font-family: var(--font-display);
       font-size: 1.05rem;
       font-weight: 700;
-      color: var(--cyan-bright);
+      color: var(--cyan-neon);
       margin-bottom: 4px;
     }
 
     .pillar-desc {
       font-size: 0.84rem;
-      color: var(--text-gray);
+      color: var(--text-muted);
       line-height: 1.45;
     }
 
     /* =========================================================
-       SELECTED WORKS (HIGH-RES ANIMATED COVERS)
+       SELECTED WORKS (LOOPING 4K VIDEO CARDS)
        ========================================================= */
     .portfolio-section { padding: 95px 0; }
 
@@ -432,19 +439,20 @@
     }
 
     .project-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-blue);
+      background: var(--bg-glass);
+      border: 1px solid var(--border-subtle);
       border-radius: var(--radius-md);
       overflow: hidden;
       display: flex;
       flex-direction: column;
       transition: all 0.4s var(--ease-cinema);
       position: relative;
+      backdrop-filter: blur(16px);
     }
 
     .project-card:hover {
       transform: translateY(-8px);
-      border-color: var(--cyan-bright);
+      border-color: var(--cyan-neon);
       box-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.85), 0 0 35px rgba(56, 189, 248, 0.3);
     }
 
@@ -457,27 +465,20 @@
       overflow: hidden;
     }
 
-    .project-thumb-img {
+    .project-thumbnail video {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.6s var(--ease-cinema), filter 0.4s ease;
-      filter: contrast(105%) brightness(95%);
+      transition: transform 0.6s var(--ease-cinema);
+      opacity: 0.88;
     }
 
-    .project-card:hover .project-thumb-img {
+    .project-card:hover .project-thumbnail video {
       transform: scale(1.08);
-      filter: contrast(110%) brightness(105%);
-    }
-
-    .project-thumb-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(2, 4, 10, 0.3) 0%, rgba(2, 4, 10, 0.75) 100%);
-      z-index: 2;
+      opacity: 1;
     }
 
     .project-tag {
@@ -487,12 +488,12 @@
       padding: 5px 14px;
       border-radius: var(--radius-full);
       background: rgba(2, 4, 10, 0.85);
-      border: 1px solid var(--border-blue);
+      border: 1px solid var(--border-subtle);
       backdrop-filter: blur(8px);
       font-size: 0.72rem;
       font-weight: 700;
       text-transform: uppercase;
-      color: var(--cyan-bright);
+      color: var(--cyan-neon);
       letter-spacing: 0.05em;
       z-index: 3;
     }
@@ -536,7 +537,7 @@
 
     .project-desc {
       font-size: 0.88rem;
-      color: var(--text-gray);
+      color: var(--text-muted);
       margin-bottom: 18px;
       flex-grow: 1;
       line-height: 1.5;
@@ -548,7 +549,7 @@
       gap: 6px;
       font-size: 0.9rem;
       font-weight: 700;
-      color: var(--cyan-bright);
+      color: var(--cyan-neon);
       background: transparent;
       border: none;
       cursor: pointer;
@@ -558,7 +559,7 @@
     .watch-btn:hover { transform: translateX(4px); }
 
     /* =========================================================
-       SERVICES SECTION
+       SERVICES (BENTO AGENCY STYLE)
        ========================================================= */
     .services-section { padding: 90px 0; }
     .services-grid {
@@ -568,33 +569,34 @@
     }
 
     .service-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border-blue);
+      background: var(--bg-glass);
+      border: 1px solid var(--border-subtle);
       border-radius: var(--radius-md);
       padding: 28px 22px;
       transition: all 0.35s var(--ease-cinema);
+      backdrop-filter: blur(16px);
     }
 
     .service-card:hover {
-      border-color: var(--cyan-bright);
+      border-color: var(--cyan-neon);
       transform: translateY(-6px);
-      background: var(--bg-card-hover);
+      background: var(--bg-glass-hover);
     }
 
     .service-title {
       font-size: 1.2rem;
       margin-bottom: 8px;
-      color: var(--cyan-bright);
+      color: var(--cyan-neon);
     }
 
     .service-desc {
       font-size: 0.88rem;
       line-height: 1.55;
-      color: var(--text-gray);
+      color: var(--text-muted);
     }
 
     /* =========================================================
-       ABOUT ME SECTION WITH DEDICATED PROFILE PHOTO CARD
+       ABOUT SECTION WITH YOUR REAL PHOTO CARD
        ========================================================= */
     .about-section { padding: 90px 0; }
     
@@ -603,11 +605,12 @@
       grid-template-columns: 340px 1fr;
       gap: 40px;
       align-items: center;
-      background: var(--bg-card);
-      border: 1px solid var(--border-blue);
+      background: var(--bg-glass);
+      border: 1px solid var(--border-subtle);
       border-radius: var(--radius-lg);
       padding: 40px;
       box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+      backdrop-filter: blur(20px);
     }
 
     .about-photo-wrapper {
@@ -624,7 +627,6 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: contrast(105%);
       transition: transform 0.5s ease;
     }
 
@@ -642,7 +644,7 @@
       padding: 6px 14px;
       border-radius: var(--radius-full);
       background: rgba(2, 4, 10, 0.85);
-      border: 1px solid var(--cyan-bright);
+      border: 1px solid var(--cyan-neon);
       backdrop-filter: blur(8px);
     }
 
@@ -669,7 +671,7 @@
     }
 
     .about-content p {
-      color: var(--text-gray);
+      color: var(--text-muted);
       line-height: 1.7;
       margin-bottom: 16px;
     }
@@ -680,7 +682,7 @@
     .contact-section { padding: 90px 0 110px 0; }
     .contact-card-wrap {
       background: radial-gradient(circle at 100% 0%, rgba(56, 189, 248, 0.12) 0%, rgba(5, 12, 30, 0.95) 70%);
-      border: 1px solid var(--border-blue);
+      border: 1px solid var(--border-subtle);
       border-radius: var(--radius-lg);
       padding: 40px 24px;
       box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
@@ -701,7 +703,7 @@
       gap: 10px;
       padding: 14px 24px;
       background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--border-blue);
+      border: 1px solid var(--border-subtle);
       border-radius: var(--radius-full);
       font-weight: 700;
       font-size: 0.95rem;
@@ -710,40 +712,40 @@
     }
 
     .channel-btn:hover {
-      border-color: var(--cyan-bright);
+      border-color: var(--cyan-neon);
       background: rgba(56, 189, 248, 0.1);
       transform: translateY(-2px);
     }
 
     /* =========================================================
-       FULLSCREEN VIDEO LIGHTBOX MODAL
+       NATIVE FULLSCREEN VIDEO PLAYER MODAL
        ========================================================= */
-    .video-modal {
+    .native-modal {
       position: fixed;
       inset: 0;
       z-index: 9999;
-      background: rgba(2, 4, 10, 0.96);
-      backdrop-filter: blur(20px);
+      background: rgba(2, 6, 18, 0.96);
+      backdrop-filter: blur(25px);
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 16px;
+      padding: 14px;
       opacity: 0;
       visibility: hidden;
       transition: all 0.3s ease;
     }
 
-    .video-modal.active { opacity: 1; visibility: visible; }
+    .native-modal.active { opacity: 1; visibility: visible; }
 
-    .video-modal-box {
+    .native-modal-content {
       position: relative;
       width: 100%;
-      max-width: 960px;
+      max-width: 950px;
       background: #000;
       border-radius: var(--radius-md);
       overflow: hidden;
       border: 1px solid var(--border-glow);
-      box-shadow: 0 0 50px rgba(56, 189, 248, 0.35);
+      box-shadow: 0 0 60px rgba(56, 189, 248, 0.35);
     }
 
     .modal-bar {
@@ -751,17 +753,17 @@
       align-items: center;
       justify-content: space-between;
       padding: 12px 18px;
-      background: #04091a;
+      background: #060c1d;
       border-bottom: 1px solid rgba(56, 189, 248, 0.2);
     }
 
     .modal-title {
       font-size: 0.9rem;
       font-weight: 700;
-      color: var(--cyan-bright);
+      color: var(--cyan-neon);
     }
 
-    .modal-close {
+    .modal-close-btn {
       width: 36px;
       height: 36px;
       border-radius: 50%;
@@ -775,24 +777,24 @@
       font-size: 1.1rem;
     }
 
-    .video-frame-container {
+    .video-holder {
       position: relative;
       width: 100%;
-      padding-top: 56.25%;
       background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .video-frame-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
+    .video-holder video {
       width: 100%;
-      height: 100%;
-      border: none;
+      max-height: 75vh;
+      display: block;
+      outline: none;
     }
 
     .site-footer {
-      border-top: 1px solid var(--border-blue);
+      border-top: 1px solid var(--border-subtle);
       padding: 30px 0;
       text-align: center;
       font-size: 0.85rem;
@@ -801,7 +803,7 @@
 
     @media (max-width: 850px) {
       .about-grid { grid-template-columns: 1fr; gap: 30px; padding: 26px; }
-      .about-photo-wrapper { height: 320px; }
+      .about-photo-wrapper { height: 340px; }
       .nav-desktop-links { display: none; }
     }
   </style>
@@ -852,10 +854,12 @@
         <a href="#contact" class="btn btn-secondary">Contact Me</a>
       </div>
 
-      <!-- Main Showreel Video Block with High-End Cover -->
-      <div class="showreel-card" onclick="openVideoPlayer('https://drive.google.com/file/d/1Tmp-E1IsLOjFlM_pxJmzgWTmrQE9fxS3/preview', 'Official Showreel 2026')">
+      <!-- Main Showreel Video (Live Looping Preview) -->
+      <div class="showreel-card" onclick="playVideo('showreel.mp4', 'Official Showreel 2026')">
         <div class="showreel-frame">
-          <img class="showreel-poster-img" src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1200&q=80" alt="Showreel Cover" />
+          <video class="bg-video-loop" autoplay muted loop playsinline preload="auto">
+            <source src="showreel.mp4" type="video/mp4" />
+          </video>
           <div class="showreel-overlay">
             <div class="play-btn-circle">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
@@ -888,21 +892,22 @@
     </div>
   </section>
 
-  <!-- Selected Works (Your 2 Projects with Animated High-Res Covers) -->
+  <!-- Selected Works (Your Real 4K Videos Looping in Cards) -->
   <section id="work" class="portfolio-section">
     <div class="container">
       <div class="section-header">
         <div class="badge-wave"><span class="badge-text">Selected Portfolio</span></div>
         <h2>Curated Works</h2>
-        <p>Tap on any project to watch in full screen HD.</p>
+        <p>Tap on any project to watch in full-screen with sound.</p>
       </div>
 
       <div class="portfolio-grid">
-        <!-- Project 1: AI Motion Video with Futuristic Cover -->
+        <!-- Project 1 -->
         <div class="project-card">
-          <div class="project-thumbnail" onclick="openVideoPlayer('https://drive.google.com/file/d/1apnWtbqqDnYO7UbQemo4ayGB3iosDQHH/preview', 'Project 01 — AI Motion')">
-            <img class="project-thumb-img" src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" alt="AI Project 1" />
-            <div class="project-thumb-overlay"></div>
+          <div class="project-thumbnail" onclick="playVideo('project-1.mp4', 'Project 01 — AI Motion Cut')">
+            <video autoplay muted loop playsinline preload="auto">
+              <source src="project-1.mp4" type="video/mp4" />
+            </video>
             <div class="project-tag">AI &amp; Visuals</div>
             <div class="project-play">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
@@ -911,17 +916,18 @@
           <div class="project-body">
             <h3 class="project-title">Project 01 — AI Motion Cut</h3>
             <p class="project-desc">High-impact visual cut blending generative video concepts with dynamic sound design.</p>
-            <button class="watch-btn" onclick="openVideoPlayer('https://drive.google.com/file/d/1apnWtbqqDnYO7UbQemo4ayGB3iosDQHH/preview', 'Project 01 — AI Motion')">
-              Watch Video →
+            <button class="watch-btn" onclick="playVideo('project-1.mp4', 'Project 01 — AI Motion Cut')">
+              Watch Film →
             </button>
           </div>
         </div>
 
-        <!-- Project 2: Retention Reel with High-Speed Action Cover -->
+        <!-- Project 2 -->
         <div class="project-card">
-          <div class="project-thumbnail" onclick="openVideoPlayer('https://drive.google.com/file/d/1Zu84NTYg7Ihlu8iIKP_V1MEr6qaguav4/preview', 'Project 02 — Retention Reel')">
-            <img class="project-thumb-img" src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80" alt="Reel Project 2" />
-            <div class="project-thumb-overlay"></div>
+          <div class="project-thumbnail" onclick="playVideo('project-2.mp4', 'Project 02 — Retention Reel')">
+            <video autoplay muted loop playsinline preload="auto">
+              <source src="project-2.mp4" type="video/mp4" />
+            </video>
             <div class="project-tag">Viral Reel</div>
             <div class="project-play">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
@@ -930,8 +936,8 @@
           <div class="project-body">
             <h3 class="project-title">Project 02 — Retention Reel</h3>
             <p class="project-desc">Fast-paced video edit built for high retention, kinetic transitions, and audio sync.</p>
-            <button class="watch-btn" onclick="openVideoPlayer('https://drive.google.com/file/d/1Zu84NTYg7Ihlu8iIKP_V1MEr6qaguav4/preview', 'Project 02 — Retention Reel')">
-              Watch Video →
+            <button class="watch-btn" onclick="playVideo('project-2.mp4', 'Project 02 — Retention Reel')">
+              Watch Film →
             </button>
           </div>
         </div>
@@ -945,7 +951,7 @@
       <div class="section-header">
         <div class="badge-wave"><span class="badge-text">Capabilities</span></div>
         <h2>Editing Services</h2>
-        <p>Complete post-production workflows tailored for human attention.</p>
+        <p>Complete post-production workflows tailored for human engagement.</p>
       </div>
 
       <div class="services-grid">
@@ -963,105 +969,4 @@
         </div>
         <div class="service-card">
           <h3 class="service-title">Color Grading</h3>
-          <p class="service-desc">DaVinci Resolve studio grading, film print emulation, and skin-tone balance.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- About Section With Profile Photo Card -->
-  <section id="about" class="about-section">
-    <div class="container">
-      <div class="about-grid">
-        <!-- Photo Card (Loads profile.jpg, or high-end placeholder) -->
-        <div class="about-photo-wrapper">
-          <img class="about-photo-img" src="profile.jpg" alt="JOO — Video Editor" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80'" />
-          <div class="profile-badge">
-            <div class="green-dot"></div>
-            <span>Available for Work</span>
-          </div>
-        </div>
-
-        <div class="about-content">
-          <div class="badge-wave"><span class="badge-text">Behind The Monitor</span></div>
-          <h2>I turn complex concepts into cinematic reality.</h2>
-          <p style="color:#fff; font-size:1.15rem; margin-bottom:12px;">Hey, I'm <strong>JOO</strong> — Video Editor &amp; AI Video Creator.</p>
-          <p>
-            I focus on human storytelling amplified with generative AI video models. Every frame is timed with precision, audio hits are synced to transients, and visuals are sculpted to hold attention from the first second.
-          </p>
-          <a href="#contact" class="btn btn-primary" style="margin-top:12px;">Start a Project</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="contact-section">
-    <div class="container">
-      <div class="contact-card-wrap">
-        <div class="badge-wave"><span class="badge-text">Let's Connect</span></div>
-        <h2>Let's Work Together</h2>
-        <p style="color:var(--text-gray); margin-top:10px;">Ready to collaborate on your next video? Reach out directly below.</p>
-
-        <div class="contact-channels">
-          <!-- WhatsApp Direct -->
-          <a href="https://wa.me/201143081231?text=Hi%20JOO,%20I%20saw%20your%20portfolio%20and%20want%20to%20collaborate!" target="_blank" rel="noopener noreferrer" class="channel-btn">
-            <span>WhatsApp (+20 114 308 1231)</span>
-          </a>
-
-          <!-- Instagram Profile -->
-          <a href="https://instagram.com/joeny_7" target="_blank" rel="noopener noreferrer" class="channel-btn">
-            <span>Instagram (@joeny_7)</span>
-          </a>
-
-          <!-- Email -->
-          <a href="mailto:youssefjoeyhmhh@gmail.com?subject=Project%20Inquiry%20for%20JOO" class="channel-btn">
-            <span>Email Me</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      &copy; 2026 <strong>JOO</strong> — Video Editor &amp; AI Video Creator.
-    </div>
-  </footer>
-
-  <!-- Fullscreen Video Lightbox Modal -->
-  <div class="video-modal" id="videoModal" onclick="if(event.target===this)closeVideoPlayer()">
-    <div class="video-modal-box">
-      <div class="modal-bar">
-        <span class="modal-title" id="modalTitle">Project Playback</span>
-        <button class="modal-close" onclick="closeVideoPlayer()" aria-label="Close">✕</button>
-      </div>
-      <div class="video-frame-container" id="videoWrapper"></div>
-    </div>
-  </div>
-
-  <script>
-    const modal = document.getElementById("videoModal");
-    const wrapper = document.getElementById("videoWrapper");
-    const titleEl = document.getElementById("modalTitle");
-
-    function openVideoPlayer(url, title) {
-      titleEl.textContent = title;
-      wrapper.innerHTML = `<iframe src="${url}" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
-      modal.classList.add("active");
-      document.body.style.overflow = "hidden";
-    }
-
-    function closeVideoPlayer() {
-      modal.classList.remove("active");
-      wrapper.innerHTML = "";
-      document.body.style.overflow = "auto";
-    }
-
-    window.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeVideoPlayer();
-    });
-  </script>
-</body>
-</html>
+          <p class="service-desc">DaVinci Resolve studio grading, film print emulation, and skin-ton
