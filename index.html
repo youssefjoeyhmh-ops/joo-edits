@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
@@ -13,10 +13,10 @@
   <meta property="og:description" content="Cinematic Visuals, DaVinci Resolve Color Grading &amp; High-Retention Edits." />
   <meta property="og:image" content="https://youssefjoeyhmh-ops.github.io/joo-edits/profile.jpg" />
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts: English (Syne + Plus Jakarta Sans) & Arabic (Cairo) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
 
   <style>
     /* =========================================================
@@ -47,6 +47,12 @@
       --radius-full: 9999px;
       
       --ease-cinema: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Arabic Font Support */
+    html[dir="rtl"] {
+      --font-heading: 'Cairo', sans-serif;
+      --font-body: 'Cairo', sans-serif;
     }
 
     *, *::before, *::after {
@@ -154,6 +160,28 @@
 
     .btn-secondary:active { transform: scale(0.96); background: rgba(56, 189, 248, 0.1); }
 
+    /* Language Switcher Pill */
+    .lang-toggle-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 15px;
+      border-radius: var(--radius-full);
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid var(--border-blue);
+      color: var(--cyan-neon);
+      font-weight: 800;
+      font-size: 0.82rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .lang-toggle-btn:hover {
+      background: rgba(56, 189, 248, 0.22);
+      box-shadow: 0 0 18px rgba(56, 189, 248, 0.45);
+      transform: scale(1.05);
+    }
+
     /* Sound Wave Badge */
     .badge-wave {
       display: inline-flex;
@@ -255,6 +283,12 @@
     }
 
     .nav-link:hover { color: var(--cyan-neon); }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
     /* Hero Section */
     .hero {
@@ -388,9 +422,7 @@
       text-shadow: 0 2px 10px rgba(0,0,0,0.9);
     }
 
-    /* =========================================================
-       SIDE-BY-SIDE HORIZONTAL PROJECTS CAROUSEL (NO VERTICAL SCROLL)
-       ========================================================= */
+    /* Selected Works: Side-By-Side Horizontal Carousel */
     .portfolio-section { padding: 90px 0 50px 0; }
 
     .section-header-flex {
@@ -400,9 +432,7 @@
       margin-bottom: 30px;
     }
 
-    .section-header-flex h2 {
-      font-size: clamp(2rem, 5vw, 2.8rem);
-    }
+    .section-header-flex h2 { font-size: clamp(2rem, 5vw, 2.8rem); }
 
     .swipe-hint {
       display: inline-flex;
@@ -418,7 +448,6 @@
       letter-spacing: 0.05em;
     }
 
-    /* Horizontal Side-by-Side Flexbox Carousel */
     .projects-carousel {
       display: flex;
       gap: 22px;
@@ -427,6 +456,7 @@
       -webkit-overflow-scrolling: touch;
       padding: 10px 4px 30px 4px;
       scrollbar-width: none;
+      direction: ltr; /* Keeps swipe order consistent */
     }
 
     .projects-carousel::-webkit-scrollbar { display: none; }
@@ -524,19 +554,10 @@
       flex-grow: 1;
     }
 
-    .project-title {
-      font-size: 1.25rem;
-      margin-bottom: 6px;
-      color: #fff;
-    }
+    html[dir="rtl"] .project-body { text-align: right; }
 
-    .project-desc {
-      font-size: 0.88rem;
-      color: var(--text-gray);
-      margin-bottom: 18px;
-      flex-grow: 1;
-      line-height: 1.5;
-    }
+    .project-title { font-size: 1.25rem; margin-bottom: 6px; color: #fff; }
+    .project-desc { font-size: 0.88rem; color: var(--text-gray); margin-bottom: 18px; flex-grow: 1; line-height: 1.5; }
 
     .watch-btn {
       display: inline-flex;
@@ -556,9 +577,7 @@
     /* =========================================================
        COLOR GRADING BEFORE/AFTER INTERACTIVE SLIDER
        ========================================================= */
-    .color-suite-section {
-      padding: 50px 0 90px 0;
-    }
+    .color-suite-section { padding: 50px 0 90px 0; }
 
     .grading-wrapper {
       position: relative;
@@ -686,6 +705,8 @@
       box-shadow: 0 20px 50px rgba(0,0,0,0.6);
     }
 
+    html[dir="rtl"] .about-content { text-align: right; }
+
     .about-photo-wrapper {
       position: relative;
       width: 100%;
@@ -719,6 +740,8 @@
       backdrop-filter: blur(8px);
     }
 
+    html[dir="rtl"] .profile-badge { left: auto; right: 14px; }
+
     .green-dot {
       width: 8px;
       height: 8px;
@@ -735,21 +758,10 @@
       letter-spacing: 0.05em;
     }
 
-    .about-content h2 {
-      font-size: 2.2rem;
-      margin-bottom: 12px;
-      color: #fff;
-    }
+    .about-content h2 { font-size: 2.2rem; margin-bottom: 12px; color: #fff; }
+    .about-content p { color: var(--text-gray); line-height: 1.7; margin-bottom: 16px; }
 
-    .about-content p {
-      color: var(--text-gray);
-      line-height: 1.7;
-      margin-bottom: 16px;
-    }
-
-    /* =========================================================
-       ANIMATED SOCIAL CHANNELS WITH OFFICIAL SVG LOGOS
-       ========================================================= */
+    /* Contact Section */
     .contact-section { padding: 90px 0 110px 0; }
     
     .contact-card-wrap {
@@ -768,7 +780,6 @@
       margin-top: 32px;
     }
 
-    /* Animated Social Box */
     .social-box {
       display: flex;
       align-items: center;
@@ -779,21 +790,19 @@
       border-radius: var(--radius-md);
       transition: all 0.35s var(--ease-cinema);
       text-align: left;
-      position: relative;
-      overflow: hidden;
     }
+
+    html[dir="rtl"] .social-box { text-align: right; }
 
     .social-box:hover {
       transform: translateY(-4px);
       box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.8), 0 0 25px rgba(56, 189, 248, 0.25);
     }
 
-    /* Specific Branding Colors & Glows */
     .social-box.whatsapp:hover { border-color: #22c55e; box-shadow: 0 0 25px rgba(34, 197, 94, 0.3); }
     .social-box.instagram:hover { border-color: #e1306c; box-shadow: 0 0 25px rgba(225, 48, 108, 0.3); }
     .social-box.email:hover { border-color: var(--cyan-neon); box-shadow: 0 0 25px rgba(56, 189, 248, 0.3); }
 
-    /* Animated Icons */
     .social-icon-wrap {
       width: 52px;
       height: 52px;
@@ -803,12 +812,9 @@
       justify-content: center;
       flex-shrink: 0;
       transition: transform 0.4s ease;
-      position: relative;
     }
 
-    .social-box:hover .social-icon-wrap {
-      transform: scale(1.12) rotate(5deg);
-    }
+    .social-box:hover .social-icon-wrap { transform: scale(1.12) rotate(5deg); }
 
     .social-box.whatsapp .social-icon-wrap {
       background: rgba(34, 197, 94, 0.12);
@@ -840,18 +846,8 @@
       50% { box-shadow: 0 0 0 8px rgba(56, 189, 248, 0); }
     }
 
-    .social-info small {
-      display: block;
-      font-size: 0.75rem;
-      color: var(--text-gray);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .social-info strong {
-      font-size: 1.05rem;
-      color: #fff;
-    }
+    .social-info small { display: block; font-size: 0.75rem; color: var(--text-gray); text-transform: uppercase; }
+    .social-info strong { font-size: 1.05rem; color: #fff; }
 
     /* Modal Player */
     .native-modal {
@@ -891,11 +887,7 @@
       border-bottom: 1px solid rgba(56, 189, 248, 0.2);
     }
 
-    .modal-title {
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: var(--cyan-neon);
-    }
+    .modal-title { font-size: 0.9rem; font-weight: 700; color: var(--cyan-neon); }
 
     .modal-close-btn {
       width: 36px;
@@ -959,14 +951,21 @@
         </a>
 
         <ul class="nav-desktop-links">
-          <li><a href="#hero" class="nav-link">Home</a></li>
-          <li><a href="#work" class="nav-link">Work</a></li>
-          <li><a href="#grading" class="nav-link">Color Suite</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li><a href="#hero" class="nav-link" data-i18n="nav_home">Home</a></li>
+          <li><a href="#work" class="nav-link" data-i18n="nav_work">Work</a></li>
+          <li><a href="#grading" class="nav-link" data-i18n="nav_color">Color Suite</a></li>
+          <li><a href="#about" class="nav-link" data-i18n="nav_about">About</a></li>
+          <li><a href="#contact" class="nav-link" data-i18n="nav_contact">Contact</a></li>
         </ul>
 
-        <a href="#contact" class="btn btn-primary" style="min-height: 40px; padding: 6px 18px; font-size: 0.85rem;">Let's Talk</a>
+        <div class="nav-actions">
+          <!-- Language Toggle Button -->
+          <button class="lang-toggle-btn" onclick="toggleLang()" id="langBtn">
+            <span>🌐</span>
+            <span id="langText">العربية</span>
+          </button>
+          <a href="#contact" class="btn btn-primary" style="min-height: 38px; padding: 5px 16px; font-size: 0.82rem;" data-i18n="btn_talk">Let's Talk</a>
+        </div>
       </div>
     </div>
   </header>
@@ -979,17 +978,17 @@
         <div class="equalizer-bars">
           <span></span><span></span><span></span><span></span>
         </div>
-        <span class="badge-text">Video Editor &bull; AI Video Creator</span>
+        <span class="badge-text" data-i18n="hero_badge">Video Editor &bull; AI Video Creator</span>
       </div>
 
       <h1 class="hero-title">JOO</h1>
-      <p class="hero-subtitle">
-        I turn raw ideas into <span>cinematic visual reality.</span>
+      <p class="hero-subtitle" id="heroSub">
+        I turn raw ideas into <span data-i18n="hero_sub_highlight">cinematic visual reality.</span>
       </p>
 
       <div class="hero-actions">
-        <a href="#work" class="btn btn-primary">View Portfolio</a>
-        <a href="#contact" class="btn btn-secondary">Contact Me</a>
+        <a href="#work" class="btn btn-primary" data-i18n="hero_btn_work">View Portfolio</a>
+        <a href="#contact" class="btn btn-secondary" data-i18n="hero_btn_contact">Contact Me</a>
       </div>
 
       <!-- Main Showreel Video Card -->
@@ -1002,7 +1001,7 @@
             <div class="play-btn-circle">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
             </div>
-            <span class="showreel-text">Play Official Showreel</span>
+            <span class="showreel-text" data-i18n="showreel_play">Play Official Showreel</span>
           </div>
         </div>
       </div>
@@ -1015,11 +1014,11 @@
     <div class="container">
       <div class="section-header-flex">
         <div>
-          <h2>Selected Works</h2>
-          <p style="color:var(--text-gray); font-size:0.95rem;">Side-by-side showcase. Tap to play in full screen.</p>
+          <h2 data-i18n="works_title">Selected Works</h2>
+          <p style="color:var(--text-gray); font-size:0.95rem;" data-i18n="works_sub">Side-by-side showcase. Tap to play in full screen.</p>
         </div>
         <div class="swipe-hint">
-          <span>Swipe ◂ ▸</span>
+          <span data-i18n="swipe_hint">Swipe ◂ ▸</span>
         </div>
       </div>
 
@@ -1032,15 +1031,15 @@
             <video autoplay muted loop playsinline preload="auto">
               <source src="project-1.mp4" type="video/mp4" onerror="this.src='assets/project-1.mp4'" />
             </video>
-            <div class="project-tag">AI &amp; Visuals</div>
+            <div class="project-tag" data-i18n="p1_tag">AI &amp; Visuals</div>
             <div class="project-play">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
             </div>
           </div>
           <div class="project-body">
-            <h3 class="project-title">Project 01 — AI Motion Cut</h3>
-            <p class="project-desc">High-impact visual cut blending generative video concepts with dynamic sound design.</p>
-            <button class="watch-btn" onclick="playVideo('project-1.mp4', 'Project 01 — AI Motion Cut')">
+            <h3 class="project-title" data-i18n="p1_title">Project 01 — AI Motion Cut</h3>
+            <p class="project-desc" data-i18n="p1_desc">High-impact visual cut blending generative video concepts with dynamic sound design.</p>
+            <button class="watch-btn" onclick="playVideo('project-1.mp4', 'Project 01 — AI Motion Cut')" data-i18n="watch_film">
               Watch Film →
             </button>
           </div>
@@ -1052,15 +1051,15 @@
             <video autoplay muted loop playsinline preload="auto">
               <source src="project-2.mp4" type="video/mp4" onerror="this.src='assets/project-2.mp4'" />
             </video>
-            <div class="project-tag">Viral Reel</div>
+            <div class="project-tag" data-i18n="p2_tag">Viral Reel</div>
             <div class="project-play">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
             </div>
           </div>
           <div class="project-body">
-            <h3 class="project-title">Project 02 — Retention Reel</h3>
-            <p class="project-desc">Fast-paced video edit built for high retention, kinetic transitions, and audio sync.</p>
-            <button class="watch-btn" onclick="playVideo('project-2.mp4', 'Project 02 — Retention Reel')">
+            <h3 class="project-title" data-i18n="p2_title">Project 02 — Retention Reel</h3>
+            <p class="project-desc" data-i18n="p2_desc">Fast-paced video edit built for high retention, kinetic transitions, and audio sync.</p>
+            <button class="watch-btn" onclick="playVideo('project-2.mp4', 'Project 02 — Retention Reel')" data-i18n="watch_film">
               Watch Film →
             </button>
           </div>
@@ -1070,26 +1069,26 @@
     </div>
   </section>
 
-  <!-- INTERACTIVE COLOR GRADING SUITE (BEFORE / AFTER SLIDER) -->
+  <!-- INTERACTIVE COLOR GRADING SUITE -->
   <section id="grading" class="color-suite-section">
     <div class="container">
       <div style="text-align: center; margin-bottom: 35px;">
-        <div class="badge-wave"><span class="badge-text">DaVinci Resolve Studio</span></div>
-        <h2 style="font-size: clamp(2rem, 5vw, 2.8rem);">Color Grading Breakdown</h2>
-        <p style="color:var(--text-gray);">Drag the slider to reveal raw flat log camera footage vs final cinema grade.</p>
+        <div class="badge-wave"><span class="badge-text" data-i18n="color_badge">DaVinci Resolve Studio</span></div>
+        <h2 style="font-size: clamp(2rem, 5vw, 2.8rem);" data-i18n="color_title">Color Grading Breakdown</h2>
+        <p style="color:var(--text-gray);" data-i18n="color_sub">Drag the slider to reveal raw flat log camera footage vs final cinema grade.</p>
       </div>
 
       <div class="grading-wrapper">
         <div class="compare-container" id="compareBox" style="--slider-pos: 50%;">
-          <img class="compare-img" src="https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=1200&q=80" alt="Graded Cinema Look" />
+          <img class="compare-img" src="after.jpg" onerror="this.onerror=null; this.src='grade.jpg'; if(!this.complete)this.src='https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=1200&q=80';" alt="Graded Cinema Look" />
           <div class="compare-before-layer">
-            <img class="compare-before-img" src="https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=1200&q=80" alt="Raw Log Look" />
+            <img class="compare-before-img" src="before.jpg" onerror="this.onerror=null; this.src='grade.jpg'; if(!this.complete)this.src='https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=1200&q=80';" alt="Raw Log Look" />
           </div>
           <div class="compare-divider">
             <div class="compare-handle"><span>◂ ▸</span></div>
           </div>
-          <div class="compare-badge badge-before">RAW LOG (BEFORE)</div>
-          <div class="compare-badge badge-after">DAVINCI GRADE (AFTER)</div>
+          <div class="compare-badge badge-before" data-i18n="log_before">RAW LOG (BEFORE)</div>
+          <div class="compare-badge badge-after" data-i18n="log_after">DAVINCI GRADE (AFTER)</div>
           <input type="range" min="0" max="100" value="50" class="compare-range" aria-label="Comparison Slider" oninput="document.getElementById('compareBox').style.setProperty('--slider-pos', this.value + '%')" />
         </div>
       </div>
@@ -1104,18 +1103,18 @@
           <img class="about-photo-img" src="profile.jpg" alt="JOO — Video Editor" onerror="if(!this.src.includes('assets/'))this.src='assets/profile.jpg';" />
           <div class="profile-badge">
             <div class="green-dot"></div>
-            <span>Available for Work</span>
+            <span data-i18n="status_work">Available for Work</span>
           </div>
         </div>
 
         <div class="about-content">
-          <div class="badge-wave"><span class="badge-text">Behind The Monitor</span></div>
-          <h2>I turn complex concepts into cinematic reality.</h2>
-          <p style="color:#fff; font-size:1.15rem; margin-bottom:12px;">Hey, I'm <strong>JOO</strong> — Video Editor &amp; AI Video Creator.</p>
-          <p>
+          <div class="badge-wave"><span class="badge-text" data-i18n="about_badge">Behind The Monitor</span></div>
+          <h2 data-i18n="about_title">I turn complex concepts into cinematic reality.</h2>
+          <p style="color:#fff; font-size:1.15rem; margin-bottom:12px;" data-i18n="about_lead">Hey, I'm <strong>JOO</strong> — Video Editor &amp; AI Video Creator.</p>
+          <p data-i18n="about_desc">
             I focus on human storytelling amplified with generative AI video models. Every frame is timed with precision, audio hits are synced to transients, and visuals are sculpted to hold attention from the first second.
           </p>
-          <a href="#contact" class="btn btn-primary" style="margin-top:12px;">Start a Project</a>
+          <a href="#contact" class="btn btn-primary" style="margin-top:12px;" data-i18n="about_btn">Start a Project</a>
         </div>
       </div>
     </div>
@@ -1125,13 +1124,13 @@
   <section id="contact" class="contact-section">
     <div class="container">
       <div class="contact-card-wrap">
-        <div class="badge-wave"><span class="badge-text">Let's Connect</span></div>
-        <h2>Let's Work Together</h2>
-        <p style="color:var(--text-gray); margin-top:10px;">Ready to collaborate? Reach out directly via WhatsApp, Instagram, or Email.</p>
+        <div class="badge-wave"><span class="badge-text" data-i18n="contact_badge">Let's Connect</span></div>
+        <h2 data-i18n="contact_title">Let's Work Together</h2>
+        <p style="color:var(--text-gray); margin-top:10px;" data-i18n="contact_sub">Ready to collaborate? Reach out directly via WhatsApp, Instagram, or Email.</p>
 
         <div class="channels-grid">
           
-          <!-- WhatsApp Box With Animated Official Logo -->
+          <!-- WhatsApp Box -->
           <a href="https://wa.me/201143081231?text=Hi%20JOO,%20I%20saw%20your%20portfolio%20and%20want%20to%20collaborate!" target="_blank" rel="noopener noreferrer" class="social-box whatsapp">
             <div class="social-icon-wrap">
               <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
@@ -1139,12 +1138,12 @@
               </svg>
             </div>
             <div class="social-info">
-              <small>WhatsApp Direct</small>
+              <small data-i18n="wa_label">WhatsApp Direct</small>
               <strong>+20 114 308 1231</strong>
             </div>
           </a>
 
-          <!-- Instagram Box With Animated Official Logo -->
+          <!-- Instagram Box -->
           <a href="https://instagram.com/joeny_7" target="_blank" rel="noopener noreferrer" class="social-box instagram">
             <div class="social-icon-wrap">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -1152,21 +1151,21 @@
               </svg>
             </div>
             <div class="social-info">
-              <small>Instagram Profile</small>
+              <small data-i18n="ig_label">Instagram Profile</small>
               <strong>@joeny_7</strong>
             </div>
           </a>
 
-          <!-- Email Box With Animated Official Logo -->
+          <!-- Email Box -->
           <a href="mailto:youssefjoeyhmhh@gmail.com?subject=Project%20Inquiry%20for%20JOO" class="social-box email">
             <div class="social-icon-wrap">
-              <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                 <polyline points="22,6 12,13 2,6"></polyline>
               </svg>
             </div>
             <div class="social-info">
-              <small>Email Me</small>
+              <small data-i18n="email_label">Email Me</small>
               <strong>youssefjoeyhmhh@gmail.com</strong>
             </div>
           </a>
@@ -1179,7 +1178,7 @@
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container">
-      &copy; 2026 <strong>JOO</strong> — Video Editor &amp; AI Video Creator.
+      &copy; 2026 <strong>JOO</strong> — <span data-i18n="footer_title">Video Editor &amp; AI Video Creator.</span>
     </div>
   </footer>
 
@@ -1197,6 +1196,122 @@
   </div>
 
   <script>
+    /* =========================================================
+       BILINGUAL TRANSLATION DICTIONARY
+       ========================================================= */
+    const translations = {
+      en: {
+        nav_home: "Home",
+        nav_work: "Work",
+        nav_color: "Color Suite",
+        nav_about: "About",
+        nav_contact: "Contact",
+        btn_talk: "Let's Talk",
+        hero_badge: "Video Editor • AI Video Creator",
+        hero_sub_highlight: "cinematic visual reality.",
+        hero_btn_work: "View Portfolio",
+        hero_btn_contact: "Contact Me",
+        showreel_play: "Play Official Showreel",
+        works_title: "Selected Works",
+        works_sub: "Side-by-side showcase. Tap to play in full screen.",
+        swipe_hint: "Swipe ◂ ▸",
+        p1_tag: "AI & Visuals",
+        p1_title: "Project 01 — AI Motion Cut",
+        p1_desc: "High-impact visual cut blending generative video concepts with dynamic sound design.",
+        p2_tag: "Viral Reel",
+        p2_title: "Project 02 — Retention Reel",
+        p2_desc: "Fast-paced video edit built for high retention, kinetic transitions, and audio sync.",
+        watch_film: "Watch Film →",
+        color_badge: "DaVinci Resolve Studio",
+        color_title: "Color Grading Breakdown",
+        color_sub: "Drag the slider to reveal raw flat log camera footage vs final cinema grade.",
+        log_before: "RAW LOG (BEFORE)",
+        log_after: "DAVINCI GRADE (AFTER)",
+        status_work: "Available for Work",
+        about_badge: "Behind The Monitor",
+        about_title: "I turn complex concepts into cinematic reality.",
+        about_lead: "Hey, I'm <strong>JOO</strong> — Video Editor & AI Video Creator.",
+        about_desc: "I focus on human storytelling amplified with generative AI video models. Every frame is timed with precision, audio hits are synced to transients, and visuals are sculpted to hold attention from the first second.",
+        about_btn: "Start a Project",
+        contact_badge: "Let's Connect",
+        contact_title: "Let's Work Together",
+        contact_sub: "Ready to collaborate? Reach out directly via WhatsApp, Instagram, or Email.",
+        wa_label: "WhatsApp Direct",
+        ig_label: "Instagram Profile",
+        email_label: "Email Me",
+        footer_title: "Video Editor & AI Video Creator."
+      },
+      ar: {
+        nav_home: "الرئيسية",
+        nav_work: "الأعمال",
+        nav_color: "التلوين السينمائي",
+        nav_about: "عني",
+        nav_contact: "تواصل معي",
+        btn_talk: "ابدأ مشروعك",
+        hero_badge: "مونتير محترف • صانع فيديو بالذكاء الاصطناعي",
+        hero_sub_highlight: "واقع بصري سينمائي مبهر.",
+        hero_btn_work: "مشاهدة الأعمال",
+        hero_btn_contact: "تواصل معي",
+        showreel_play: "تشغيل الشوريل الرسمي",
+        works_title: "أعمال مختارة",
+        works_sub: "معرض أفقي متكامل. اضغط على أي مشروع للمشاهدة بملء الشاشة.",
+        swipe_hint: "اسحب للمزيد ◂ ▸",
+        p1_tag: "ذكاء اصطناعي ومؤثرات",
+        p1_title: "مشروع 01 — مونتاج ذكاء اصطناعي",
+        p1_desc: "مونتاج بصري هجين يدمج أحدث تقنيات الذكاء الاصطناعي التوليدي مع هندسة صوتية سينمائية.",
+        p2_tag: "ريلز عالي التفاعل",
+        p2_title: "مشروع 02 — ريلز احتباس المشاهدة",
+        p2_desc: "مونتاج سريع الإيقاع مصمم لرفع نسب المشاهدة مع انتقالات حركية ومزامنة دقيقة مع الصوت.",
+        watch_film: "مشاهدة الفيديو ←",
+        color_badge: "استوديو دافينشي ريزولف",
+        color_title: "مقارنة التلوين السينمائي",
+        color_sub: "اسحب الشريط بصباعك لرؤية الكادر الخام الباهت من الكاميرا مقابل التلوين السينمائي النهائي.",
+        log_before: "قبل (RAW LOG)",
+        log_after: "بعد (تلوين سينمائي)",
+        status_work: "متاح لاستلام المشاريع",
+        about_badge: "خلف شاشات المونتاج",
+        about_title: "أحول المفاهيم المعقدة إلى واقع سينمائي ملموس.",
+        about_lead: "أهلاً، أنا <strong>جو (JOO)</strong> — مونتير وصانع فيديو بالذكاء الاصطناعي.",
+        about_desc: "أركز على السرد القصصي المعزز بنماذج الذكاء الاصطناعي التوليدي. كل فريم محسوب بدقة، وكل ضربة صوتية متزامنة باحترافية لتظل عين المشاهد مشدودة من أول ثانية.",
+        about_btn: "ابدأ مشروعك الآن",
+        contact_badge: "تواصل مباشر",
+        contact_title: "لنصنع شيئاً لا يُنسى معاً",
+        contact_sub: "جاهز لتنفيذ مشروعك القادم؟ تواصل معي فوراً عبر واتساب، إنستغرام، أو الإيميل.",
+        wa_label: "محادثة واتساب فورية",
+        ig_label: "حساب الإنستغرام",
+        email_label: "إرسال إيميل",
+        footer_title: "مونتير محترف وصانع فيديو بالذكاء الاصطناعي."
+      }
+    };
+
+    let currentLang = 'en';
+
+    function toggleLang() {
+      currentLang = currentLang === 'en' ? 'ar' : 'en';
+      document.documentElement.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
+      document.documentElement.setAttribute('lang', currentLang);
+
+      // Update Toggle Button Text
+      document.getElementById('langText').textContent = currentLang === 'ar' ? 'English' : 'العربية';
+
+      // Update Hero Subtitle Structure
+      const subEl = document.getElementById('heroSub');
+      if (currentLang === 'ar') {
+        subEl.innerHTML = `أحول الأفكار الخام إلى <span style="color:var(--cyan-neon); font-style:italic;">${translations.ar.hero_sub_highlight}</span>`;
+      } else {
+        subEl.innerHTML = `I turn raw ideas into <span style="color:var(--cyan-neon); font-style:italic;">${translations.en.hero_sub_highlight}</span>`;
+      }
+
+      // Update all data-i18n elements
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[currentLang][key]) {
+          el.innerHTML = translations[currentLang][key];
+        }
+      });
+    }
+
+    /* Video Player Logic */
     const modal = document.getElementById("videoModal");
     const player = document.getElementById("nativeVideoPlayer");
     const titleEl = document.getElementById("modalVideoTitle");
