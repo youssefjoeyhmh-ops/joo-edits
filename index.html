@@ -13,12 +13,12 @@
 
   <style>
     /* =========================================================
-       1. ELITE MIDNIGHT SAPPHIRE & ELECTRIC CYAN SYSTEM
+       ELITE MIDNIGHT SAPPHIRE & ELECTRIC CYAN SYSTEM
        ========================================================= */
     :root {
       --bg-void: #02040a;
       --bg-navy: #050c1e;
-      --bg-card: rgba(8, 18, 44, 0.7);
+      --bg-card: rgba(8, 18, 44, 0.72);
       --bg-card-hover: rgba(14, 28, 66, 0.95);
       
       --cyan-bright: #38bdf8;
@@ -111,9 +111,7 @@
 
     a { text-decoration: none; color: inherit; }
 
-    /* =========================================================
-       2. BUTTONS & MICRO-INTERACTIONS
-       ========================================================= */
+    /* Buttons */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -199,9 +197,7 @@
       letter-spacing: 0.08em;
     }
 
-    /* =========================================================
-       3. NAVIGATION
-       ========================================================= */
+    /* Navbar */
     .site-nav {
       position: fixed;
       top: 14px;
@@ -253,9 +249,7 @@
 
     .nav-link:hover { color: var(--cyan-bright); }
 
-    /* =========================================================
-       4. HERO SECTION WITH SHIMMERING TITLE
-       ========================================================= */
+    /* Hero Section */
     .hero {
       padding: 145px 0 65px 0;
       text-align: center;
@@ -301,7 +295,7 @@
       margin-bottom: 50px;
     }
 
-    /* Main Showreel Block */
+    /* Main Showreel Frame with Animated Cover */
     .showreel-card {
       position: relative;
       width: 100%;
@@ -318,38 +312,36 @@
       position: relative;
       width: 100%;
       padding-top: 56.25%;
-      background: linear-gradient(145deg, #06112c 0%, #020512 100%);
+      background: #040814;
       cursor: pointer;
+      overflow: hidden;
     }
 
-    /* High-End Cinema Slate Graphic */
-    .cinema-slate {
+    .showreel-poster-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.82;
+      transition: transform 0.6s var(--ease-cinema), opacity 0.4s ease;
+    }
+
+    .showreel-card:hover .showreel-poster-img {
+      transform: scale(1.06);
+      opacity: 0.95;
+    }
+
+    .showreel-overlay {
       position: absolute;
       inset: 0;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      padding: 24px;
-      background: radial-gradient(circle at center, rgba(14, 28, 66, 0.35) 0%, rgba(2, 4, 10, 0.85) 100%);
-      border: 1px dashed rgba(56, 189, 248, 0.2);
-    }
-
-    .slate-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.75rem;
-      color: var(--cyan-bright);
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      font-weight: 700;
-    }
-
-    .slate-center {
-      display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
+      background: radial-gradient(circle at center, rgba(6, 13, 31, 0.2) 0%, rgba(2, 4, 10, 0.8) 100%);
+      z-index: 2;
     }
 
     .play-btn-circle {
@@ -386,17 +378,10 @@
       text-transform: uppercase;
       font-weight: 700;
       color: #fff;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.9);
     }
 
-    .slate-footer {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.75rem;
-      color: var(--text-dim);
-      font-family: monospace;
-    }
-
-    /* Production Standards Strip */
+    /* Pillars */
     .pillars-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -425,7 +410,7 @@
     }
 
     /* =========================================================
-       5. SELECTED WORKS (STRICTLY 2 PROJECTS)
+       SELECTED WORKS (HIGH-RES ANIMATED COVERS)
        ========================================================= */
     .portfolio-section { padding: 95px 0; }
 
@@ -472,32 +457,44 @@
       overflow: hidden;
     }
 
-    .card-slate {
+    .project-thumb-img {
       position: absolute;
-      inset: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 18px;
-      background: linear-gradient(135deg, #081330 0%, #030612 100%);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s var(--ease-cinema), filter 0.4s ease;
+      filter: contrast(105%) brightness(95%);
     }
 
-    .card-slate-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    .project-card:hover .project-thumb-img {
+      transform: scale(1.08);
+      filter: contrast(110%) brightness(105%);
+    }
+
+    .project-thumb-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(2, 4, 10, 0.3) 0%, rgba(2, 4, 10, 0.75) 100%);
+      z-index: 2;
     }
 
     .project-tag {
-      padding: 4px 12px;
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      padding: 5px 14px;
       border-radius: var(--radius-full);
-      background: rgba(2, 4, 10, 0.8);
+      background: rgba(2, 4, 10, 0.85);
       border: 1px solid var(--border-blue);
+      backdrop-filter: blur(8px);
       font-size: 0.72rem;
       font-weight: 700;
       text-transform: uppercase;
       color: var(--cyan-bright);
       letter-spacing: 0.05em;
+      z-index: 3;
     }
 
     .project-play {
@@ -505,8 +502,8 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%) scale(0.95);
-      width: 54px;
-      height: 54px;
+      width: 58px;
+      height: 58px;
       border-radius: 50%;
       background: linear-gradient(135deg, #38bdf8 0%, #1d4ed8 100%);
       color: #fff;
@@ -514,18 +511,18 @@
       align-items: center;
       justify-content: center;
       z-index: 3;
-      box-shadow: 0 0 25px rgba(56, 189, 248, 0.5);
+      box-shadow: 0 0 30px rgba(56, 189, 248, 0.6);
       transition: transform 0.3s ease;
     }
 
     .project-card:hover .project-play {
-      transform: translate(-50%, -50%) scale(1.08);
+      transform: translate(-50%, -50%) scale(1.1);
       background: #fff;
       color: #02040a;
     }
 
     .project-body {
-      padding: 22px;
+      padding: 24px;
       display: flex;
       flex-direction: column;
       flex-grow: 1;
@@ -561,7 +558,7 @@
     .watch-btn:hover { transform: translateX(4px); }
 
     /* =========================================================
-       6. SERVICES SECTION
+       SERVICES SECTION
        ========================================================= */
     .services-section { padding: 90px 0; }
     .services-grid {
@@ -597,29 +594,88 @@
     }
 
     /* =========================================================
-       7. ABOUT ME SECTION
+       ABOUT ME SECTION WITH DEDICATED PROFILE PHOTO CARD
        ========================================================= */
     .about-section { padding: 90px 0; }
-    .about-card {
+    
+    .about-grid {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 40px;
+      align-items: center;
       background: var(--bg-card);
       border: 1px solid var(--border-blue);
       border-radius: var(--radius-lg);
-      padding: 40px 28px;
+      padding: 40px;
       box-shadow: 0 20px 50px rgba(0,0,0,0.5);
     }
 
-    .about-card h2 {
-      font-size: 2rem;
-      margin-bottom: 12px;
+    .about-photo-wrapper {
+      position: relative;
+      width: 100%;
+      height: 380px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-glow);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(56, 189, 248, 0.2);
     }
 
-    .about-card p {
+    .about-photo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: contrast(105%);
+      transition: transform 0.5s ease;
+    }
+
+    .about-photo-wrapper:hover .about-photo-img {
+      transform: scale(1.04);
+    }
+
+    .profile-badge {
+      position: absolute;
+      bottom: 14px;
+      left: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      background: rgba(2, 4, 10, 0.85);
+      border: 1px solid var(--cyan-bright);
+      backdrop-filter: blur(8px);
+    }
+
+    .green-dot {
+      width: 8px;
+      height: 8px;
+      background: #22c55e;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #22c55e;
+    }
+
+    .profile-badge span {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .about-content h2 {
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+
+    .about-content p {
       color: var(--text-gray);
       line-height: 1.7;
+      margin-bottom: 16px;
     }
 
     /* =========================================================
-       8. CONTACT SECTION
+       CONTACT SECTION
        ========================================================= */
     .contact-section { padding: 90px 0 110px 0; }
     .contact-card-wrap {
@@ -660,7 +716,7 @@
     }
 
     /* =========================================================
-       9. FULLSCREEN VIDEO PLAYER MODAL
+       FULLSCREEN VIDEO LIGHTBOX MODAL
        ========================================================= */
     .video-modal {
       position: fixed;
@@ -743,7 +799,9 @@
       color: var(--text-dim);
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 850px) {
+      .about-grid { grid-template-columns: 1fr; gap: 30px; padding: 26px; }
+      .about-photo-wrapper { height: 320px; }
       .nav-desktop-links { display: none; }
     }
   </style>
@@ -794,24 +852,15 @@
         <a href="#contact" class="btn btn-secondary">Contact Me</a>
       </div>
 
-      <!-- Main Showreel Video Block -->
+      <!-- Main Showreel Video Block with High-End Cover -->
       <div class="showreel-card" onclick="openVideoPlayer('https://drive.google.com/file/d/1Tmp-E1IsLOjFlM_pxJmzgWTmrQE9fxS3/preview', 'Official Showreel 2026')">
         <div class="showreel-frame">
-          <div class="cinema-slate">
-            <div class="slate-header">
-              <span>JOO STUDIOS &bull; REEL 01</span>
-              <span>4K MASTER &bull; 60 FPS</span>
+          <img class="showreel-poster-img" src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1200&q=80" alt="Showreel Cover" />
+          <div class="showreel-overlay">
+            <div class="play-btn-circle">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
             </div>
-            <div class="slate-center">
-              <div class="play-btn-circle">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-              </div>
-              <span class="showreel-text">Play Official Showreel</span>
-            </div>
-            <div class="slate-footer">
-              <span>TIME: 00:01:45:12</span>
-              <span>AUDIO: MASTER 5.1</span>
-            </div>
+            <span class="showreel-text">Play Official Showreel</span>
           </div>
         </div>
       </div>
@@ -839,7 +888,7 @@
     </div>
   </section>
 
-  <!-- Selected Works (Strictly 2 Projects) -->
+  <!-- Selected Works (Your 2 Projects with Animated High-Res Covers) -->
   <section id="work" class="portfolio-section">
     <div class="container">
       <div class="section-header">
@@ -849,18 +898,14 @@
       </div>
 
       <div class="portfolio-grid">
-        <!-- Project 1 -->
+        <!-- Project 1: AI Motion Video with Futuristic Cover -->
         <div class="project-card">
           <div class="project-thumbnail" onclick="openVideoPlayer('https://drive.google.com/file/d/1apnWtbqqDnYO7UbQemo4ayGB3iosDQHH/preview', 'Project 01 — AI Motion')">
-            <div class="card-slate">
-              <div class="card-slate-top">
-                <span class="project-tag">AI &amp; Visuals</span>
-                <span style="font-size:0.75rem; color:var(--text-dim); font-family:monospace;">4K UHD</span>
-              </div>
-              <div class="project-play">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-              </div>
-              <div style="font-size:0.75rem; color:var(--cyan-bright); font-family:monospace;">SCENE 01 / TAKE 04</div>
+            <img class="project-thumb-img" src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" alt="AI Project 1" />
+            <div class="project-thumb-overlay"></div>
+            <div class="project-tag">AI &amp; Visuals</div>
+            <div class="project-play">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
             </div>
           </div>
           <div class="project-body">
@@ -872,18 +917,14 @@
           </div>
         </div>
 
-        <!-- Project 2 -->
+        <!-- Project 2: Retention Reel with High-Speed Action Cover -->
         <div class="project-card">
           <div class="project-thumbnail" onclick="openVideoPlayer('https://drive.google.com/file/d/1Zu84NTYg7Ihlu8iIKP_V1MEr6qaguav4/preview', 'Project 02 — Retention Reel')">
-            <div class="card-slate">
-              <div class="card-slate-top">
-                <span class="project-tag">Viral Reel</span>
-                <span style="font-size:0.75rem; color:var(--text-dim); font-family:monospace;">9:16 VERTICAL</span>
-              </div>
-              <div class="project-play">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-              </div>
-              <div style="font-size:0.75rem; color:var(--cyan-bright); font-family:monospace;">SCENE 02 / TAKE 01</div>
+            <img class="project-thumb-img" src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80" alt="Reel Project 2" />
+            <div class="project-thumb-overlay"></div>
+            <div class="project-tag">Viral Reel</div>
+            <div class="project-play">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
             </div>
           </div>
           <div class="project-body">
@@ -928,16 +969,28 @@
     </div>
   </section>
 
-  <!-- About -->
+  <!-- About Section With Profile Photo Card -->
   <section id="about" class="about-section">
     <div class="container">
-      <div class="about-card">
-        <div class="badge-wave"><span class="badge-text">Behind The Monitor</span></div>
-        <h2>I turn complex concepts into cinematic reality.</h2>
-        <p style="color:#fff; font-size:1.15rem; margin: 12px 0 14px 0;">Hey, I'm <strong>JOO</strong> — Video Editor &amp; AI Video Creator.</p>
-        <p>
-          I focus on human storytelling amplified with generative AI video models. Every frame is timed with precision, audio hits are synced to transients, and visuals are sculpted to hold human attention from the first second.
-        </p>
+      <div class="about-grid">
+        <!-- Photo Card (Loads profile.jpg, or high-end placeholder) -->
+        <div class="about-photo-wrapper">
+          <img class="about-photo-img" src="profile.jpg" alt="JOO — Video Editor" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80'" />
+          <div class="profile-badge">
+            <div class="green-dot"></div>
+            <span>Available for Work</span>
+          </div>
+        </div>
+
+        <div class="about-content">
+          <div class="badge-wave"><span class="badge-text">Behind The Monitor</span></div>
+          <h2>I turn complex concepts into cinematic reality.</h2>
+          <p style="color:#fff; font-size:1.15rem; margin-bottom:12px;">Hey, I'm <strong>JOO</strong> — Video Editor &amp; AI Video Creator.</p>
+          <p>
+            I focus on human storytelling amplified with generative AI video models. Every frame is timed with precision, audio hits are synced to transients, and visuals are sculpted to hold attention from the first second.
+          </p>
+          <a href="#contact" class="btn btn-primary" style="margin-top:12px;">Start a Project</a>
+        </div>
       </div>
     </div>
   </section>
@@ -948,7 +1001,7 @@
       <div class="contact-card-wrap">
         <div class="badge-wave"><span class="badge-text">Let's Connect</span></div>
         <h2>Let's Work Together</h2>
-        <p style="color:var(--text-gray); margin-top:10px;">Ready to collaborate on your next project? Reach out directly below.</p>
+        <p style="color:var(--text-gray); margin-top:10px;">Ready to collaborate on your next video? Reach out directly below.</p>
 
         <div class="contact-channels">
           <!-- WhatsApp Direct -->
