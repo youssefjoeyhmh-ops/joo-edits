@@ -3,27 +3,50 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-  <title>JOO — Video Editor &amp; AI Creator</title>
+  <title>JOO — Video Editor &amp; AI Video Creator</title>
+  <meta name="description" content="Portfolio of JOO — Professional Video Editor and AI Video Creator crafting cinematic visuals and high-retention edits." />
+
+  <!-- Open Graph Meta Tags (WhatsApp & Social Preview) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://youssefjoeyhmh-ops.github.io/joo-edits/" />
+  <meta property="og:title" content="JOO — Video Editor &amp; AI Creator" />
+  <meta property="og:description" content="Cinematic Visuals, DaVinci Resolve Color Grading &amp; High-Retention Edits." />
+  <meta property="og:image" content="https://youssefjoeyhmh-ops.github.io/joo-edits/profile.jpg" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
 
   <style>
+    /* =========================================================
+       DEEP NOIR BLACK & SAPPHIRE NAVY SYSTEM
+       ========================================================= */
     :root {
-      --bg-dark: #02050e;
-      --bg-card: rgba(8, 17, 43, 0.75);
-      --bg-card-hover: rgba(14, 28, 68, 0.95);
-      --cyan: #38bdf8;
-      --cyan-glow: rgba(56, 189, 248, 0.35);
-      --border-blue: rgba(56, 189, 248, 0.22);
-      --border-active: rgba(56, 189, 248, 0.7);
+      --bg-black: #000206;
+      --bg-navy: #04091a;
+      --bg-card: rgba(6, 15, 38, 0.75);
+      --bg-card-hover: rgba(10, 24, 60, 0.95);
+      
+      --cyan-neon: #38bdf8;
+      --cyan-bright: #00f0ff;
+      --blue-electric: #2563eb;
+      --border-blue: rgba(56, 189, 248, 0.18);
+      --border-glow: rgba(56, 189, 248, 0.6);
+
       --text-white: #ffffff;
       --text-gray: #94a3b8;
-      --font-head: 'Syne', sans-serif;
+      --text-dim: #64748b;
+
+      --font-heading: 'Syne', sans-serif;
       --font-body: 'Plus Jakarta Sans', sans-serif;
-      --radius: 16px;
+
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 22px;
+      --radius-full: 9999px;
+      
+      --ease-cinema: cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     *, *::before, *::after {
@@ -33,29 +56,66 @@
       -webkit-tap-highlight-color: transparent;
     }
 
-    html { scroll-behavior: smooth; color-scheme: dark; }
+    html {
+      scroll-behavior: smooth;
+      color-scheme: dark;
+    }
 
     body {
-      background-color: var(--bg-dark);
+      background-color: var(--bg-black);
       color: var(--text-white);
       font-family: var(--font-body);
+      font-size: 16px;
       line-height: 1.6;
       overflow-x: hidden;
       background-image: 
-        radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.25) 0%, transparent 60%),
-        radial-gradient(circle at 100% 40%, rgba(56, 189, 248, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 0% 75%, rgba(29, 78, 216, 0.15) 0%, transparent 55%);
+        radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.2) 0%, transparent 60%),
+        radial-gradient(circle at 100% 35%, rgba(56, 189, 248, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 0% 75%, rgba(29, 78, 216, 0.12) 0%, transparent 55%);
       background-attachment: fixed;
+    }
+
+    ::selection {
+      background: var(--cyan-neon);
+      color: #000206;
+    }
+
+    /* Ambient Pulsing Glow */
+    .ambient-sphere {
+      position: fixed;
+      top: -20%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100vw;
+      max-width: 900px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, rgba(0, 2, 6, 0) 70%);
+      pointer-events: none;
+      z-index: 0;
+      filter: blur(90px);
+      animation: ambientPulse 8s ease-in-out infinite alternate;
+    }
+
+    @keyframes ambientPulse {
+      0% { transform: translateX(-50%) scale(0.92); opacity: 0.5; }
+      100% { transform: translateX(-50%) scale(1.15); opacity: 0.9; }
     }
 
     .container {
       width: 100%;
-      max-width: 1060px;
+      max-width: 1100px;
       margin: 0 auto;
       padding: 0 20px;
+      position: relative;
+      z-index: 1;
     }
 
-    h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 800; }
+    h1, h2, h3, h4 {
+      font-family: var(--font-heading);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
     a { text-decoration: none; color: inherit; }
 
     /* Buttons */
@@ -66,65 +126,78 @@
       gap: 10px;
       min-height: 50px;
       padding: 12px 28px;
-      border-radius: 9999px;
+      border-radius: var(--radius-full);
       font-size: 0.95rem;
       font-weight: 700;
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: all 0.35s var(--ease-cinema);
       border: 1px solid transparent;
       outline: none;
+      position: relative;
+      overflow: hidden;
     }
 
     .btn-primary {
       background: linear-gradient(135deg, #38bdf8 0%, #1d4ed8 100%);
-      color: #fff;
-      box-shadow: 0 10px 25px -5px rgba(56, 189, 248, 0.5);
+      color: #ffffff;
+      box-shadow: 0 10px 30px -5px rgba(56, 189, 248, 0.5);
     }
+
     .btn-primary:active { transform: scale(0.96); }
 
     .btn-secondary {
-      background: rgba(255, 255, 255, 0.05);
-      color: #fff;
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-white);
       border: 1px solid var(--border-blue);
+      backdrop-filter: blur(12px);
     }
 
-    /* Equalizer Badge */
-    .badge-wrap {
+    .btn-secondary:active { transform: scale(0.96); background: rgba(56, 189, 248, 0.1); }
+
+    /* Sound Wave Badge */
+    .badge-wave {
       display: inline-flex;
       align-items: center;
       gap: 10px;
       padding: 6px 18px;
-      border-radius: 9999px;
+      border-radius: var(--radius-full);
       background: rgba(56, 189, 248, 0.08);
       border: 1px solid var(--border-blue);
-      margin-bottom: 20px;
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.15);
+      margin-bottom: 22px;
+      animation: floatBadge 3.5s ease-in-out infinite alternate;
     }
 
-    .equalizer {
+    @keyframes floatBadge {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-4px); }
+    }
+
+    .equalizer-bars {
       display: flex;
       align-items: center;
       gap: 3px;
       height: 14px;
     }
 
-    .equalizer span {
+    .equalizer-bars span {
       width: 2.5px;
       height: 100%;
-      background: var(--cyan);
+      background: var(--cyan-neon);
       border-radius: 2px;
-      animation: wave 1.2s ease-in-out infinite alternate;
+      animation: equalize 1.2s ease-in-out infinite alternate;
     }
-    .equalizer span:nth-child(2) { animation-delay: 0.2s; height: 60%; }
-    .equalizer span:nth-child(3) { animation-delay: 0.4s; height: 85%; }
-    .equalizer span:nth-child(4) { animation-delay: 0.15s; height: 40%; }
+    .equalizer-bars span:nth-child(2) { animation-delay: 0.25s; height: 60%; }
+    .equalizer-bars span:nth-child(3) { animation-delay: 0.45s; height: 90%; }
+    .equalizer-bars span:nth-child(4) { animation-delay: 0.15s; height: 40%; }
 
-    @keyframes wave {
+    @keyframes equalize {
       0% { transform: scaleY(0.3); }
       100% { transform: scaleY(1); }
     }
 
     .badge-text {
-      color: var(--cyan);
+      color: var(--cyan-neon);
       font-size: 0.78rem;
       font-weight: 700;
       text-transform: uppercase;
@@ -144,74 +217,114 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 10px 20px;
-      border-radius: 9999px;
-      background: rgba(5, 12, 30, 0.85);
+      padding: 10px 22px;
+      border-radius: var(--radius-full);
+      background: rgba(4, 9, 26, 0.88);
       border: 1px solid var(--border-blue);
       backdrop-filter: blur(20px);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.85);
     }
 
-    .brand { font-family: var(--font-head); font-size: 1.4rem; font-weight: 800; color: #fff; }
-    .brand span { color: var(--cyan); }
+    .brand-logo {
+      font-family: var(--font-heading);
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
 
-    .nav-links { display: flex; align-items: center; gap: 24px; list-style: none; }
-    .nav-link { font-size: 0.9rem; font-weight: 600; color: var(--text-gray); transition: color 0.2s; }
-    .nav-link:hover { color: var(--cyan); }
+    .brand-glow {
+      color: var(--cyan-neon);
+      text-shadow: 0 0 15px rgba(56, 189, 248, 0.7);
+    }
 
-    /* Hero */
+    .nav-desktop-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-gray);
+      transition: color 0.3s ease;
+    }
+
+    .nav-link:hover { color: var(--cyan-neon); }
+
+    /* Hero Section */
     .hero {
-      padding: 140px 0 60px 0;
+      padding: 145px 0 65px 0;
       text-align: center;
+      position: relative;
     }
 
     .hero-title {
-      font-size: clamp(4rem, 16vw, 7rem);
+      font-size: clamp(4.2rem, 18vw, 7.5rem);
+      margin-bottom: 8px;
       line-height: 0.95;
       text-transform: uppercase;
       background: linear-gradient(135deg, #ffffff 0%, #38bdf8 50%, #1d4ed8 100%);
+      background-size: 200% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-bottom: 8px;
+      animation: textShine 4s linear infinite;
+      filter: drop-shadow(0 0 40px rgba(56, 189, 248, 0.4));
+    }
+
+    @keyframes textShine {
+      to { background-position: 200% center; }
     }
 
     .hero-subtitle {
-      font-size: clamp(1rem, 3.8vw, 1.3rem);
+      font-size: clamp(1.05rem, 4vw, 1.35rem);
       color: var(--text-gray);
-      margin-bottom: 30px;
+      margin-bottom: 32px;
+      padding: 0 10px;
     }
 
-    .hero-subtitle span { color: var(--cyan); font-weight: 600; font-style: italic; }
+    .hero-subtitle span {
+      color: var(--cyan-neon);
+      font-weight: 600;
+      font-style: italic;
+    }
 
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
+      align-items: center;
       justify-content: center;
       gap: 14px;
-      margin-bottom: 45px;
+      margin-bottom: 50px;
     }
 
-    /* Main Showreel Card */
-    .showreel-box {
+    /* Main Showreel Frame */
+    .showreel-card {
       position: relative;
       width: 100%;
-      border-radius: 20px;
-      border: 1px solid var(--border-active);
+      max-width: 1000px;
+      margin: 0 auto;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-glow);
       background: #000;
       overflow: hidden;
-      box-shadow: 0 20px 60px -15px rgba(0, 0, 0, 0.95), 0 0 35px var(--cyan-glow);
+      box-shadow: 0 25px 70px -15px rgba(0, 0, 0, 0.95), 0 0 45px rgba(56, 189, 248, 0.25);
       cursor: pointer;
     }
 
-    .video-aspect {
+    .showreel-frame {
       position: relative;
       width: 100%;
       padding-top: 56.25%;
-      background: #04091a;
+      background: #000206;
       overflow: hidden;
     }
 
-    .video-aspect video {
+    .bg-video-loop {
       position: absolute;
       top: 0;
       left: 0;
@@ -219,10 +332,13 @@
       height: 100%;
       object-fit: cover;
       opacity: 0.88;
-      transition: transform 0.5s ease;
+      transition: transform 0.6s var(--ease-cinema);
     }
 
-    .showreel-box:hover .video-aspect video { transform: scale(1.04); opacity: 1; }
+    .showreel-card:hover .bg-video-loop {
+      transform: scale(1.04);
+      opacity: 0.98;
+    }
 
     .showreel-overlay {
       position: absolute;
@@ -231,185 +347,376 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background: radial-gradient(circle at center, rgba(6, 13, 31, 0.1) 0%, rgba(2, 5, 14, 0.75) 100%);
+      background: radial-gradient(circle at center, rgba(4, 9, 26, 0.15) 0%, rgba(0, 2, 6, 0.8) 100%);
       z-index: 2;
     }
 
-    .play-circle {
-      width: 80px;
-      height: 80px;
+    .play-btn-circle {
+      width: 82px;
+      height: 82px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #38bdf8 0%, #1d4ed8 100%);
+      background: linear-gradient(135deg, #38bdf8 0%, #2563eb 100%);
       border: 3px solid rgba(255, 255, 255, 0.7);
       display: flex;
       align-items: center;
       justify-content: center;
       color: #fff;
-      box-shadow: 0 0 35px rgba(56, 189, 248, 0.6);
-      transition: transform 0.3s;
+      box-shadow: 0 0 40px rgba(56, 189, 248, 0.65);
+      animation: pulsePlay 2s infinite;
+      transition: transform 0.3s ease;
     }
 
-    .play-circle svg { transform: translateX(3px); width: 32px; height: 32px; }
-    .showreel-box:hover .play-circle { transform: scale(1.08); }
+    @keyframes pulsePlay {
+      0% { transform: scale(1); box-shadow: 0 0 25px rgba(56, 189, 248, 0.5); }
+      50% { transform: scale(1.08); box-shadow: 0 0 50px rgba(56, 189, 248, 0.85); }
+      100% { transform: scale(1); box-shadow: 0 0 25px rgba(56, 189, 248, 0.5); }
+    }
 
-    .showreel-caption {
-      margin-top: 14px;
+    .play-btn-circle svg {
+      transform: translateX(3px);
+      width: 34px;
+      height: 34px;
+    }
+
+    .showreel-text {
+      margin-top: 16px;
       font-size: 0.85rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       font-weight: 700;
       color: #fff;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.9);
     }
 
-    /* Section Headers */
-    .section-head {
-      text-align: center;
-      margin: 80px 0 40px 0;
-    }
-    .section-head h2 { font-size: clamp(2rem, 5vw, 2.8rem); margin-bottom: 8px; }
-    .section-head p { color: var(--text-gray); font-size: 0.95rem; }
+    /* =========================================================
+       SIDE-BY-SIDE HORIZONTAL PROJECTS CAROUSEL (NO VERTICAL SCROLL)
+       ========================================================= */
+    .portfolio-section { padding: 90px 0 50px 0; }
 
-    /* Selected Works Grid */
-    .works-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 24px;
+    .section-header-flex {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 30px;
     }
 
-    .work-card {
+    .section-header-flex h2 {
+      font-size: clamp(2rem, 5vw, 2.8rem);
+    }
+
+    .swipe-hint {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid var(--border-blue);
+      color: var(--cyan-neon);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    /* Horizontal Side-by-Side Flexbox Carousel */
+    .projects-carousel {
+      display: flex;
+      gap: 22px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding: 10px 4px 30px 4px;
+      scrollbar-width: none;
+    }
+
+    .projects-carousel::-webkit-scrollbar { display: none; }
+
+    .project-card {
+      flex: 0 0 88%;
+      max-width: 480px;
+      scroll-snap-align: start;
       background: var(--bg-card);
       border: 1px solid var(--border-blue);
-      border-radius: var(--radius);
+      border-radius: var(--radius-md);
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      transition: all 0.35s ease;
+      transition: all 0.4s var(--ease-cinema);
+      position: relative;
     }
 
-    .work-card:hover {
+    .project-card:hover {
+      border-color: var(--cyan-neon);
+      box-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.9), 0 0 35px rgba(56, 189, 248, 0.3);
       transform: translateY(-6px);
-      border-color: var(--cyan);
-      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.8), 0 0 30px rgba(56, 189, 248, 0.25);
     }
 
-    .card-thumb {
+    .project-thumbnail {
       position: relative;
       width: 100%;
       padding-top: 56.25%;
-      background: #04091a;
+      background: #02050e;
       cursor: pointer;
       overflow: hidden;
     }
 
-    .card-thumb video {
+    .project-thumbnail video {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      opacity: 0.85;
-      transition: transform 0.5s ease;
+      opacity: 0.88;
+      transition: transform 0.6s var(--ease-cinema);
     }
 
-    .work-card:hover .card-thumb video { transform: scale(1.06); opacity: 1; }
+    .project-card:hover .project-thumbnail video {
+      transform: scale(1.08);
+      opacity: 1;
+    }
 
-    .card-tag {
+    .project-tag {
       position: absolute;
-      top: 12px;
-      left: 12px;
-      padding: 4px 12px;
-      border-radius: 9999px;
-      background: rgba(2, 5, 14, 0.85);
+      top: 14px;
+      left: 14px;
+      padding: 5px 14px;
+      border-radius: var(--radius-full);
+      background: rgba(0, 2, 6, 0.85);
       border: 1px solid var(--border-blue);
+      backdrop-filter: blur(8px);
       font-size: 0.72rem;
       font-weight: 700;
-      color: var(--cyan);
+      text-transform: uppercase;
+      color: var(--cyan-neon);
+      letter-spacing: 0.05em;
       z-index: 3;
     }
 
-    .card-play-btn {
+    .project-play {
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%);
-      width: 54px;
-      height: 54px;
+      transform: translate(-50%, -50%) scale(0.95);
+      width: 58px;
+      height: 58px;
       border-radius: 50%;
       background: linear-gradient(135deg, #38bdf8 0%, #1d4ed8 100%);
       color: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 0 25px rgba(56, 189, 248, 0.5);
       z-index: 3;
-      transition: transform 0.2s;
+      box-shadow: 0 0 30px rgba(56, 189, 248, 0.6);
+      transition: transform 0.3s ease;
     }
 
-    .work-card:hover .card-play-btn { transform: translate(-50%, -50%) scale(1.1); }
+    .project-card:hover .project-play {
+      transform: translate(-50%, -50%) scale(1.1);
+      background: #fff;
+      color: #000206;
+    }
 
-    .card-body {
-      padding: 22px;
+    .project-body {
+      padding: 24px;
       display: flex;
       flex-direction: column;
       flex-grow: 1;
     }
 
-    .card-title { font-size: 1.25rem; margin-bottom: 6px; }
-    .card-desc { font-size: 0.88rem; color: var(--text-gray); margin-bottom: 16px; flex-grow: 1; }
+    .project-title {
+      font-size: 1.25rem;
+      margin-bottom: 6px;
+      color: #fff;
+    }
 
-    .play-link {
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: var(--cyan);
-      background: transparent;
-      border: none;
-      cursor: pointer;
+    .project-desc {
+      font-size: 0.88rem;
+      color: var(--text-gray);
+      margin-bottom: 18px;
+      flex-grow: 1;
+      line-height: 1.5;
+    }
+
+    .watch-btn {
       display: inline-flex;
       align-items: center;
       gap: 6px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--cyan-neon);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s ease;
     }
 
-    /* About Section with Real Photo */
-    .about-wrap {
-      display: grid;
-      grid-template-columns: 320px 1fr;
-      gap: 36px;
-      align-items: center;
-      background: var(--bg-card);
-      border: 1px solid var(--border-blue);
-      border-radius: 20px;
-      padding: 36px;
-      margin-top: 60px;
+    .watch-btn:hover { transform: translateX(4px); }
+
+    /* =========================================================
+       COLOR GRADING BEFORE/AFTER INTERACTIVE SLIDER
+       ========================================================= */
+    .color-suite-section {
+      padding: 50px 0 90px 0;
     }
 
-    .photo-frame {
+    .grading-wrapper {
       position: relative;
       width: 100%;
-      height: 360px;
-      border-radius: var(--radius);
+      max-width: 980px;
+      margin: 0 auto;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-glow);
       overflow: hidden;
-      border: 1px solid var(--border-active);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 25px var(--cyan-glow);
+      box-shadow: 0 25px 65px -15px rgba(0, 0, 0, 0.95), 0 0 35px rgba(56, 189, 248, 0.2);
     }
 
-    .photo-frame img {
+    .compare-container {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      overflow: hidden;
+      user-select: none;
+    }
+
+    .compare-img {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
+      pointer-events: none;
     }
 
-    .status-badge {
+    .compare-before-layer {
       position: absolute;
-      bottom: 12px;
-      left: 12px;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      clip-path: polygon(0 0, var(--slider-pos, 50%) 0, var(--slider-pos, 50%) 100%, 0 100%);
+      pointer-events: none;
+    }
+
+    .compare-before-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: saturate(0.2) contrast(0.78) brightness(1.18);
+    }
+
+    .compare-divider {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: var(--slider-pos, 50%);
+      width: 3px;
+      background: var(--cyan-bright);
+      box-shadow: 0 0 15px var(--cyan-bright);
+      transform: translateX(-50%);
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    .compare-handle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #38bdf8 0%, #1d4ed8 100%);
+      border: 3px solid #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.8);
+      font-size: 0.85rem;
+      font-weight: 800;
+    }
+
+    .compare-badge {
+      position: absolute;
+      top: 16px;
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      background: rgba(0, 2, 6, 0.85);
+      border: 1px solid var(--border-blue);
+      backdrop-filter: blur(8px);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      z-index: 11;
+      pointer-events: none;
+    }
+
+    .badge-before { left: 16px; color: var(--text-gray); }
+    .badge-after { right: 16px; color: var(--cyan-neon); }
+
+    .compare-range {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: ew-resize;
+      z-index: 20;
+    }
+
+    /* About Section */
+    .about-section { padding: 80px 0; }
+    
+    .about-grid {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 40px;
+      align-items: center;
+      background: var(--bg-card);
+      border: 1px solid var(--border-blue);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+    }
+
+    .about-photo-wrapper {
+      position: relative;
+      width: 100%;
+      height: 380px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-glow);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(56, 189, 248, 0.2);
+    }
+
+    .about-photo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .about-photo-wrapper:hover .about-photo-img { transform: scale(1.04); }
+
+    .profile-badge {
+      position: absolute;
+      bottom: 14px;
+      left: 14px;
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 5px 12px;
-      border-radius: 9999px;
-      background: rgba(2, 5, 14, 0.85);
-      border: 1px solid var(--cyan);
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      background: rgba(0, 2, 6, 0.85);
+      border: 1px solid var(--cyan-neon);
+      backdrop-filter: blur(8px);
     }
 
     .green-dot {
@@ -420,68 +727,139 @@
       box-shadow: 0 0 8px #22c55e;
     }
 
-    .status-badge span { font-size: 0.72rem; font-weight: 700; color: #fff; text-transform: uppercase; }
+    .profile-badge span {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
 
-    .about-text h2 { font-size: 2rem; margin-bottom: 12px; }
-    .about-text p { color: var(--text-gray); line-height: 1.7; margin-bottom: 16px; }
+    .about-content h2 {
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+      color: #fff;
+    }
 
-    /* Contact Section with Prominent WhatsApp & Instagram */
-    .contact-card {
-      background: radial-gradient(circle at 100% 0%, rgba(56, 189, 248, 0.12) 0%, rgba(5, 12, 30, 0.95) 70%);
+    .about-content p {
+      color: var(--text-gray);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    /* =========================================================
+       ANIMATED SOCIAL CHANNELS WITH OFFICIAL SVG LOGOS
+       ========================================================= */
+    .contact-section { padding: 90px 0 110px 0; }
+    
+    .contact-card-wrap {
+      background: radial-gradient(circle at 100% 0%, rgba(56, 189, 248, 0.12) 0%, rgba(4, 9, 26, 0.95) 70%);
       border: 1px solid var(--border-blue);
-      border-radius: 20px;
+      border-radius: var(--radius-lg);
       padding: 40px 24px;
-      margin: 80px 0 100px 0;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9);
       text-align: center;
     }
 
     .channels-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 16px;
-      margin-top: 28px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+      margin-top: 32px;
     }
 
-    .channel-box {
+    /* Animated Social Box */
+    .social-box {
       display: flex;
       align-items: center;
-      gap: 16px;
-      padding: 16px 20px;
-      background: rgba(255, 255, 255, 0.03);
+      gap: 18px;
+      padding: 18px 22px;
+      background: rgba(255, 255, 255, 0.02);
       border: 1px solid var(--border-blue);
-      border-radius: var(--radius);
-      transition: all 0.3s;
+      border-radius: var(--radius-md);
+      transition: all 0.35s var(--ease-cinema);
       text-align: left;
+      position: relative;
+      overflow: hidden;
     }
 
-    .channel-box:hover {
-      border-color: var(--cyan);
-      background: rgba(56, 189, 248, 0.08);
-      transform: translateY(-3px);
+    .social-box:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.8), 0 0 25px rgba(56, 189, 248, 0.25);
     }
 
-    .channel-icon {
-      width: 46px;
-      height: 46px;
+    /* Specific Branding Colors & Glows */
+    .social-box.whatsapp:hover { border-color: #22c55e; box-shadow: 0 0 25px rgba(34, 197, 94, 0.3); }
+    .social-box.instagram:hover { border-color: #e1306c; box-shadow: 0 0 25px rgba(225, 48, 108, 0.3); }
+    .social-box.email:hover { border-color: var(--cyan-neon); box-shadow: 0 0 25px rgba(56, 189, 248, 0.3); }
+
+    /* Animated Icons */
+    .social-icon-wrap {
+      width: 52px;
+      height: 52px;
       border-radius: 50%;
-      background: rgba(56, 189, 248, 0.12);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--cyan);
       flex-shrink: 0;
+      transition: transform 0.4s ease;
+      position: relative;
     }
 
-    .channel-info small { display: block; font-size: 0.75rem; color: var(--text-gray); text-transform: uppercase; }
-    .channel-info strong { font-size: 1rem; color: #fff; }
+    .social-box:hover .social-icon-wrap {
+      transform: scale(1.12) rotate(5deg);
+    }
 
-    /* Fullscreen Native Video Modal */
-    .video-modal {
+    .social-box.whatsapp .social-icon-wrap {
+      background: rgba(34, 197, 94, 0.12);
+      border: 1px solid rgba(34, 197, 94, 0.4);
+      color: #22c55e;
+      animation: pulseGreen 2.5s infinite;
+    }
+
+    @keyframes pulseGreen {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); }
+      50% { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
+    }
+
+    .social-box.instagram .social-icon-wrap {
+      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #fff;
+    }
+
+    .social-box.email .social-icon-wrap {
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid var(--border-blue);
+      color: var(--cyan-neon);
+      animation: pulseCyan 2.5s infinite;
+    }
+
+    @keyframes pulseCyan {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.4); }
+      50% { box-shadow: 0 0 0 8px rgba(56, 189, 248, 0); }
+    }
+
+    .social-info small {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--text-gray);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .social-info strong {
+      font-size: 1.05rem;
+      color: #fff;
+    }
+
+    /* Modal Player */
+    .native-modal {
       position: fixed;
       inset: 0;
       z-index: 9999;
-      background: rgba(2, 5, 14, 0.96);
-      backdrop-filter: blur(20px);
+      background: rgba(0, 2, 6, 0.96);
+      backdrop-filter: blur(25px);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -491,31 +869,35 @@
       transition: all 0.3s ease;
     }
 
-    .video-modal.active { opacity: 1; visibility: visible; }
+    .native-modal.active { opacity: 1; visibility: visible; }
 
-    .modal-box {
+    .native-modal-content {
       position: relative;
       width: 100%;
       max-width: 950px;
       background: #000;
-      border-radius: var(--radius);
+      border-radius: var(--radius-md);
       overflow: hidden;
-      border: 1px solid var(--border-active);
-      box-shadow: 0 0 50px rgba(56, 189, 248, 0.35);
+      border: 1px solid var(--border-glow);
+      box-shadow: 0 0 60px rgba(56, 189, 248, 0.35);
     }
 
-    .modal-header {
+    .modal-bar {
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 12px 18px;
-      background: #04091a;
+      background: #030714;
       border-bottom: 1px solid rgba(56, 189, 248, 0.2);
     }
 
-    .modal-title { font-size: 0.9rem; font-weight: 700; color: var(--cyan); }
+    .modal-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--cyan-neon);
+    }
 
-    .modal-close {
+    .modal-close-btn {
       width: 36px;
       height: 36px;
       border-radius: 50%;
@@ -529,7 +911,8 @@
       font-size: 1.1rem;
     }
 
-    .video-frame {
+    .video-holder {
+      position: relative;
       width: 100%;
       background: #000;
       display: flex;
@@ -537,7 +920,7 @@
       justify-content: center;
     }
 
-    .video-frame video {
+    .video-holder video {
       width: 100%;
       max-height: 75vh;
       display: block;
@@ -549,29 +932,40 @@
       padding: 30px 0;
       text-align: center;
       font-size: 0.85rem;
-      color: var(--text-gray);
+      color: var(--text-dim);
     }
 
-    @media (max-width: 800px) {
-      .about-wrap { grid-template-columns: 1fr; padding: 24px; }
-      .photo-frame { height: 320px; }
-      .nav-links { display: none; }
+    @media (min-width: 769px) {
+      .project-card { flex: 0 0 calc(50% - 11px); max-width: none; }
+    }
+
+    @media (max-width: 850px) {
+      .about-grid { grid-template-columns: 1fr; gap: 30px; padding: 26px; }
+      .about-photo-wrapper { height: 340px; }
+      .nav-desktop-links { display: none; }
     }
   </style>
 </head>
 <body>
 
+  <div class="ambient-sphere"></div>
+
   <!-- Navbar -->
   <header class="site-nav">
     <div class="container">
       <div class="nav-inner">
-        <a href="#hero" class="brand">JOO<span>.</span></a>
-        <ul class="nav-links">
+        <a href="#hero" class="brand-logo">
+          <span>JOO</span><span class="brand-glow">.</span>
+        </a>
+
+        <ul class="nav-desktop-links">
           <li><a href="#hero" class="nav-link">Home</a></li>
           <li><a href="#work" class="nav-link">Work</a></li>
+          <li><a href="#grading" class="nav-link">Color Suite</a></li>
           <li><a href="#about" class="nav-link">About</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
+
         <a href="#contact" class="btn btn-primary" style="min-height: 40px; padding: 6px 18px; font-size: 0.85rem;">Let's Talk</a>
       </div>
     </div>
@@ -580,15 +974,18 @@
   <!-- Hero Section -->
   <section id="hero" class="hero">
     <div class="container">
-      <div class="badge-wrap">
-        <div class="equalizer">
+      
+      <div class="badge-wave">
+        <div class="equalizer-bars">
           <span></span><span></span><span></span><span></span>
         </div>
-        <span class="badge-text">Video Editor &bull; AI Creator</span>
+        <span class="badge-text">Video Editor &bull; AI Video Creator</span>
       </div>
 
       <h1 class="hero-title">JOO</h1>
-      <p class="hero-subtitle">I turn raw ideas into <span>cinematic visual reality.</span></p>
+      <p class="hero-subtitle">
+        I turn raw ideas into <span>cinematic visual reality.</span>
+      </p>
 
       <div class="hero-actions">
         <a href="#work" class="btn btn-primary">View Portfolio</a>
@@ -596,129 +993,185 @@
       </div>
 
       <!-- Main Showreel Video Card -->
-      <div class="showreel-box" onclick="openVideo('showreel.mp4', 'Official Showreel 2026')">
-        <div class="video-aspect">
-          <video autoplay muted loop playsinline preload="auto">
+      <div class="showreel-card" onclick="playVideo('showreel.mp4', 'Official Showreel 2026')">
+        <div class="showreel-frame">
+          <video class="bg-video-loop" autoplay muted loop playsinline preload="auto">
             <source src="showreel.mp4" type="video/mp4" onerror="this.src='assets/showreel.mp4'" />
           </video>
           <div class="showreel-overlay">
-            <div class="play-circle">
+            <div class="play-btn-circle">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
             </div>
-            <span class="showreel-caption">Play Official Showreel</span>
+            <span class="showreel-text">Play Official Showreel</span>
           </div>
         </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Selected Works: SIDE-BY-SIDE HORIZONTAL CAROUSEL (SWIPEABLE) -->
+  <section id="work" class="portfolio-section">
+    <div class="container">
+      <div class="section-header-flex">
+        <div>
+          <h2>Selected Works</h2>
+          <p style="color:var(--text-gray); font-size:0.95rem;">Side-by-side showcase. Tap to play in full screen.</p>
+        </div>
+        <div class="swipe-hint">
+          <span>Swipe ◂ ▸</span>
+        </div>
+      </div>
+
+      <!-- Carousel Track -->
+      <div class="projects-carousel">
+        
+        <!-- Project 1 -->
+        <div class="project-card">
+          <div class="project-thumbnail" onclick="playVideo('project-1.mp4', 'Project 01 — AI Motion Cut')">
+            <video autoplay muted loop playsinline preload="auto">
+              <source src="project-1.mp4" type="video/mp4" onerror="this.src='assets/project-1.mp4'" />
+            </video>
+            <div class="project-tag">AI &amp; Visuals</div>
+            <div class="project-play">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Project 01 — AI Motion Cut</h3>
+            <p class="project-desc">High-impact visual cut blending generative video concepts with dynamic sound design.</p>
+            <button class="watch-btn" onclick="playVideo('project-1.mp4', 'Project 01 — AI Motion Cut')">
+              Watch Film →
+            </button>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card">
+          <div class="project-thumbnail" onclick="playVideo('project-2.mp4', 'Project 02 — Retention Reel')">
+            <video autoplay muted loop playsinline preload="auto">
+              <source src="project-2.mp4" type="video/mp4" onerror="this.src='assets/project-2.mp4'" />
+            </video>
+            <div class="project-tag">Viral Reel</div>
+            <div class="project-play">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Project 02 — Retention Reel</h3>
+            <p class="project-desc">Fast-paced video edit built for high retention, kinetic transitions, and audio sync.</p>
+            <button class="watch-btn" onclick="playVideo('project-2.mp4', 'Project 02 — Retention Reel')">
+              Watch Film →
+            </button>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Selected Works -->
-  <section id="work" class="container">
-    <div class="section-head">
-      <h2>Selected Works</h2>
-      <p>Tap on any project to watch in full screen with sound.</p>
-    </div>
-
-    <div class="works-grid">
-      <!-- Project 1 -->
-      <div class="work-card">
-        <div class="card-thumb" onclick="openVideo('project-1.mp4', 'Project 01 — AI Motion Cut')">
-          <video autoplay muted loop playsinline preload="auto">
-            <source src="project-1.mp4" type="video/mp4" onerror="this.src='assets/project-1.mp4'" />
-          </video>
-          <div class="card-tag">AI &amp; Visuals</div>
-          <div class="card-play-btn">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-          </div>
-        </div>
-        <div class="card-body">
-          <h3 class="card-title">Project 01 — AI Motion Cut</h3>
-          <p class="card-desc">High-impact visual cut blending generative video concepts with dynamic sound design.</p>
-          <button class="play-link" onclick="openVideo('project-1.mp4', 'Project 01 — AI Motion Cut')">Watch Film →</button>
-        </div>
+  <!-- INTERACTIVE COLOR GRADING SUITE (BEFORE / AFTER SLIDER) -->
+  <section id="grading" class="color-suite-section">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 35px;">
+        <div class="badge-wave"><span class="badge-text">DaVinci Resolve Studio</span></div>
+        <h2 style="font-size: clamp(2rem, 5vw, 2.8rem);">Color Grading Breakdown</h2>
+        <p style="color:var(--text-gray);">Drag the slider to reveal raw flat log camera footage vs final cinema grade.</p>
       </div>
 
-      <!-- Project 2 -->
-      <div class="work-card">
-        <div class="card-thumb" onclick="openVideo('project-2.mp4', 'Project 02 — Retention Reel')">
-          <video autoplay muted loop playsinline preload="auto">
-            <source src="project-2.mp4" type="video/mp4" onerror="this.src='assets/project-2.mp4'" />
-          </video>
-          <div class="card-tag">Viral Reel</div>
-          <div class="card-play-btn">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      <div class="grading-wrapper">
+        <div class="compare-container" id="compareBox" style="--slider-pos: 50%;">
+          <img class="compare-img" src="https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=1200&q=80" alt="Graded Cinema Look" />
+          <div class="compare-before-layer">
+            <img class="compare-before-img" src="https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=1200&q=80" alt="Raw Log Look" />
           </div>
-        </div>
-        <div class="card-body">
-          <h3 class="card-title">Project 02 — Retention Reel</h3>
-          <p class="card-desc">Fast-paced video edit built for high retention, kinetic transitions, and audio sync.</p>
-          <button class="play-link" onclick="openVideo('project-2.mp4', 'Project 02 — Retention Reel')">Watch Film →</button>
+          <div class="compare-divider">
+            <div class="compare-handle"><span>◂ ▸</span></div>
+          </div>
+          <div class="compare-badge badge-before">RAW LOG (BEFORE)</div>
+          <div class="compare-badge badge-after">DAVINCI GRADE (AFTER)</div>
+          <input type="range" min="0" max="100" value="50" class="compare-range" aria-label="Comparison Slider" oninput="document.getElementById('compareBox').style.setProperty('--slider-pos', this.value + '%')" />
         </div>
       </div>
     </div>
   </section>
 
   <!-- About Section With Real Photo -->
-  <section id="about" class="container">
-    <div class="about-wrap">
-      <div class="photo-frame">
-        <img src="profile.jpg" alt="JOO" onerror="if(!this.src.includes('assets/'))this.src='assets/profile.jpg';" />
-        <div class="status-badge">
-          <div class="green-dot"></div>
-          <span>Available for Work</span>
+  <section id="about" class="about-section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-photo-wrapper">
+          <img class="about-photo-img" src="profile.jpg" alt="JOO — Video Editor" onerror="if(!this.src.includes('assets/'))this.src='assets/profile.jpg';" />
+          <div class="profile-badge">
+            <div class="green-dot"></div>
+            <span>Available for Work</span>
+          </div>
         </div>
-      </div>
 
-      <div class="about-text">
-        <h2>Behind The Monitor</h2>
-        <p style="color:#fff; font-size:1.15rem; margin-bottom:12px;">Hey, I'm <strong>JOO</strong> — Video Editor &amp; AI Video Creator.</p>
-        <p>
-          I focus on human storytelling amplified with generative AI video models. Every frame is timed with precision, audio hits are synced to transients, and visuals are sculpted to hold attention from the first second.
-        </p>
-        <a href="#contact" class="btn btn-primary" style="margin-top:10px;">Start a Project</a>
+        <div class="about-content">
+          <div class="badge-wave"><span class="badge-text">Behind The Monitor</span></div>
+          <h2>I turn complex concepts into cinematic reality.</h2>
+          <p style="color:#fff; font-size:1.15rem; margin-bottom:12px;">Hey, I'm <strong>JOO</strong> — Video Editor &amp; AI Video Creator.</p>
+          <p>
+            I focus on human storytelling amplified with generative AI video models. Every frame is timed with precision, audio hits are synced to transients, and visuals are sculpted to hold attention from the first second.
+          </p>
+          <a href="#contact" class="btn btn-primary" style="margin-top:12px;">Start a Project</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact Section With Explicit Details -->
-  <section id="contact" class="container">
-    <div class="contact-card">
-      <h2>Let's Work Together</h2>
-      <p style="color:var(--text-gray); margin-top:8px;">Ready to collaborate? Reach out directly via WhatsApp, Instagram, or Email.</p>
+  <!-- Contact Section with Animated Official SVG Logos -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div class="contact-card-wrap">
+        <div class="badge-wave"><span class="badge-text">Let's Connect</span></div>
+        <h2>Let's Work Together</h2>
+        <p style="color:var(--text-gray); margin-top:10px;">Ready to collaborate? Reach out directly via WhatsApp, Instagram, or Email.</p>
 
-      <div class="channels-grid">
-        <!-- WhatsApp -->
-        <a href="https://wa.me/201143081231?text=Hi%20JOO,%20I%20saw%20your%20portfolio%20and%20want%20to%20collaborate!" target="_blank" rel="noopener noreferrer" class="channel-box">
-          <div class="channel-icon">
-            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-          </div>
-          <div class="channel-info">
-            <small>WhatsApp Direct</small>
-            <strong>+20 114 308 1231</strong>
-          </div>
-        </a>
+        <div class="channels-grid">
+          
+          <!-- WhatsApp Box With Animated Official Logo -->
+          <a href="https://wa.me/201143081231?text=Hi%20JOO,%20I%20saw%20your%20portfolio%20and%20want%20to%20collaborate!" target="_blank" rel="noopener noreferrer" class="social-box whatsapp">
+            <div class="social-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+              </svg>
+            </div>
+            <div class="social-info">
+              <small>WhatsApp Direct</small>
+              <strong>+20 114 308 1231</strong>
+            </div>
+          </a>
 
-        <!-- Instagram -->
-        <a href="https://instagram.com/joeny_7" target="_blank" rel="noopener noreferrer" class="channel-box">
-          <div class="channel-icon">
-            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-          </div>
-          <div class="channel-info">
-            <small>Instagram Profile</small>
-            <strong>@joeny_7</strong>
-          </div>
-        </a>
+          <!-- Instagram Box With Animated Official Logo -->
+          <a href="https://instagram.com/joeny_7" target="_blank" rel="noopener noreferrer" class="social-box instagram">
+            <div class="social-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </div>
+            <div class="social-info">
+              <small>Instagram Profile</small>
+              <strong>@joeny_7</strong>
+            </div>
+          </a>
 
-        <!-- Email -->
-        <a href="mailto:youssefjoeyhmhh@gmail.com?subject=Project%20Inquiry%20for%20JOO" class="channel-box">
-          <div class="channel-icon">
-            <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-          </div>
-          <div class="channel-info">
-            <small>Email Me</small>
-            <strong>youssefjoeyhmhh@gmail.com</strong>
-          </div>
-        </a>
+          <!-- Email Box With Animated Official Logo -->
+          <a href="mailto:youssefjoeyhmhh@gmail.com?subject=Project%20Inquiry%20for%20JOO" class="social-box email">
+            <div class="social-icon-wrap">
+              <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </div>
+            <div class="social-info">
+              <small>Email Me</small>
+              <strong>youssefjoeyhmhh@gmail.com</strong>
+            </div>
+          </a>
+
+        </div>
       </div>
     </div>
   </section>
@@ -730,37 +1183,30 @@
     </div>
   </footer>
 
-  <!-- Native Fullscreen Video Modal -->
-  <div class="video-modal" id="videoModal" onclick="if(event.target===this)closeVideo()">
-    <div class="modal-box">
-      <div class="modal-header">
-        <span class="modal-title" id="modalTitle">Project Playback</span>
-        <button class="modal-close" onclick="closeVideo()">✕</button>
+  <!-- Native Fullscreen Modal -->
+  <div class="native-modal" id="videoModal" onclick="if(event.target===this)closeVideo()">
+    <div class="native-modal-content">
+      <div class="modal-bar">
+        <span class="modal-title" id="modalVideoTitle">Project Playback</span>
+        <button class="modal-close-btn" onclick="closeVideo()">✕</button>
       </div>
-      <div class="video-frame">
-        <video id="player" controls playsinline preload="auto"></video>
+      <div class="video-holder">
+        <video id="nativeVideoPlayer" controls playsinline preload="auto"></video>
       </div>
     </div>
   </div>
 
   <script>
     const modal = document.getElementById("videoModal");
-    const player = document.getElementById("player");
-    const titleEl = document.getElementById("modalTitle");
+    const player = document.getElementById("nativeVideoPlayer");
+    const titleEl = document.getElementById("modalVideoTitle");
 
-    function openVideo(src, title) {
+    function playVideo(src, title) {
       titleEl.textContent = title;
       player.src = src;
       modal.classList.add("active");
       document.body.style.overflow = "hidden";
-      player.play().catch(e => {});
-
-      player.onerror = function() {
-        if (!player.src.includes("assets/")) {
-          player.src = "assets/" + src;
-          player.play().catch(e => {});
-        }
-      };
+      player.play().catch(() => {});
     }
 
     function closeVideo() {
