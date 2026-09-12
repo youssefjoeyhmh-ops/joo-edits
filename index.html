@@ -7,6 +7,9 @@
   <title>JOO — Video Editor &amp; AI Video Creator</title>
   <meta name="description" content="Portfolio of JOO — Professional Video Editor and AI Video Creator crafting cinematic visuals and high-retention edits." />
 
+  <!-- Glowing Cyan "J" Favicon for Browser Tab -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='25' fill='%2302040a'/><text x='50%25' y='72%25' font-size='65' font-family='sans-serif' font-weight='900' fill='%2338bdf8' text-anchor='middle'>J</text></svg>" />
+
   <!-- Open Graph Meta Tags (WhatsApp & Social Preview) -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://youssefjoeyhmh-ops.github.io/joo-edits/" />
@@ -14,15 +17,12 @@
   <meta property="og:description" content="Cinematic Visuals, DaVinci Resolve Color Grading &amp; High-Retention Edits." />
   <meta property="og:image" content="https://youssefjoeyhmh-ops.github.io/joo-edits/profile.jpg" />
 
-  <!-- Google Fonts: English (Syne + Plus Jakarta Sans) & Arabic (Cairo) -->
+  <!-- Google Fonts: English & Arabic -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
 
   <style>
-    /* =========================================================
-       DEEP NOIR BLACK & SAPPHIRE NAVY SYSTEM
-       ========================================================= */
     :root {
       --bg-black: #000206;
       --bg-navy: #04091a;
@@ -50,7 +50,6 @@
       --ease-cinema: cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    /* Arabic Font Support */
     html[dir="rtl"] {
       --font-heading: 'Cairo', sans-serif;
       --font-body: 'Cairo', sans-serif;
@@ -63,10 +62,7 @@
       -webkit-tap-highlight-color: transparent;
     }
 
-    html {
-      scroll-behavior: smooth;
-      color-scheme: dark;
-    }
+    html { scroll-behavior: smooth; color-scheme: dark; }
 
     body {
       background-color: var(--bg-black);
@@ -82,12 +78,8 @@
       background-attachment: fixed;
     }
 
-    ::selection {
-      background: var(--cyan-neon);
-      color: #000206;
-    }
+    ::selection { background: var(--cyan-neon); color: #000206; }
 
-    /* Ambient Pulsing Glow */
     .ambient-sphere {
       position: fixed;
       top: -20%;
@@ -149,7 +141,6 @@
       color: #ffffff;
       box-shadow: 0 10px 30px -5px rgba(56, 189, 248, 0.5);
     }
-
     .btn-primary:active { transform: scale(0.96); }
 
     .btn-secondary {
@@ -158,80 +149,7 @@
       border: 1px solid var(--border-blue);
       backdrop-filter: blur(12px);
     }
-
     .btn-secondary:active { transform: scale(0.96); background: rgba(56, 189, 248, 0.1); }
-
-    /* Language Switcher Pill */
-    .lang-toggle-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 7px 15px;
-      border-radius: var(--radius-full);
-      background: rgba(56, 189, 248, 0.1);
-      border: 1px solid var(--border-blue);
-      color: var(--cyan-neon);
-      font-weight: 800;
-      font-size: 0.82rem;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .lang-toggle-btn:hover {
-      background: rgba(56, 189, 248, 0.22);
-      box-shadow: 0 0 18px rgba(56, 189, 248, 0.45);
-      transform: scale(1.05);
-    }
-
-    /* Sound Wave Badge */
-    .badge-wave {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 6px 18px;
-      border-radius: var(--radius-full);
-      background: rgba(56, 189, 248, 0.08);
-      border: 1px solid var(--border-blue);
-      box-shadow: 0 0 20px rgba(56, 189, 248, 0.15);
-      margin-bottom: 22px;
-      animation: floatBadge 3.5s ease-in-out infinite alternate;
-    }
-
-    @keyframes floatBadge {
-      0% { transform: translateY(0); }
-      100% { transform: translateY(-4px); }
-    }
-
-    .equalizer-bars {
-      display: flex;
-      align-items: center;
-      gap: 3px;
-      height: 14px;
-    }
-
-    .equalizer-bars span {
-      width: 2.5px;
-      height: 100%;
-      background: var(--cyan-neon);
-      border-radius: 2px;
-      animation: equalize 1.2s ease-in-out infinite alternate;
-    }
-    .equalizer-bars span:nth-child(2) { animation-delay: 0.25s; height: 60%; }
-    .equalizer-bars span:nth-child(3) { animation-delay: 0.45s; height: 90%; }
-    .equalizer-bars span:nth-child(4) { animation-delay: 0.15s; height: 40%; }
-
-    @keyframes equalize {
-      0% { transform: scaleY(0.3); }
-      100% { transform: scaleY(1); }
-    }
-
-    .badge-text {
-      color: var(--cyan-neon);
-      font-size: 0.78rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
 
     /* Navbar */
     .site-nav {
@@ -264,10 +182,7 @@
       gap: 6px;
     }
 
-    .brand-glow {
-      color: var(--cyan-neon);
-      text-shadow: 0 0 15px rgba(56, 189, 248, 0.7);
-    }
+    .brand-glow { color: var(--cyan-neon); text-shadow: 0 0 15px rgba(56, 189, 248, 0.7); }
 
     .nav-desktop-links {
       display: flex;
@@ -282,7 +197,6 @@
       color: var(--text-gray);
       transition: color 0.3s ease;
     }
-
     .nav-link:hover { color: var(--cyan-neon); }
 
     .nav-actions {
@@ -291,7 +205,65 @@
       gap: 10px;
     }
 
-    /* Hero Section */
+    .lang-toggle-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 15px;
+      border-radius: var(--radius-full);
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid var(--border-blue);
+      color: var(--cyan-neon);
+      font-weight: 800;
+      font-size: 0.82rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .lang-toggle-btn:hover {
+      background: rgba(56, 189, 248, 0.22);
+      transform: scale(1.05);
+    }
+
+    /* Urgency Badge */
+    .urgency-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: var(--radius-full);
+      background: rgba(34, 197, 94, 0.1);
+      border: 1px solid rgba(34, 197, 94, 0.35);
+      margin-bottom: 18px;
+      animation: floatUrgent 3.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes floatUrgent {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-3px); }
+    }
+
+    .pulse-dot-green {
+      width: 8px;
+      height: 8px;
+      background: #22c55e;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #22c55e;
+      animation: blinkDot 1.5s infinite;
+    }
+
+    @keyframes blinkDot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.8); }
+    }
+
+    .urgency-text {
+      color: #86efac;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    /* Hero */
     .hero {
       padding: 145px 0 65px 0;
       text-align: center;
@@ -311,9 +283,7 @@
       filter: drop-shadow(0 0 40px rgba(56, 189, 248, 0.4));
     }
 
-    @keyframes textShine {
-      to { background-position: 200% center; }
-    }
+    @keyframes textShine { to { background-position: 200% center; } }
 
     .hero-subtitle {
       font-size: clamp(1.05rem, 4vw, 1.35rem);
@@ -321,12 +291,7 @@
       margin-bottom: 32px;
       padding: 0 10px;
     }
-
-    .hero-subtitle span {
-      color: var(--cyan-neon);
-      font-weight: 600;
-      font-style: italic;
-    }
+    .hero-subtitle span { color: var(--cyan-neon); font-weight: 600; font-style: italic; }
 
     .hero-actions {
       display: flex;
@@ -337,7 +302,7 @@
       margin-bottom: 50px;
     }
 
-    /* Main Showreel Frame */
+    /* Showreel Card */
     .showreel-card {
       position: relative;
       width: 100%;
@@ -369,11 +334,7 @@
       opacity: 0.88;
       transition: transform 0.6s var(--ease-cinema);
     }
-
-    .showreel-card:hover .bg-video-loop {
-      transform: scale(1.04);
-      opacity: 0.98;
-    }
+    .showreel-card:hover .bg-video-loop { transform: scale(1.04); opacity: 0.98; }
 
     .showreel-overlay {
       position: absolute;
@@ -402,16 +363,11 @@
     }
 
     @keyframes pulsePlay {
-      0% { transform: scale(1); box-shadow: 0 0 25px rgba(56, 189, 248, 0.5); }
+      0%, 100% { transform: scale(1); box-shadow: 0 0 25px rgba(56, 189, 248, 0.5); }
       50% { transform: scale(1.08); box-shadow: 0 0 50px rgba(56, 189, 248, 0.85); }
-      100% { transform: scale(1); box-shadow: 0 0 25px rgba(56, 189, 248, 0.5); }
     }
 
-    .play-btn-circle svg {
-      transform: translateX(3px);
-      width: 34px;
-      height: 34px;
-    }
+    .play-btn-circle svg { transform: translateX(3px); width: 34px; height: 34px; }
 
     .showreel-text {
       margin-top: 16px;
@@ -423,9 +379,7 @@
       text-shadow: 0 2px 10px rgba(0,0,0,0.9);
     }
 
-    /* =========================================================
-       SELECTED WORKS: 6 PROJECTS IN HORIZONTAL CAROUSEL
-       ========================================================= */
+    /* Horizontal Carousel */
     .portfolio-section { padding: 90px 0 50px 0; }
 
     .section-header-flex {
@@ -434,7 +388,6 @@
       justify-content: space-between;
       margin-bottom: 30px;
     }
-
     .section-header-flex h2 { font-size: clamp(2rem, 5vw, 2.8rem); }
 
     .swipe-hint {
@@ -448,7 +401,6 @@
       color: var(--cyan-neon);
       font-size: 0.78rem;
       font-weight: 700;
-      letter-spacing: 0.05em;
     }
 
     .projects-carousel {
@@ -459,9 +411,8 @@
       -webkit-overflow-scrolling: touch;
       padding: 10px 4px 30px 4px;
       scrollbar-width: none;
-      direction: ltr; /* Keeps swipe order natural */
+      direction: ltr;
     }
-
     .projects-carousel::-webkit-scrollbar { display: none; }
 
     .project-card {
@@ -477,7 +428,6 @@
       transition: all 0.4s var(--ease-cinema);
       position: relative;
     }
-
     .project-card:hover {
       border-color: var(--cyan-neon);
       box-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.9), 0 0 35px rgba(56, 189, 248, 0.3);
@@ -503,11 +453,7 @@
       opacity: 0.88;
       transition: transform 0.6s var(--ease-cinema);
     }
-
-    .project-card:hover .project-thumbnail video {
-      transform: scale(1.08);
-      opacity: 1;
-    }
+    .project-card:hover .project-thumbnail video { transform: scale(1.08); opacity: 1; }
 
     .project-tag {
       position: absolute;
@@ -522,7 +468,6 @@
       font-weight: 700;
       text-transform: uppercase;
       color: var(--cyan-neon);
-      letter-spacing: 0.05em;
       z-index: 3;
     }
 
@@ -543,22 +488,14 @@
       box-shadow: 0 0 30px rgba(56, 189, 248, 0.6);
       transition: transform 0.3s ease;
     }
-
     .project-card:hover .project-play {
       transform: translate(-50%, -50%) scale(1.1);
       background: #fff;
       color: #000206;
     }
 
-    .project-body {
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-    }
-
+    .project-body { padding: 24px; display: flex; flex-direction: column; flex-grow: 1; }
     html[dir="rtl"] .project-body { text-align: right; }
-
     .project-title { font-size: 1.25rem; margin-bottom: 6px; color: #fff; }
     .project-desc { font-size: 0.88rem; color: var(--text-gray); margin-bottom: 18px; flex-grow: 1; line-height: 1.5; }
 
@@ -574,12 +511,9 @@
       cursor: pointer;
       transition: transform 0.2s ease;
     }
-
     .watch-btn:hover { transform: translateX(4px); }
 
-    /* =========================================================
-       COLOR GRADING BEFORE/AFTER INTERACTIVE SLIDER
-       ========================================================= */
+    /* Before/After Color Slider */
     .color-suite-section { padding: 50px 0 90px 0; }
 
     .grading-wrapper {
@@ -679,7 +613,6 @@
       z-index: 11;
       pointer-events: none;
     }
-
     .badge-before { left: 16px; color: var(--text-gray); }
     .badge-after { right: 16px; color: var(--cyan-neon); }
 
@@ -691,6 +624,137 @@
       opacity: 0;
       cursor: ew-resize;
       z-index: 20;
+    }
+
+    /* =========================================================
+       PRICING & PACKAGES (EGYPTIAN POUNDS - EGP)
+       ========================================================= */
+    .pricing-section { padding: 90px 0; }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+    }
+
+    .pricing-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-blue);
+      border-radius: var(--radius-lg);
+      padding: 36px 26px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: all 0.35s var(--ease-cinema);
+    }
+    .pricing-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--cyan-neon);
+      box-shadow: 0 20px 45px -15px rgba(0,0,0,0.9), 0 0 30px rgba(56, 189, 248, 0.25);
+    }
+
+    .pricing-card.popular {
+      border-color: var(--cyan-neon);
+      background: rgba(10, 24, 60, 0.85);
+      box-shadow: 0 0 35px rgba(56, 189, 248, 0.2);
+    }
+
+    .popular-tag {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #38bdf8 0%, #1d4ed8 100%);
+      color: #fff;
+      padding: 4px 14px;
+      border-radius: var(--radius-full);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .package-name { font-size: 1.3rem; margin-bottom: 6px; color: #fff; }
+    .package-price {
+      font-size: 2.6rem;
+      font-family: var(--font-heading);
+      font-weight: 800;
+      color: var(--cyan-neon);
+      line-height: 1;
+      margin: 14px 0 6px 0;
+    }
+    .package-price span { font-size: 0.92rem; color: var(--text-gray); font-family: var(--font-body); font-weight: 500; }
+    .package-sub { font-size: 0.84rem; color: var(--text-gray); margin-bottom: 24px; }
+
+    .features-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 30px;
+      flex-grow: 1;
+    }
+    .features-list li {
+      font-size: 0.88rem;
+      color: var(--text-white);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .features-list li svg { flex-shrink: 0; color: var(--cyan-neon); }
+
+    /* =========================================================
+       FAQ ACCORDION SECTION
+       ========================================================= */
+    .faq-section { padding: 60px 0 90px 0; }
+
+    .faq-wrapper {
+      max-width: 860px;
+      margin: 35px auto 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-blue);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    .faq-item.active { border-color: var(--cyan-neon); background: var(--bg-card-hover); }
+
+    .faq-question {
+      padding: 18px 22px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+    }
+    .faq-icon {
+      font-size: 1.2rem;
+      color: var(--cyan-neon);
+      transition: transform 0.3s ease;
+    }
+    .faq-item.active .faq-icon { transform: rotate(45deg); }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s var(--ease-cinema);
+      padding: 0 22px;
+      color: var(--text-gray);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    .faq-item.active .faq-answer {
+      max-height: 200px;
+      padding-bottom: 20px;
     }
 
     /* About Section */
@@ -707,7 +771,6 @@
       padding: 40px;
       box-shadow: 0 20px 50px rgba(0,0,0,0.6);
     }
-
     html[dir="rtl"] .about-content { text-align: right; }
 
     .about-photo-wrapper {
@@ -719,14 +782,7 @@
       border: 1px solid var(--border-glow);
       box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(56, 189, 248, 0.2);
     }
-
-    .about-photo-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-
+    .about-photo-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
     .about-photo-wrapper:hover .about-photo-img { transform: scale(1.04); }
 
     .profile-badge {
@@ -742,24 +798,10 @@
       border: 1px solid var(--cyan-neon);
       backdrop-filter: blur(8px);
     }
-
     html[dir="rtl"] .profile-badge { left: auto; right: 14px; }
 
-    .green-dot {
-      width: 8px;
-      height: 8px;
-      background: #22c55e;
-      border-radius: 50%;
-      box-shadow: 0 0 8px #22c55e;
-    }
-
-    .profile-badge span {
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: #fff;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
+    .green-dot { width: 8px; height: 8px; background: #22c55e; border-radius: 50%; box-shadow: 0 0 8px #22c55e; }
+    .profile-badge span { font-size: 0.75rem; font-weight: 700; color: #fff; text-transform: uppercase; }
 
     .about-content h2 { font-size: 2.2rem; margin-bottom: 12px; color: #fff; }
     .about-content p { color: var(--text-gray); line-height: 1.7; margin-bottom: 16px; }
@@ -794,14 +836,12 @@
       transition: all 0.35s var(--ease-cinema);
       text-align: left;
     }
-
     html[dir="rtl"] .social-box { text-align: right; }
 
     .social-box:hover {
       transform: translateY(-4px);
       box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.8), 0 0 25px rgba(56, 189, 248, 0.25);
     }
-
     .social-box.whatsapp:hover { border-color: #22c55e; box-shadow: 0 0 25px rgba(34, 197, 94, 0.3); }
     .social-box.instagram:hover { border-color: #e1306c; box-shadow: 0 0 25px rgba(225, 48, 108, 0.3); }
     .social-box.email:hover { border-color: var(--cyan-neon); box-shadow: 0 0 25px rgba(56, 189, 248, 0.3); }
@@ -816,7 +856,6 @@
       flex-shrink: 0;
       transition: transform 0.4s ease;
     }
-
     .social-box:hover .social-icon-wrap { transform: scale(1.12) rotate(5deg); }
 
     .social-box.whatsapp .social-icon-wrap {
@@ -825,7 +864,6 @@
       color: #22c55e;
       animation: pulseGreen 2.5s infinite;
     }
-
     @keyframes pulseGreen {
       0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); }
       50% { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
@@ -843,7 +881,6 @@
       color: var(--cyan-neon);
       animation: pulseCyan 2.5s infinite;
     }
-
     @keyframes pulseCyan {
       0%, 100% { box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.4); }
       50% { box-shadow: 0 0 0 8px rgba(56, 189, 248, 0); }
@@ -851,6 +888,33 @@
 
     .social-info small { display: block; font-size: 0.75rem; color: var(--text-gray); text-transform: uppercase; }
     .social-info strong { font-size: 1.05rem; color: #fff; }
+
+    /* FLOATING STICKY WHATSAPP BUTTON */
+    .floating-wa-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 999;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      background: #22c55e;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 30px rgba(34, 197, 94, 0.45);
+      border: 2px solid rgba(255, 255, 255, 0.5);
+      animation: floatWA 3s ease-in-out infinite alternate;
+      cursor: pointer;
+    }
+    html[dir="rtl"] .floating-wa-btn { right: auto; left: 24px; }
+
+    @keyframes floatWA {
+      0% { transform: translateY(0) scale(1); }
+      100% { transform: translateY(-6px) scale(1.06); }
+    }
+    .floating-wa-btn:active { transform: scale(0.92); }
 
     /* Modal Player */
     .native-modal {
@@ -867,7 +931,6 @@
       visibility: hidden;
       transition: all 0.3s ease;
     }
-
     .native-modal.active { opacity: 1; visibility: visible; }
 
     .native-modal-content {
@@ -889,7 +952,6 @@
       background: #030714;
       border-bottom: 1px solid rgba(56, 189, 248, 0.2);
     }
-
     .modal-title { font-size: 0.9rem; font-weight: 700; color: var(--cyan-neon); }
 
     .modal-close-btn {
@@ -933,7 +995,6 @@
     @media (min-width: 769px) {
       .project-card { flex: 0 0 calc(33.333% - 15px); max-width: none; }
     }
-
     @media (max-width: 850px) {
       .about-grid { grid-template-columns: 1fr; gap: 30px; padding: 26px; }
       .about-photo-wrapper { height: 340px; }
@@ -944,6 +1005,13 @@
 <body>
 
   <div class="ambient-sphere"></div>
+
+  <!-- FLOATING STICKY WHATSAPP BUTTON -->
+  <a href="https://wa.me/201143081231?text=Hi%20JOO,%20I%20saw%20your%20portfolio%20and%20want%20to%20collaborate!" target="_blank" rel="noopener noreferrer" class="floating-wa-btn" aria-label="Chat on WhatsApp">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+    </svg>
+  </a>
 
   <!-- Navbar -->
   <header class="site-nav">
@@ -957,6 +1025,8 @@
           <li><a href="#hero" class="nav-link" data-i18n="nav_home">Home</a></li>
           <li><a href="#work" class="nav-link" data-i18n="nav_work">Work</a></li>
           <li><a href="#grading" class="nav-link" data-i18n="nav_color">Color Suite</a></li>
+          <li><a href="#pricing" class="nav-link" data-i18n="nav_pricing">Pricing</a></li>
+          <li><a href="#faq" class="nav-link" data-i18n="nav_faq">FAQ</a></li>
           <li><a href="#about" class="nav-link" data-i18n="nav_about">About</a></li>
           <li><a href="#contact" class="nav-link" data-i18n="nav_contact">Contact</a></li>
         </ul>
@@ -976,11 +1046,10 @@
   <section id="hero" class="hero">
     <div class="container">
       
-      <div class="badge-wave">
-        <div class="equalizer-bars">
-          <span></span><span></span><span></span><span></span>
-        </div>
-        <span class="badge-text" data-i18n="hero_badge">Video Editor &bull; AI Video Creator</span>
+      <!-- Urgency Pill -->
+      <div class="urgency-pill">
+        <div class="pulse-dot-green"></div>
+        <span class="urgency-text" data-i18n="urgency_badge">🟢 Available for 2 Projects This Month</span>
       </div>
 
       <h1 class="hero-title">JOO</h1>
@@ -990,7 +1059,7 @@
 
       <div class="hero-actions">
         <a href="#work" class="btn btn-primary" data-i18n="hero_btn_work">View Portfolio</a>
-        <a href="#contact" class="btn btn-secondary" data-i18n="hero_btn_contact">Contact Me</a>
+        <a href="#pricing" class="btn btn-secondary" data-i18n="hero_btn_pricing">See Packages</a>
       </div>
 
       <!-- Main Showreel Video Card -->
@@ -1024,9 +1093,7 @@
         </div>
       </div>
 
-      <!-- Carousel Track with 6 Projects -->
       <div class="projects-carousel">
-        
         <!-- Project 1 -->
         <div class="project-card">
           <div class="project-thumbnail" onclick="playVideo('project-1.mp4', 'Project 01 — AI Motion Cut')">
@@ -1034,16 +1101,12 @@
               <source src="project-1.mp4" type="video/mp4" onerror="this.src='assets/project-1.mp4'" />
             </video>
             <div class="project-tag" data-i18n="p1_tag">AI &amp; Visuals</div>
-            <div class="project-play">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-            </div>
+            <div class="project-play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
           </div>
           <div class="project-body">
             <h3 class="project-title" data-i18n="p1_title">Project 01 — AI Motion Cut</h3>
             <p class="project-desc" data-i18n="p1_desc">High-impact visual cut blending generative video concepts with dynamic sound design.</p>
-            <button class="watch-btn" onclick="playVideo('project-1.mp4', 'Project 01 — AI Motion Cut')" data-i18n="watch_film">
-              Watch Film →
-            </button>
+            <button class="watch-btn" onclick="playVideo('project-1.mp4', 'Project 01 — AI Motion Cut')" data-i18n="watch_film">Watch Film →</button>
           </div>
         </div>
 
@@ -1054,16 +1117,12 @@
               <source src="project-2.mp4" type="video/mp4" onerror="this.src='assets/project-2.mp4'" />
             </video>
             <div class="project-tag" data-i18n="p2_tag">Viral Reel</div>
-            <div class="project-play">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-            </div>
+            <div class="project-play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
           </div>
           <div class="project-body">
             <h3 class="project-title" data-i18n="p2_title">Project 02 — Retention Reel</h3>
             <p class="project-desc" data-i18n="p2_desc">Fast-paced video edit built for high retention, kinetic transitions, and audio sync.</p>
-            <button class="watch-btn" onclick="playVideo('project-2.mp4', 'Project 02 — Retention Reel')" data-i18n="watch_film">
-              Watch Film →
-            </button>
+            <button class="watch-btn" onclick="playVideo('project-2.mp4', 'Project 02 — Retention Reel')" data-i18n="watch_film">Watch Film →</button>
           </div>
         </div>
 
@@ -1074,16 +1133,12 @@
               <source src="project-3.mp4" type="video/mp4" onerror="this.src='project-1.mp4'" />
             </video>
             <div class="project-tag" data-i18n="p3_tag">Commercial Ad</div>
-            <div class="project-play">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-            </div>
+            <div class="project-play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
           </div>
           <div class="project-body">
             <h3 class="project-title" data-i18n="p3_title">Project 03 — Commercial Brand Ad</h3>
             <p class="project-desc" data-i18n="p3_desc">High-production brand commercial engineered to command respect and convert viewers.</p>
-            <button class="watch-btn" onclick="playVideo('project-3.mp4', 'Project 03 — Commercial Brand Ad')" data-i18n="watch_film">
-              Watch Film →
-            </button>
+            <button class="watch-btn" onclick="playVideo('project-3.mp4', 'Project 03 — Commercial Brand Ad')" data-i18n="watch_film">Watch Film →</button>
           </div>
         </div>
 
@@ -1094,16 +1149,12 @@
               <source src="project-4.mp4" type="video/mp4" onerror="this.src='project-2.mp4'" />
             </video>
             <div class="project-tag" data-i18n="p4_tag">Cinematic Cut</div>
-            <div class="project-play">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-            </div>
+            <div class="project-play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
           </div>
           <div class="project-body">
             <h3 class="project-title" data-i18n="p4_title">Project 04 — Cinematic Film Cut</h3>
             <p class="project-desc" data-i18n="p4_desc">Atmospheric narrative storytelling with custom color timing and spatial soundscapes.</p>
-            <button class="watch-btn" onclick="playVideo('project-4.mp4', 'Project 04 — Cinematic Film Cut')" data-i18n="watch_film">
-              Watch Film →
-            </button>
+            <button class="watch-btn" onclick="playVideo('project-4.mp4', 'Project 04 — Cinematic Film Cut')" data-i18n="watch_film">Watch Film →</button>
           </div>
         </div>
 
@@ -1114,16 +1165,12 @@
               <source src="project-5.mp4" type="video/mp4" onerror="this.src='project-1.mp4'" />
             </video>
             <div class="project-tag" data-i18n="p5_tag">Music Video</div>
-            <div class="project-play">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-            </div>
+            <div class="project-play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
           </div>
           <div class="project-body">
             <h3 class="project-title" data-i18n="p5_title">Project 05 — Music Video Edit</h3>
             <p class="project-desc" data-i18n="p5_desc">Rhythmic transient beat matching, kinetic speed ramps, and stylized transitions.</p>
-            <button class="watch-btn" onclick="playVideo('project-5.mp4', 'Project 05 — Music Video Edit')" data-i18n="watch_film">
-              Watch Film →
-            </button>
+            <button class="watch-btn" onclick="playVideo('project-5.mp4', 'Project 05 — Music Video Edit')" data-i18n="watch_film">Watch Film →</button>
           </div>
         </div>
 
@@ -1134,19 +1181,14 @@
               <source src="project-6.mp4" type="video/mp4" onerror="this.src='project-2.mp4'" />
             </video>
             <div class="project-tag" data-i18n="p6_tag">VFX &amp; Motion</div>
-            <div class="project-play">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-            </div>
+            <div class="project-play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
           </div>
           <div class="project-body">
             <h3 class="project-title" data-i18n="p6_title">Project 06 — VFX &amp; 3D Motion</h3>
             <p class="project-desc" data-i18n="p6_desc">Composited visual effects fusing neural AI interpolation with 3D camera tracking.</p>
-            <button class="watch-btn" onclick="playVideo('project-6.mp4', 'Project 06 — VFX & 3D Motion')" data-i18n="watch_film">
-              Watch Film →
-            </button>
+            <button class="watch-btn" onclick="playVideo('project-6.mp4', 'Project 06 — VFX & 3D Motion')" data-i18n="watch_film">Watch Film →</button>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -1181,6 +1223,121 @@
     </div>
   </section>
 
+  <!-- PRICING & PACKAGES (EGYPTIAN POUNDS - EGP) -->
+  <section id="pricing" class="pricing-section">
+    <div class="container">
+      <div style="text-align:center;">
+        <div class="badge-wave"><span class="badge-text" data-i18n="pricing_badge">Investment &amp; Rates</span></div>
+        <h2 style="font-size: clamp(2rem, 5vw, 2.8rem);" data-i18n="pricing_title">Transparent Packages</h2>
+        <p style="color:var(--text-gray);" data-i18n="pricing_sub">Choose the ideal workflow for your content goals. Custom quotes available.</p>
+      </div>
+
+      <div class="pricing-grid">
+        
+        <!-- Package 1 -->
+        <div class="pricing-card">
+          <h3 class="package-name" data-i18n="pkg1_name">Starter Reel</h3>
+          <div class="package-price" data-i18n="pkg1_price">750 EGP <span>/ reel</span></div>
+          <p class="package-sub" data-i18n="pkg1_sub">Ideal for single viral short-form videos &amp; TikTok hooks.</p>
+          <ul class="features-list">
+            <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="pkg1_f1">9:16 Vertical High Retention Cut</span></li>
+            <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="pkg1_f2">Dynamic Subtitles &amp; SFX Hooks</span></li>
+            <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="pkg1_f3">24-48 Hour Fast Turnaround</span></li>
+            <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="pkg1_f4">2 Revisions Included</span></li>
+          </ul>
+          <a href="https://wa.me/201143081231?text=Hi%20JOO,%20I%20want%20to%20book%20the%20Starter%20Reel%20Package%20(750%20EGP)!" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="width:100%;" data-i18n="book_wa">Book via WhatsApp</a>
+        </div>
+
+        <!-- Package 2 (Popular) -->
+        <div class="pricing-card popular">
+          <div class="popular-tag" data-i18n="popular_tag">MOST POPULAR</div>
+          <h3 class="package-name" data-i18n="pkg2_name">Creator Retainer</h3>
+          <div class="package-price" data-i18n="pkg2_price">5,500 EGP <span>/ month</span></div>
+          <p class="package-sub" data-i18n="pkg2_sub">Complete monthly content pipeline for creators &amp; personal brands.</p>
+          <ul class="features-list">
+            <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="pkg2_f1">8 High-Retention Viral Reels</span></li>
+            <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="pkg2_f2">Custom Sound Design &amp; Kinetic Text</span></li>
+            <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="pkg2_f3">Consistent Visual Identity</span></li>
+            <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="pkg2_f4">Priority WhatsApp Support</span></li>
+          </ul>
+          <a href="https://wa.me/201143081231?text=Hi%20JOO,%20I%20want%20to%20book%20the%20Creator%20Retainer%20Package%20(5,500%20EGP)!" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width:100%;" data-i18n="book_wa">Book via WhatsApp</a>
+        </div>
+
+        <!-- Package 3 -->
+        <div class="pricing-card">
+          <h3 class="package-name" data-i18n="pkg3_name">Commercial &amp; AI</h3>
+          <div class="package-price" data-i18n="pkg3_price">3,000 EGP <span>/ project</span></div>
+          <p class="package-sub" data-i18n="pkg3_sub">High-production brand promos, DTC ads &amp; AI video concepts.</p>
+          <ul class="features-list">
+            <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="pkg3_f1">Full Commercial Video &amp; Pacing</span></li>
+            <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="pkg3_f2">Runway Gen-3 AI Scene Generation</span></li>
+            <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="pkg3_f3">DaVinci Studio Film Color Grade</span></li>
+            <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="pkg3_f4">4K Master Delivery &amp; Revisions</span></li>
+          </ul>
+          <a href="https://wa.me/201143081231?text=Hi%20JOO,%20I%20want%20to%20book%20the%20Commercial%20%26%20AI%20Package%20(3,000%20EGP)!" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="width:100%;" data-i18n="book_wa">Book via WhatsApp</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ ACCORDION SECTION (WITH GOOGLE DRIVE EXPLICIT DELIVERY) -->
+  <section id="faq" class="faq-section">
+    <div class="container">
+      <div style="text-align:center;">
+        <div class="badge-wave"><span class="badge-text" data-i18n="faq_badge">Clarity</span></div>
+        <h2 style="font-size: clamp(2rem, 5vw, 2.8rem);" data-i18n="faq_title">Frequently Asked Questions</h2>
+        <p style="color:var(--text-gray);" data-i18n="faq_sub">Everything you need to know before starting your project.</p>
+      </div>
+
+      <div class="faq-wrapper">
+        <!-- Question 1 -->
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">
+            <span data-i18n="q1_title">How are files sent and delivered?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer" data-i18n="q1_ans">
+            All raw footage reception and final 4K master video delivery are handled smoothly through dedicated Google Drive folders. You simply share your Drive link, and I deliver your finished exports directly into your folder.
+          </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">
+            <span data-i18n="q2_title">How long does it take to deliver the first cut?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer" data-i18n="q2_ans">
+            For short-form reels and individual videos, the first draft is delivered within 24 to 48 hours. Larger commercial or AI-heavy projects typically take 3 to 5 business days depending on footage scope.
+          </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">
+            <span data-i18n="q3_title">Are revisions included in the price?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer" data-i18n="q3_ans">
+            Yes! Every project includes up to 2 rounds of revisions at no additional cost to guarantee that the final export matches your creative vision 100%.
+          </div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">
+            <span data-i18n="q4_title">Which editing and AI software do you use?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer" data-i18n="q4_ans">
+            I work with industry-standard professional software: Adobe Premiere Pro for editing &amp; pacing, DaVinci Resolve Studio for Hollywood-grade color, After Effects for motion graphics, and Runway Gen-3 &amp; Midjourney for generative AI visuals.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- About Section With Real Photo -->
   <section id="about" class="about-section">
     <div class="container">
@@ -1198,7 +1355,7 @@
           <h2 data-i18n="about_title">I turn complex concepts into cinematic reality.</h2>
           <p style="color:#fff; font-size:1.15rem; margin-bottom:12px;" data-i18n="about_lead">Hey, I'm <strong>JOO</strong> — Video Editor &amp; AI Video Creator.</p>
           <p data-i18n="about_desc">
-            I focus on human storytelling amplified with generative AI video models. Every frame is timed with precision, audio hits are synced to transients, and visuals are sculpted to hold attention from the first second.
+            With 1 year of production company experience, I focus on human storytelling amplified with generative AI video models. Every frame is timed with precision, audio hits are synced to transients, and visuals are sculpted to hold attention from the first second.
           </p>
           <a href="#contact" class="btn btn-primary" style="margin-top:12px;" data-i18n="about_btn">Start a Project</a>
         </div>
@@ -1237,8 +1394,21 @@
               </svg>
             </div>
             <div class="social-info">
-              <small data-i18n="ig_label">Instagram Profile</small>
-              <strong>@joeny_7</strong>
+              <small data-i18n="wa_label">WhatsApp Direct</small>
+              <strong>+20 114 308 1231</strong>
+            </div>
+          </a>
+
+          <!-- Instagram Box -->
+          <a href="https://instagram.com/joeny_7" target="_blank" rel="noopener noreferrer" class="social-box instagram">
+            <div class="social-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </div>
+            <div class="social-info">
+              <small data-i18n="wa_label">WhatsApp Direct</small>
+              <strong>+20 114 308 1231</strong>
             </div>
           </a>
 
@@ -1283,20 +1453,22 @@
 
   <script>
     /* =========================================================
-       BILINGUAL TRANSLATION DICTIONARY (6 PROJECTS + COLOR SUITE)
+       BILINGUAL TRANSLATION DICTIONARY (EGP PRICING & GOOGLE DRIVE)
        ========================================================= */
     const translations = {
       en: {
         nav_home: "Home",
         nav_work: "Work",
         nav_color: "Color Suite",
+        nav_pricing: "Pricing",
+        nav_faq: "FAQ",
         nav_about: "About",
         nav_contact: "Contact",
         btn_talk: "Let's Talk",
-        hero_badge: "Video Editor • AI Video Creator",
+        urgency_badge: "🟢 Available for 2 Projects This Month",
         hero_sub_highlight: "cinematic visual reality.",
         hero_btn_work: "View Portfolio",
-        hero_btn_contact: "Contact Me",
+        hero_btn_pricing: "See Packages",
         showreel_play: "Play Official Showreel",
         works_title: "Selected Works",
         works_sub: "Side-by-side showcase. Tap to play in full screen.",
@@ -1325,122 +1497,23 @@
         color_sub: "Drag the slider to reveal raw flat log camera footage vs final cinema grade.",
         log_before: "RAW LOG (BEFORE)",
         log_after: "DAVINCI GRADE (AFTER)",
-        status_work: "Available for Work",
-        about_badge: "Behind The Monitor",
-        about_title: "I turn complex concepts into cinematic reality.",
-        about_lead: "Hey, I'm <strong>JOO</strong> — Video Editor & AI Video Creator.",
-        about_desc: "I focus on human storytelling amplified with generative AI video models. Every frame is timed with precision, audio hits are synced to transients, and visuals are sculpted to hold attention from the first second.",
-        about_btn: "Start a Project",
-        contact_badge: "Let's Connect",
-        contact_title: "Let's Work Together",
-        contact_sub: "Ready to collaborate? Reach out directly via WhatsApp, Instagram, or Email.",
-        wa_label: "WhatsApp Direct",
-        ig_label: "Instagram Profile",
-        email_label: "Email Me",
-        footer_title: "Video Editor & AI Video Creator."
-      },
-      ar: {
-        nav_home: "الرئيسية",
-        nav_work: "الأعمال",
-        nav_color: "التلوين السينمائي",
-        nav_about: "عني",
-        nav_contact: "تواصل معي",
-        btn_talk: "ابدأ مشروعك",
-        hero_badge: "مونتير محترف • صانع فيديو بالذكاء الاصطناعي",
-        hero_sub_highlight: "واقع بصري سينمائي مبهر.",
-        hero_btn_work: "مشاهدة الأعمال",
-        hero_btn_contact: "تواصل معي",
-        showreel_play: "تشغيل الشوريل الرسمي",
-        works_title: "أعمال مختارة",
-        works_sub: "معرض أفقي متكامل. اضغط على أي مشروع للمشاهدة بملء الشاشة.",
-        swipe_hint: "اسحب للمزيد ◂ ▸",
-        p1_tag: "ذكاء اصطناعي ومؤثرات",
-        p1_title: "مشروع 01 — مونتاج ذكاء اصطناعي",
-        p1_desc: "مونتاج بصري هجين يدمج أحدث تقنيات الذكاء الاصطناعي التوليدي مع هندسة صوتية سينمائية.",
-        p2_tag: "ريلز عالي التفاعل",
-        p2_title: "مشروع 02 — ريلز احتباس المشاهدة",
-        p2_desc: "مونتاج سريع الإيقاع مصمم لرفع نسب المشاهدة مع انتقالات حركية ومزامنة دقيقة مع الصوت.",
-        p3_tag: "إعلان تجاري",
-        p3_title: "مشروع 03 — إعلان تجاري لبراند",
-        p3_desc: "إعلان تجاري بأعلى جودة بصرية مصمم لإبراز هوية البراند وجذب العملاء بدقة.",
-        p4_tag: "مونتاج سينمائي",
-        p4_title: "مشروع 04 — فيلم سينمائي قصير",
-        p4_desc: "سرد قصصي درامي بأجواء سينمائية وتدرج لوني خاص مع مؤثرات صوتية محيطية.",
-        p5_tag: "فيديو كليب",
-        p5_title: "مشروع 05 — فيديو كليب موسيقي",
-        p5_desc: "مزامنة إيقاعية دقيقة مع النغمات، تسريع وإبطاء حركي وانتقالات بصرية مبتكرة.",
-        p6_tag: "خدع بصرية وحركة",
-        p6_title: "مشروع 06 — خدع بصرية وأنيميشن 3D",
-        p6_desc: "دمج احترافي بين تقنيات الذكاء الاصطناعي وتتبع حركة الكاميرا ثلاثية الأبعاد.",
-        watch_film: "مشاهدة الفيديو ←",
-        color_badge: "استوديو دافينشي ريزولف",
-        color_title: "مقارنة التلوين السينمائي",
-        color_sub: "اسحب الشريط بصباعك لرؤية الكادر الخام الباهت من الكاميرا مقابل التلوين السينمائي النهائي.",
-        log_before: "قبل (RAW LOG)",
-        log_after: "بعد (تلوين سينمائي)",
-        status_work: "متاح لاستلام المشاريع",
-        about_badge: "خلف شاشات المونتاج",
-        about_title: "أحول المفاهيم المعقدة إلى واقع سينمائي ملموس.",
-        about_lead: "أهلاً، أنا <strong>جو (JOO)</strong> — مونتير وصانع فيديو بالذكاء الاصطناعي.",
-        about_desc: "أركز على السرد القصصي المعزز بنماذج الذكاء الاصطناعي التوليدي. كل فريم محسوب بدقة، وكل ضربة صوتية متزامنة باحترافية لتظل عين المشاهد مشدودة من أول ثانية.",
-        about_btn: "ابدأ مشروعك الآن",
-        contact_badge: "تواصل مباشر",
-        contact_title: "لنصنع شيئاً لا يُنسى معاً",
-        contact_sub: "جاهز لتنفيذ مشروعك القادم؟ تواصل معي فوراً عبر واتساب، إنستغرام، أو الإيميل.",
-        wa_label: "محادثة واتساب فورية",
-        ig_label: "حساب الإنستغرام",
-        email_label: "إرسال إيميل",
-        footer_title: "مونتير محترف وصانع فيديو بالذكاء الاصطناعي."
-      }
-    };
-
-    let currentLang = 'en';
-
-    function toggleLang() {
-      currentLang = currentLang === 'en' ? 'ar' : 'en';
-      document.documentElement.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
-      document.documentElement.setAttribute('lang', currentLang);
-
-      document.getElementById('langText').textContent = currentLang === 'ar' ? 'English' : 'العربية';
-
-      const subEl = document.getElementById('heroSub');
-      if (currentLang === 'ar') {
-        subEl.innerHTML = `أحول الأفكار الخام إلى <span style="color:var(--cyan-neon); font-style:italic;">${translations.ar.hero_sub_highlight}</span>`;
-      } else {
-        subEl.innerHTML = `I turn raw ideas into <span style="color:var(--cyan-neon); font-style:italic;">${translations.en.hero_sub_highlight}</span>`;
-      }
-
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (translations[currentLang][key]) {
-          el.innerHTML = translations[currentLang][key];
-        }
-      });
-    }
-
-    /* Video Player Logic */
-    const modal = document.getElementById("videoModal");
-    const player = document.getElementById("nativeVideoPlayer");
-    const titleEl = document.getElementById("modalVideoTitle");
-
-    function playVideo(src, title) {
-      titleEl.textContent = title;
-      player.src = src;
-      modal.classList.add("active");
-      document.body.style.overflow = "hidden";
-      player.play().catch(() => {});
-    }
-
-    function closeVideo() {
-      modal.classList.remove("active");
-      player.pause();
-      player.src = "";
-      document.body.style.overflow = "auto";
-    }
-
-    window.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeVideo();
-    });
-  </script>
-</body>
-</html>
+        pricing_badge: "Investment & Rates",
+        pricing_title: "Transparent Packages",
+        pricing_sub: "Choose the ideal workflow for your content goals. Custom quotes available.",
+        popular_tag: "MOST POPULAR",
+        pkg1_name: "Starter Reel",
+        pkg1_price: "750 EGP <span>/ reel</span>",
+        pkg1_sub: "Ideal for single viral short-form videos & TikTok hooks.",
+        pkg1_f1: "9:16 Vertical High Retention Cut",
+        pkg1_f2: "Dynamic Subtitles & SFX Hooks",
+        pkg1_f3: "24-48 Hour Fast Turnaround",
+        pkg1_f4: "2 Revisions Included",
+        pkg2_name: "Creator Retainer",
+        pkg2_price: "5,500 EGP <span>/ month</span>",
+        pkg2_sub: "Complete monthly content pipeline for creators & personal brands.",
+        pkg2_f1: "8 High-Retention Viral Reels",
+        pkg2_f2: "Custom Sound Design & Kinetic Text",
+        pkg2_f3: "Consistent Visual Identity",
+        pkg2_f4: "Priority WhatsApp Support",
+        pkg3_name: "Commercial & AI",
+        pkg3_price: "3,000 EGP <span>/ proj
