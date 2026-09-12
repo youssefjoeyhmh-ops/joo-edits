@@ -705,4 +705,1037 @@
       margin-bottom: 30px;
       flex-grow: 1;
     }
-  
+    .features-list li {
+      font-size: 0.88rem;
+      color: var(--text-white);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .features-list li svg { flex-shrink: 0; color: var(--cyan-neon); }
+
+    /* FAQ Accordion */
+    .faq-section { padding: 60px 0 90px 0; }
+
+    .faq-wrapper {
+      max-width: 860px;
+      margin: 35px auto 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-blue);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      cursor: pointer;
+      transition: border-color 0.3s ease, background 0.3s ease;
+    }
+    .faq-item.active { border-color: var(--cyan-neon); background: var(--bg-card-hover); }
+
+    .faq-question {
+      padding: 18px 22px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+    }
+    .faq-icon {
+      font-size: 1.3rem;
+      color: var(--cyan-neon);
+      transition: transform 0.3s ease;
+    }
+    .faq-item.active .faq-icon { transform: rotate(45deg); }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s var(--ease-cinema), padding 0.4s ease;
+      padding: 0 22px;
+      color: var(--text-gray);
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+    .faq-item.active .faq-answer {
+      max-height: 350px;
+      padding-bottom: 20px;
+    }
+
+    /* About Section */
+    .about-section { padding: 80px 0; }
+    
+    .about-grid {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 40px;
+      align-items: center;
+      background: var(--bg-card);
+      border: 1px solid var(--border-blue);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+    }
+    html[dir="rtl"] .about-content { text-align: right; }
+
+    .about-photo-wrapper {
+      position: relative;
+      width: 100%;
+      height: 380px;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-glow);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(56, 189, 248, 0.2);
+    }
+    .about-photo-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .about-photo-wrapper:hover .about-photo-img { transform: scale(1.04); }
+
+    .profile-badge {
+      position: absolute;
+      bottom: 14px;
+      left: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      background: rgba(0, 2, 6, 0.85);
+      border: 1px solid var(--cyan-neon);
+      backdrop-filter: blur(8px);
+    }
+    html[dir="rtl"] .profile-badge { left: auto; right: 14px; }
+
+    .green-dot { width: 8px; height: 8px; background: #22c55e; border-radius: 50%; box-shadow: 0 0 8px #22c55e; }
+    .profile-badge span { font-size: 0.75rem; font-weight: 700; color: #fff; text-transform: uppercase; }
+
+    .about-content h2 { font-size: 2.2rem; margin-bottom: 12px; color: #fff; }
+    .about-content p { color: var(--text-gray); line-height: 1.7; margin-bottom: 16px; }
+
+    /* Contact Section: Fixed Email Layout */
+    .contact-section { padding: 90px 0 110px 0; }
+    
+    .contact-card-wrap {
+      background: radial-gradient(circle at 100% 0%, rgba(56, 189, 248, 0.12) 0%, rgba(4, 9, 26, 0.95) 70%);
+      border: 1px solid var(--border-blue);
+      border-radius: var(--radius-lg);
+      padding: 40px 24px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9);
+      text-align: center;
+    }
+
+    .channels-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+      margin-top: 32px;
+    }
+
+    .social-box {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 18px 20px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-blue);
+      border-radius: var(--radius-md);
+      transition: all 0.35s var(--ease-cinema);
+      text-align: left;
+      overflow: hidden;
+    }
+    html[dir="rtl"] .social-box { text-align: right; }
+
+    .social-box:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.8), 0 0 25px rgba(56, 189, 248, 0.25);
+    }
+    .social-box.whatsapp:hover { border-color: #22c55e; box-shadow: 0 0 25px rgba(34, 197, 94, 0.3); }
+    .social-box.instagram:hover { border-color: #e1306c; box-shadow: 0 0 25px rgba(225, 48, 108, 0.3); }
+    .social-box.email:hover { border-color: var(--cyan-neon); box-shadow: 0 0 25px rgba(56, 189, 248, 0.3); }
+
+    .social-icon-wrap {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: transform 0.4s ease;
+    }
+    .social-box:hover .social-icon-wrap { transform: scale(1.12) rotate(5deg); }
+
+    .social-box.whatsapp .social-icon-wrap {
+      background: rgba(34, 197, 94, 0.12);
+      border: 1px solid rgba(34, 197, 94, 0.4);
+      color: #22c55e;
+      animation: pulseGreen 2.5s infinite;
+    }
+    @keyframes pulseGreen {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); }
+      50% { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
+    }
+
+    .social-box.instagram .social-icon-wrap {
+      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #fff;
+    }
+
+    .social-box.email .social-icon-wrap {
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid var(--border-blue);
+      color: var(--cyan-neon);
+      animation: pulseCyan 2.5s infinite;
+    }
+    @keyframes pulseCyan {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.4); }
+      50% { box-shadow: 0 0 0 8px rgba(56, 189, 248, 0); }
+    }
+
+    .social-info {
+      overflow: hidden;
+      flex: 1;
+    }
+
+    .social-info small { display: block; font-size: 0.75rem; color: var(--text-gray); text-transform: uppercase; }
+    
+    .social-info strong { 
+      font-size: 1.05rem; 
+      color: #fff; 
+      display: block;
+    }
+
+    /* Email Responsive Wrap to prevent overflow */
+    .social-box.email .social-info strong {
+      font-size: clamp(0.72rem, 3vw, 0.9rem);
+      word-break: break-all;
+      letter-spacing: 0;
+    }
+
+    /* FLOATING STICKY WHATSAPP BUTTON */
+    .floating-wa-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 999;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      background: #22c55e;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 30px rgba(34, 197, 94, 0.45);
+      border: 2px solid rgba(255, 255, 255, 0.5);
+      animation: floatWA 3s ease-in-out infinite alternate;
+      cursor: pointer;
+    }
+    html[dir="rtl"] .floating-wa-btn { right: auto; left: 24px; }
+
+    @keyframes floatWA {
+      0% { transform: translateY(0) scale(1); }
+      100% { transform: translateY(-6px) scale(1.06); }
+    }
+    .floating-wa-btn:active { transform: scale(0.92); }
+
+    /* Modal Player */
+    .native-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(0, 2, 6, 0.96);
+      backdrop-filter: blur(25px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px;
+      opacity: 0;
+      pointer-events: none;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    .native-modal.active { opacity: 1; pointer-events: auto; visibility: visible; }
+
+    .native-modal-content {
+      position: relative;
+      width: 100%;
+      max-width: 950px;
+      background: #000;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-glow);
+      box-shadow: 0 0 60px rgba(56, 189, 248, 0.35);
+    }
+
+    .modal-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 18px;
+      background: #030714;
+      border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+    }
+    .modal-title { font-size: 0.9rem; font-weight: 700; color: var(--cyan-neon); }
+
+    .modal-close-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.1rem;
+    }
+
+    .video-holder {
+      position: relative;
+      width: 100%;
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .video-holder video {
+      width: 100%;
+      max-height: 75vh;
+      display: block;
+      outline: none;
+    }
+
+    .site-footer {
+      border-top: 1px solid var(--border-blue);
+      padding: 30px 0;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-dim);
+    }
+
+    @media (min-width: 769px) {
+      .project-card { flex: 0 0 calc(33.333% - 15px); max-width: none; }
+    }
+    @media (max-width: 850px) {
+      .about-grid { grid-template-columns: 1fr; gap: 30px; padding: 26px; }
+      .about-photo-wrapper { height: 340px; }
+      .nav-desktop-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="ambient-sphere"></div>
+
+  <!-- FLOATING STICKY WHATSAPP BUTTON -->
+  <a href="https://wa.me/201143081231?text=Hi%20JOO,%20I%20saw%20your%20portfolio%20and%20want%20to%20collaborate!" target="_blank" rel="noopener noreferrer" class="floating-wa-btn" aria-label="Chat on WhatsApp">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+    </svg>
+  </a>
+
+  <!-- Navbar -->
+  <header class="site-nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="#hero" class="brand-logo">
+          <span>JOO</span><span class="brand-glow">.</span>
+        </a>
+
+        <ul class="nav-desktop-links">
+          <li><a href="#hero" class="nav-link" data-i18n="nav_home">Home</a></li>
+          <li><a href="#work" class="nav-link" data-i18n="nav_work">Work</a></li>
+          <li><a href="#grading" class="nav-link" data-i18n="nav_color">Color Suite</a></li>
+          <li><a href="#pricing" class="nav-link" data-i18n="nav_pricing">Pricing</a></li>
+          <li><a href="#faq" class="nav-link" data-i18n="nav_faq">FAQ</a></li>
+          <li><a href="#about" class="nav-link" data-i18n="nav_about">About</a></li>
+          <li><a href="#contact" class="nav-link" data-i18n="nav_contact">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="lang-toggle-btn" onclick="toggleLang()" id="langBtn" type="button">
+            <span>🌐</span>
+            <span id="langText">العربية</span>
+          </button>
+          <a href="#contact" class="btn btn-primary" style="min-height: 38px; padding: 5px 16px; font-size: 0.82rem;" data-i18n="btn_talk">Let's Talk</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="container">
+      
+      <!-- Urgency Pill -->
+      <div class="urgency-pill">
+        <div class="pulse-dot-green"></div>
+        <span class="urgency-text" data-i18n="urgency_badge">🟢 Available for 2 Projects This Month</span>
+      </div>
+
+      <h1 class="hero-title">JOO</h1>
+      <p class="hero-subtitle" id="heroSub">
+        I turn raw ideas into <span data-i18n="hero_sub_highlight">cinematic visual reality.</span>
+      </p>
+
+      <div class="hero-actions">
+        <a href="#work" class="btn btn-primary" data-i18n="hero_btn_work">View Portfolio</a>
+        <a href="#pricing" class="btn btn-secondary" data-i18n="hero_btn_pricing">See Packages</a>
+      </div>
+
+      <!-- Main Showreel Video Card (Play button is the explicit trigger, preventing scroll triggers) -->
+      <div class="showreel-card">
+        <div class="showreel-frame">
+          <video class="bg-video-loop" autoplay muted loop playsinline preload="auto">
+            <source src="showreel.mp4" type="video/mp4" onerror="this.src='assets/showreel.mp4'" />
+          </video>
+          <div class="showreel-overlay">
+            <div class="play-btn-circle" onclick="playVideo('showreel.mp4', 'Official Showreel 2026')">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+            <span class="showreel-text" onclick="playVideo('showreel.mp4', 'Official Showreel 2026')" data-i18n="showreel_play">Play Official Showreel</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Selected Works: 6 PROJECTS IN HORIZONTAL CAROUSEL -->
+  <section id="work" class="portfolio-section">
+    <div class="container">
+      <div class="section-header-flex">
+        <div>
+          <h2 data-i18n="works_title">Selected Works</h2>
+          <p style="color:var(--text-gray); font-size:0.95rem;" data-i18n="works_sub">Side-by-side showcase. Tap to play in full screen.</p>
+        </div>
+        <div class="swipe-hint">
+          <span data-i18n="swipe_hint">Swipe ◂ ▸</span>
+        </div>
+      </div>
+
+      <div class="projects-carousel">
+        <!-- Project 1 -->
+        <div class="project-card">
+          <div class="project-thumbnail">
+            <video autoplay muted loop playsinline preload="auto">
+              <source src="project-1.mp4" type="video/mp4" onerror="this.src='assets/project-1.mp4'" />
+            </video>
+            <div class="project-tag" data-i18n="p1_tag">AI &amp; Visuals</div>
+            <div class="project-play" onclick="playVideo('project-1.mp4', 'Project 01 — AI Motion Cut')"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title" data-i18n="p1_title">Project 01 — AI Motion Cut</h3>
+            <p class="project-desc" data-i18n="p1_desc">High-impact visual cut blending generative video concepts with dynamic sound design.</p>
+            <button class="watch-btn" type="button" onclick="playVideo('project-1.mp4', 'Project 01 — AI Motion Cut')" data-i18n="watch_film">Watch Film →</button>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card">
+          <div class="project-thumbnail">
+            <video autoplay muted loop playsinline preload="auto">
+              <source src="project-2.mp4" type="video/mp4" onerror="this.src='assets/project-2.mp4'" />
+            </video>
+            <div class="project-tag" data-i18n="p2_tag">Viral Reel</div>
+            <div class="project-play" onclick="playVideo('project-2.mp4', 'Project 02 — Retention Reel')"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title" data-i18n="p2_title">Project 02 — Retention Reel</h3>
+            <p class="project-desc" data-i18n="p2_desc">Fast-paced video edit built for high retention, kinetic transitions, and audio sync.</p>
+            <button class="watch-btn" type="button" onclick="playVideo('project-2.mp4', 'Project 02 — Retention Reel')" data-i18n="watch_film">Watch Film →</button>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card">
+          <div class="project-thumbnail">
+            <video autoplay muted loop playsinline preload="auto">
+              <source src="project-3.mp4" type="video/mp4" onerror="this.src='project-1.mp4'" />
+            </video>
+            <div class="project-tag" data-i18n="p3_tag">Commercial Ad</div>
+            <div class="project-play" onclick="playVideo('project-3.mp4', 'Project 03 — Commercial Brand Ad')"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title" data-i18n="p3_title">Project 03 — Commercial Brand Ad</h3>
+            <p class="project-desc" data-i18n="p3_desc">High-production brand commercial engineered to command respect and convert viewers.</p>
+            <button class="watch-btn" type="button" onclick="playVideo('project-3.mp4', 'Project 03 — Commercial Brand Ad')" data-i18n="watch_film">Watch Film →</button>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card">
+          <div class="project-thumbnail">
+            <video autoplay muted loop playsinline preload="auto">
+              <source src="project-4.mp4" type="video/mp4" onerror="this.src='project-2.mp4'" />
+            </video>
+            <div class="project-tag" data-i18n="p4_tag">Cinematic Cut</div>
+            <div class="project-play" onclick="playVideo('project-4.mp4', 'Project 04 — Cinematic Film Cut')"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title" data-i18n="p4_title">Project 04 — Cinematic Film Cut</h3>
+            <p class="project-desc" data-i18n="p4_desc">Atmospheric narrative storytelling with custom color timing and spatial soundscapes.</p>
+            <button class="watch-btn" type="button" onclick="playVideo('project-4.mp4', 'Project 04 — Cinematic Film Cut')" data-i18n="watch_film">Watch Film →</button>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="project-card">
+          <div class="project-thumbnail">
+            <video autoplay muted loop playsinline preload="auto">
+              <source src="project-5.mp4" type="video/mp4" onerror="this.src='project-1.mp4'" />
+            </video>
+            <div class="project-tag" data-i18n="p5_tag">Music Video</div>
+            <div class="project-play" onclick="playVideo('project-5.mp4', 'Project 05 — Music Video Edit')"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title" data-i18n="p5_title">Project 05 — Music Video Edit</h3>
+            <p class="project-desc" data-i18n="p5_desc">Rhythmic transient beat matching, kinetic speed ramps, and stylized transitions.</p>
+            <button class="watch-btn" type="button" onclick="playVideo('project-5.mp4', 'Project 05 — Music Video Edit')" data-i18n="watch_film">Watch Film →</button>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="project-card">
+          <div class="project-thumbnail">
+            <video autoplay muted loop playsinline preload="auto">
+              <source src="project-6.mp4" type="video/mp4" onerror="this.src='project-2.mp4'" />
+            </video>
+            <div class="project-tag" data-i18n="p6_tag">VFX &amp; Motion</div>
+            <div class="project-play" onclick="playVideo('project-6.mp4', 'Project 06 — VFX & 3D Motion')"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title" data-i18n="p6_title">Project 06 — VFX &amp; 3D Motion</h3>
+            <p class="project-desc" data-i18n="p6_desc">Composited visual effects fusing neural AI interpolation with 3D camera tracking.</p>
+            <button class="watch-btn" type="button" onclick="playVideo('project-6.mp4', 'Project 06 — VFX & 3D Motion')" data-i18n="watch_film">Watch Film →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE COLOR GRADING SUITE (ENLARGED & DETAILED) -->
+  <section id="grading" class="color-suite-section">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 35px;">
+        <div class="badge-wave"><span class="badge-text" data-i18n="color_badge">DaVinci Resolve Studio</span></div>
+        <h2 style="font-size: clamp(2rem, 5vw, 2.8rem);" data-i18n="color_title">Color Grading Breakdown</h2>
+        <p style="color:var(--text-gray);" data-i18n="color_sub">Drag the slider to reveal raw flat log camera footage vs final cinema grade.</p>
+      </div>
+
+      <div class="grading-wrapper">
+        <div class="compare-container" id="compareBox" style="--slider-pos: 50%;">
+          <!-- Graded Image (Loads after.jpg with centered face position) -->
+          <img class="compare-img" src="after.jpg" onerror="if(!this.src.includes('assets/'))this.src='assets/after.jpg';" alt="Graded Cinema Look" />
+          
+          <!-- Raw Log Image (Loads before.jpg with centered face position) -->
+          <div class="compare-before-layer">
+            <img class="compare-before-img" src="before.jpg" onerror="if(!this.src.includes('assets/'))this.src='assets/before.jpg';" alt="Raw Log Look" />
+          </div>
+
+          <div class="compare-divider">
+            <div class="compare-handle"><span>◂ ▸</span></div>
+          </div>
+          <div class="compare-badge badge-before" data-i18n="log_before">RAW LOG (BEFORE)</div>
+          <div class="compare-badge badge-after" data-i18n="log_after">DAVINCI GRADE (AFTER)</div>
+          <input type="range" min="0" max="100" value="50" class="compare-range" aria-label="Comparison Slider" oninput="document.getElementById('compareBox').style.setProperty('--slider-pos', this.value + '%')" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING & PACKAGES (EGYPTIAN POUNDS - EGP) -->
+  <section id="pricing" class="pricing-section">
+    <div class="container">
+      <div style="text-align:center;">
+        <div class="badge-wave"><span class="badge-text" data-i18n="pricing_badge">Investment &amp; Rates</span></div>
+        <h2 style="font-size: clamp(2rem, 5vw, 2.8rem);" data-i18n="pricing_title">Transparent Packages</h2>
+        <p style="color:var(--text-gray);" data-i18n="pricing_sub">Choose the ideal workflow for your content goals. Custom quotes available.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <!-- Package 1 -->
+        <div class="pricing-card">
+          <h3 class="package-name" data-i18n="pkg1_name">Starter Reel</h3>
+          <div class="package-price" data-i18n="pkg1_price">750 EGP <span>/ reel</span></div>
+          <p class="package-sub" data-i18n="pkg1_sub">Ideal for single viral short-form videos &amp; TikTok hooks.</p>
+          <ul class="features-list">
+            <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="pkg1_f1">9:16 Vertical High Retention Cut</span></li>
+            <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="pkg1_f2">Dynamic Subtitles &amp; SFX Hooks</span></li>
+            <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="pkg1_f3">24-48 Hour Fast Turnaround</span></li>
+            <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="pkg1_f4">2 Revisions Included</span></li>
+          </ul>
+          <a href="https://wa.me/201143081231?text=Hi%20JOO,%20I%20want%20to%20book%20the%20Starter%20Reel%20Package%20(750%20EGP)!" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="width:100%;" data-i18n="book_wa">Book via WhatsApp</a>
+        </div>
+
+        <!-- Package 2 (Popular) -->
+        <div class="pricing-card popular">
+          <div class="popular-tag" data-i18n="popular_tag">MOST POPULAR</div>
+          <h3 class="package-name" data-i18n="pkg2_name">Creator Retainer</h3>
+          <div class="package-price" data-i18n="pkg2_price">5,500 EGP <span>/ month</span></div>
+          <p class="package-sub" data-i18n="pkg2_sub">Complete monthly content pipeline for creators &amp; personal brands.</p>
+          <ul class="features-list">
+            <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="pkg2_f1">8 High-Retention Viral Reels</span></li>
+            <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="pkg2_f2">Custom Sound Design &amp; Kinetic Text</span></li>
+            <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="pkg2_f3">Consistent Visual Identity</span></li>
+            <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="pkg2_f4">Priority WhatsApp Support</span></li>
+          </ul>
+          <a href="https://wa.me/201143081231?text=Hi%20JOO,%20I%20want%20to%20book%20the%20Creator%20Retainer%20Package%20(5,500%20EGP)!" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="width:100%;" data-i18n="book_wa">Book via WhatsApp</a>
+        </div>
+
+        <!-- Package 3 -->
+        <div class="pricing-card">
+          <h3 class="package-name" data-i18n="pkg3_name">Commercial &amp; AI</h3>
+          <div class="package-price" data-i18n="pkg3_price">3,000 EGP <span>/ project</span></div>
+          <p class="package-sub" data-i18n="pkg3_sub">High-production brand promos, DTC ads &amp; AI video concepts.</p>
+          <ul class="features-list">
+            <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="pkg3_f1">Full Commercial Video &amp; Pacing</span></li>
+            <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="pkg3_f2">Runway Gen-3 AI Scene Generation</span></li>
+            <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="pkg3_f3">DaVinci Studio Film Color Grade</span></li>
+            <li><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg><span data-i18n="pkg3_f4">4K Master Delivery &amp; Revisions</span></li>
+          </ul>
+          <a href="https://wa.me/201143081231?text=Hi%20JOO,%20I%20want%20to%20book%20the%20Commercial%20%26%20AI%20Package%20(3,000%20EGP)!" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="width:100%;" data-i18n="book_wa">Book via WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ ACCORDION SECTION -->
+  <section id="faq" class="faq-section">
+    <div class="container">
+      <div style="text-align:center;">
+        <div class="badge-wave"><span class="badge-text" data-i18n="faq_badge">Clarity</span></div>
+        <h2 style="font-size: clamp(2rem, 5vw, 2.8rem);" data-i18n="faq_title">Frequently Asked Questions</h2>
+        <p style="color:var(--text-gray);" data-i18n="faq_sub">Everything you need to know before starting your project.</p>
+      </div>
+
+      <div class="faq-wrapper">
+        <!-- Question 1 -->
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">
+            <span data-i18n="q1_title">How are files sent and delivered?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p data-i18n="q1_ans">All raw footage reception and final 4K master video delivery are handled smoothly through dedicated Google Drive folders. You simply share your Drive link, and I deliver your finished exports directly into your folder.</p>
+          </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">
+            <span data-i18n="q2_title">How long does it take to deliver the first cut?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p data-i18n="q2_ans">For short-form reels and individual videos, the first draft is delivered within 24 to 48 hours. Larger commercial or AI-heavy projects typically take 3 to 5 business days depending on footage scope.</p>
+          </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">
+            <span data-i18n="q3_title">Are revisions included in the price?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p data-i18n="q3_ans">Yes! Every project includes up to 2 rounds of revisions at no additional cost to guarantee that the final export matches your creative vision 100%.</p>
+          </div>
+        </div>
+
+        <!-- Question 4 -->
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">
+            <span data-i18n="q4_title">Which editing and AI software do you use?</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p data-i18n="q4_ans">I work with industry-standard professional software: Adobe Premiere Pro for editing &amp; pacing, DaVinci Resolve Studio for Hollywood-grade color, After Effects for motion graphics, and Runway Gen-3 &amp; Midjourney for generative AI visuals.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section With Real Photo & Updated 3 Years Experience -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-photo-wrapper">
+          <img class="about-photo-img" src="profile.jpg" alt="JOO — Video Editor" onerror="if(!this.src.includes('assets/'))this.src='assets/profile.jpg';" />
+          <div class="profile-badge">
+            <div class="green-dot"></div>
+            <span data-i18n="status_work">Available for Work</span>
+          </div>
+        </div>
+
+        <div class="about-content">
+          <div class="badge-wave"><span class="badge-text" data-i18n="about_badge">Behind The Monitor</span></div>
+          <h2 data-i18n="about_title">I turn complex concepts into cinematic reality.</h2>
+          <p style="color:#fff; font-size:1.15rem; margin-bottom:12px;" data-i18n="about_lead">Hey, I'm <strong>JOO</strong> — Video Editor &amp; AI Video Creator.</p>
+          <p data-i18n="about_desc">
+            With 3 years of production company and agency experience, I focus on human storytelling amplified with generative AI video models. Every frame is timed with precision, audio hits are synced to transients, and visuals are sculpted to hold attention from the first second.
+          </p>
+          <a href="#contact" class="btn btn-primary" style="margin-top:12px;" data-i18n="about_btn">Start a Project</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section (Fixed Email Wrap, Strictly 3 Channels) -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div class="contact-card-wrap">
+        <div class="badge-wave"><span class="badge-text" data-i18n="contact_badge">Let's Connect</span></div>
+        <h2 data-i18n="contact_title">Let's Work Together</h2>
+        <p style="color:var(--text-gray); margin-top:10px;" data-i18n="contact_sub">Ready to collaborate? Reach out directly via WhatsApp, Instagram, or Email.</p>
+
+        <div class="channels-grid">
+          
+          <!-- 1. WhatsApp Card -->
+          <a href="https://wa.me/201143081231?text=Hi%20JOO,%20I%20saw%20your%20portfolio%20and%20want%20to%20collaborate!" target="_blank" rel="noopener noreferrer" class="social-box whatsapp">
+            <div class="social-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+              </svg>
+            </div>
+            <div class="social-info">
+              <small data-i18n="wa_label">WhatsApp Direct</small>
+              <strong>+20 114 308 1231</strong>
+            </div>
+          </a>
+
+          <!-- 2. Instagram Card -->
+          <a href="https://instagram.com/joeny_7" target="_blank" rel="noopener noreferrer" class="social-box instagram">
+            <div class="social-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </div>
+            <div class="social-info">
+              <small data-i18n="ig_label">Instagram Profile</small>
+              <strong>@joeny_7</strong>
+            </div>
+          </a>
+
+          <!-- 3. Email Card with Responsive Font -->
+          <a href="mailto:youssefjoeyhmhh@gmail.com?subject=Project%20Inquiry%20for%20JOO" class="social-box email">
+            <div class="social-icon-wrap">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </div>
+            <div class="social-info">
+              <small data-i18n="email_label">Email Me</small>
+              <strong>youssefjoeyhmhh@gmail.com</strong>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      &copy; 2026 <strong>JOO</strong> — <span data-i18n="footer_title">Video Editor &amp; AI Video Creator.</span>
+    </div>
+  </footer>
+
+  <!-- Native Fullscreen Modal -->
+  <div class="native-modal" id="videoModal" onclick="closeModalOnBackdrop(event)">
+    <div class="native-modal-content">
+      <div class="modal-bar">
+        <span class="modal-title" id="modalVideoTitle">Project Playback</span>
+        <button class="modal-close-btn" onclick="closeVideo()" type="button">✕</button>
+      </div>
+      <div class="video-holder">
+        <video id="nativeVideoPlayer" controls playsinline preload="auto"></video>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* =========================================================
+       BILINGUAL TRANSLATION DICTIONARY (WITH 3 YEARS EXP)
+       ========================================================= */
+    const translations = {
+      en: {
+        nav_home: "Home",
+        nav_work: "Work",
+        nav_color: "Color Suite",
+        nav_pricing: "Pricing",
+        nav_faq: "FAQ",
+        nav_about: "About",
+        nav_contact: "Contact",
+        btn_talk: "Let's Talk",
+        urgency_badge: "🟢 Available for 2 Projects This Month",
+        hero_sub_highlight: "cinematic visual reality.",
+        hero_btn_work: "View Portfolio",
+        hero_btn_pricing: "See Packages",
+        showreel_play: "Play Official Showreel",
+        works_title: "Selected Works",
+        works_sub: "Side-by-side showcase. Tap to play in full screen.",
+        swipe_hint: "Swipe ◂ ▸",
+        p1_tag: "AI & Visuals",
+        p1_title: "Project 01 — AI Motion Cut",
+        p1_desc: "High-impact visual cut blending generative video concepts with dynamic sound design.",
+        p2_tag: "Viral Reel",
+        p2_title: "Project 02 — Retention Reel",
+        p2_desc: "Fast-paced video edit built for high retention, kinetic transitions, and audio sync.",
+        p3_tag: "Commercial Ad",
+        p3_title: "Project 03 — Commercial Brand Ad",
+        p3_desc: "High-production brand commercial engineered to command respect and convert viewers.",
+        p4_tag: "Cinematic Cut",
+        p4_title: "Project 04 — Cinematic Film Cut",
+        p4_desc: "Atmospheric narrative storytelling with custom color timing and spatial soundscapes.",
+        p5_tag: "Music Video",
+        p5_title: "Project 05 — Music Video Edit",
+        p5_desc: "Rhythmic transient beat matching, kinetic speed ramps, and stylized transitions.",
+        p6_tag: "VFX & Motion",
+        p6_title: "Project 06 — VFX & 3D Motion",
+        p6_desc: "Composited visual effects fusing neural AI interpolation with 3D camera tracking.",
+        watch_film: "Watch Film →",
+        color_badge: "DaVinci Resolve Studio",
+        color_title: "Color Grading Breakdown",
+        color_sub: "Drag the slider to reveal raw flat log camera footage vs final cinema grade.",
+        log_before: "RAW LOG (BEFORE)",
+        log_after: "DAVINCI GRADE (AFTER)",
+        pricing_badge: "Investment & Rates",
+        pricing_title: "Transparent Packages",
+        pricing_sub: "Choose the ideal workflow for your content goals. Custom quotes available.",
+        popular_tag: "MOST POPULAR",
+        pkg1_name: "Starter Reel",
+        pkg1_price: "750 EGP <span>/ reel</span>",
+        pkg1_sub: "Ideal for single viral short-form videos & TikTok hooks.",
+        pkg1_f1: "9:16 Vertical High Retention Cut",
+        pkg1_f2: "Dynamic Subtitles & SFX Hooks",
+        pkg1_f3: "24-48 Hour Fast Turnaround",
+        pkg1_f4: "2 Revisions Included",
+        pkg2_name: "Creator Retainer",
+        pkg2_price: "5,500 EGP <span>/ month</span>",
+        pkg2_sub: "Complete monthly content pipeline for creators & personal brands.",
+        pkg2_f1: "8 High-Retention Viral Reels",
+        pkg2_f2: "Custom Sound Design & Kinetic Text",
+        pkg2_f3: "Consistent Visual Identity",
+        pkg2_f4: "Priority WhatsApp Support",
+        pkg3_name: "Commercial & AI",
+        pkg3_price: "3,000 EGP <span>/ project</span>",
+        pkg3_sub: "High-production brand promos, DTC ads & AI video concepts.",
+        pkg3_f1: "Full Commercial Video & Pacing",
+        pkg3_f2: "Runway Gen-3 AI Scene Generation",
+        pkg3_f3: "DaVinci Studio Film Color Grade",
+        pkg3_f4: "4K Master Delivery & Revisions",
+        book_wa: "Book via WhatsApp",
+        faq_badge: "Clarity",
+        faq_title: "Frequently Asked Questions",
+        faq_sub: "Everything you need to know before starting your project.",
+        q1_title: "How are files sent and delivered?",
+        q1_ans: "All raw footage reception and final 4K master video delivery are handled smoothly through dedicated Google Drive folders. You simply share your Drive link, and I deliver your finished exports directly into your folder.",
+        q2_title: "How long does it take to deliver the first cut?",
+        q2_ans: "For short-form reels and individual videos, the first draft is delivered within 24 to 48 hours. Larger commercial or AI-heavy projects typically take 3 to 5 business days depending on footage scope.",
+        q3_title: "Are revisions included in the price?",
+        q3_ans: "Yes! Every project includes up to 2 rounds of revisions at no additional cost to guarantee that the final export matches your creative vision 100%.",
+        q4_title: "Which editing and AI software do you use?",
+        q4_ans: "I work with industry-standard professional software: Adobe Premiere Pro for editing & pacing, DaVinci Resolve Studio for Hollywood-grade color, After Effects for motion graphics, and Runway Gen-3 & Midjourney for generative AI visuals.",
+        status_work: "Available for Work",
+        about_badge: "Behind The Monitor",
+        about_title: "I turn complex concepts into cinematic reality.",
+        about_lead: "Hey, I'm <strong>JOO</strong> — Video Editor & AI Video Creator.",
+        about_desc: "With 3 years of production company and agency experience, I focus on human storytelling amplified with generative AI video models. Every frame is timed with precision, audio hits are synced to transients, and visuals are sculpted to hold attention from the first second.",
+        about_btn: "Start a Project",
+        contact_badge: "Let's Connect",
+        contact_title: "Let's Work Together",
+        contact_sub: "Ready to collaborate? Reach out directly via WhatsApp, Instagram, or Email.",
+        wa_label: "WhatsApp Direct",
+        ig_label: "Instagram Profile",
+        email_label: "Email Me",
+        footer_title: "Video Editor & AI Video Creator."
+      },
+      ar: {
+        nav_home: "الرئيسية",
+        nav_work: "الأعمال",
+        nav_color: "التلوين السينمائي",
+        nav_pricing: "الأسعار",
+        nav_faq: "الأسئلة الشائعة",
+        nav_about: "عني",
+        nav_contact: "تواصل معي",
+        btn_talk: "ابدأ مشروعك",
+        urgency_badge: "🟢 متاح لمشروعين فقط هذا الشهر",
+        hero_sub_highlight: "واقع بصري سينمائي مبهر.",
+        hero_btn_work: "مشاهدة الأعمال",
+        hero_btn_pricing: "باقات الأسعار",
+        showreel_play: "تشغيل الشوريل الرسمي",
+        works_title: "أعمال مختارة",
+        works_sub: "معرض أفقي متكامل. اضغط على أي مشروع للمشاهدة بملء الشاشة.",
+        swipe_hint: "اسحب للمزيد ◂ ▸",
+        p1_tag: "ذكاء اصطناعي ومؤثرات",
+        p1_title: "مشروع 01 — مونتاج ذكاء اصطناعي",
+        p1_desc: "مونتاج بصري هجين يدمج أحدث تقنيات الذكاء الاصطناعي التوليدي مع هندسة صوتية سينمائية.",
+        p2_tag: "ريلز عالي التفاعل",
+        p2_title: "مشروع 02 — ريلز احتباس المشاهدة",
+        p2_desc: "مونتاج سريع الإيقاع مصمم لرفع نسب المشاهدة مع انتقالات حركية ومزامنة دقيقة مع الصوت.",
+        p3_tag: "إعلان تجاري",
+        p3_title: "مشروع 03 — إعلان تجاري لبراند",
+        p3_desc: "إعلان تجاري بأعلى جودة بصرية مصمم لإبراز هوية البراند وجذب العملاء بدقة.",
+        p4_tag: "مونتاج سينمائي",
+        p4_title: "مشروع 04 — فيلم سينمائي قصير",
+        p4_desc: "سرد قصصي درامي بأجواء سينمائية وتدرج لوني خاص مع مؤثرات صوتية محيطية.",
+        p5_tag: "فيديو كليب",
+        p5_title: "مشروع 05 — فيديو كليب موسيقي",
+        p5_desc: "مزامنة إيقاعية دقيقة مع النغمات، تسريع وإبطاء حركي وانتقالات بصرية مبتكرة.",
+        p6_tag: "خدع بصرية وحركة",
+        p6_title: "مشروع 06 — خدع بصرية وأنيميشن 3D",
+        p6_desc: "دمج احترافي بين تقنيات الذكاء الاصطناعي وتتبع حركة الكاميرا ثلاثية الأبعاد.",
+        watch_film: "مشاهدة الفيديو ←",
+        color_badge: "استوديو دافينشي ريزولف",
+        color_title: "مقارنة التلوين السينمائي",
+        color_sub: "اسحب الشريط بصباعك لرؤية الكادر الخام الباهت من الكاميرا مقابل التلوين السينمائي النهائي.",
+        log_before: "قبل (RAW LOG)",
+        log_after: "بعد (تلوين سينمائي)",
+        pricing_badge: "الاستثمار والباقات",
+        pricing_title: "باقات واضحة وبدون تعقيد",
+        pricing_sub: "اختر الباقة المناسبة لأهداف محتواك. متاح أيضاً طلب تسعير مخصص لمشروعك.",
+        popular_tag: "الأكثر طلباً",
+        pkg1_name: "ريلز فردي",
+        pkg1_price: "750 جنيه <span>/ ريلز</span>",
+        pkg1_sub: "مثالية للمحتوى السريع، الشورتس، وريلز إنستغرام وتيك توك.",
+        pkg1_f1: "مونتاج عمودي 9:16 عالي الاحتباس",
+        pkg1_f2: "نصوص متحركة ومؤثرات صوتية جذابة",
+        pkg1_f3: "تسليم سريع خلال 24 إلى 48 ساعة",
+        pkg1_f4: "جولتين تعديل مجاناً",
+        pkg2_name: "باقة المحتوى الشهرية",
+        pkg2_price: "5,500 جنيه <span>/ شهرياً</span>",
+        pkg2_sub: "خط إنتاج شهري متكامل لصناع المحتوى والبراندات الشخصية.",
+        pkg2_f1: "8 فيديوهات ريلز عالية المشاهدة شهرياً",
+        pkg2_f2: "هندسة صوت ونصوص حركية مخصصة",
+        pkg2_f3: "هوية بصرية ثابتة تميز براندك",
+        pkg2_f4: "دعم وأولوية تواصل مباشرة على واتساب",
+        pkg3_name: "إعلانات وذكاء اصطناعي",
+        pkg3_price: "3,000 جنيه <span>/ للمشروع</span>",
+        pkg3_sub: "إعلانات تجارية سينمائية، بروموهات براندات ولقطات AI.",
+        pkg3_f1: "مونتاج إعلاني سينمائي متكامل الإيقاع",
+        pkg3_f2: "توليد مشاهد متقدمة عبر Runway Gen-3",
+        pkg3_f3: "تلوين سينمائي باستوديو DaVinci Resolve",
+        pkg3_f4: "تسليم ماستر 4K مع جولات تعديل",
+        book_wa: "احجز الباقة عبر واتساب",
+        faq_badge: "وضوح تام",
+        faq_title: "الأسئلة الشائعة",
+        faq_sub: "كل ما يهمك معرفته قبل بدء العمل معاً.",
+        q1_title: "كيف يتم إرسال واستلام الملفات؟",
+        q1_ans: "استلام الماتريال الخام وتسليم الفيديوهات النهائية بجودة 4K يتم بالكامل عبر روابط Google Drive مخصصة لكل عميل لضمان أعلى جودة وبدون أي ضغط أو فقدان للبيانات.",
+        q2_title: "كم يستغرق تسليم أول مسودة عمل؟",
+        q2_ans: "بالنسبة لفيديوهات الريلز الفردية، يتم تسليم أول مسودة خلال 24 إلى 48 ساعة. أما الإعلانات الكبيرة والمشاريع المعتمدة على الذكاء الاصطناعي فتستغرق من 3 إلى 5 أيام عمل بحسب حجم الماتريال.",
+        q3_title: "هل التعديلات مشمولة في سعر الباقة؟",
+        q3_ans: "نعم بالتأكيد! كل مشروع يتضمن حتى جولتين من التعديلات بدون أي تكلفة إضافية لضمان أن النتيجة النهائية تطابق رؤيتك الفنية بنسبة 100%.",
+        q4_title: "ما هي البرامج والذكاء الاصطناعي التي تعمل بها؟",
+        q4_ans: "أعمل بأحدث البرامج المعتمدة في هوليوود: Adobe Premiere Pro للمونتاج والإيقاع، DaVinci Resolve Studio للتلوين السينمائي، After Effects للمؤثرات البصرية، ونماذج Runway Gen-3 و Midjourney للذكاء الاصطناعي.",
+        status_work: "متاح لاستلام المشاريع",
+        about_badge: "خلف شاشات المونتاج",
+        about_title: "أحول المفاهيم المعقدة إلى واقع سينمائي ملموس.",
+        about_lead: "أهلاً، أنا <strong>جو (JOO)</strong> — مونتير وصانع فيديو بالذكاء الاصطناعي.",
+        about_desc: "بخبرة 3 سنوات في شركات الإنتاج وصناعة المحتوى، أركز على السرد القصصي المعزز بنماذج الذكاء الاصطناعي التوليدي. كل فريم محسوب بدقة، وكل ضربة صوتية متزامنة باحترافية لتظل عين المشاهد مشدودة من أول ثانية.",
+        about_btn: "ابدأ مشروعك الآن",
+        contact_badge: "تواصل مباشر",
+        contact_title: "لنصنع شيئاً لا يُنسى معاً",
+        contact_sub: "جاهز لتنفيذ مشروعك القادم؟ تواصل معي فوراً عبر واتساب، إنستغرام، أو الإيميل.",
+        wa_label: "محادثة واتساب فورية",
+        ig_label: "حساب الإنستغرام",
+        email_label: "إرسال إيميل",
+        footer_title: "مونتير محترف وصانع فيديو بالذكاء الاصطناعي."
+      }
+    };
+
+    let currentLang = 'en';
+
+    function toggleLang() {
+      try {
+        currentLang = (currentLang === 'en') ? 'ar' : 'en';
+        document.documentElement.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
+        document.documentElement.setAttribute('lang', currentLang);
+
+        const langText = document.getElementById('langText');
+        if (langText) langText.textContent = (currentLang === 'ar') ? 'English' : 'العربية';
+
+        const subEl = document.getElementById('heroSub');
+        if (subEl) {
+          if (currentLang === 'ar') {
+            subEl.innerHTML = `أحول الأفكار الخام إلى <span style="color:var(--cyan-neon); font-style:italic;">${translations.ar.hero_sub_highlight}</span>`;
+          } else {
+            subEl.innerHTML = `I turn raw ideas into <span style="color:var(--cyan-neon); font-style:italic;">${translations.en.hero_sub_highlight}</span>`;
+          }
+        }
+
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          if (translations[currentLang] && translations[currentLang][key]) {
+            el.innerHTML = translations[currentLang][key];
+          }
+        });
+      } catch (err) {
+        console.error('Language toggle error:', err);
+      }
+    }
+
+    /* FAQ Accordion Toggle */
+    function toggleFaq(card) {
+      const wasActive = card.classList.contains('active');
+      document.querySelectorAll('.faq-item').forEach(item => item.classList.remove('active'));
+      if (!wasActive) {
+        card.classList.add('active');
+      }
+    }
+
+    /* Video Player Logic */
+    const modal = document.getElementById("videoModal");
+    const player = document.getElementById("nativeVideoPlayer");
+    const titleEl = document.getElementById("modalVideoTitle");
+
+    function playVideo(src, title) {
+      if (!modal || !player) return;
+      if (titleEl) titleEl.textContent = title;
+      
+      player.src = src;
+      player.load();
+      modal.classList.add("active");
+      document.body.style.overflow = "hidden";
+      player.play().catch(() => {});
+
+      player.onerror = function() {
+        if (!player.src.includes("assets/")) {
+          player.src = "assets/" + src;
+          player.load();
+          player.play().catch(() => {});
+        }
+      };
+    }
+
+    function closeVideo() {
+      if (!modal || !player) return;
+      modal.classList.remove("active");
+      player.pause();
+      player.src = "";
+      document.body.style.overflow = "auto";
+    }
+
+    function closeModalOnBackdrop(e) {
+      if (e.target === modal) {
+        closeVideo();
+      }
+    }
+
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeVideo();
+    });
+  </script>
+</body>
+</html>
