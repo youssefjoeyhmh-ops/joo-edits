@@ -6,7 +6,7 @@
   <title>JOO — Video Editor &amp; AI Video Creator</title>
   <meta name="description" content="Portfolio of JOO — Professional Video Editor and AI Video Creator crafting cinematic visuals and high-retention edits." />
 
-  <!-- Glowing Cyan "J" Favicon for Browser Tab -->
+  <!-- Glowing Cyan "J" Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='25' fill='%2302040a'/><text x='50%25' y='72%25' font-size='65' font-family='sans-serif' font-weight='900' fill='%2338bdf8' text-anchor='middle'>J</text></svg>" />
 
   <!-- Open Graph Meta Tags (WhatsApp & Social Preview) -->
@@ -25,14 +25,14 @@
     :root {
       --bg-black: #000206;
       --bg-navy: #04091a;
-      --bg-card: rgba(6, 15, 38, 0.75);
+      --bg-card: rgba(6, 15, 38, 0.78);
       --bg-card-hover: rgba(10, 24, 60, 0.95);
       
       --cyan-neon: #38bdf8;
       --cyan-bright: #00f0ff;
       --blue-electric: #2563eb;
       --border-blue: rgba(56, 189, 248, 0.18);
-      --border-glow: rgba(56, 189, 248, 0.6);
+      --border-glow: rgba(56, 189, 248, 0.65);
 
       --text-white: #ffffff;
       --text-gray: #94a3b8;
@@ -180,13 +180,12 @@
       align-items: center;
       gap: 6px;
     }
-
     .brand-glow { color: var(--cyan-neon); text-shadow: 0 0 15px rgba(56, 189, 248, 0.7); }
 
     .nav-desktop-links {
       display: flex;
       align-items: center;
-      gap: 26px;
+      gap: 24px;
       list-style: none;
     }
 
@@ -201,14 +200,14 @@
     .nav-actions {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
     }
 
     .lang-toggle-btn {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 7px 15px;
+      padding: 7px 14px;
       border-radius: var(--radius-full);
       background: rgba(56, 189, 248, 0.1);
       border: 1px solid var(--border-blue);
@@ -218,9 +217,52 @@
       cursor: pointer;
       transition: all 0.3s ease;
     }
-    .lang-toggle-btn:hover {
-      background: rgba(56, 189, 248, 0.22);
-      transform: scale(1.05);
+    .lang-toggle-btn:hover { background: rgba(56, 189, 248, 0.22); transform: scale(1.05); }
+
+    .hamburger-btn {
+      display: none;
+      width: 42px;
+      height: 42px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-blue);
+      border-radius: 50%;
+      color: #fff;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mobile-drawer {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 2, 6, 0.98);
+      backdrop-filter: blur(25px);
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+    .mobile-drawer.open { opacity: 1; visibility: visible; }
+    .drawer-link { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 800; color: #fff; }
+    .drawer-close {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--border-blue);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
     }
 
     /* Urgency Badge */
@@ -233,12 +275,6 @@
       background: rgba(34, 197, 94, 0.1);
       border: 1px solid rgba(34, 197, 94, 0.35);
       margin-bottom: 18px;
-      animation: floatUrgent 3.5s ease-in-out infinite alternate;
-    }
-
-    @keyframes floatUrgent {
-      0% { transform: translateY(0); }
-      100% { transform: translateY(-3px); }
     }
 
     .pulse-dot-green {
@@ -249,18 +285,12 @@
       box-shadow: 0 0 10px #22c55e;
       animation: blinkDot 1.5s infinite;
     }
-
     @keyframes blinkDot {
       0%, 100% { opacity: 1; transform: scale(1); }
       50% { opacity: 0.4; transform: scale(0.8); }
     }
 
-    .urgency-text {
-      color: #86efac;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-    }
+    .urgency-text { color: #86efac; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.05em; }
 
     /* Hero */
     .hero {
@@ -281,7 +311,6 @@
       animation: textShine 4s linear infinite;
       filter: drop-shadow(0 0 40px rgba(56, 189, 248, 0.4));
     }
-
     @keyframes textShine { to { background-position: 200% center; } }
 
     .hero-subtitle {
@@ -330,10 +359,9 @@
       height: 100%;
       object-fit: cover;
       opacity: 0.88;
-      pointer-events: none; /* Prevents scroll clicks from triggering video */
+      pointer-events: none;
       transition: transform 0.6s var(--ease-cinema);
     }
-    .showreel-card:hover .bg-video-loop { transform: scale(1.04); opacity: 0.98; }
 
     .showreel-overlay {
       position: absolute;
@@ -344,7 +372,7 @@
       justify-content: center;
       background: radial-gradient(circle at center, rgba(4, 9, 26, 0.15) 0%, rgba(0, 2, 6, 0.8) 100%);
       z-index: 2;
-      pointer-events: none; /* Crucial: allows scroll without accidental play clicks */
+      pointer-events: none;
     }
 
     .play-btn-circle {
@@ -361,14 +389,12 @@
       animation: pulsePlay 2s infinite;
       transition: transform 0.3s ease;
       cursor: pointer;
-      pointer-events: auto; /* Play button explicitly clickable */
+      pointer-events: auto;
     }
-
     @keyframes pulsePlay {
       0%, 100% { transform: scale(1); box-shadow: 0 0 25px rgba(56, 189, 248, 0.5); }
       50% { transform: scale(1.08); box-shadow: 0 0 50px rgba(56, 189, 248, 0.85); }
     }
-
     .play-btn-circle svg { transform: translateX(3px); width: 34px; height: 34px; }
 
     .showreel-text {
@@ -378,12 +404,11 @@
       text-transform: uppercase;
       font-weight: 700;
       color: #fff;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.9);
       cursor: pointer;
       pointer-events: auto;
     }
 
-    /* Horizontal Carousel */
+    /* Horizontal Projects Carousel */
     .portfolio-section { padding: 90px 0 50px 0; }
 
     .section-header-flex {
@@ -473,7 +498,6 @@
       font-weight: 700;
       text-transform: uppercase;
       color: var(--cyan-neon);
-      letter-spacing: 0.05em;
       z-index: 3;
     }
 
@@ -494,11 +518,7 @@
       box-shadow: 0 0 30px rgba(56, 189, 248, 0.6);
       transition: transform 0.3s ease;
     }
-    .project-card:hover .project-play {
-      transform: translate(-50%, -50%) scale(1.1);
-      background: #fff;
-      color: #000206;
-    }
+    .project-card:hover .project-play { transform: translate(-50%, -50%) scale(1.1); background: #fff; color: #000206; }
 
     .project-body { padding: 24px; display: flex; flex-direction: column; flex-grow: 1; }
     html[dir="rtl"] .project-body { text-align: right; }
@@ -519,9 +539,7 @@
     }
     .watch-btn:hover { transform: translateX(4px); }
 
-    /* =========================================================
-       COLOR GRADING BEFORE/AFTER (ENLARGED & DETAIL-FOCUSED)
-       ========================================================= */
+    /* Before/After Color Slider (Enlarged) */
     .color-suite-section { padding: 50px 0 90px 0; }
 
     .grading-wrapper {
@@ -535,11 +553,10 @@
       box-shadow: 0 25px 65px -15px rgba(0, 0, 0, 0.95), 0 0 35px rgba(56, 189, 248, 0.2);
     }
 
-    /* Enlarged Aspect Ratio: 4:3 for clear face details */
     .compare-container {
       position: relative;
       width: 100%;
-      padding-top: 75%; /* Taller ratio so facial features & color depth are large */
+      padding-top: 75%;
       min-height: 380px;
       overflow: hidden;
       user-select: none;
@@ -638,7 +655,7 @@
       z-index: 20;
     }
 
-    /* Pricing Section */
+    /* Pricing Section (Starting at EGP) */
     .pricing-section { padding: 90px 0; }
 
     .pricing-grid {
@@ -663,7 +680,6 @@
       border-color: var(--cyan-neon);
       box-shadow: 0 20px 45px -15px rgba(0,0,0,0.9), 0 0 30px rgba(56, 189, 248, 0.25);
     }
-
     .pricing-card.popular {
       border-color: var(--cyan-neon);
       background: rgba(10, 24, 60, 0.85);
@@ -686,13 +702,14 @@
     }
 
     .package-name { font-size: 1.3rem; margin-bottom: 6px; color: #fff; }
+    .starting-at { font-size: 0.8rem; color: var(--cyan-neon); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
     .package-price {
       font-size: 2.6rem;
       font-family: var(--font-heading);
       font-weight: 800;
-      color: var(--cyan-neon);
+      color: var(--text-white);
       line-height: 1;
-      margin: 14px 0 6px 0;
+      margin: 8px 0 6px 0;
     }
     .package-price span { font-size: 0.92rem; color: var(--text-gray); font-family: var(--font-body); font-weight: 500; }
     .package-sub { font-size: 0.84rem; color: var(--text-gray); margin-bottom: 24px; }
@@ -766,9 +783,31 @@
       padding-bottom: 20px;
     }
 
+    /* What I Bring (Value Proposition) */
+    .value-section { padding: 80px 0; }
+    .value-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+      margin-top: 35px;
+    }
+    .value-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-blue);
+      border-radius: var(--radius-md);
+      padding: 30px 24px;
+      transition: all 0.35s ease;
+    }
+    .value-card:hover {
+      border-color: var(--cyan-neon);
+      transform: translateY(-5px);
+      background: var(--bg-card-hover);
+    }
+    .value-title { font-size: 1.2rem; color: var(--cyan-neon); margin-bottom: 8px; }
+    .value-desc { font-size: 0.88rem; color: var(--text-gray); line-height: 1.6; }
+
     /* About Section */
     .about-section { padding: 80px 0; }
-    
     .about-grid {
       display: grid;
       grid-template-columns: 320px 1fr;
@@ -815,9 +854,8 @@
     .about-content h2 { font-size: 2.2rem; margin-bottom: 12px; color: #fff; }
     .about-content p { color: var(--text-gray); line-height: 1.7; margin-bottom: 16px; }
 
-    /* Contact Section: Fixed Email Layout */
+    /* Contact Section */
     .contact-section { padding: 90px 0 110px 0; }
-    
     .contact-card-wrap {
       background: radial-gradient(circle at 100% 0%, rgba(56, 189, 248, 0.12) 0%, rgba(4, 9, 26, 0.95) 70%);
       border: 1px solid var(--border-blue);
@@ -896,27 +934,12 @@
       50% { box-shadow: 0 0 0 8px rgba(56, 189, 248, 0); }
     }
 
-    .social-info {
-      overflow: hidden;
-      flex: 1;
-    }
-
+    .social-info { overflow: hidden; flex: 1; }
     .social-info small { display: block; font-size: 0.75rem; color: var(--text-gray); text-transform: uppercase; }
-    
-    .social-info strong { 
-      font-size: 1.05rem; 
-      color: #fff; 
-      display: block;
-    }
+    .social-info strong { font-size: 1.05rem; color: #fff; display: block; }
+    .social-box.email .social-info strong { font-size: clamp(0.72rem, 3vw, 0.9rem); word-break: break-all; }
 
-    /* Email Responsive Wrap to prevent overflow */
-    .social-box.email .social-info strong {
-      font-size: clamp(0.72rem, 3vw, 0.9rem);
-      word-break: break-all;
-      letter-spacing: 0;
-    }
-
-    /* FLOATING STICKY WHATSAPP BUTTON */
+    /* Sticky WhatsApp */
     .floating-wa-btn {
       position: fixed;
       bottom: 24px;
@@ -936,14 +959,12 @@
       cursor: pointer;
     }
     html[dir="rtl"] .floating-wa-btn { right: auto; left: 24px; }
-
     @keyframes floatWA {
       0% { transform: translateY(0) scale(1); }
       100% { transform: translateY(-6px) scale(1.06); }
     }
-    .floating-wa-btn:active { transform: scale(0.92); }
 
-    /* Modal Player */
+    /* Modal Player + Case Study Breakdown */
     .native-modal {
       position: fixed;
       inset: 0;
@@ -965,9 +986,10 @@
       position: relative;
       width: 100%;
       max-width: 950px;
-      background: #000;
+      background: #030714;
       border-radius: var(--radius-md);
-      overflow: hidden;
+      overflow-y: auto;
+      max-height: 90vh;
       border: 1px solid var(--border-glow);
       box-shadow: 0 0 60px rgba(56, 189, 248, 0.35);
     }
@@ -977,10 +999,10 @@
       align-items: center;
       justify-content: space-between;
       padding: 12px 18px;
-      background: #030714;
+      background: #02050e;
       border-bottom: 1px solid rgba(56, 189, 248, 0.2);
     }
-    .modal-title { font-size: 0.9rem; font-weight: 700; color: var(--cyan-neon); }
+    .modal-title { font-size: 0.95rem; font-weight: 700; color: var(--cyan-neon); }
 
     .modal-close-btn {
       width: 36px;
@@ -1004,12 +1026,33 @@
       align-items: center;
       justify-content: center;
     }
+    .video-holder video { width: 100%; max-height: 55vh; display: block; outline: none; }
 
-    .video-holder video {
-      width: 100%;
-      max-height: 75vh;
+    /* Case Study Box Inside Modal */
+    .modal-case-study {
+      padding: 22px 20px;
+      background: rgba(6, 15, 38, 0.8);
+      border-top: 1px solid var(--border-blue);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      text-align: left;
+    }
+    html[dir="rtl"] .modal-case-study { text-align: right; }
+
+    .case-item small {
       display: block;
-      outline: none;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--cyan-neon);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 4px;
+    }
+    .case-item p {
+      font-size: 0.85rem;
+      color: var(--text-white);
+      line-height: 1.4;
     }
 
     .site-footer {
@@ -1027,6 +1070,7 @@
       .about-grid { grid-template-columns: 1fr; gap: 30px; padding: 26px; }
       .about-photo-wrapper { height: 340px; }
       .nav-desktop-links { display: none; }
+      .hamburger-btn { display: flex; }
     }
   </style>
 </head>
@@ -1034,12 +1078,24 @@
 
   <div class="ambient-sphere"></div>
 
-  <!-- FLOATING STICKY WHATSAPP BUTTON -->
+  <!-- FLOATING WHATSAPP BUTTON -->
   <a href="https://wa.me/201143081231?text=Hi%20JOO,%20I%20saw%20your%20portfolio%20and%20want%20to%20collaborate!" target="_blank" rel="noopener noreferrer" class="floating-wa-btn" aria-label="Chat on WhatsApp">
     <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
       <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
     </svg>
   </a>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <button class="drawer-close" onclick="toggleDrawer()" type="button">✕</button>
+    <a href="#hero" class="drawer-link" onclick="toggleDrawer()" data-i18n="nav_home">Home</a>
+    <a href="#work" class="drawer-link" onclick="toggleDrawer()" data-i18n="nav_work">Work</a>
+    <a href="#grading" class="drawer-link" onclick="toggleDrawer()" data-i18n="nav_color">Color Suite</a>
+    <a href="#pricing" class="drawer-link" onclick="toggleDrawer()" data-i18n="nav_pricing">Pricing</a>
+    <a href="#faq" class="drawer-link" onclick="toggleDrawer()" data-i18n="nav_faq">FAQ</a>
+    <a href="#about" class="drawer-link" onclick="toggleDrawer()" data-i18n="nav_about">About</a>
+    <a href="#contact" class="drawer-link" onclick="toggleDrawer()" data-i18n="nav_contact">Contact</a>
+  </div>
 
   <!-- Navbar -->
   <header class="site-nav">
@@ -1065,6 +1121,9 @@
             <span id="langText">العربية</span>
           </button>
           <a href="#contact" class="btn btn-primary" style="min-height: 38px; padding: 5px 16px; font-size: 0.82rem;" data-i18n="btn_talk">Let's Talk</a>
+          <button class="hamburger-btn" onclick="toggleDrawer()" type="button" aria-label="Open Mobile Menu">
+            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
         </div>
       </div>
     </div>
@@ -1073,8 +1132,6 @@
   <!-- Hero Section -->
   <section id="hero" class="hero">
     <div class="container">
-      
-      <!-- Urgency Pill -->
       <div class="urgency-pill">
         <div class="pulse-dot-green"></div>
         <span class="urgency-text" data-i18n="urgency_badge">🟢 Available for 2 Projects This Month</span>
@@ -1090,25 +1147,22 @@
         <a href="#pricing" class="btn btn-secondary" data-i18n="hero_btn_pricing">See Packages</a>
       </div>
 
-      <!-- Main Showreel Video Card (Play button is the explicit trigger, preventing scroll triggers) -->
+      <!-- Main Showreel Video Card -->
       <div class="showreel-card">
         <div class="showreel-frame">
-          <video class="bg-video-loop" autoplay muted loop playsinline preload="auto">
-            <source src="showreel.mp4" type="video/mp4" onerror="this.src='assets/showreel.mp4'" />
-          </video>
+          <video class="bg-video-loop lazy-video" muted loop playsinline preload="none" data-src="showreel.mp4"></video>
           <div class="showreel-overlay">
-            <div class="play-btn-circle" onclick="playVideo('showreel.mp4', 'Official Showreel 2026')">
+            <div class="play-btn-circle" onclick="playProject(0)">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
             </div>
-            <span class="showreel-text" onclick="playVideo('showreel.mp4', 'Official Showreel 2026')" data-i18n="showreel_play">Play Official Showreel</span>
+            <span class="showreel-text" onclick="playProject(0)" data-i18n="showreel_play">Play Official Showreel</span>
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- Selected Works: 6 PROJECTS IN HORIZONTAL CAROUSEL -->
+  <!-- Selected Works: 6 PROJECTS WITH LAZY VIDEO PREVIEWS & CASE STUDIES -->
   <section id="work" class="portfolio-section">
     <div class="container">
       <div class="section-header-flex">
@@ -1125,103 +1179,91 @@
         <!-- Project 1 -->
         <div class="project-card">
           <div class="project-thumbnail">
-            <video autoplay muted loop playsinline preload="auto">
-              <source src="project-1.mp4" type="video/mp4" onerror="this.src='assets/project-1.mp4'" />
-            </video>
+            <video class="lazy-video" muted loop playsinline preload="none" data-src="project-1.mp4"></video>
             <div class="project-tag" data-i18n="p1_tag">AI &amp; Visuals</div>
-            <div class="project-play" onclick="playVideo('project-1.mp4', 'Project 01 — AI Motion Cut')"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+            <div class="project-play" onclick="playProject(1)"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
           </div>
           <div class="project-body">
             <h3 class="project-title" data-i18n="p1_title">Project 01 — AI Motion Cut</h3>
             <p class="project-desc" data-i18n="p1_desc">High-impact visual cut blending generative video concepts with dynamic sound design.</p>
-            <button class="watch-btn" type="button" onclick="playVideo('project-1.mp4', 'Project 01 — AI Motion Cut')" data-i18n="watch_film">Watch Film →</button>
+            <button class="watch-btn" type="button" onclick="playProject(1)" data-i18n="watch_film">Watch Film →</button>
           </div>
         </div>
 
         <!-- Project 2 -->
         <div class="project-card">
           <div class="project-thumbnail">
-            <video autoplay muted loop playsinline preload="auto">
-              <source src="project-2.mp4" type="video/mp4" onerror="this.src='assets/project-2.mp4'" />
-            </video>
+            <video class="lazy-video" muted loop playsinline preload="none" data-src="project-2.mp4"></video>
             <div class="project-tag" data-i18n="p2_tag">Viral Reel</div>
-            <div class="project-play" onclick="playVideo('project-2.mp4', 'Project 02 — Retention Reel')"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+            <div class="project-play" onclick="playProject(2)"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
           </div>
           <div class="project-body">
             <h3 class="project-title" data-i18n="p2_title">Project 02 — Retention Reel</h3>
             <p class="project-desc" data-i18n="p2_desc">Fast-paced video edit built for high retention, kinetic transitions, and audio sync.</p>
-            <button class="watch-btn" type="button" onclick="playVideo('project-2.mp4', 'Project 02 — Retention Reel')" data-i18n="watch_film">Watch Film →</button>
+            <button class="watch-btn" type="button" onclick="playProject(2)" data-i18n="watch_film">Watch Film →</button>
           </div>
         </div>
 
         <!-- Project 3 -->
         <div class="project-card">
           <div class="project-thumbnail">
-            <video autoplay muted loop playsinline preload="auto">
-              <source src="project-3.mp4" type="video/mp4" onerror="this.src='project-1.mp4'" />
-            </video>
+            <video class="lazy-video" muted loop playsinline preload="none" data-src="project-3.mp4"></video>
             <div class="project-tag" data-i18n="p3_tag">Commercial Ad</div>
-            <div class="project-play" onclick="playVideo('project-3.mp4', 'Project 03 — Commercial Brand Ad')"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+            <div class="project-play" onclick="playProject(3)"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
           </div>
           <div class="project-body">
             <h3 class="project-title" data-i18n="p3_title">Project 03 — Commercial Brand Ad</h3>
             <p class="project-desc" data-i18n="p3_desc">High-production brand commercial engineered to command respect and convert viewers.</p>
-            <button class="watch-btn" type="button" onclick="playVideo('project-3.mp4', 'Project 03 — Commercial Brand Ad')" data-i18n="watch_film">Watch Film →</button>
+            <button class="watch-btn" type="button" onclick="playProject(3)" data-i18n="watch_film">Watch Film →</button>
           </div>
         </div>
 
         <!-- Project 4 -->
         <div class="project-card">
           <div class="project-thumbnail">
-            <video autoplay muted loop playsinline preload="auto">
-              <source src="project-4.mp4" type="video/mp4" onerror="this.src='project-2.mp4'" />
-            </video>
+            <video class="lazy-video" muted loop playsinline preload="none" data-src="project-4.mp4"></video>
             <div class="project-tag" data-i18n="p4_tag">Cinematic Cut</div>
-            <div class="project-play" onclick="playVideo('project-4.mp4', 'Project 04 — Cinematic Film Cut')"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+            <div class="project-play" onclick="playProject(4)"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
           </div>
           <div class="project-body">
             <h3 class="project-title" data-i18n="p4_title">Project 04 — Cinematic Film Cut</h3>
             <p class="project-desc" data-i18n="p4_desc">Atmospheric narrative storytelling with custom color timing and spatial soundscapes.</p>
-            <button class="watch-btn" type="button" onclick="playVideo('project-4.mp4', 'Project 04 — Cinematic Film Cut')" data-i18n="watch_film">Watch Film →</button>
+            <button class="watch-btn" type="button" onclick="playProject(4)" data-i18n="watch_film">Watch Film →</button>
           </div>
         </div>
 
         <!-- Project 5 -->
         <div class="project-card">
           <div class="project-thumbnail">
-            <video autoplay muted loop playsinline preload="auto">
-              <source src="project-5.mp4" type="video/mp4" onerror="this.src='project-1.mp4'" />
-            </video>
+            <video class="lazy-video" muted loop playsinline preload="none" data-src="project-5.mp4"></video>
             <div class="project-tag" data-i18n="p5_tag">Music Video</div>
-            <div class="project-play" onclick="playVideo('project-5.mp4', 'Project 05 — Music Video Edit')"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+            <div class="project-play" onclick="playProject(5)"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
           </div>
           <div class="project-body">
             <h3 class="project-title" data-i18n="p5_title">Project 05 — Music Video Edit</h3>
             <p class="project-desc" data-i18n="p5_desc">Rhythmic transient beat matching, kinetic speed ramps, and stylized transitions.</p>
-            <button class="watch-btn" type="button" onclick="playVideo('project-5.mp4', 'Project 05 — Music Video Edit')" data-i18n="watch_film">Watch Film →</button>
+            <button class="watch-btn" type="button" onclick="playProject(5)" data-i18n="watch_film">Watch Film →</button>
           </div>
         </div>
 
         <!-- Project 6 -->
         <div class="project-card">
           <div class="project-thumbnail">
-            <video autoplay muted loop playsinline preload="auto">
-              <source src="project-6.mp4" type="video/mp4" onerror="this.src='project-2.mp4'" />
-            </video>
+            <video class="lazy-video" muted loop playsinline preload="none" data-src="project-6.mp4"></video>
             <div class="project-tag" data-i18n="p6_tag">VFX &amp; Motion</div>
-            <div class="project-play" onclick="playVideo('project-6.mp4', 'Project 06 — VFX & 3D Motion')"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+            <div class="project-play" onclick="playProject(6)"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
           </div>
           <div class="project-body">
             <h3 class="project-title" data-i18n="p6_title">Project 06 — VFX &amp; 3D Motion</h3>
             <p class="project-desc" data-i18n="p6_desc">Composited visual effects fusing neural AI interpolation with 3D camera tracking.</p>
-            <button class="watch-btn" type="button" onclick="playVideo('project-6.mp4', 'Project 06 — VFX & 3D Motion')" data-i18n="watch_film">Watch Film →</button>
+            <button class="watch-btn" type="button" onclick="playProject(6)" data-i18n="watch_film">Watch Film →</button>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- INTERACTIVE COLOR GRADING SUITE (ENLARGED & DETAILED) -->
+  <!-- INTERACTIVE COLOR GRADING SUITE -->
   <section id="grading" class="color-suite-section">
     <div class="container">
       <div style="text-align: center; margin-bottom: 35px;">
@@ -1232,14 +1274,10 @@
 
       <div class="grading-wrapper">
         <div class="compare-container" id="compareBox" style="--slider-pos: 50%;">
-          <!-- Graded Image (Loads after.jpg with centered face position) -->
-          <img class="compare-img" src="after.jpg" onerror="if(!this.src.includes('assets/'))this.src='assets/after.jpg';" alt="Graded Cinema Look" />
-          
-          <!-- Raw Log Image (Loads before.jpg with centered face position) -->
+          <img class="compare-img" src="after.jpg" onerror="this.src='grade.jpg';" alt="Graded Cinema Look" />
           <div class="compare-before-layer">
-            <img class="compare-before-img" src="before.jpg" onerror="if(!this.src.includes('assets/'))this.src='assets/before.jpg';" alt="Raw Log Look" />
+            <img class="compare-before-img" src="before.jpg" onerror="this.src='grade.jpg';" alt="Raw Log Look" />
           </div>
-
           <div class="compare-divider">
             <div class="compare-handle"><span>◂ ▸</span></div>
           </div>
@@ -1251,7 +1289,33 @@
     </div>
   </section>
 
-  <!-- PRICING & PACKAGES (EGYPTIAN POUNDS - EGP) -->
+  <!-- WHAT I BRING (CONVERSION-FOCUSED VALUE PILLARS) -->
+  <section class="value-section">
+    <div class="container">
+      <div style="text-align:center;">
+        <div class="badge-wave"><span class="badge-text" data-i18n="val_badge">Execution Standard</span></div>
+        <h2 style="font-size: clamp(2rem, 5vw, 2.8rem);" data-i18n="val_title">What I Bring To Your Content</h2>
+        <p style="color:var(--text-gray);" data-i18n="val_sub">Grounded post-production principles designed to retain attention and convert audiences.</p>
+      </div>
+
+      <div class="value-grid">
+        <div class="value-card">
+          <h3 class="value-title" data-i18n="v1_title">Psychological Pacing</h3>
+          <p class="value-desc" data-i18n="v1_desc">Cutting on kinetic micro-beats. I stop viewers from swiping away in the crucial first 3 seconds of every video.</p>
+        </div>
+        <div class="value-card">
+          <h3 class="value-title" data-i18n="v2_title">Immersive Soundscapes</h3>
+          <p class="value-desc" data-i18n="v2_desc">Over 40 multitrack layers of whooshes, impacts, and foley designed to make viewers experience the visuals physically.</p>
+        </div>
+        <div class="value-card">
+          <h3 class="value-title" data-i18n="v3_title">DaVinci Contrast &amp; Depth</h3>
+          <p class="value-desc" data-i18n="v3_desc">Preserving natural skin-tones while sculpting Kodak film-print emulation that makes mobile OLED screens pop.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING & PACKAGES (STARTING AT - EGP) -->
   <section id="pricing" class="pricing-section">
     <div class="container">
       <div style="text-align:center;">
@@ -1264,6 +1328,7 @@
         <!-- Package 1 -->
         <div class="pricing-card">
           <h3 class="package-name" data-i18n="pkg1_name">Starter Reel</h3>
+          <div class="starting-at" data-i18n="start_at">STARTING AT</div>
           <div class="package-price" data-i18n="pkg1_price">750 EGP <span>/ reel</span></div>
           <p class="package-sub" data-i18n="pkg1_sub">Ideal for single viral short-form videos &amp; TikTok hooks.</p>
           <ul class="features-list">
@@ -1279,6 +1344,7 @@
         <div class="pricing-card popular">
           <div class="popular-tag" data-i18n="popular_tag">MOST POPULAR</div>
           <h3 class="package-name" data-i18n="pkg2_name">Creator Retainer</h3>
+          <div class="starting-at" data-i18n="start_at">STARTING AT</div>
           <div class="package-price" data-i18n="pkg2_price">5,500 EGP <span>/ month</span></div>
           <p class="package-sub" data-i18n="pkg2_sub">Complete monthly content pipeline for creators &amp; personal brands.</p>
           <ul class="features-list">
@@ -1293,6 +1359,7 @@
         <!-- Package 3 -->
         <div class="pricing-card">
           <h3 class="package-name" data-i18n="pkg3_name">Commercial &amp; AI</h3>
+          <div class="starting-at" data-i18n="start_at">STARTING AT</div>
           <div class="package-price" data-i18n="pkg3_price">3,000 EGP <span>/ project</span></div>
           <p class="package-sub" data-i18n="pkg3_sub">High-production brand promos, DTC ads &amp; AI video concepts.</p>
           <ul class="features-list">
@@ -1317,7 +1384,6 @@
       </div>
 
       <div class="faq-wrapper">
-        <!-- Question 1 -->
         <div class="faq-item" onclick="toggleFaq(this)">
           <div class="faq-question">
             <span data-i18n="q1_title">How are files sent and delivered?</span>
@@ -1328,7 +1394,6 @@
           </div>
         </div>
 
-        <!-- Question 2 -->
         <div class="faq-item" onclick="toggleFaq(this)">
           <div class="faq-question">
             <span data-i18n="q2_title">How long does it take to deliver the first cut?</span>
@@ -1339,7 +1404,6 @@
           </div>
         </div>
 
-        <!-- Question 3 -->
         <div class="faq-item" onclick="toggleFaq(this)">
           <div class="faq-question">
             <span data-i18n="q3_title">Are revisions included in the price?</span>
@@ -1350,7 +1414,6 @@
           </div>
         </div>
 
-        <!-- Question 4 -->
         <div class="faq-item" onclick="toggleFaq(this)">
           <div class="faq-question">
             <span data-i18n="q4_title">Which editing and AI software do you use?</span>
@@ -1364,12 +1427,12 @@
     </div>
   </section>
 
-  <!-- About Section With Real Photo & Updated 3 Years Experience -->
+  <!-- About Section With Real Photo -->
   <section id="about" class="about-section">
     <div class="container">
       <div class="about-grid">
         <div class="about-photo-wrapper">
-          <img class="about-photo-img" src="profile.jpg" alt="JOO — Video Editor" onerror="if(!this.src.includes('assets/'))this.src='assets/profile.jpg';" />
+          <img class="about-photo-img" src="profile.jpg" alt="JOO — Video Editor" onerror="this.src='grade.jpg';" />
           <div class="profile-badge">
             <div class="green-dot"></div>
             <span data-i18n="status_work">Available for Work</span>
@@ -1389,7 +1452,7 @@
     </div>
   </section>
 
-  <!-- Contact Section (Fixed Email Wrap, Strictly 3 Channels) -->
+  <!-- Contact Section (STRICTLY 3 CHANNELS) -->
   <section id="contact" class="contact-section">
     <div class="container">
       <div class="contact-card-wrap">
@@ -1398,8 +1461,7 @@
         <p style="color:var(--text-gray); margin-top:10px;" data-i18n="contact_sub">Ready to collaborate? Reach out directly via WhatsApp, Instagram, or Email.</p>
 
         <div class="channels-grid">
-          
-          <!-- 1. WhatsApp Card -->
+          <!-- WhatsApp -->
           <a href="https://wa.me/201143081231?text=Hi%20JOO,%20I%20saw%20your%20portfolio%20and%20want%20to%20collaborate!" target="_blank" rel="noopener noreferrer" class="social-box whatsapp">
             <div class="social-icon-wrap">
               <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
@@ -1412,7 +1474,7 @@
             </div>
           </a>
 
-          <!-- 2. Instagram Card -->
+          <!-- Instagram -->
           <a href="https://instagram.com/joeny_7" target="_blank" rel="noopener noreferrer" class="social-box instagram">
             <div class="social-icon-wrap">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -1425,7 +1487,7 @@
             </div>
           </a>
 
-          <!-- 3. Email Card with Responsive Font -->
+          <!-- Email -->
           <a href="mailto:youssefjoeyhmhh@gmail.com?subject=Project%20Inquiry%20for%20JOO" class="social-box email">
             <div class="social-icon-wrap">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1438,7 +1500,6 @@
               <strong>youssefjoeyhmhh@gmail.com</strong>
             </div>
           </a>
-
         </div>
       </div>
     </div>
@@ -1451,7 +1512,7 @@
     </div>
   </footer>
 
-  <!-- Native Fullscreen Modal -->
+  <!-- NATIVE FULLSCREEN MODAL + CASE STUDY BREAKDOWN -->
   <div class="native-modal" id="videoModal" onclick="closeModalOnBackdrop(event)">
     <div class="native-modal-content">
       <div class="modal-bar">
@@ -1461,13 +1522,93 @@
       <div class="video-holder">
         <video id="nativeVideoPlayer" controls playsinline preload="auto"></video>
       </div>
+      <!-- Case Study Breakdown inside Modal -->
+      <div class="modal-case-study">
+        <div class="case-item">
+          <small data-i18n="cs_goal_label">Project Goal</small>
+          <p id="csGoal">Maximize viewer retention and hook the audience within the first 2 seconds.</p>
+        </div>
+        <div class="case-item">
+          <small data-i18n="cs_role_label">My Role</small>
+          <p id="csRole">Kinetic Pacing, Transient Audio Sync &amp; Motion Design.</p>
+        </div>
+        <div class="case-item">
+          <small data-i18n="cs_tools_label">Software Stack</small>
+          <p id="csTools">Premiere Pro, DaVinci Resolve Studio &amp; Runway AI.</p>
+        </div>
+      </div>
     </div>
   </div>
 
   <script>
-    /* =========================================================
-       BILINGUAL TRANSLATION DICTIONARY (WITH 3 YEARS EXP)
-       ========================================================= */
+    /* Projects Database with Case Studies */
+    const projectsData = [
+      {
+        src: "showreel.mp4",
+        title_en: "Official Showreel 2026",
+        title_ar: "الشوريل الرسمي 2026",
+        goal_en: "Showcasing commercial pacing, high-retention cuts & AI visuals in one master cut.",
+        goal_ar: "عرض الإيقاع الإعلاني، مونتاج احتباس المشاهدة ومشاهد الذكاء الاصطناعي في شو ريل متكامل.",
+        role_en: "Full Post-Production, Sound Design, Color Grading & Master Export.",
+        role_ar: "مونتاج كامل، هندسة صوت محيطي، تلوين سينمائي وماستر بجودة 4K."
+      },
+      {
+        src: "project-1.mp4",
+        title_en: "Project 01 — AI Motion Cut",
+        title_ar: "مشروع 01 — مونتاج ذكاء اصطناعي",
+        goal_en: "Seamlessly blend neural video generation with high-speed commercial pacing.",
+        goal_ar: "دمج توليد الفيديو بالذكاء الاصطناعي مع إيقاع إعلاني فائق السرعة وجذاب.",
+        role_en: "Runway Gen-3 AI Prompting, Compositing & Transient Audio Sync.",
+        role_ar: "توليد المشاهد عبر Runway، دمج بصري، ومزامنة ضربات الصوت."
+      },
+      {
+        src: "project-2.mp4",
+        title_en: "Project 02 — Retention Reel",
+        title_ar: "مشروع 02 — ريلز احتباس المشاهدة",
+        goal_en: "Stop scrolling on Instagram & TikTok with kinetic typography and audio hooks.",
+        goal_ar: "إيقاف السكرول في أول ثانيتين بريلز تيك توك وإنستغرام عبر نصوص وهوك صوتي.",
+        role_en: "Pacing, Sound Design, Kinetic Zoom Cuts & DaVinci Mobile Grade.",
+        role_ar: "تقطيع حركي سريع، ساوند ديزاين مخصص، وتلوين يناسب شاشات الموبايل."
+      },
+      {
+        src: "project-3.mp4",
+        title_en: "Project 03 — Commercial Brand Ad",
+        title_ar: "مشروع 03 — إعلان تجاري لبراند",
+        goal_en: "Command respect for the brand and drive direct viewer conversion.",
+        goal_ar: "إبراز فخامة المنتج وتحويل المشاهدات إلى مبيعات مباشرة.",
+        role_en: "Commercial Cut, Dynamic Speed Ramping & Master Delivery.",
+        role_ar: "مونتاج إعلاني، تسريع وإبطاء حركي وتسليم بجودة 4K."
+      },
+      {
+        src: "project-4.mp4",
+        title_en: "Project 04 — Cinematic Film Cut",
+        title_ar: "مشروع 04 — فيلم سينمائي قصير",
+        goal_en: "Evoking deep emotion through intentional narrative breathing & atmosphere.",
+        goal_ar: "خلق حالة نفسية وتأثير درامي عميق من خلال الإيقاع والهدوء السينمائي.",
+        role_en: "Narrative Arc, Ambient Foley Sound & Kodak Film Emulation.",
+        role_ar: "بناء القصة الدرامية، تصميم صوتي محيطي ومحاكاة ألوان كوداك."
+      },
+      {
+        src: "project-5.mp4",
+        title_en: "Project 05 — Music Video Edit",
+        title_ar: "مشروع 05 — فيديو كليب موسيقي",
+        goal_en: "Sync every cut tightly to multitrack rhythm and beat transients.",
+        goal_ar: "مزامنة التقطيع فريم بفريم مع بيتات الموسيقى والتأثيرات الإيقاعية.",
+        role_en: "Beat Matching, Color Timing & Stylized Frame Transitions.",
+        role_ar: "تقطيع إيقاعي، تلوين فني مخصص، وانتقالات إبداعية."
+      },
+      {
+        src: "project-6.mp4",
+        title_en: "Project 06 — VFX & 3D Motion",
+        title_ar: "مشروع 06 — خدع بصرية وأنيميشن 3D",
+        goal_en: "Deliver impossible visual concepts fusing 3D tracking with neural VFX.",
+        goal_ar: "تنفيذ أفكار بصرية غير تقليدية بدمج تتبع الكاميرا ثلاثي الأبعاد والـ AI.",
+        role_en: "Camera Tracking, Particle VFX & Layer Compositing.",
+        role_ar: "تتبع حركة، مؤثرات جزيئية، وتراكيب بصرية متقدمة."
+      }
+    ];
+
+    /* Bilingual Dictionary */
     const translations = {
       en: {
         nav_home: "Home",
@@ -1510,10 +1651,20 @@
         color_sub: "Drag the slider to reveal raw flat log camera footage vs final cinema grade.",
         log_before: "RAW LOG (BEFORE)",
         log_after: "DAVINCI GRADE (AFTER)",
+        val_badge: "Execution Standard",
+        val_title: "What I Bring To Your Content",
+        val_sub: "Grounded post-production principles designed to retain attention and convert audiences.",
+        v1_title: "Psychological Pacing",
+        v1_desc: "Cutting on kinetic micro-beats. I stop viewers from swiping away in the crucial first 3 seconds of every video.",
+        v2_title: "Immersive Soundscapes",
+        v2_desc: "Over 40 multitrack layers of whooshes, impacts, and foley designed to make viewers experience the visuals physically.",
+        v3_title: "DaVinci Contrast & Depth",
+        v3_desc: "Preserving natural skin-tones while sculpting Kodak film-print emulation that makes mobile OLED screens pop.",
         pricing_badge: "Investment & Rates",
         pricing_title: "Transparent Packages",
         pricing_sub: "Choose the ideal workflow for your content goals. Custom quotes available.",
         popular_tag: "MOST POPULAR",
+        start_at: "STARTING AT",
         pkg1_name: "Starter Reel",
         pkg1_price: "750 EGP <span>/ reel</span>",
         pkg1_sub: "Ideal for single viral short-form videos & TikTok hooks.",
@@ -1559,6 +1710,9 @@
         wa_label: "WhatsApp Direct",
         ig_label: "Instagram Profile",
         email_label: "Email Me",
+        cs_goal_label: "Project Goal",
+        cs_role_label: "My Role",
+        cs_tools_label: "Software Stack",
         footer_title: "Video Editor & AI Video Creator."
       },
       ar: {
@@ -1602,10 +1756,20 @@
         color_sub: "اسحب الشريط بصباعك لرؤية الكادر الخام الباهت من الكاميرا مقابل التلوين السينمائي النهائي.",
         log_before: "قبل (RAW LOG)",
         log_after: "بعد (تلوين سينمائي)",
+        val_badge: "معايير التنفيذ",
+        val_title: "ما الذي أقدمه لمحتواك بالظبط؟",
+        val_sub: "مبادئ مونتاج راسخة مصممة لإبقاء عين المشاهد وتحويل التفاعل إلى أرقام ونتائج.",
+        v1_title: "إيقاع نفسي مدروس",
+        v1_desc: "التقطيع على الميكرو-بيتس الحركية لمنع المشاهد من قلب الشاشة في أول 3 ثوانٍ المصيرية.",
+        v2_title: "هندسة صوتية محيطية",
+        v2_desc: "أكثر من 40 طبقة صوتية من الـ whooshes والـ impacts تجعل المشاهد يعيش اللقطة بحواسه.",
+        v3_title: "عمق وتباين DaVinci",
+        v3_desc: "حماية تدرجات البشرة الطبيعية مع محاكاة ألوان شريط كوداك لتنطق الشاشات بجودة سينمائية.",
         pricing_badge: "الاستثمار والباقات",
         pricing_title: "باقات واضحة وبدون تعقيد",
         pricing_sub: "اختر الباقة المناسبة لأهداف محتواك. متاح أيضاً طلب تسعير مخصص لمشروعك.",
         popular_tag: "الأكثر طلباً",
+        start_at: "تبدأ من",
         pkg1_name: "ريلز فردي",
         pkg1_price: "750 جنيه <span>/ ريلز</span>",
         pkg1_sub: "مثالية للمحتوى السريع، الشورتس، وريلز إنستغرام وتيك توك.",
@@ -1651,6 +1815,9 @@
         wa_label: "محادثة واتساب فورية",
         ig_label: "حساب الإنستغرام",
         email_label: "إرسال إيميل",
+        cs_goal_label: "هدف المشروع",
+        cs_role_label: "دوري الفني",
+        cs_tools_label: "الأدوات والبرامج",
         footer_title: "مونتير محترف وصانع فيديو بالذكاء الاصطناعي."
       }
     };
@@ -1686,6 +1853,10 @@
       }
     }
 
+    function toggleDrawer() {
+      document.getElementById("mobileDrawer").classList.toggle("open");
+    }
+
     /* FAQ Accordion Toggle */
     function toggleFaq(card) {
       const wasActive = card.classList.contains('active');
@@ -1695,28 +1866,26 @@
       }
     }
 
-    /* Video Player Logic */
+    /* Video Player + Case Study Loader */
     const modal = document.getElementById("videoModal");
     const player = document.getElementById("nativeVideoPlayer");
     const titleEl = document.getElementById("modalVideoTitle");
+    const csGoalEl = document.getElementById("csGoal");
+    const csRoleEl = document.getElementById("csRole");
 
-    function playVideo(src, title) {
-      if (!modal || !player) return;
-      if (titleEl) titleEl.textContent = title;
-      
-      player.src = src;
+    function playProject(index) {
+      const data = projectsData[index];
+      if (!data) return;
+
+      titleEl.textContent = (currentLang === 'ar') ? data.title_ar : data.title_en;
+      csGoalEl.textContent = (currentLang === 'ar') ? data.goal_ar : data.goal_en;
+      csRoleEl.textContent = (currentLang === 'ar') ? data.role_ar : data.role_en;
+
+      player.src = data.src;
       player.load();
       modal.classList.add("active");
       document.body.style.overflow = "hidden";
       player.play().catch(() => {});
-
-      player.onerror = function() {
-        if (!player.src.includes("assets/")) {
-          player.src = "assets/" + src;
-          player.load();
-          player.play().catch(() => {});
-        }
-      };
     }
 
     function closeVideo() {
@@ -1735,6 +1904,35 @@
 
     window.addEventListener("keydown", (e) => {
       if (e.key === "Escape") closeVideo();
+    });
+
+    /* =========================================================
+       PERFORMANCE ENGINE: LAZY LOAD VIDEOS VIA OBSERVER
+       ========================================================= */
+    document.addEventListener("DOMContentLoaded", () => {
+      const lazyVideos = document.querySelectorAll("video.lazy-video");
+      if ("IntersectionObserver" in window) {
+        const videoObserver = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            const video = entry.target;
+            if (entry.isIntersecting) {
+              if (!video.src && video.dataset.src) {
+                video.src = video.dataset.src;
+                video.load();
+              }
+              video.play().catch(() => {});
+            } else {
+              video.pause();
+            }
+          });
+        }, { threshold: 0.15 });
+
+        lazyVideos.forEach((video) => videoObserver.observe(video));
+      } else {
+        lazyVideos.forEach((video) => {
+          if (video.dataset.src) video.src = video.dataset.src;
+        });
+      }
     });
   </script>
 </body>
