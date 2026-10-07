@@ -22,16 +22,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
 
   <style>
+    /* =========================================================
+       ULTRA-LIGHTWEIGHT MIDNIGHT SAPPHIRE DESIGN SYSTEM
+       ========================================================= */
     :root {
       --bg-black: #000206;
       --bg-navy: #04091a;
-      --bg-card: rgba(6, 15, 38, 0.78);
-      --bg-card-hover: rgba(10, 24, 60, 0.95);
+      --bg-card: #08112b;
+      --bg-card-hover: #0c1a40;
       
       --cyan-neon: #38bdf8;
       --cyan-bright: #00f0ff;
       --blue-electric: #2563eb;
-      --border-blue: rgba(56, 189, 248, 0.18);
+      --border-blue: rgba(56, 189, 248, 0.2);
       --border-glow: rgba(56, 189, 248, 0.65);
 
       --text-white: #ffffff;
@@ -63,6 +66,7 @@
 
     html { scroll-behavior: smooth; color-scheme: dark; }
 
+    /* Performance Optimized Background (Zero GPU Lag) */
     body {
       background-color: var(--bg-black);
       color: var(--text-white);
@@ -71,33 +75,12 @@
       line-height: 1.6;
       overflow-x: hidden;
       background-image: 
-        radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.2) 0%, transparent 60%),
-        radial-gradient(circle at 100% 35%, rgba(56, 189, 248, 0.08) 0%, transparent 50%),
-        radial-gradient(circle at 0% 75%, rgba(29, 78, 216, 0.12) 0%, transparent 55%);
-      background-attachment: fixed;
+        radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.18) 0%, transparent 50%),
+        radial-gradient(circle at 100% 35%, rgba(56, 189, 248, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 0% 75%, rgba(29, 78, 216, 0.1) 0%, transparent 50%);
     }
 
     ::selection { background: var(--cyan-neon); color: #000206; }
-
-    .ambient-sphere {
-      position: fixed;
-      top: -20%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100vw;
-      max-width: 900px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, rgba(0, 2, 6, 0) 70%);
-      pointer-events: none;
-      z-index: 0;
-      filter: blur(90px);
-      animation: ambientPulse 8s ease-in-out infinite alternate;
-    }
-
-    @keyframes ambientPulse {
-      0% { transform: translateX(-50%) scale(0.92); opacity: 0.5; }
-      100% { transform: translateX(-50%) scale(1.15); opacity: 0.9; }
-    }
 
     .container {
       width: 100%;
@@ -128,27 +111,24 @@
       font-size: 0.95rem;
       font-weight: 700;
       cursor: pointer;
-      transition: all 0.35s var(--ease-cinema);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
       border: 1px solid transparent;
       outline: none;
-      position: relative;
-      overflow: hidden;
     }
 
     .btn-primary {
       background: linear-gradient(135deg, #38bdf8 0%, #1d4ed8 100%);
       color: #ffffff;
-      box-shadow: 0 10px 30px -5px rgba(56, 189, 248, 0.5);
+      box-shadow: 0 8px 25px -5px rgba(56, 189, 248, 0.45);
     }
     .btn-primary:active { transform: scale(0.96); }
 
     .btn-secondary {
-      background: rgba(255, 255, 255, 0.04);
+      background: rgba(255, 255, 255, 0.05);
       color: var(--text-white);
       border: 1px solid var(--border-blue);
-      backdrop-filter: blur(12px);
     }
-    .btn-secondary:active { transform: scale(0.96); background: rgba(56, 189, 248, 0.1); }
+    .btn-secondary:active { transform: scale(0.96); background: rgba(56, 189, 248, 0.12); }
 
     /* Navbar */
     .site-nav {
@@ -165,10 +145,9 @@
       justify-content: space-between;
       padding: 10px 22px;
       border-radius: var(--radius-full);
-      background: rgba(4, 9, 26, 0.88);
+      background: rgba(4, 9, 26, 0.92);
       border: 1px solid var(--border-blue);
-      backdrop-filter: blur(20px);
-      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.85);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
     }
 
     .brand-logo {
@@ -180,12 +159,12 @@
       align-items: center;
       gap: 6px;
     }
-    .brand-glow { color: var(--cyan-neon); text-shadow: 0 0 15px rgba(56, 189, 248, 0.7); }
+    .brand-glow { color: var(--cyan-neon); text-shadow: 0 0 12px rgba(56, 189, 248, 0.6); }
 
     .nav-desktop-links {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: 26px;
       list-style: none;
     }
 
@@ -193,7 +172,7 @@
       font-size: 0.9rem;
       font-weight: 600;
       color: var(--text-gray);
-      transition: color 0.3s ease;
+      transition: color 0.2s ease;
     }
     .nav-link:hover { color: var(--cyan-neon); }
 
@@ -215,9 +194,9 @@
       font-weight: 800;
       font-size: 0.82rem;
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: background 0.2s ease;
     }
-    .lang-toggle-btn:hover { background: rgba(56, 189, 248, 0.22); transform: scale(1.05); }
+    .lang-toggle-btn:hover { background: rgba(56, 189, 248, 0.22); }
 
     .hamburger-btn {
       display: none;
@@ -236,7 +215,6 @@
       position: fixed;
       inset: 0;
       background: rgba(0, 2, 6, 0.98);
-      backdrop-filter: blur(25px);
       z-index: 999;
       display: flex;
       flex-direction: column;
@@ -245,7 +223,7 @@
       gap: 24px;
       opacity: 0;
       visibility: hidden;
-      transition: all 0.3s ease;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
     }
     .mobile-drawer.open { opacity: 1; visibility: visible; }
     .drawer-link { font-family: var(--font-heading); font-size: 1.6rem; font-weight: 800; color: #fff; }
@@ -283,11 +261,6 @@
       background: #22c55e;
       border-radius: 50%;
       box-shadow: 0 0 10px #22c55e;
-      animation: blinkDot 1.5s infinite;
-    }
-    @keyframes blinkDot {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.4; transform: scale(0.8); }
     }
 
     .urgency-text { color: #86efac; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.05em; }
@@ -305,13 +278,10 @@
       line-height: 0.95;
       text-transform: uppercase;
       background: linear-gradient(135deg, #ffffff 0%, #38bdf8 50%, #1d4ed8 100%);
-      background-size: 200% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      animation: textShine 4s linear infinite;
-      filter: drop-shadow(0 0 40px rgba(56, 189, 248, 0.4));
+      filter: drop-shadow(0 0 35px rgba(56, 189, 248, 0.3));
     }
-    @keyframes textShine { to { background-position: 200% center; } }
 
     .hero-subtitle {
       font-size: clamp(1.05rem, 4vw, 1.35rem);
@@ -340,27 +310,15 @@
       border: 1px solid var(--border-glow);
       background: #000;
       overflow: hidden;
-      box-shadow: 0 25px 70px -15px rgba(0, 0, 0, 0.95), 0 0 45px rgba(56, 189, 248, 0.25);
+      box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.9), 0 0 35px rgba(56, 189, 248, 0.2);
     }
 
     .showreel-frame {
       position: relative;
       width: 100%;
       padding-top: 56.25%;
-      background: #000206;
+      background: #04091a;
       overflow: hidden;
-    }
-
-    .bg-video-loop {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0.88;
-      pointer-events: none;
-      transition: transform 0.6s var(--ease-cinema);
     }
 
     .showreel-overlay {
@@ -370,9 +328,8 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background: radial-gradient(circle at center, rgba(4, 9, 26, 0.15) 0%, rgba(0, 2, 6, 0.8) 100%);
+      background: radial-gradient(circle at center, rgba(6, 15, 38, 0.2) 0%, rgba(0, 2, 6, 0.85) 100%);
       z-index: 2;
-      pointer-events: none;
     }
 
     .play-btn-circle {
@@ -385,16 +342,11 @@
       align-items: center;
       justify-content: center;
       color: #fff;
-      box-shadow: 0 0 40px rgba(56, 189, 248, 0.65);
-      animation: pulsePlay 2s infinite;
-      transition: transform 0.3s ease;
+      box-shadow: 0 0 30px rgba(56, 189, 248, 0.6);
       cursor: pointer;
-      pointer-events: auto;
+      transition: transform 0.25s ease;
     }
-    @keyframes pulsePlay {
-      0%, 100% { transform: scale(1); box-shadow: 0 0 25px rgba(56, 189, 248, 0.5); }
-      50% { transform: scale(1.08); box-shadow: 0 0 50px rgba(56, 189, 248, 0.85); }
-    }
+    .play-btn-circle:hover { transform: scale(1.08); }
     .play-btn-circle svg { transform: translateX(3px); width: 34px; height: 34px; }
 
     .showreel-text {
@@ -405,7 +357,6 @@
       font-weight: 700;
       color: #fff;
       cursor: pointer;
-      pointer-events: auto;
     }
 
     /* Horizontal Projects Carousel */
@@ -454,36 +405,35 @@
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      transition: all 0.4s var(--ease-cinema);
+      transition: border-color 0.3s ease, transform 0.3s ease;
       position: relative;
     }
     .project-card:hover {
       border-color: var(--cyan-neon);
-      box-shadow: 0 20px 45px -15px rgba(0, 0, 0, 0.9), 0 0 35px rgba(56, 189, 248, 0.3);
-      transform: translateY(-6px);
+      transform: translateY(-5px);
     }
 
+    /* High-Performance Card Still Frame */
     .project-thumbnail {
       position: relative;
       width: 100%;
       padding-top: 56.25%;
-      background: #02050e;
+      background: linear-gradient(135deg, #071333 0%, #03081a 100%);
       cursor: pointer;
       overflow: hidden;
     }
 
-    .project-thumbnail video {
+    .project-poster-img {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      opacity: 0.88;
-      pointer-events: none;
-      transition: transform 0.6s var(--ease-cinema);
+      opacity: 0.85;
+      transition: transform 0.5s ease;
     }
-    .project-card:hover .project-thumbnail video { transform: scale(1.08); opacity: 1; }
+    .project-card:hover .project-poster-img { transform: scale(1.05); opacity: 0.98; }
 
     .project-tag {
       position: absolute;
@@ -493,11 +443,11 @@
       border-radius: var(--radius-full);
       background: rgba(0, 2, 6, 0.85);
       border: 1px solid var(--border-blue);
-      backdrop-filter: blur(8px);
       font-size: 0.72rem;
       font-weight: 700;
       text-transform: uppercase;
       color: var(--cyan-neon);
+      letter-spacing: 0.05em;
       z-index: 3;
     }
 
@@ -505,7 +455,7 @@
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%) scale(0.95);
+      transform: translate(-50%, -50%);
       width: 58px;
       height: 58px;
       border-radius: 50%;
@@ -515,10 +465,14 @@
       align-items: center;
       justify-content: center;
       z-index: 3;
-      box-shadow: 0 0 30px rgba(56, 189, 248, 0.6);
-      transition: transform 0.3s ease;
+      box-shadow: 0 0 25px rgba(56, 189, 248, 0.5);
+      transition: transform 0.25s ease;
     }
-    .project-card:hover .project-play { transform: translate(-50%, -50%) scale(1.1); background: #fff; color: #000206; }
+    .project-card:hover .project-play {
+      transform: translate(-50%, -50%) scale(1.1);
+      background: #fff;
+      color: #000206;
+    }
 
     .project-body { padding: 24px; display: flex; flex-direction: column; flex-grow: 1; }
     html[dir="rtl"] .project-body { text-align: right; }
@@ -535,11 +489,9 @@
       background: transparent;
       border: none;
       cursor: pointer;
-      transition: transform 0.2s ease;
     }
-    .watch-btn:hover { transform: translateX(4px); }
 
-    /* Before/After Color Slider (Enlarged) */
+    /* Before/After Color Slider (Enlarged & Detailed) */
     .color-suite-section { padding: 50px 0 90px 0; }
 
     .grading-wrapper {
@@ -550,13 +502,13 @@
       border-radius: var(--radius-lg);
       border: 1px solid var(--border-glow);
       overflow: hidden;
-      box-shadow: 0 25px 65px -15px rgba(0, 0, 0, 0.95), 0 0 35px rgba(56, 189, 248, 0.2);
+      box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.9);
     }
 
     .compare-container {
       position: relative;
       width: 100%;
-      padding-top: 75%;
+      padding-top: 75%; /* 4:3 Ratio for Large Face Clarity */
       min-height: 380px;
       overflow: hidden;
       user-select: none;
@@ -622,7 +574,7 @@
       align-items: center;
       justify-content: center;
       color: #fff;
-      box-shadow: 0 0 22px rgba(56, 189, 248, 0.85);
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.7);
       font-size: 0.9rem;
       font-weight: 800;
     }
@@ -634,7 +586,6 @@
       border-radius: var(--radius-full);
       background: rgba(0, 2, 6, 0.85);
       border: 1px solid var(--border-blue);
-      backdrop-filter: blur(8px);
       font-size: 0.72rem;
       font-weight: 800;
       letter-spacing: 0.08em;
@@ -673,17 +624,15 @@
       display: flex;
       flex-direction: column;
       position: relative;
-      transition: all 0.35s var(--ease-cinema);
+      transition: transform 0.3s ease, border-color 0.3s ease;
     }
     .pricing-card:hover {
-      transform: translateY(-8px);
+      transform: translateY(-6px);
       border-color: var(--cyan-neon);
-      box-shadow: 0 20px 45px -15px rgba(0,0,0,0.9), 0 0 30px rgba(56, 189, 248, 0.25);
     }
     .pricing-card.popular {
       border-color: var(--cyan-neon);
-      background: rgba(10, 24, 60, 0.85);
-      box-shadow: 0 0 35px rgba(56, 189, 248, 0.2);
+      background: #0a1840;
     }
 
     .popular-tag {
@@ -748,7 +697,7 @@
       border-radius: var(--radius-md);
       overflow: hidden;
       cursor: pointer;
-      transition: border-color 0.3s ease, background 0.3s ease;
+      transition: border-color 0.25s ease;
     }
     .faq-item.active { border-color: var(--cyan-neon); background: var(--bg-card-hover); }
 
@@ -765,14 +714,14 @@
     .faq-icon {
       font-size: 1.3rem;
       color: var(--cyan-neon);
-      transition: transform 0.3s ease;
+      transition: transform 0.25s ease;
     }
     .faq-item.active .faq-icon { transform: rotate(45deg); }
 
     .faq-answer {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.4s var(--ease-cinema), padding 0.4s ease;
+      transition: max-height 0.35s ease, padding 0.35s ease;
       padding: 0 22px;
       color: var(--text-gray);
       font-size: 0.92rem;
@@ -783,7 +732,7 @@
       padding-bottom: 20px;
     }
 
-    /* What I Bring (Value Proposition) */
+    /* What I Bring */
     .value-section { padding: 80px 0; }
     .value-grid {
       display: grid;
@@ -796,13 +745,9 @@
       border: 1px solid var(--border-blue);
       border-radius: var(--radius-md);
       padding: 30px 24px;
-      transition: all 0.35s ease;
+      transition: border-color 0.25s ease;
     }
-    .value-card:hover {
-      border-color: var(--cyan-neon);
-      transform: translateY(-5px);
-      background: var(--bg-card-hover);
-    }
+    .value-card:hover { border-color: var(--cyan-neon); }
     .value-title { font-size: 1.2rem; color: var(--cyan-neon); margin-bottom: 8px; }
     .value-desc { font-size: 0.88rem; color: var(--text-gray); line-height: 1.6; }
 
@@ -817,7 +762,6 @@
       border: 1px solid var(--border-blue);
       border-radius: var(--radius-lg);
       padding: 40px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
     }
     html[dir="rtl"] .about-content { text-align: right; }
 
@@ -828,10 +772,8 @@
       border-radius: var(--radius-md);
       overflow: hidden;
       border: 1px solid var(--border-glow);
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(56, 189, 248, 0.2);
     }
-    .about-photo-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-    .about-photo-wrapper:hover .about-photo-img { transform: scale(1.04); }
+    .about-photo-img { width: 100%; height: 100%; object-fit: cover; }
 
     .profile-badge {
       position: absolute;
@@ -842,9 +784,8 @@
       gap: 8px;
       padding: 6px 14px;
       border-radius: var(--radius-full);
-      background: rgba(0, 2, 6, 0.85);
+      background: rgba(0, 2, 6, 0.9);
       border: 1px solid var(--cyan-neon);
-      backdrop-filter: blur(8px);
     }
     html[dir="rtl"] .profile-badge { left: auto; right: 14px; }
 
@@ -861,7 +802,6 @@
       border: 1px solid var(--border-blue);
       border-radius: var(--radius-lg);
       padding: 40px 24px;
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9);
       text-align: center;
     }
 
@@ -877,22 +817,18 @@
       align-items: center;
       gap: 18px;
       padding: 18px 20px;
-      background: rgba(255, 255, 255, 0.02);
+      background: rgba(255, 255, 255, 0.03);
       border: 1px solid var(--border-blue);
       border-radius: var(--radius-md);
-      transition: all 0.35s var(--ease-cinema);
+      transition: border-color 0.25s ease;
       text-align: left;
       overflow: hidden;
     }
     html[dir="rtl"] .social-box { text-align: right; }
 
-    .social-box:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.8), 0 0 25px rgba(56, 189, 248, 0.25);
-    }
-    .social-box.whatsapp:hover { border-color: #22c55e; box-shadow: 0 0 25px rgba(34, 197, 94, 0.3); }
-    .social-box.instagram:hover { border-color: #e1306c; box-shadow: 0 0 25px rgba(225, 48, 108, 0.3); }
-    .social-box.email:hover { border-color: var(--cyan-neon); box-shadow: 0 0 25px rgba(56, 189, 248, 0.3); }
+    .social-box.whatsapp:hover { border-color: #22c55e; }
+    .social-box.instagram:hover { border-color: #e1306c; }
+    .social-box.email:hover { border-color: var(--cyan-neon); }
 
     .social-icon-wrap {
       width: 52px;
@@ -902,75 +838,23 @@
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      transition: transform 0.4s ease;
-    }
-    .social-box:hover .social-icon-wrap { transform: scale(1.12) rotate(5deg); }
-
-    .social-box.whatsapp .social-icon-wrap {
-      background: rgba(34, 197, 94, 0.12);
-      border: 1px solid rgba(34, 197, 94, 0.4);
-      color: #22c55e;
-      animation: pulseGreen 2.5s infinite;
-    }
-    @keyframes pulseGreen {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); }
-      50% { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
     }
 
-    .social-box.instagram .social-icon-wrap {
-      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      color: #fff;
-    }
-
-    .social-box.email .social-icon-wrap {
-      background: rgba(56, 189, 248, 0.12);
-      border: 1px solid var(--border-blue);
-      color: var(--cyan-neon);
-      animation: pulseCyan 2.5s infinite;
-    }
-    @keyframes pulseCyan {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.4); }
-      50% { box-shadow: 0 0 0 8px rgba(56, 189, 248, 0); }
-    }
+    .social-box.whatsapp .social-icon-wrap { background: rgba(34, 197, 94, 0.12); color: #22c55e; }
+    .social-box.instagram .social-icon-wrap { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%); color: #fff; }
+    .social-box.email .social-icon-wrap { background: rgba(56, 189, 248, 0.12); color: var(--cyan-neon); }
 
     .social-info { overflow: hidden; flex: 1; }
     .social-info small { display: block; font-size: 0.75rem; color: var(--text-gray); text-transform: uppercase; }
     .social-info strong { font-size: 1.05rem; color: #fff; display: block; }
-    .social-box.email .social-info strong { font-size: clamp(0.72rem, 3vw, 0.9rem); word-break: break-all; }
+    .social-box.email .social-info strong { font-size: clamp(0.72rem, 3vw, 0.88rem); word-break: break-all; }
 
-    /* Sticky WhatsApp */
-    .floating-wa-btn {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      z-index: 999;
-      width: 62px;
-      height: 62px;
-      border-radius: 50%;
-      background: #22c55e;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 10px 30px rgba(34, 197, 94, 0.45);
-      border: 2px solid rgba(255, 255, 255, 0.5);
-      animation: floatWA 3s ease-in-out infinite alternate;
-      cursor: pointer;
-    }
-    html[dir="rtl"] .floating-wa-btn { right: auto; left: 24px; }
-    @keyframes floatWA {
-      0% { transform: translateY(0) scale(1); }
-      100% { transform: translateY(-6px) scale(1.06); }
-    }
-
-    /* Modal Player + Case Study Breakdown */
+    /* Modal Player + Case Studies */
     .native-modal {
       position: fixed;
       inset: 0;
       z-index: 9999;
       background: rgba(0, 2, 6, 0.96);
-      backdrop-filter: blur(25px);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -978,7 +862,7 @@
       opacity: 0;
       pointer-events: none;
       visibility: hidden;
-      transition: opacity 0.3s ease, visibility 0.3s ease;
+      transition: opacity 0.25s ease, visibility 0.25s ease;
     }
     .native-modal.active { opacity: 1; pointer-events: auto; visibility: visible; }
 
@@ -991,7 +875,6 @@
       overflow-y: auto;
       max-height: 90vh;
       border: 1px solid var(--border-glow);
-      box-shadow: 0 0 60px rgba(56, 189, 248, 0.35);
     }
 
     .modal-bar {
@@ -1028,10 +911,9 @@
     }
     .video-holder video { width: 100%; max-height: 55vh; display: block; outline: none; }
 
-    /* Case Study Box Inside Modal */
     .modal-case-study {
       padding: 22px 20px;
-      background: rgba(6, 15, 38, 0.8);
+      background: rgba(6, 15, 38, 0.85);
       border-top: 1px solid var(--border-blue);
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -1049,11 +931,27 @@
       letter-spacing: 0.06em;
       margin-bottom: 4px;
     }
-    .case-item p {
-      font-size: 0.85rem;
-      color: var(--text-white);
-      line-height: 1.4;
+    .case-item p { font-size: 0.85rem; color: var(--text-white); line-height: 1.4; }
+
+    /* Sticky WhatsApp */
+    .floating-wa-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 999;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      background: #22c55e;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 25px rgba(34, 197, 94, 0.4);
+      border: 2px solid rgba(255, 255, 255, 0.5);
+      cursor: pointer;
     }
+    html[dir="rtl"] .floating-wa-btn { right: auto; left: 24px; }
 
     .site-footer {
       border-top: 1px solid var(--border-blue);
@@ -1076,8 +974,6 @@
 </head>
 <body>
 
-  <div class="ambient-sphere"></div>
-
   <!-- FLOATING WHATSAPP BUTTON -->
   <a href="https://wa.me/201143081231?text=Hi%20JOO,%20I%20saw%20your%20portfolio%20and%20want%20to%20collaborate!" target="_blank" rel="noopener noreferrer" class="floating-wa-btn" aria-label="Chat on WhatsApp">
     <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
@@ -1085,7 +981,7 @@
     </svg>
   </a>
 
-  <!-- Mobile Navigation Drawer -->
+  <!-- Mobile Drawer -->
   <div class="mobile-drawer" id="mobileDrawer">
     <button class="drawer-close" onclick="toggleDrawer()" type="button">✕</button>
     <a href="#hero" class="drawer-link" onclick="toggleDrawer()" data-i18n="nav_home">Home</a>
@@ -1150,7 +1046,7 @@
       <!-- Main Showreel Video Card -->
       <div class="showreel-card">
         <div class="showreel-frame">
-          <video class="bg-video-loop lazy-video" muted loop playsinline preload="none" data-src="showreel.mp4"></video>
+          <img class="project-poster-img" src="after.jpg" onerror="this.src='grade.jpg';" alt="Showreel Cover" />
           <div class="showreel-overlay">
             <div class="play-btn-circle" onclick="playProject(0)">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
@@ -1162,7 +1058,7 @@
     </div>
   </section>
 
-  <!-- Selected Works: 6 PROJECTS WITH LAZY VIDEO PREVIEWS & CASE STUDIES -->
+  <!-- Selected Works: 6 PROJECTS WITH 4K COVERS & INSTANT PLAYBACK -->
   <section id="work" class="portfolio-section">
     <div class="container">
       <div class="section-header-flex">
@@ -1178,10 +1074,10 @@
       <div class="projects-carousel">
         <!-- Project 1 -->
         <div class="project-card">
-          <div class="project-thumbnail">
-            <video class="lazy-video" muted loop playsinline preload="none" data-src="project-1.mp4"></video>
+          <div class="project-thumbnail" onclick="playProject(1)">
+            <img class="project-poster-img" src="after.jpg" onerror="this.src='grade.jpg';" alt="Project 1 Cover" />
             <div class="project-tag" data-i18n="p1_tag">AI &amp; Visuals</div>
-            <div class="project-play" onclick="playProject(1)"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+            <div class="project-play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
           </div>
           <div class="project-body">
             <h3 class="project-title" data-i18n="p1_title">Project 01 — AI Motion Cut</h3>
@@ -1192,10 +1088,10 @@
 
         <!-- Project 2 -->
         <div class="project-card">
-          <div class="project-thumbnail">
-            <video class="lazy-video" muted loop playsinline preload="none" data-src="project-2.mp4"></video>
+          <div class="project-thumbnail" onclick="playProject(2)">
+            <img class="project-poster-img" src="after.jpg" onerror="this.src='grade.jpg';" alt="Project 2 Cover" />
             <div class="project-tag" data-i18n="p2_tag">Viral Reel</div>
-            <div class="project-play" onclick="playProject(2)"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+            <div class="project-play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
           </div>
           <div class="project-body">
             <h3 class="project-title" data-i18n="p2_title">Project 02 — Retention Reel</h3>
@@ -1206,10 +1102,10 @@
 
         <!-- Project 3 -->
         <div class="project-card">
-          <div class="project-thumbnail">
-            <video class="lazy-video" muted loop playsinline preload="none" data-src="project-3.mp4"></video>
+          <div class="project-thumbnail" onclick="playProject(3)">
+            <img class="project-poster-img" src="after.jpg" onerror="this.src='grade.jpg';" alt="Project 3 Cover" />
             <div class="project-tag" data-i18n="p3_tag">Commercial Ad</div>
-            <div class="project-play" onclick="playProject(3)"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+            <div class="project-play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
           </div>
           <div class="project-body">
             <h3 class="project-title" data-i18n="p3_title">Project 03 — Commercial Brand Ad</h3>
@@ -1220,10 +1116,10 @@
 
         <!-- Project 4 -->
         <div class="project-card">
-          <div class="project-thumbnail">
-            <video class="lazy-video" muted loop playsinline preload="none" data-src="project-4.mp4"></video>
+          <div class="project-thumbnail" onclick="playProject(4)">
+            <img class="project-poster-img" src="after.jpg" onerror="this.src='grade.jpg';" alt="Project 4 Cover" />
             <div class="project-tag" data-i18n="p4_tag">Cinematic Cut</div>
-            <div class="project-play" onclick="playProject(4)"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+            <div class="project-play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
           </div>
           <div class="project-body">
             <h3 class="project-title" data-i18n="p4_title">Project 04 — Cinematic Film Cut</h3>
@@ -1234,10 +1130,10 @@
 
         <!-- Project 5 -->
         <div class="project-card">
-          <div class="project-thumbnail">
-            <video class="lazy-video" muted loop playsinline preload="none" data-src="project-5.mp4"></video>
+          <div class="project-thumbnail" onclick="playProject(5)">
+            <img class="project-poster-img" src="after.jpg" onerror="this.src='grade.jpg';" alt="Project 5 Cover" />
             <div class="project-tag" data-i18n="p5_tag">Music Video</div>
-            <div class="project-play" onclick="playProject(5)"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+            <div class="project-play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
           </div>
           <div class="project-body">
             <h3 class="project-title" data-i18n="p5_title">Project 05 — Music Video Edit</h3>
@@ -1248,10 +1144,10 @@
 
         <!-- Project 6 -->
         <div class="project-card">
-          <div class="project-thumbnail">
-            <video class="lazy-video" muted loop playsinline preload="none" data-src="project-6.mp4"></video>
+          <div class="project-thumbnail" onclick="playProject(6)">
+            <img class="project-poster-img" src="after.jpg" onerror="this.src='grade.jpg';" alt="Project 6 Cover" />
             <div class="project-tag" data-i18n="p6_tag">VFX &amp; Motion</div>
-            <div class="project-play" onclick="playProject(6)"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+            <div class="project-play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
           </div>
           <div class="project-body">
             <h3 class="project-title" data-i18n="p6_title">Project 06 — VFX &amp; 3D Motion</h3>
@@ -1263,7 +1159,7 @@
     </div>
   </section>
 
-  <!-- INTERACTIVE COLOR GRADING SUITE -->
+  <!-- INTERACTIVE COLOR GRADING SUITE (ENLARGED & DETAIL FOCUSED) -->
   <section id="grading" class="color-suite-section">
     <div class="container">
       <div style="text-align: center; margin-bottom: 35px;">
@@ -1427,7 +1323,7 @@
     </div>
   </section>
 
-  <!-- About Section With Real Photo -->
+  <!-- About Section With Real Photo & 3 Years Experience -->
   <section id="about" class="about-section">
     <div class="container">
       <div class="about-grid">
@@ -1857,7 +1753,6 @@
       document.getElementById("mobileDrawer").classList.toggle("open");
     }
 
-    /* FAQ Accordion Toggle */
     function toggleFaq(card) {
       const wasActive = card.classList.contains('active');
       document.querySelectorAll('.faq-item').forEach(item => item.classList.remove('active'));
@@ -1866,12 +1761,13 @@
       }
     }
 
-    /* Video Player + Case Study Loader */
+    /* Video Player Logic */
     const modal = document.getElementById("videoModal");
     const player = document.getElementById("nativeVideoPlayer");
     const titleEl = document.getElementById("modalVideoTitle");
     const csGoalEl = document.getElementById("csGoal");
     const csRoleEl = document.getElementById("csRole");
+    const csToolsEl = document.getElementById("csTools");
 
     function playProject(index) {
       const data = projectsData[index];
@@ -1892,7 +1788,8 @@
       if (!modal || !player) return;
       modal.classList.remove("active");
       player.pause();
-      player.src = "";
+      player.removeAttribute("src"); // Frees mobile RAM immediately
+      player.load();
       document.body.style.overflow = "auto";
     }
 
@@ -1904,35 +1801,6 @@
 
     window.addEventListener("keydown", (e) => {
       if (e.key === "Escape") closeVideo();
-    });
-
-    /* =========================================================
-       PERFORMANCE ENGINE: LAZY LOAD VIDEOS VIA OBSERVER
-       ========================================================= */
-    document.addEventListener("DOMContentLoaded", () => {
-      const lazyVideos = document.querySelectorAll("video.lazy-video");
-      if ("IntersectionObserver" in window) {
-        const videoObserver = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            const video = entry.target;
-            if (entry.isIntersecting) {
-              if (!video.src && video.dataset.src) {
-                video.src = video.dataset.src;
-                video.load();
-              }
-              video.play().catch(() => {});
-            } else {
-              video.pause();
-            }
-          });
-        }, { threshold: 0.15 });
-
-        lazyVideos.forEach((video) => videoObserver.observe(video));
-      } else {
-        lazyVideos.forEach((video) => {
-          if (video.dataset.src) video.src = video.dataset.src;
-        });
-      }
     });
   </script>
 </body>
