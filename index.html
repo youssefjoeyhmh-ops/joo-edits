@@ -71,7 +71,7 @@
       line-height: 1.6;
       overflow-x: hidden;
       background-image: 
-        radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.18) 0%, transparent 50%),
+        radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.18) 0%, transparent 55%),
         radial-gradient(circle at 100% 35%, rgba(56, 189, 248, 0.08) 0%, transparent 45%),
         radial-gradient(circle at 0% 75%, rgba(29, 78, 216, 0.1) 0%, transparent 50%);
     }
@@ -278,6 +278,7 @@
       line-height: 0.95;
       text-transform: uppercase;
       background: linear-gradient(135deg, #ffffff 0%, #38bdf8 50%, #1d4ed8 100%);
+      background-size: 200% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       filter: drop-shadow(0 0 35px rgba(56, 189, 248, 0.3));
@@ -300,7 +301,7 @@
       margin-bottom: 50px;
     }
 
-    /* Showreel Card with Real Video Frame Cover */
+    /* Showreel Card with Animated Looping Video */
     .showreel-card {
       position: relative;
       width: 100%;
@@ -319,10 +320,10 @@
       padding-top: 56.25%;
       background: #04091a;
       overflow: hidden;
+      cursor: pointer;
     }
 
-    /* Shows the real video first frame without lag */
-    .showreel-preview-video {
+    .bg-video-loop {
       position: absolute;
       top: 0;
       left: 0;
@@ -331,7 +332,9 @@
       object-fit: cover;
       opacity: 0.85;
       pointer-events: none;
+      transition: transform 0.6s ease;
     }
+    .showreel-card:hover .bg-video-loop { transform: scale(1.04); opacity: 0.95; }
 
     .showreel-overlay {
       position: absolute;
@@ -340,9 +343,8 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background: radial-gradient(circle at center, rgba(6, 15, 38, 0.25) 0%, rgba(0, 2, 6, 0.8) 100%);
+      background: radial-gradient(circle at center, rgba(6, 15, 38, 0.15) 0%, rgba(0, 2, 6, 0.75) 100%);
       z-index: 2;
-      pointer-events: none;
     }
 
     .play-btn-circle {
@@ -357,7 +359,6 @@
       color: #fff;
       box-shadow: 0 0 30px rgba(56, 189, 248, 0.6);
       cursor: pointer;
-      pointer-events: auto;
       transition: transform 0.25s ease;
     }
     .play-btn-circle:hover { transform: scale(1.08); }
@@ -370,8 +371,6 @@
       text-transform: uppercase;
       font-weight: 700;
       color: #fff;
-      cursor: pointer;
-      pointer-events: auto;
     }
 
     /* Horizontal Projects Carousel */
@@ -428,7 +427,7 @@
       transform: translateY(-5px);
     }
 
-    /* Video Frame Thumbnail using real video snapshot */
+    /* Looping Ambient Preview Video in Each Project Card */
     .project-thumbnail {
       position: relative;
       width: 100%;
@@ -438,7 +437,7 @@
       overflow: hidden;
     }
 
-    .card-video-preview {
+    .project-thumbnail video {
       position: absolute;
       top: 0;
       left: 0;
@@ -447,9 +446,9 @@
       object-fit: cover;
       opacity: 0.85;
       pointer-events: none;
-      transition: transform 0.4s ease;
+      transition: transform 0.5s ease;
     }
-    .project-card:hover .card-video-preview { transform: scale(1.05); opacity: 0.98; }
+    .project-card:hover .project-thumbnail video { transform: scale(1.05); opacity: 0.98; }
 
     .project-tag {
       position: absolute;
@@ -507,7 +506,7 @@
       cursor: pointer;
     }
 
-    /* Before/After Color Slider */
+    /* Before/After Color Slider (Enlarged) */
     .color-suite-section { padding: 50px 0 90px 0; }
 
     .grading-wrapper {
@@ -622,7 +621,7 @@
       z-index: 20;
     }
 
-    /* Pricing Section: Custom Quotes & Inquiries (No Hard Numbers) */
+    /* Pricing Section: Custom Quotes (No Fixed Numbers) */
     .pricing-section { padding: 90px 0; }
 
     .pricing-grid {
@@ -811,7 +810,7 @@
     .about-content h2 { font-size: 2.2rem; margin-bottom: 12px; color: #fff; }
     .about-content p { color: var(--text-gray); line-height: 1.7; margin-bottom: 16px; }
 
-    /* Contact Section */
+    /* Contact Section: Exactly 3 Channels */
     .contact-section { padding: 90px 0 110px 0; }
     .contact-card-wrap {
       background: radial-gradient(circle at 100% 0%, rgba(56, 189, 248, 0.12) 0%, rgba(4, 9, 26, 0.95) 70%);
@@ -833,7 +832,7 @@
       align-items: center;
       gap: 18px;
       padding: 18px 20px;
-      background: rgba(255, 255, 255, 0.03);
+      background: rgba(255, 255, 255, 0.02);
       border: 1px solid var(--border-blue);
       border-radius: var(--radius-md);
       transition: border-color 0.25s ease;
@@ -1060,24 +1059,23 @@
       </div>
 
       <!-- Main Showreel Video Card -->
-      <div class="showreel-card">
+      <div class="showreel-card" onclick="playProject(0)">
         <div class="showreel-frame">
-          <!-- Real Showreel Video First Frame -->
-          <video class="showreel-preview-video" muted playsinline preload="metadata">
-            <source src="showreel.mp4#t=0.5" type="video/mp4" />
+          <video class="bg-video-loop" autoplay muted loop playsinline preload="auto">
+            <source src="showreel.mp4" type="video/mp4" />
           </video>
           <div class="showreel-overlay">
-            <div class="play-btn-circle" onclick="playProject(0)">
+            <div class="play-btn-circle">
               <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
             </div>
-            <span class="showreel-text" onclick="playProject(0)" data-i18n="showreel_play">Play Official Showreel</span>
+            <span class="showreel-text" data-i18n="showreel_play">Play Official Showreel</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Selected Works: 6 PROJECTS WITH NATIVE VIDEO PREVIEWS -->
+  <!-- Selected Works: 6 PROJECTS WITH REAL VIDEO PREVIEWS -->
   <section id="work" class="portfolio-section">
     <div class="container">
       <div class="section-header-flex">
@@ -1094,8 +1092,8 @@
         <!-- Project 1 -->
         <div class="project-card">
           <div class="project-thumbnail" onclick="playProject(1)">
-            <video class="card-video-preview" muted playsinline preload="metadata">
-              <source src="project-1.mp4#t=0.5" type="video/mp4" />
+            <video autoplay muted loop playsinline preload="auto">
+              <source src="project-1.mp4" type="video/mp4" />
             </video>
             <div class="project-tag" data-i18n="p1_tag">AI &amp; Visuals</div>
             <div class="project-play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
@@ -1110,8 +1108,8 @@
         <!-- Project 2 -->
         <div class="project-card">
           <div class="project-thumbnail" onclick="playProject(2)">
-            <video class="card-video-preview" muted playsinline preload="metadata">
-              <source src="project-2.mp4#t=0.5" type="video/mp4" />
+            <video autoplay muted loop playsinline preload="auto">
+              <source src="project-2.mp4" type="video/mp4" />
             </video>
             <div class="project-tag" data-i18n="p2_tag">Viral Reel</div>
             <div class="project-play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
@@ -1126,8 +1124,8 @@
         <!-- Project 3 -->
         <div class="project-card">
           <div class="project-thumbnail" onclick="playProject(3)">
-            <video class="card-video-preview" muted playsinline preload="metadata">
-              <source src="project-3.mp4#t=0.5" type="video/mp4" />
+            <video autoplay muted loop playsinline preload="auto">
+              <source src="project-3.mp4" type="video/mp4" onerror="this.src='project-1.mp4'" />
             </video>
             <div class="project-tag" data-i18n="p3_tag">Commercial Ad</div>
             <div class="project-play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
@@ -1142,8 +1140,8 @@
         <!-- Project 4 -->
         <div class="project-card">
           <div class="project-thumbnail" onclick="playProject(4)">
-            <video class="card-video-preview" muted playsinline preload="metadata">
-              <source src="project-4.mp4#t=0.5" type="video/mp4" />
+            <video autoplay muted loop playsinline preload="auto">
+              <source src="project-4.mp4" type="video/mp4" onerror="this.src='project-2.mp4'" />
             </video>
             <div class="project-tag" data-i18n="p4_tag">Cinematic Cut</div>
             <div class="project-play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
@@ -1158,8 +1156,8 @@
         <!-- Project 5 -->
         <div class="project-card">
           <div class="project-thumbnail" onclick="playProject(5)">
-            <video class="card-video-preview" muted playsinline preload="metadata">
-              <source src="project-5.mp4#t=0.5" type="video/mp4" />
+            <video autoplay muted loop playsinline preload="auto">
+              <source src="project-5.mp4" type="video/mp4" onerror="this.src='project-1.mp4'" />
             </video>
             <div class="project-tag" data-i18n="p5_tag">Music Video</div>
             <div class="project-play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
@@ -1174,8 +1172,8 @@
         <!-- Project 6 -->
         <div class="project-card">
           <div class="project-thumbnail" onclick="playProject(6)">
-            <video class="card-video-preview" muted playsinline preload="metadata">
-              <source src="project-6.mp4#t=0.5" type="video/mp4" />
+            <video autoplay muted loop playsinline preload="auto">
+              <source src="project-6.mp4" type="video/mp4" onerror="this.src='project-2.mp4'" />
             </video>
             <div class="project-tag" data-i18n="p6_tag">VFX &amp; Motion</div>
             <div class="project-play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
@@ -1450,7 +1448,6 @@
       <div class="video-holder">
         <video id="nativeVideoPlayer" controls playsinline preload="auto"></video>
       </div>
-      <!-- Case Study Breakdown inside Modal -->
       <div class="modal-case-study">
         <div class="case-item">
           <small data-i18n="cs_goal_label">Project Goal</small>
@@ -1469,7 +1466,6 @@
   </div>
 
   <script>
-    /* Projects Database with Case Studies */
     const projectsData = [
       {
         src: "showreel.mp4",
@@ -1536,7 +1532,6 @@
       }
     ];
 
-    /* Bilingual Dictionary */
     const translations = {
       en: {
         nav_home: "Home",
@@ -1604,4 +1599,252 @@
         pkg2_sub: "Complete monthly content pipeline for creators & personal brands.",
         pkg2_f1: "8 High-Retention Viral Reels",
         pkg2_f2: "Custom Sound Design & Kinetic Text",
-        pkg2_f
+        pkg2_f3: "Consistent Visual Identity",
+        pkg2_f4: "Priority WhatsApp Support",
+        pkg3_name: "Commercial & AI",
+        pkg3_price: "Project Based <span>/ production</span>",
+        pkg3_sub: "High-production brand promos, DTC ads & AI video concepts.",
+        pkg3_f1: "Full Commercial Video & Pacing",
+        pkg3_f2: "Runway Gen-3 AI Scene Generation",
+        pkg3_f3: "DaVinci Studio Film Color Grade",
+        pkg3_f4: "4K Master Delivery & Revisions",
+        book_wa: "Inquire on WhatsApp",
+        faq_badge: "Clarity",
+        faq_title: "Frequently Asked Questions",
+        faq_sub: "Everything you need to know before starting your project.",
+        q1_title: "How are files sent and delivered?",
+        q1_ans: "All raw footage reception and final 4K master video delivery are handled smoothly through dedicated Google Drive folders. You simply share your Drive link, and I deliver your finished exports directly into your folder.",
+        q2_title: "How long does it take to deliver the first cut?",
+        q2_ans: "For short-form reels and individual videos, the first draft is delivered within 24 to 48 hours. Larger commercial or AI-heavy projects typically take 3 to 5 business days depending on footage scope.",
+        q3_title: "Are revisions included in the price?",
+        q3_ans: "Yes! Every project includes up to 2 rounds of revisions at no additional cost to guarantee that the final export matches your creative vision 100%.",
+        q4_title: "Which editing and AI software do you use?",
+        q4_ans: "I work with industry-standard professional software: Adobe Premiere Pro for editing & pacing, DaVinci Resolve Studio for Hollywood-grade color, After Effects for motion graphics, and Runway Gen-3 & Midjourney for generative AI visuals.",
+        status_work: "Available for Work",
+        about_badge: "Behind The Monitor",
+        about_title: "I turn complex concepts into cinematic reality.",
+        about_lead: "Hey, I'm <strong>JOO</strong> — Video Editor & AI Video Creator.",
+        about_desc: "With 3 years of production company and agency experience, I focus on human storytelling amplified with generative AI video models. Every frame is timed with precision, audio hits are synced to transients, and visuals are sculpted to hold attention from the first second.",
+        about_btn: "Start a Project",
+        contact_badge: "Let's Connect",
+        contact_title: "Let's Work Together",
+        contact_sub: "Ready to collaborate? Reach out directly via WhatsApp, Instagram, or Email.",
+        wa_label: "WhatsApp Direct",
+        ig_label: "Instagram Profile",
+        email_label: "Email Me",
+        cs_goal_label: "Project Goal",
+        cs_role_label: "My Role",
+        cs_tools_label: "Software Stack",
+        footer_title: "Video Editor & AI Video Creator."
+      },
+      ar: {
+        nav_home: "الرئيسية",
+        nav_work: "الأعمال",
+        nav_color: "التلوين السينمائي",
+        nav_pricing: "الأسعار",
+        nav_faq: "الأسئلة الشائعة",
+        nav_about: "عني",
+        nav_contact: "تواصل معي",
+        btn_talk: "ابدأ مشروعك",
+        urgency_badge: "🟢 متاح لمشروعين فقط هذا الشهر",
+        hero_sub_highlight: "واقع بصري سينمائي مبهر.",
+        hero_btn_work: "مشاهدة الأعمال",
+        hero_btn_pricing: "باقات الأسعار",
+        showreel_play: "تشغيل الشوريل الرسمي",
+        works_title: "أعمال مختارة",
+        works_sub: "معرض أفقي متكامل. اضغط على أي مشروع للمشاهدة بملء الشاشة.",
+        swipe_hint: "اسحب للمزيد ◂ ▸",
+        p1_tag: "ذكاء اصطناعي ومؤثرات",
+        p1_title: "مشروع 01 — مونتاج ذكاء اصطناعي",
+        p1_desc: "مونتاج بصري هجين يدمج أحدث تقنيات الذكاء الاصطناعي التوليدي مع هندسة صوتية سينمائية.",
+        p2_tag: "ريلز عالي التفاعل",
+        p2_title: "مشروع 02 — ريلز احتباس المشاهدة",
+        p2_desc: "مونتاج سريع الإيقاع مصمم لرفع نسب المشاهدة مع انتقالات حركية ومزامنة دقيقة مع الصوت.",
+        p3_tag: "إعلان تجاري",
+        p3_title: "مشروع 03 — إعلان تجاري لبراند",
+        p3_desc: "إعلان تجاري بأعلى جودة بصرية مصمم لإبراز هوية البراند وجذب العملاء بدقة.",
+        p4_tag: "مونتاج سينمائي",
+        p4_title: "مشروع 04 — فيلم سينمائي قصير",
+        p4_desc: "سرد قصصي درامي بأجواء سينمائية وتدرج لوني خاص مع مؤثرات صوتية محيطية.",
+        p5_tag: "فيديو كليب",
+        p5_title: "مشروع 05 — فيديو كليب موسيقي",
+        p5_desc: "مزامنة إيقاعية دقيقة مع النغمات، تسريع وإبطاء حركي وانتقالات بصرية مبتكرة.",
+        p6_tag: "خدع بصرية وحركة",
+        p6_title: "مشروع 06 — خدع بصرية وأنيميشن 3D",
+        p6_desc: "دمج احترافي بين تقنيات الذكاء الاصطناعي وتتبع حركة الكاميرا ثلاثية الأبعاد.",
+        watch_film: "مشاهدة الفيديو ←",
+        color_badge: "استوديو دافينشي ريزولف",
+        color_title: "مقارنة التلوين السينمائي",
+        color_sub: "اسحب الشريط بصباعك لرؤية الكادر الخام الباهت من الكاميرا مقابل التلوين السينمائي النهائي.",
+        log_before: "قبل (RAW LOG)",
+        log_after: "بعد (تلوين سينمائي)",
+        val_badge: "معايير التنفيذ",
+        val_title: "ما الذي أقدمه لمحتواك بالظبط؟",
+        val_sub: "مبادئ مونتاج راسخة مصممة لإبقاء عين المشاهد وتحويل التفاعل إلى أرقام ونتائج.",
+        v1_title: "إيقاع نفسي مدروس",
+        v1_desc: "التقطيع على الميكرو-بيتس الحركية لمنع المشاهد من قلب الشاشة في أول 3 ثوانٍ المصيرية.",
+        v2_title: "هندسة صوتية محيطية",
+        v2_desc: "أكثر من 40 طبقة صوتية من الـ whooshes والـ impacts تجعل المشاهد يعيش اللقطة بحواسه.",
+        v3_title: "عمق وتباين DaVinci",
+        v3_desc: "حماية تدرجات البشرة الطبيعية مع محاكاة ألوان شريط كوداك لتنطق الشاشات بجودة سينمائية.",
+        pricing_badge: "الاستثمار والباقات",
+        pricing_title: "باقات مخصصة لمشروعك",
+        pricing_sub: "اختر نوع المشروع المناسب لأهداف محتواك، واستفسر عن التسعير عبر واتساب.",
+        popular_tag: "الأكثر طلباً",
+        pkg1_name: "ريلز فردي",
+        pkg1_price: "تسعير مخصص <span>/ لكل مشروع</span>",
+        pkg1_sub: "مثالية للمحتوى السريع، الشورتس، وريلز إنستغرام وتيك توك.",
+        pkg1_f1: "مونتاج عمودي 9:16 عالي الاحتباس",
+        pkg1_f2: "نصوص متحركة ومؤثرات صوتية جذابة",
+        pkg1_f3: "تسليم سريع خلال 24 إلى 48 ساعة",
+        pkg1_f4: "جولتين تعديل مجاناً",
+        pkg2_name: "باقة المحتوى الشهرية",
+        pkg2_price: "خطة شهرية <span>/ تعاقد مرن</span>",
+        pkg2_sub: "خط إنتاج شهري متكامل لصناع المحتوى والبراندات الشخصية.",
+        pkg2_f1: "8 فيديوهات ريلز عالية المشاهدة شهرياً",
+        pkg2_f2: "هندسة صوت ونصوص حركية مخصصة",
+        pkg2_f3: "هوية بصرية ثابتة تميز براندك",
+        pkg2_f4: "دعم وأولوية تواصل مباشرة على واتساب",
+        pkg3_name: "إعلانات وذكاء اصطناعي",
+        pkg3_price: "حسب العمل <span>/ للإنتاج</span>",
+        pkg3_sub: "إعلانات تجارية سينمائية، بروموهات براندات ولقطات AI.",
+        pkg3_f1: "مونتاج إعلاني سينمائي متكامل الإيقاع",
+        pkg3_f2: "توليد مشاهد متقدمة عبر Runway Gen-3",
+        pkg3_f3: "تلوين سينمائي باستوديو DaVinci Resolve",
+        pkg3_f4: "تسليم ماستر 4K مع جولات تعديل",
+        book_wa: "استفسر واحجز عبر واتساب",
+        faq_badge: "وضوح تام",
+        faq_title: "الأسئلة الشائعة",
+        faq_sub: "كل ما يهمك معرفته قبل بدء العمل معاً.",
+        q1_title: "كيف يتم إرسال واستلام الملفات؟",
+        q1_ans: "استلام الماتريال الخام وتسليم الفيديوهات النهائية بجودة 4K يتم بالكامل عبر روابط Google Drive مخصصة لكل عميل لضمان أعلى جودة وبدون أي ضغط أو فقدان للبيانات.",
+        q2_title: "كم يستغرق تسليم أول مسودة عمل؟",
+        q2_ans: "بالنسبة لفيديوهات الريلز الفردية، يتم تسليم أول مسودة خلال 24 إلى 48 ساعة. أما الإعلانات الكبيرة والمشاريع المعتمدة على الذكاء الاصطناعي فتستغرق من 3 إلى 5 أيام عمل بحسب حجم الماتريال.",
+        q3_title: "هل التعديلات مشمولة في سعر الباقة؟",
+        q3_ans: "نعم بالتأكيد! كل مشروع يتضمن حتى جولتين من التعديلات بدون أي تكلفة إضافية لضمان أن النتيجة النهائية تطابق رؤيتك الفنية بنسبة 100%.",
+        q4_title: "ما هي البرامج والذكاء الاصطناعي التي تعمل بها؟",
+        q4_ans: "أعمل بأحدث البرامج المعتمدة في هوليوود: Adobe Premiere Pro للمونتاج والإيقاع، DaVinci Resolve Studio للتلوين السينمائي، After Effects للمؤثرات البصرية، ونماذج Runway Gen-3 و Midjourney للذكاء الاصطناعي.",
+        status_work: "متاح لاستلام المشاريع",
+        about_badge: "خلف شاشات المونتاج",
+        about_title: "أحول المفاهيم المعقدة إلى واقع سينمائي ملموس.",
+        about_lead: "أهلاً، أنا <strong>جو (JOO)</strong> — مونتير وصانع فيديو بالذكاء الاصطناعي.",
+        about_desc: "بخبرة 3 سنوات في شركات الإنتاج وصناعة المحتوى، أركز على السرد القصصي المعزز بنماذج الذكاء الاصطناعي التوليدي. كل فريم محسوب بدقة، وكل ضربة صوتية متزامنة باحترافية لتظل عين المشاهد مشدودة من أول ثانية.",
+        about_btn: "ابدأ مشروعك الآن",
+        contact_badge: "تواصل مباشر",
+        contact_title: "لنصنع شيئاً لا يُنسى معاً",
+        contact_sub: "جاهز لتنفيذ مشروعك القادم؟ تواصل معي فوراً عبر واتساب، إنستغرام، أو الإيميل.",
+        wa_label: "محادثة واتساب فورية",
+        ig_label: "حساب الإنستغرام",
+        email_label: "إرسال إيميل",
+        cs_goal_label: "هدف المشروع",
+        cs_role_label: "دوري الفني",
+        cs_tools_label: "الأدوات والبرامج",
+        footer_title: "مونتير محترف وصانع فيديو بالذكاء الاصطناعي."
+      }
+    };
+
+    let currentLang = 'en';
+
+    function toggleLang() {
+      try {
+        currentLang = (currentLang === 'en') ? 'ar' : 'en';
+        document.documentElement.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
+        document.documentElement.setAttribute('lang', currentLang);
+
+        const langText = document.getElementById('langText');
+        if (langText) langText.textContent = (currentLang === 'ar') ? 'English' : 'العربية';
+
+        const subEl = document.getElementById('heroSub');
+        if (subEl) {
+          if (currentLang === 'ar') {
+            subEl.innerHTML = `أحول الأفكار الخام إلى <span style="color:var(--cyan-neon); font-style:italic;">${translations.ar.hero_sub_highlight}</span>`;
+          } else {
+            subEl.innerHTML = `I turn raw ideas into <span style="color:var(--cyan-neon); font-style:italic;">${translations.en.hero_sub_highlight}</span>`;
+          }
+        }
+
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          if (translations[currentLang] && translations[currentLang][key]) {
+            el.innerHTML = translations[currentLang][key];
+          }
+        });
+      } catch (err) {
+        console.error('Language toggle error:', err);
+      }
+    }
+
+    function toggleDrawer() {
+      const drawer = document.getElementById("mobileDrawer");
+      if (drawer) drawer.classList.toggle("open");
+    }
+
+    function toggleFaq(card) {
+      const wasActive = card.classList.contains('active');
+      document.querySelectorAll('.faq-item').forEach(item => item.classList.remove('active'));
+      if (!wasActive) {
+        card.classList.add('active');
+      }
+    }
+
+    /* Reliable Safe Video Player */
+    function playProject(index) {
+      try {
+        const data = projectsData[index];
+        if (!data) return;
+
+        const modal = document.getElementById("videoModal");
+        const player = document.getElementById("nativeVideoPlayer");
+        const titleEl = document.getElementById("modalVideoTitle");
+        const csGoalEl = document.getElementById("csGoal");
+        const csRoleEl = document.getElementById("csRole");
+
+        if (titleEl) titleEl.textContent = (currentLang === 'ar') ? data.title_ar : data.title_en;
+        if (csGoalEl) csGoalEl.textContent = (currentLang === 'ar') ? data.goal_ar : data.goal_en;
+        if (csRoleEl) csRoleEl.textContent = (currentLang === 'ar') ? data.role_ar : data.role_en;
+
+        if (player) {
+          player.src = data.src;
+          player.load();
+          player.play().catch(e => console.log('Autoplay prevented:', e));
+        }
+
+        if (modal) {
+          modal.classList.add("active");
+          document.body.style.overflow = "hidden";
+        }
+      } catch (err) {
+        console.error('Play project error:', err);
+      }
+    }
+
+    function closeVideo() {
+      try {
+        const modal = document.getElementById("videoModal");
+        const player = document.getElementById("nativeVideoPlayer");
+
+        if (modal) modal.classList.remove("active");
+        if (player) {
+          player.pause();
+          player.removeAttribute("src");
+          player.load();
+        }
+        document.body.style.overflow = "auto";
+      } catch (err) {
+        console.error('Close video error:', err);
+      }
+    }
+
+    function closeModalOnBackdrop(e) {
+      const modal = document.getElementById("videoModal");
+      if (e.target === modal) {
+        closeVideo();
+      }
+    }
+
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeVideo();
+    });
+  </script>
+</body>
+</html>
