@@ -31,7 +31,7 @@
       --cyan-neon: #38bdf8;
       --cyan-bright: #00f0ff;
       --blue-electric: #2563eb;
-      --border-blue: rgba(56, 189, 248, 0.2);
+      --border-blue: rgba(56, 189, 248, 0.18);
       --border-glow: rgba(56, 189, 248, 0.65);
 
       --text-white: #ffffff;
@@ -71,7 +71,7 @@
       line-height: 1.6;
       overflow-x: hidden;
       background-image: 
-        radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.18) 0%, transparent 55%),
+        radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.18) 0%, transparent 50%),
         radial-gradient(circle at 100% 35%, rgba(56, 189, 248, 0.08) 0%, transparent 45%),
         radial-gradient(circle at 0% 75%, rgba(29, 78, 216, 0.1) 0%, transparent 50%);
     }
@@ -256,11 +256,6 @@
       background: #22c55e;
       border-radius: 50%;
       box-shadow: 0 0 10px #22c55e;
-      animation: blinkDot 1.5s infinite;
-    }
-    @keyframes blinkDot {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.4; transform: scale(0.8); }
     }
 
     .urgency-text { color: #86efac; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.05em; }
@@ -278,7 +273,6 @@
       line-height: 0.95;
       text-transform: uppercase;
       background: linear-gradient(135deg, #ffffff 0%, #38bdf8 50%, #1d4ed8 100%);
-      background-size: 200% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       filter: drop-shadow(0 0 35px rgba(56, 189, 248, 0.3));
@@ -301,7 +295,7 @@
       margin-bottom: 50px;
     }
 
-    /* Showreel Card with Animated Looping Video */
+    /* Showreel Card */
     .showreel-card {
       position: relative;
       width: 100%;
@@ -373,6 +367,46 @@
       color: #fff;
     }
 
+    /* =========================================================
+       FILTER TABS SYSTEM
+       ========================================================= */
+    .filter-tabs-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 16px;
+      margin-bottom: 24px;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+    .filter-tabs-wrapper::-webkit-scrollbar { display: none; }
+
+    .filter-pill {
+      flex-shrink: 0;
+      padding: 9px 20px;
+      border-radius: var(--radius-full);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-blue);
+      color: var(--text-gray);
+      font-size: 0.84rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .filter-pill:hover {
+      border-color: var(--cyan-neon);
+      color: #fff;
+    }
+
+    .filter-pill.active {
+      background: linear-gradient(135deg, #38bdf8 0%, #1d4ed8 100%);
+      border-color: transparent;
+      color: #ffffff;
+      box-shadow: 0 4px 20px -3px rgba(56, 189, 248, 0.5);
+    }
+
     /* Horizontal Projects Carousel */
     .portfolio-section { padding: 90px 0 50px 0; }
 
@@ -380,7 +414,7 @@
       display: flex;
       align-items: flex-end;
       justify-content: space-between;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
     .section-header-flex h2 { font-size: clamp(2rem, 5vw, 2.8rem); }
 
@@ -419,7 +453,7 @@
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      transition: border-color 0.3s ease, transform 0.3s ease;
+      transition: all 0.35s ease;
       position: relative;
     }
     .project-card:hover {
@@ -427,7 +461,6 @@
       transform: translateY(-5px);
     }
 
-    /* Looping Ambient Preview Video in Each Project Card */
     .project-thumbnail {
       position: relative;
       width: 100%;
@@ -506,7 +539,7 @@
       cursor: pointer;
     }
 
-    /* Before/After Color Slider (Enlarged) */
+    /* Before/After Color Slider */
     .color-suite-section { padding: 50px 0 90px 0; }
 
     .grading-wrapper {
@@ -523,7 +556,7 @@
     .compare-container {
       position: relative;
       width: 100%;
-      padding-top: 75%; /* 4:3 Ratio for Large Face Clarity */
+      padding-top: 75%;
       min-height: 380px;
       overflow: hidden;
       user-select: none;
@@ -621,7 +654,7 @@
       z-index: 20;
     }
 
-    /* Pricing Section: Custom Quotes (No Fixed Numbers) */
+    /* Pricing Section */
     .pricing-section { padding: 90px 0; }
 
     .pricing-grid {
@@ -810,7 +843,7 @@
     .about-content h2 { font-size: 2.2rem; margin-bottom: 12px; color: #fff; }
     .about-content p { color: var(--text-gray); line-height: 1.7; margin-bottom: 16px; }
 
-    /* Contact Section: Exactly 3 Channels */
+    /* Contact Section */
     .contact-section { padding: 90px 0 110px 0; }
     .contact-card-wrap {
       background: radial-gradient(circle at 100% 0%, rgba(56, 189, 248, 0.12) 0%, rgba(4, 9, 26, 0.95) 70%);
@@ -1075,7 +1108,7 @@
     </div>
   </section>
 
-  <!-- Selected Works: 6 PROJECTS WITH REAL VIDEO PREVIEWS -->
+  <!-- Selected Works: 6 PROJECTS WITH FILTER TABS & HORIZONTAL CAROUSEL -->
   <section id="work" class="portfolio-section">
     <div class="container">
       <div class="section-header-flex">
@@ -1088,9 +1121,18 @@
         </div>
       </div>
 
-      <div class="projects-carousel">
-        <!-- Project 1 -->
-        <div class="project-card">
+      <!-- FILTER TABS SYSTEM -->
+      <div class="filter-tabs-wrapper">
+        <button class="filter-pill active" onclick="filterProjects('all', this)" type="button" data-i18n="filter_all">All Projects</button>
+        <button class="filter-pill" onclick="filterProjects('reels', this)" type="button" data-i18n="filter_reels">Viral Reels</button>
+        <button class="filter-pill" onclick="filterProjects('ai', this)" type="button" data-i18n="filter_ai">AI &amp; VFX</button>
+        <button class="filter-pill" onclick="filterProjects('commercial', this)" type="button" data-i18n="filter_comm">Commercials</button>
+        <button class="filter-pill" onclick="filterProjects('cinematic', this)" type="button" data-i18n="filter_cine">Cinematic</button>
+      </div>
+
+      <div class="projects-carousel" id="projectsTrack">
+        <!-- Project 1 (AI) -->
+        <div class="project-card" data-cat="ai">
           <div class="project-thumbnail" onclick="playProject(1)">
             <video autoplay muted loop playsinline preload="auto">
               <source src="project-1.mp4" type="video/mp4" />
@@ -1105,8 +1147,8 @@
           </div>
         </div>
 
-        <!-- Project 2 -->
-        <div class="project-card">
+        <!-- Project 2 (Reels) -->
+        <div class="project-card" data-cat="reels">
           <div class="project-thumbnail" onclick="playProject(2)">
             <video autoplay muted loop playsinline preload="auto">
               <source src="project-2.mp4" type="video/mp4" />
@@ -1121,8 +1163,8 @@
           </div>
         </div>
 
-        <!-- Project 3 -->
-        <div class="project-card">
+        <!-- Project 3 (Commercial) -->
+        <div class="project-card" data-cat="commercial">
           <div class="project-thumbnail" onclick="playProject(3)">
             <video autoplay muted loop playsinline preload="auto">
               <source src="project-3.mp4" type="video/mp4" onerror="this.src='project-1.mp4'" />
@@ -1137,8 +1179,8 @@
           </div>
         </div>
 
-        <!-- Project 4 -->
-        <div class="project-card">
+        <!-- Project 4 (Cinematic) -->
+        <div class="project-card" data-cat="cinematic">
           <div class="project-thumbnail" onclick="playProject(4)">
             <video autoplay muted loop playsinline preload="auto">
               <source src="project-4.mp4" type="video/mp4" onerror="this.src='project-2.mp4'" />
@@ -1153,8 +1195,8 @@
           </div>
         </div>
 
-        <!-- Project 5 -->
-        <div class="project-card">
+        <!-- Project 5 (Cinematic / Music) -->
+        <div class="project-card" data-cat="cinematic">
           <div class="project-thumbnail" onclick="playProject(5)">
             <video autoplay muted loop playsinline preload="auto">
               <source src="project-5.mp4" type="video/mp4" onerror="this.src='project-1.mp4'" />
@@ -1169,8 +1211,8 @@
           </div>
         </div>
 
-        <!-- Project 6 -->
-        <div class="project-card">
+        <!-- Project 6 (AI & VFX) -->
+        <div class="project-card" data-cat="ai">
           <div class="project-thumbnail" onclick="playProject(6)">
             <video autoplay muted loop playsinline preload="auto">
               <source src="project-6.mp4" type="video/mp4" onerror="this.src='project-2.mp4'" />
@@ -1550,6 +1592,11 @@
         works_title: "Selected Works",
         works_sub: "Side-by-side showcase. Tap to play in full screen.",
         swipe_hint: "Swipe ◂ ▸",
+        filter_all: "All Projects",
+        filter_reels: "Viral Reels",
+        filter_ai: "AI & VFX",
+        filter_comm: "Commercials",
+        filter_cine: "Cinematic",
         p1_tag: "AI & Visuals",
         p1_title: "Project 01 — AI Motion Cut",
         p1_desc: "High-impact visual cut blending generative video concepts with dynamic sound design.",
@@ -1654,6 +1701,11 @@
         works_title: "أعمال مختارة",
         works_sub: "معرض أفقي متكامل. اضغط على أي مشروع للمشاهدة بملء الشاشة.",
         swipe_hint: "اسحب للمزيد ◂ ▸",
+        filter_all: "كل المشاريع",
+        filter_reels: "ريلز وسوشيال",
+        filter_ai: "ذكاء اصطناعي",
+        filter_comm: "إعلانات تجارية",
+        filter_cine: "سينمائي",
         p1_tag: "ذكاء اصطناعي ومؤثرات",
         p1_title: "مشروع 01 — مونتاج ذكاء اصطناعي",
         p1_desc: "مونتاج بصري هجين يدمج أحدث تقنيات الذكاء الاصطناعي التوليدي مع هندسة صوتية سينمائية.",
@@ -1787,7 +1839,22 @@
       }
     }
 
-    /* Reliable Safe Video Player */
+    /* Filter Projects System */
+    function filterProjects(cat, btn) {
+      document.querySelectorAll('.filter-pill').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const cards = document.querySelectorAll('.project-card');
+      cards.forEach(card => {
+        if (cat === 'all' || card.getAttribute('data-cat') === cat) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    /* Video Player Logic */
     function playProject(index) {
       try {
         const data = projectsData[index];
