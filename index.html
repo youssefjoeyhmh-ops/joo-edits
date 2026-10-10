@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   <title>JOO — Video Editor &amp; AI Video Creator</title>
-  <meta name="description" content="Portfolio of JOO — Professional Video Editor and AI Video Creator crafting cinematic visuals and high-retention edits." />
+  <meta name="description" content="Portfolio of JOO — Professional Video Editor &amp; AI Video Creator. Commercials, UGC Service Explainers, Beauty, Automotive &amp; AI." />
 
   <!-- Glowing Cyan "J" Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='25' fill='%2302040a'/><text x='50%25' y='72%25' font-size='65' font-family='sans-serif' font-weight='900' fill='%2338bdf8' text-anchor='middle'>J</text></svg>" />
@@ -13,7 +13,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://youssefjoeyhmh-ops.github.io/joo-edits/" />
   <meta property="og:title" content="JOO — Video Editor &amp; AI Creator" />
-  <meta property="og:description" content="Cinematic Visuals, DaVinci Resolve Color Grading &amp; High-Retention Edits." />
+  <meta property="og:description" content="UGC Service Explainers, Commercials, Automotive &amp; DaVinci Resolve Color Grading." />
   <meta property="og:image" content="https://youssefjoeyhmh-ops.github.io/joo-edits/profile.jpg" />
 
   <!-- Google Fonts: English & Arabic -->
@@ -159,12 +159,12 @@
     .nav-desktop-links {
       display: flex;
       align-items: center;
-      gap: 26px;
+      gap: 22px;
       list-style: none;
     }
 
     .nav-link {
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       font-weight: 600;
       color: var(--text-gray);
       transition: color 0.2s ease;
@@ -256,6 +256,11 @@
       background: #22c55e;
       border-radius: 50%;
       box-shadow: 0 0 10px #22c55e;
+      animation: blinkDot 1.5s infinite;
+    }
+    @keyframes blinkDot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.8); }
     }
 
     .urgency-text { color: #86efac; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.05em; }
@@ -273,6 +278,7 @@
       line-height: 0.95;
       text-transform: uppercase;
       background: linear-gradient(135deg, #ffffff 0%, #38bdf8 50%, #1d4ed8 100%);
+      background-size: 200% auto;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       filter: drop-shadow(0 0 35px rgba(56, 189, 248, 0.3));
@@ -367,9 +373,7 @@
       color: #fff;
     }
 
-    /* =========================================================
-       FILTER TABS SYSTEM
-       ========================================================= */
+    /* Filter Tabs */
     .filter-tabs-wrapper {
       display: flex;
       align-items: center;
@@ -394,12 +398,7 @@
       cursor: pointer;
       transition: all 0.25s ease;
     }
-
-    .filter-pill:hover {
-      border-color: var(--cyan-neon);
-      color: #fff;
-    }
-
+    .filter-pill:hover { border-color: var(--cyan-neon); color: #fff; }
     .filter-pill.active {
       background: linear-gradient(135deg, #38bdf8 0%, #1d4ed8 100%);
       border-color: transparent;
@@ -453,13 +452,10 @@
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      transition: all 0.35s ease;
+      transition: border-color 0.3s ease, transform 0.3s ease;
       position: relative;
     }
-    .project-card:hover {
-      border-color: var(--cyan-neon);
-      transform: translateY(-5px);
-    }
+    .project-card:hover { border-color: var(--cyan-neon); transform: translateY(-5px); }
 
     .project-thumbnail {
       position: relative;
@@ -469,7 +465,6 @@
       cursor: pointer;
       overflow: hidden;
     }
-
     .project-thumbnail video {
       position: absolute;
       top: 0;
@@ -483,6 +478,7 @@
     }
     .project-card:hover .project-thumbnail video { transform: scale(1.05); opacity: 0.98; }
 
+    /* Category Badges */
     .project-tag {
       position: absolute;
       top: 14px;
@@ -497,6 +493,12 @@
       color: var(--cyan-neon);
       letter-spacing: 0.05em;
       z-index: 3;
+    }
+
+    .project-tag.saudi-tag {
+      background: rgba(4, 30, 16, 0.9);
+      border-color: #22c55e;
+      color: #86efac;
     }
 
     .project-play {
@@ -674,14 +676,8 @@
       position: relative;
       transition: transform 0.3s ease, border-color 0.3s ease;
     }
-    .pricing-card:hover {
-      transform: translateY(-6px);
-      border-color: var(--cyan-neon);
-    }
-    .pricing-card.popular {
-      border-color: var(--cyan-neon);
-      background: #0a1840;
-    }
+    .pricing-card:hover { transform: translateY(-6px); border-color: var(--cyan-neon); }
+    .pricing-card.popular { border-color: var(--cyan-neon); background: #0a1840; }
 
     .popular-tag {
       position: absolute;
@@ -699,7 +695,6 @@
     }
 
     .package-name { font-size: 1.3rem; margin-bottom: 6px; color: #fff; }
-    
     .package-quote-label {
       font-size: 1.85rem;
       font-family: var(--font-heading);
@@ -1108,7 +1103,7 @@
     </div>
   </section>
 
-  <!-- Selected Works: 6 PROJECTS WITH FILTER TABS & HORIZONTAL CAROUSEL -->
+  <!-- Selected Works: 18 PROJECTS WITH COMPLETE NICHE FILTER TABS -->
   <section id="work" class="portfolio-section">
     <div class="container">
       <div class="section-header-flex">
@@ -1121,116 +1116,276 @@
         </div>
       </div>
 
-      <!-- FILTER TABS SYSTEM -->
+      <!-- COMPLETE FILTER TABS -->
       <div class="filter-tabs-wrapper">
-        <button class="filter-pill active" onclick="filterProjects('all', this)" type="button" data-i18n="filter_all">All Projects</button>
-        <button class="filter-pill" onclick="filterProjects('reels', this)" type="button" data-i18n="filter_reels">Viral Reels</button>
-        <button class="filter-pill" onclick="filterProjects('ai', this)" type="button" data-i18n="filter_ai">AI &amp; VFX</button>
-        <button class="filter-pill" onclick="filterProjects('commercial', this)" type="button" data-i18n="filter_comm">Commercials</button>
-        <button class="filter-pill" onclick="filterProjects('cinematic', this)" type="button" data-i18n="filter_cine">Cinematic</button>
+        <button class="filter-pill active" onclick="filterProjects('all', this)" type="button" data-i18n="f_all">All Works</button>
+        <button class="filter-pill" onclick="filterProjects('gulf', this)" type="button" data-i18n="f_gulf">🇸🇦 Saudi &amp; Gulf</button>
+        <button class="filter-pill" onclick="filterProjects('talk', this)" type="button" data-i18n="f_talk">🎙️ UGC &amp; Explainers</button>
+        <button class="filter-pill" onclick="filterProjects('beauty', this)" type="button" data-i18n="f_beauty">💄 Beauty &amp; Fashion</button>
+        <button class="filter-pill" onclick="filterProjects('food', this)" type="button" data-i18n="f_food">☕ Food &amp; Cafes</button>
+        <button class="filter-pill" onclick="filterProjects('energy', this)" type="button" data-i18n="f_energy">🏎️ High Energy (Gym &amp; Cars)</button>
+        <button class="filter-pill" onclick="filterProjects('ai', this)" type="button" data-i18n="f_ai">🤖 AI &amp; VFX</button>
       </div>
 
       <div class="projects-carousel" id="projectsTrack">
-        <!-- Project 1 (AI) -->
+        
+        <!-- P1: AI -->
         <div class="project-card" data-cat="ai">
           <div class="project-thumbnail" onclick="playProject(1)">
-            <video autoplay muted loop playsinline preload="auto">
-              <source src="project-1.mp4" type="video/mp4" />
-            </video>
-            <div class="project-tag" data-i18n="p1_tag">AI &amp; Visuals</div>
+            <video autoplay muted loop playsinline preload="auto"><source src="project-1.mp4" type="video/mp4" /></video>
+            <div class="project-tag" data-i18n="tag_ai">AI Video</div>
             <div class="project-play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
           </div>
           <div class="project-body">
-            <h3 class="project-title" data-i18n="p1_title">Project 01 — AI Motion Cut</h3>
-            <p class="project-desc" data-i18n="p1_desc">High-impact visual cut blending generative video concepts with dynamic sound design.</p>
+            <h3 class="project-title" data-i18n="t_p1">Project 01 — AI Cinematic Concept</h3>
+            <p class="project-desc" data-i18n="d_p1">Generative video synthesis, neural motion &amp; futuristic sound design.</p>
             <button class="watch-btn" type="button" onclick="playProject(1)" data-i18n="watch_film">Watch Film →</button>
           </div>
         </div>
 
-        <!-- Project 2 (Reels) -->
-        <div class="project-card" data-cat="reels">
+        <!-- P2: Beauty -->
+        <div class="project-card" data-cat="beauty">
           <div class="project-thumbnail" onclick="playProject(2)">
-            <video autoplay muted loop playsinline preload="auto">
-              <source src="project-2.mp4" type="video/mp4" />
-            </video>
-            <div class="project-tag" data-i18n="p2_tag">Viral Reel</div>
+            <video autoplay muted loop playsinline preload="auto"><source src="project-2.mp4" type="video/mp4" /></video>
+            <div class="project-tag" data-i18n="tag_beauty">Beauty &amp; Salon</div>
             <div class="project-play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
           </div>
           <div class="project-body">
-            <h3 class="project-title" data-i18n="p2_title">Project 02 — Retention Reel</h3>
-            <p class="project-desc" data-i18n="p2_desc">Fast-paced video edit built for high retention, kinetic transitions, and audio sync.</p>
+            <h3 class="project-title" data-i18n="t_p2">Project 02 — Luxury Salon Commercial</h3>
+            <p class="project-desc" data-i18n="d_p2">Elegant aesthetic pacing, soft film glow &amp; luxury salon atmosphere.</p>
             <button class="watch-btn" type="button" onclick="playProject(2)" data-i18n="watch_film">Watch Film →</button>
           </div>
         </div>
 
-        <!-- Project 3 (Commercial) -->
-        <div class="project-card" data-cat="commercial">
+        <!-- P3: Beauty / Fashion -->
+        <div class="project-card" data-cat="beauty">
           <div class="project-thumbnail" onclick="playProject(3)">
-            <video autoplay muted loop playsinline preload="auto">
-              <source src="project-3.mp4" type="video/mp4" onerror="this.src='project-1.mp4'" />
-            </video>
-            <div class="project-tag" data-i18n="p3_tag">Commercial Ad</div>
+            <video autoplay muted loop playsinline preload="auto"><source src="project-3.mp4" type="video/mp4" /></video>
+            <div class="project-tag" data-i18n="tag_beauty">Fashion &amp; Model</div>
             <div class="project-play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
           </div>
           <div class="project-body">
-            <h3 class="project-title" data-i18n="p3_title">Project 03 — Commercial Brand Ad</h3>
-            <p class="project-desc" data-i18n="p3_desc">High-production brand commercial engineered to command respect and convert viewers.</p>
+            <h3 class="project-title" data-i18n="t_p3">Project 03 — Fashion &amp; Model Reel</h3>
+            <p class="project-desc" data-i18n="d_p3">Dynamic match cuts, stylish color timing &amp; high-fashion pacing.</p>
             <button class="watch-btn" type="button" onclick="playProject(3)" data-i18n="watch_film">Watch Film →</button>
           </div>
         </div>
 
-        <!-- Project 4 (Cinematic) -->
-        <div class="project-card" data-cat="cinematic">
+        <!-- P4: AI -->
+        <div class="project-card" data-cat="ai">
           <div class="project-thumbnail" onclick="playProject(4)">
-            <video autoplay muted loop playsinline preload="auto">
-              <source src="project-4.mp4" type="video/mp4" onerror="this.src='project-2.mp4'" />
-            </video>
-            <div class="project-tag" data-i18n="p4_tag">Cinematic Cut</div>
+            <video autoplay muted loop playsinline preload="auto"><source src="project-4.mp4" type="video/mp4" /></video>
+            <div class="project-tag" data-i18n="tag_ai">AI VFX</div>
             <div class="project-play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
           </div>
           <div class="project-body">
-            <h3 class="project-title" data-i18n="p4_title">Project 04 — Cinematic Film Cut</h3>
-            <p class="project-desc" data-i18n="p4_desc">Atmospheric narrative storytelling with custom color timing and spatial soundscapes.</p>
+            <h3 class="project-title" data-i18n="t_p4">Project 04 — Neural CGI &amp; VFX</h3>
+            <p class="project-desc" data-i18n="d_p4">Runway Gen-3 generative camera tracking &amp; composited visual effects.</p>
             <button class="watch-btn" type="button" onclick="playProject(4)" data-i18n="watch_film">Watch Film →</button>
           </div>
         </div>
 
-        <!-- Project 5 (Cinematic / Music) -->
-        <div class="project-card" data-cat="cinematic">
+        <!-- P5: Food / Cafes -->
+        <div class="project-card" data-cat="food">
           <div class="project-thumbnail" onclick="playProject(5)">
-            <video autoplay muted loop playsinline preload="auto">
-              <source src="project-5.mp4" type="video/mp4" onerror="this.src='project-1.mp4'" />
-            </video>
-            <div class="project-tag" data-i18n="p5_tag">Music Video</div>
+            <video autoplay muted loop playsinline preload="auto"><source src="project-5.mp4" type="video/mp4" /></video>
+            <div class="project-tag" data-i18n="tag_food">Food &amp; Cafe</div>
             <div class="project-play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
           </div>
           <div class="project-body">
-            <h3 class="project-title" data-i18n="p5_title">Project 05 — Music Video Edit</h3>
-            <p class="project-desc" data-i18n="p5_desc">Rhythmic transient beat matching, kinetic speed ramps, and stylized transitions.</p>
+            <h3 class="project-title" data-i18n="t_p5">Project 05 — Artisan Cafe Promo</h3>
+            <p class="project-desc" data-i18n="d_p5">Sensory coffee preparation, macro lens speed ramps &amp; rhythmic audio.</p>
             <button class="watch-btn" type="button" onclick="playProject(5)" data-i18n="watch_film">Watch Film →</button>
           </div>
         </div>
 
-        <!-- Project 6 (AI & VFX) -->
-        <div class="project-card" data-cat="ai">
+        <!-- P6: Beauty -->
+        <div class="project-card" data-cat="beauty">
           <div class="project-thumbnail" onclick="playProject(6)">
-            <video autoplay muted loop playsinline preload="auto">
-              <source src="project-6.mp4" type="video/mp4" onerror="this.src='project-2.mp4'" />
-            </video>
-            <div class="project-tag" data-i18n="p6_tag">VFX &amp; Motion</div>
+            <video autoplay muted loop playsinline preload="auto"><source src="project-6.mp4" type="video/mp4" /></video>
+            <div class="project-tag" data-i18n="tag_beauty">Beauty Aesthetics</div>
             <div class="project-play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
           </div>
           <div class="project-body">
-            <h3 class="project-title" data-i18n="p6_title">Project 06 — VFX &amp; 3D Motion</h3>
-            <p class="project-desc" data-i18n="p6_desc">Composited visual effects fusing neural AI interpolation with 3D camera tracking.</p>
+            <h3 class="project-title" data-i18n="t_p6">Project 06 — Clinic &amp; Skincare Promo</h3>
+            <p class="project-desc" data-i18n="d_p6">Smooth skin-tone preservation, clinical precision &amp; luxury brand feel.</p>
             <button class="watch-btn" type="button" onclick="playProject(6)" data-i18n="watch_film">Watch Film →</button>
           </div>
         </div>
+
+        <!-- P7: High Energy (Cars/Gym) -->
+        <div class="project-card" data-cat="energy">
+          <div class="project-thumbnail" onclick="playProject(7)">
+            <video autoplay muted loop playsinline preload="auto"><source src="project-7.mp4" type="video/mp4" /></video>
+            <div class="project-tag" data-i18n="tag_energy">Automotive</div>
+            <div class="project-play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title" data-i18n="t_p7">Project 07 — Automotive Speed Cut</h3>
+            <p class="project-desc" data-i18n="d_p7">Engine exhaust acoustics, whip-pans &amp; high-octane speed ramping.</p>
+            <button class="watch-btn" type="button" onclick="playProject(7)" data-i18n="watch_film">Watch Film →</button>
+          </div>
+        </div>
+
+        <!-- P8: Talking Head (UGC) + Energy -->
+        <div class="project-card" data-cat="talk">
+          <div class="project-thumbnail" onclick="playProject(8)">
+            <video autoplay muted loop playsinline preload="auto"><source src="project-8.mp4" type="video/mp4" /></video>
+            <div class="project-tag" data-i18n="tag_talk">UGC Service Ad</div>
+            <div class="project-play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title" data-i18n="t_p8">Project 08 — Service Explainer (Presenter)</h3>
+            <p class="project-desc" data-i18n="d_p8">Spokesperson delivery with dynamic punch-ins, B-roll &amp; conversion hooks.</p>
+            <button class="watch-btn" type="button" onclick="playProject(8)" data-i18n="watch_film">Watch Film →</button>
+          </div>
+        </div>
+
+        <!-- P9: Talking Head (UGC) -->
+        <div class="project-card" data-cat="talk">
+          <div class="project-thumbnail" onclick="playProject(9)">
+            <video autoplay muted loop playsinline preload="auto"><source src="project-9.mp4" type="video/mp4" /></video>
+            <div class="project-tag" data-i18n="tag_talk">Brand Spokesperson</div>
+            <div class="project-play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title" data-i18n="t_p9">Project 09 — High-Retention Talking Head</h3>
+            <p class="project-desc" data-i18n="d_p9">Clean jump cuts, animated kinetic typography &amp; sound effects.</p>
+            <button class="watch-btn" type="button" onclick="playProject(9)" data-i18n="watch_film">Watch Film →</button>
+          </div>
+        </div>
+
+        <!-- P10: Talking Head (UGC) -->
+        <div class="project-card" data-cat="talk">
+          <div class="project-thumbnail" onclick="playProject(10)">
+            <video autoplay muted loop playsinline preload="auto"><source src="project-10.mp4" type="video/mp4" /></video>
+            <div class="project-tag" data-i18n="tag_talk">Educational Reel</div>
+            <div class="project-play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title" data-i18n="t_p10">Project 10 — Business Explainer Cut</h3>
+            <p class="project-desc" data-i18n="d_p10">Engaging presenter pacing, infographic overlays &amp; high watch-time.</p>
+            <button class="watch-btn" type="button" onclick="playProject(10)" data-i18n="watch_film">Watch Film →</button>
+          </div>
+        </div>
+
+        <!-- P11: Food / Restaurant -->
+        <div class="project-card" data-cat="food">
+          <div class="project-thumbnail" onclick="playProject(11)">
+            <video autoplay muted loop playsinline preload="auto"><source src="project-11.mp4" type="video/mp4" /></video>
+            <div class="project-tag" data-i18n="tag_food">Restaurant Promo</div>
+            <div class="project-play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title" data-i18n="t_p11">Project 11 — Dining Experience Commercial</h3>
+            <p class="project-desc" data-i18n="d_p11">Sensory culinary highlights, sizzling sound design &amp; warm grade.</p>
+            <button class="watch-btn" type="button" onclick="playProject(11)" data-i18n="watch_film">Watch Film →</button>
+          </div>
+        </div>
+
+        <!-- P12: Beauty / Salon -->
+        <div class="project-card" data-cat="beauty">
+          <div class="project-thumbnail" onclick="playProject(12)">
+            <video autoplay muted loop playsinline preload="auto"><source src="project-12.mp4" type="video/mp4" /></video>
+            <div class="project-tag" data-i18n="tag_beauty">Hair &amp; Beauty</div>
+            <div class="project-play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title" data-i18n="t_p12">Project 12 — Salon Transformation Cut</h3>
+            <p class="project-desc" data-i18n="d_p12">Smooth before/after reveals, gloss highlights &amp; music transitions.</p>
+            <button class="watch-btn" type="button" onclick="playProject(12)" data-i18n="watch_film">Watch Film →</button>
+          </div>
+        </div>
+
+        <!-- P13: Talking Head (UGC) -->
+        <div class="project-card" data-cat="talk">
+          <div class="project-thumbnail" onclick="playProject(13)">
+            <video autoplay muted loop playsinline preload="auto"><source src="project-13.mp4" type="video/mp4" /></video>
+            <div class="project-tag" data-i18n="tag_talk">Presenter Reel</div>
+            <div class="project-play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title" data-i18n="t_p13">Project 13 — Service Showcase (Model)</h3>
+            <p class="project-desc" data-i18n="d_p13">Presenter-led service demonstration designed to drive inquiries.</p>
+            <button class="watch-btn" type="button" onclick="playProject(13)" data-i18n="watch_film">Watch Film →</button>
+          </div>
+        </div>
+
+        <!-- P14: Talking Head (UGC) -->
+        <div class="project-card" data-cat="talk">
+          <div class="project-thumbnail" onclick="playProject(14)">
+            <video autoplay muted loop playsinline preload="auto"><source src="project-14.mp4" type="video/mp4" /></video>
+            <div class="project-tag" data-i18n="tag_talk">Service Hook</div>
+            <div class="project-play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title" data-i18n="t_p14">Project 14 — Conversion Explainer Video</h3>
+            <p class="project-desc" data-i18n="d_p14">Fast-hook intro, seamless jump edits &amp; high audience retention.</p>
+            <button class="watch-btn" type="button" onclick="playProject(14)" data-i18n="watch_film">Watch Film →</button>
+          </div>
+        </div>
+
+        <!-- P15: 🇸🇦 SAUDI & GULF CLIENT -->
+        <div class="project-card" data-cat="gulf">
+          <div class="project-thumbnail" onclick="playProject(15)">
+            <video autoplay muted loop playsinline preload="auto"><source src="project-15.mp4" type="video/mp4" /></video>
+            <div class="project-tag saudi-tag" data-i18n="tag_ksa">🇸🇦 KSA Client</div>
+            <div class="project-play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title" data-i18n="t_p15">Project 15 — Saudi Campaign Ad 🇸🇦</h3>
+            <p class="project-desc" data-i18n="d_p15">Premium commercial edit crafted for the Saudi Arabian &amp; GCC audience.</p>
+            <button class="watch-btn" type="button" onclick="playProject(15)" data-i18n="watch_film">Watch Film →</button>
+          </div>
+        </div>
+
+        <!-- P16: Food / Cafes / Gym -->
+        <div class="project-card" data-cat="food">
+          <div class="project-thumbnail" onclick="playProject(16)">
+            <video autoplay muted loop playsinline preload="auto"><source src="project-16.mp4" type="video/mp4" /></video>
+            <div class="project-tag" data-i18n="tag_food">Cafe &amp; Venue</div>
+            <div class="project-play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title" data-i18n="t_p16">Project 16 — Specialty Cafe Highlight</h3>
+            <p class="project-desc" data-i18n="d_p16">Cinematic lighting, latte art speed ramping &amp; spatial ambience.</p>
+            <button class="watch-btn" type="button" onclick="playProject(16)" data-i18n="watch_film">Watch Film →</button>
+          </div>
+        </div>
+
+        <!-- P17: Talking Head (UGC) -->
+        <div class="project-card" data-cat="talk">
+          <div class="project-thumbnail" onclick="playProject(17)">
+            <video autoplay muted loop playsinline preload="auto"><source src="project-17.mp4" type="video/mp4" /></video>
+            <div class="project-tag" data-i18n="tag_talk">UGC Presenter</div>
+            <div class="project-play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title" data-i18n="t_p17">Project 17 — Presenter Service Ad</h3>
+            <p class="project-desc" data-i18n="d_p17">Model presenter framing, benefit highlights &amp; call-to-action motion.</p>
+            <button class="watch-btn" type="button" onclick="playProject(17)" data-i18n="watch_film">Watch Film →</button>
+          </div>
+        </div>
+
+        <!-- P18: 🇸🇦 SAUDI & GULF CLIENT -->
+        <div class="project-card" data-cat="gulf">
+          <div class="project-thumbnail" onclick="playProject(18)">
+            <video autoplay muted loop playsinline preload="auto"><source src="project-18.mp4" type="video/mp4" /></video>
+            <div class="project-tag saudi-tag" data-i18n="tag_ksa">🇸🇦 KSA Client</div>
+            <div class="project-play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title" data-i18n="t_p18">Project 18 — Gulf Brand Commercial 🇸🇦</h3>
+            <p class="project-desc" data-i18n="d_p18">Luxury commercial pacing tailored for prominent Gulf brand recognition.</p>
+            <button class="watch-btn" type="button" onclick="playProject(18)" data-i18n="watch_film">Watch Film →</button>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- INTERACTIVE COLOR GRADING SUITE (YOUR REAL AFTER/BEFORE WORK) -->
+  <!-- INTERACTIVE COLOR GRADING SUITE -->
   <section id="grading" class="color-suite-section">
     <div class="container">
       <div style="text-align: center; margin-bottom: 35px;">
@@ -1241,14 +1396,10 @@
 
       <div class="grading-wrapper">
         <div class="compare-container" id="compareBox" style="--slider-pos: 50%;">
-          <!-- Graded Image (Loads after.jpg) -->
           <img class="compare-img" src="after.jpg" onerror="this.src='grade.jpg';" alt="Graded Cinema Look" />
-          
-          <!-- Raw Log Image (Loads before.jpg) -->
           <div class="compare-before-layer">
             <img class="compare-before-img" src="before.jpg" onerror="this.src='grade.jpg';" alt="Raw Log Look" />
           </div>
-
           <div class="compare-divider">
             <div class="compare-handle"><span>◂ ▸</span></div>
           </div>
@@ -1260,7 +1411,7 @@
     </div>
   </section>
 
-  <!-- WHAT I BRING (CONVERSION-FOCUSED VALUE PILLARS) -->
+  <!-- WHAT I BRING -->
   <section class="value-section">
     <div class="container">
       <div style="text-align:center;">
@@ -1286,7 +1437,7 @@
     </div>
   </section>
 
-  <!-- PRICING & PACKAGES (CUSTOM QUOTES - NO HARD NUMBERS) -->
+  <!-- PRICING & PACKAGES (CUSTOM QUOTES) -->
   <section id="pricing" class="pricing-section">
     <div class="container">
       <div style="text-align:center;">
@@ -1529,48 +1680,156 @@
       },
       {
         src: "project-2.mp4",
-        title_en: "Project 02 — Retention Reel",
-        title_ar: "مشروع 02 — ريلز احتباس المشاهدة",
-        goal_en: "Stop scrolling on Instagram & TikTok with kinetic typography and audio hooks.",
-        goal_ar: "إيقاف السكرول في أول ثانيتين بريلز تيك توك وإنستغرام عبر نصوص وهوك صوتي.",
-        role_en: "Pacing, Sound Design, Kinetic Zoom Cuts & DaVinci Mobile Grade.",
-        role_ar: "تقطيع حركي سريع، ساوند ديزاين مخصص، وتلوين يناسب شاشات الموبايل."
+        title_en: "Project 02 — Luxury Salon Commercial",
+        title_ar: "مشروع 02 — إعلان بيوتي صالون فاخر",
+        goal_en: "Evoke luxury aesthetics and highlight beauty transformations seamlessly.",
+        goal_ar: "إبراز فخامة المكان وجاذبية التجميل والتصفيف بألوان ناعمة ومريحة.",
+        role_en: "Soft Glow Lighting, Match Cuts & Ambient Audio Mastering.",
+        role_ar: "تقطيع ناعم، إبراز تفاصيل البشرة والشعر، وهندسة صوتية راقية."
       },
       {
         src: "project-3.mp4",
-        title_en: "Project 03 — Commercial Brand Ad",
-        title_ar: "مشروع 03 — إعلان تجاري لبراند",
-        goal_en: "Command respect for the brand and drive direct viewer conversion.",
-        goal_ar: "إبراز فخامة المنتج وتحويل المشاهدات إلى مبيعات مباشرة.",
-        role_en: "Commercial Cut, Dynamic Speed Ramping & Master Delivery.",
-        role_ar: "مونتاج إعلاني، تسريع وإبطاء حركي وتسليم بجودة 4K."
+        title_en: "Project 03 — Fashion & Model Reel",
+        title_ar: "مشروع 03 — ريلز فاشون وموديلز",
+        goal_en: "Command respect for the fashion label with high-fashion rhythmic pacing.",
+        goal_ar: "إبراز تفاصيل الملابس وتنسيق الألوان بإيقاع فاشون عصري وسريع.",
+        role_en: "Rhythmic Cuts, Color Pop Timing & Dynamic Transitions.",
+        role_ar: "مونتاج ريتميك سريع، تباين ألوان سينمائي، وانتقالات عصرية."
       },
       {
         src: "project-4.mp4",
-        title_en: "Project 04 — Cinematic Film Cut",
-        title_ar: "مشروع 04 — فيلم سينمائي قصير",
-        goal_en: "Evoking deep emotion through intentional narrative breathing & atmosphere.",
-        goal_ar: "خلق حالة نفسية وتأثير درامي عميق من خلال الإيقاع والهدوء السينمائي.",
-        role_en: "Narrative Arc, Ambient Foley Sound & Kodak Film Emulation.",
-        role_ar: "بناء القصة الدرامية، تصميم صوتي محيطي ومحاكاة ألوان كوداك."
+        title_en: "Project 04 — Neural CGI & VFX",
+        title_ar: "مشروع 04 — خدع بصرية وذكاء اصطناعي",
+        goal_en: "Deliver impossible visual concepts fusing 3D tracking with neural VFX.",
+        goal_ar: "تنفيذ أفكار بصرية غير تقليدية بدمج تتبع الكاميرا ثلاثي الأبعاد والـ AI.",
+        role_en: "Runway Camera Tracking, Particle VFX & Layer Compositing.",
+        role_ar: "تتبع حركة الكاميرا، مؤثرات جزيئية، وتراكيب بصرية متقدمة."
       },
       {
         src: "project-5.mp4",
-        title_en: "Project 05 — Music Video Edit",
-        title_ar: "مشروع 05 — فيديو كليب موسيقي",
-        goal_en: "Sync every cut tightly to multitrack rhythm and beat transients.",
-        goal_ar: "مزامنة التقطيع فريم بفريم مع بيتات الموسيقى والتأثيرات الإيقاعية.",
-        role_en: "Beat Matching, Color Timing & Stylized Frame Transitions.",
-        role_ar: "تقطيع إيقاعي، تلوين فني مخصص، وانتقالات إبداعية."
+        title_en: "Project 05 — Artisan Cafe Promo",
+        title_ar: "مشروع 05 — إعلان كافيه ومشروبات",
+        goal_en: "Make the beverage crafting experience look irresistibly cinematic and appetizing.",
+        goal_ar: "إظهار تفاصيل إعداد القهوة والمشروبات بشكل شهي وجذاب يجلب الزبائن.",
+        role_en: "Macro Lens Speed Ramping, Sizzling Sound Design & Warm Film Tone.",
+        role_ar: "تسريع وإبطاء حركي، هندسة صوتية دقيقة لصوت القهوة، وألوان دافئة."
       },
       {
         src: "project-6.mp4",
-        title_en: "Project 06 — VFX & 3D Motion",
-        title_ar: "مشروع 06 — خدع بصرية وأنيميشن 3D",
-        goal_en: "Deliver impossible visual concepts fusing 3D tracking with neural VFX.",
-        goal_ar: "تنفيذ أفكار بصرية غير تقليدية بدمج تتبع الكاميرا ثلاثي الأبعاد والـ AI.",
-        role_en: "Camera Tracking, Particle VFX & Layer Compositing.",
-        role_ar: "تتبع حركة، مؤثرات جزيئية، وتراكيب بصرية متقدمة."
+        title_en: "Project 06 — Clinic & Skincare Promo",
+        title_ar: "مشروع 06 — عيادة تجميل وعناية بالبشرة",
+        goal_en: "Communicate clinical cleanliness, skin radiance, and patient trust.",
+        goal_ar: "إبراز نظافة واحترافية العيادة وإشراقة البشرة لبناء ثقة العملاء.",
+        role_en: "Skin-Tone Preserving Grade, Clean White Balance & Modern Pacing.",
+        role_ar: "تلوين دقيق يحمي ألوان البشرة، توازن إضاءة طبيعي، ومونتاج هادئ."
+      },
+      {
+        src: "project-7.mp4",
+        title_en: "Project 07 — Automotive Speed Cut",
+        title_ar: "مشروع 07 — إعلان سيارات وسرعة",
+        goal_en: "Deliver adrenaline-fueled automotive motion that makes viewers feel the horsepower.",
+        goal_ar: "نقل إحساس السرعة وقوة الموتور للمشاهد بإيقاع أكشن حماسي.",
+        role_en: "Exhaust Sound Design, Speed Ramping & Heavy Bass Drops.",
+        role_ar: "تصميم صوتي لأصوات المحركات، تقطيع حركي عنيف، ومؤثرات اهتزاز."
+      },
+      {
+        src: "project-8.mp4",
+        title_en: "Project 08 — Service Explainer (Presenter)",
+        title_ar: "مشروع 08 — بريزنتر بتشرح خدمة شركة (UGC)",
+        goal_en: "Explain complex company services clearly via presenter delivery with zero drop-off.",
+        goal_ar: "شرح خدمة الشركة أو الأبلكيشن عبر بريزنتر بطريقة شيقة وبدون أي ملل.",
+        role_en: "Dynamic Punch-ins, B-roll Placement, Sound SFX & Retention Cut.",
+        role_ar: "تقطيع Jump cuts ذكي لحركات البريزنتر، تركيب B-roll توضيحي، وساوند إفكت."
+      },
+      {
+        src: "project-9.mp4",
+        title_en: "Project 09 — High-Retention Talking Head",
+        title_ar: "مشروع 09 — فيديو حواري عالي الاحتباس",
+        goal_en: "Keep audience hooked to the presenter's message across the full duration.",
+        goal_ar: "تثبيت عين المشاهد على كلام الموديل عبر مؤثرات بصرية متزامنة مع الحديث.",
+        role_en: "Kinetic Typography, Sound Accents & Frame Zoom Balancing.",
+        role_ar: "نصوص متحركة، نغمات صوتية خاطفة، وتكبير فريمات مدروس."
+      },
+      {
+        src: "project-10.mp4",
+        title_en: "Project 10 — Business Explainer Cut",
+        title_ar: "مشروع 10 — عرض خدمة لبيزنس (بريزنتر)",
+        goal_en: "Demonstrate service benefits cleanly to drive immediate client action.",
+        goal_ar: "إبراز مميزات الخدمة والحلول التي يقدمها البيزنس لدفع العميل للطلب.",
+        role_en: "Presenter Cut, Infographic Overlays & Call-to-Action Motion.",
+        role_ar: "مونتاج متحدث رسمي، إبراز العناصر التوضيحية، وزر دعوة لاتخاذ إجراء."
+      },
+      {
+        src: "project-11.mp4",
+        title_en: "Project 11 — Dining Experience Commercial",
+        title_ar: "مشروع 11 — إعلان مطعم وتجربة طعام",
+        goal_en: "Showcase food texture, venue luxury, and dining atmosphere.",
+        goal_ar: "إظهار جودة الأطباق وفخامة صالة الطعام لجذب العائلات والزبائن.",
+        role_en: "Macro Framing, Steaming Sound Design & Warm Ambient Grade.",
+        role_ar: "تصوير وتلوين دافئ، ساوند إفكت للأطباق، وإيقاع يفتح الشهية."
+      },
+      {
+        src: "project-12.mp4",
+        title_en: "Project 12 — Salon Transformation Cut",
+        title_ar: "مشروع 12 — صالون تجميل وتغيير لوك",
+        goal_en: "Deliver an arresting beauty transformation reveal that drives salon bookings.",
+        goal_ar: "مونتاج لقطات التغيير والـ Transformation لمضاعفة حجوزات الصالون.",
+        role_en: "Match Cut Reveals, Slow-Motion Lighting & Gloss Finish.",
+        role_ar: "انتقالات Match cut دقيقة، لقطات Slow-motion، وإضاءات متألقة."
+      },
+      {
+        src: "project-13.mp4",
+        title_en: "Project 13 — Service Showcase (Model)",
+        title_ar: "مشروع 13 — موديل تشرح ميزات الخدمة",
+        goal_en: "Communicate customer pain points and introduce service solutions engagingly.",
+        goal_ar: "عرض المشكلة وحلها من خلال موديل تقدم الخدمة بأسلوب جذاب وسلس.",
+        role_en: "Service B-roll Cut, Punchy Graphics & Voice Clarity Mastering.",
+        role_ar: "تقطيع لقطات الشرح، جرافيكس متحركة، وتوضيح الصوت بجودة استوديو."
+      },
+      {
+        src: "project-14.mp4",
+        title_en: "Project 14 — Conversion Explainer Video",
+        title_ar: "مشروع 14 — إعلان تحويلي (بريزنتر وخدمات)",
+        goal_en: "Hook viewers in the first 2 seconds and guide them towards booking the service.",
+        goal_ar: "صيد انتباه العميل في أول ثانيتين وتوجيهه للاشتراك أو الحجز مباشرة.",
+        role_en: "Fast Hook Intro, Seamless Jump Edits & Sound Design.",
+        role_ar: "مقدمة خاطفة للعين، تقطيع بدون توقف، ومؤثرات صوتية محفزة."
+      },
+      {
+        src: "project-15.mp4",
+        title_en: "Project 15 — Saudi Campaign Ad 🇸🇦",
+        title_ar: "مشروع 15 — إعلان تجاري لعميل سعودي 🇸🇦",
+        goal_en: "Deliver a high-production commercial tailored for the Saudi Arabian & GCC market.",
+        goal_ar: "تنفيذ إعلان تجاري فخم بمعايير السوق السعودي والخليجي لجذب الجمهور المحلي.",
+        role_en: "Gulf Market Commercial Cut, DaVinci Film Grade & 4K Master Export.",
+        role_ar: "مونتاج إعلاني للخليج، تلوين دافينشي سينمائي، وماستر 4K متكامل."
+      },
+      {
+        src: "project-16.mp4",
+        title_en: "Project 16 — Specialty Cafe Highlight",
+        title_ar: "مشروع 16 — سبشيلتي كافيه ومكان راقي",
+        goal_en: "Capture modern coffee culture, venue vibes, and artisan presentation.",
+        goal_ar: "نقل أجواء الكافيه الراقي وثقافة القهوة المختصة للمشاهدين.",
+        role_en: "Cinematic Speed Ramps, Chill Lofi Sound Ambience & Rich Brown Contrast.",
+        role_ar: "تسريع وإبطاء حركي، أجواء صوتية هادئة، وألوان بنية غنية ودافئة."
+      },
+      {
+        src: "project-17.mp4",
+        title_en: "Project 17 — Presenter Service Ad",
+        title_ar: "مشروع 17 — إعلان خدمات مع متحدث رسمي",
+        goal_en: "Present clear business value props with professional spokesperson delivery.",
+        goal_ar: "تقديم مزايا البيزنس بأسلوب بريزنتر لبق وسريع الإيقاع.",
+        role_en: "Presenter Tracking, Benefit Pop-ups & Background Track Mixing.",
+        role_ar: "مزامنة الشرح مع شاشات متحركة، نصوص عائمة، وميكساج صوتي."
+      },
+      {
+        src: "project-18.mp4",
+        title_en: "Project 18 — Gulf Brand Commercial 🇸🇦",
+        title_ar: "مشروع 18 — إعلان براند خليجي فاخر 🇸🇦",
+        goal_en: "Establish luxury prestige and authority for an elite brand across the Gulf.",
+        goal_ar: "ترسيخ هيبة وفخامة البراند الخليجي بأسلوب بصري مهيب ومؤثر.",
+        role_en: "Prestige Commercial Edit, Studio Color Grading & Master Finishing.",
+        role_ar: "مونتاج برستيج للشركات الكبرى، تلوين شاشات OLED، وماستر نهائي."
       }
     ];
 
@@ -1592,29 +1851,19 @@
         works_title: "Selected Works",
         works_sub: "Side-by-side showcase. Tap to play in full screen.",
         swipe_hint: "Swipe ◂ ▸",
-        filter_all: "All Projects",
-        filter_reels: "Viral Reels",
-        filter_ai: "AI & VFX",
-        filter_comm: "Commercials",
-        filter_cine: "Cinematic",
-        p1_tag: "AI & Visuals",
-        p1_title: "Project 01 — AI Motion Cut",
-        p1_desc: "High-impact visual cut blending generative video concepts with dynamic sound design.",
-        p2_tag: "Viral Reel",
-        p2_title: "Project 02 — Retention Reel",
-        p2_desc: "Fast-paced video edit built for high retention, kinetic transitions, and audio sync.",
-        p3_tag: "Commercial Ad",
-        p3_title: "Project 03 — Commercial Brand Ad",
-        p3_desc: "High-production brand commercial engineered to command respect and convert viewers.",
-        p4_tag: "Cinematic Cut",
-        p4_title: "Project 04 — Cinematic Film Cut",
-        p4_desc: "Atmospheric narrative storytelling with custom color timing and spatial soundscapes.",
-        p5_tag: "Music Video",
-        p5_title: "Project 05 — Music Video Edit",
-        p5_desc: "Rhythmic transient beat matching, kinetic speed ramps, and stylized transitions.",
-        p6_tag: "VFX & Motion",
-        p6_title: "Project 06 — VFX & 3D Motion",
-        p6_desc: "Composited visual effects fusing neural AI interpolation with 3D camera tracking.",
+        f_all: "All Works",
+        f_gulf: "🇸🇦 Saudi &amp; Gulf",
+        f_talk: "🎙️ UGC &amp; Explainers",
+        f_beauty: "💄 Beauty &amp; Fashion",
+        f_food: "☕ Food &amp; Cafes",
+        f_energy: "🏎️ High Energy (Gym &amp; Cars)",
+        f_ai: "🤖 AI &amp; VFX",
+        tag_ai: "AI Video",
+        tag_beauty: "Beauty &amp; Fashion",
+        tag_food: "Food &amp; Cafe",
+        tag_energy: "Automotive &amp; Gym",
+        tag_talk: "UGC Service Ad",
+        tag_ksa: "🇸🇦 KSA Client",
         watch_film: "Watch Film →",
         color_badge: "DaVinci Resolve Studio",
         color_title: "Color Grading Breakdown",
@@ -1701,29 +1950,19 @@
         works_title: "أعمال مختارة",
         works_sub: "معرض أفقي متكامل. اضغط على أي مشروع للمشاهدة بملء الشاشة.",
         swipe_hint: "اسحب للمزيد ◂ ▸",
-        filter_all: "كل المشاريع",
-        filter_reels: "ريلز وسوشيال",
-        filter_ai: "ذكاء اصطناعي",
-        filter_comm: "إعلانات تجارية",
-        filter_cine: "سينمائي",
-        p1_tag: "ذكاء اصطناعي ومؤثرات",
-        p1_title: "مشروع 01 — مونتاج ذكاء اصطناعي",
-        p1_desc: "مونتاج بصري هجين يدمج أحدث تقنيات الذكاء الاصطناعي التوليدي مع هندسة صوتية سينمائية.",
-        p2_tag: "ريلز عالي التفاعل",
-        p2_title: "مشروع 02 — ريلز احتباس المشاهدة",
-        p2_desc: "مونتاج سريع الإيقاع مصمم لرفع نسب المشاهدة مع انتقالات حركية ومزامنة دقيقة مع الصوت.",
-        p3_tag: "إعلان تجاري",
-        p3_title: "مشروع 03 — إعلان تجاري لبراند",
-        p3_desc: "إعلان تجاري بأعلى جودة بصرية مصمم لإبراز هوية البراند وجذب العملاء بدقة.",
-        p4_tag: "مونتاج سينمائي",
-        p4_title: "مشروع 04 — فيلم سينمائي قصير",
-        p4_desc: "سرد قصصي درامي بأجواء سينمائية وتدرج لوني خاص مع مؤثرات صوتية محيطية.",
-        p5_tag: "فيديو كليب",
-        p5_title: "مشروع 05 — فيديو كليب موسيقي",
-        p5_desc: "مزامنة إيقاعية دقيقة مع النغمات، تسريع وإبطاء حركي وانتقالات بصرية مبتكرة.",
-        p6_tag: "خدع بصرية وحركة",
-        p6_title: "مشروع 06 — خدع بصرية وأنيميشن 3D",
-        p6_desc: "دمج احترافي بين تقنيات الذكاء الاصطناعي وتتبع حركة الكاميرا ثلاثية الأبعاد.",
+        f_all: "كل الأعمال",
+        f_gulf: "🇸🇦 السعودية والخليج",
+        f_talk: "🎙️ بريزنتر وخدمات (UGC)",
+        f_beauty: "💄 بيوتي وفاشون",
+        f_food: "☕ مطاعم وكافيهات",
+        f_energy: "🏎️ عربيات وجيم",
+        f_ai: "🤖 ذكاء اصطناعي",
+        tag_ai: "ذكاء اصطناعي",
+        tag_beauty: "بيوتي وفاشون",
+        tag_food: "مطاعم وكافيهات",
+        tag_energy: "عربيات وجيم",
+        tag_talk: "إعلان خدمة (بريزنتر)",
+        tag_ksa: "🇸🇦 عميل سعودي",
         watch_film: "مشاهدة الفيديو ←",
         color_badge: "استوديو دافينشي ريزولف",
         color_title: "مقارنة التلوين السينمائي",
@@ -1839,7 +2078,7 @@
       }
     }
 
-    /* Filter Projects System */
+    /* Multi-Niche Filter System */
     function filterProjects(cat, btn) {
       document.querySelectorAll('.filter-pill').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
@@ -1855,16 +2094,16 @@
     }
 
     /* Video Player Logic */
+    const modal = document.getElementById("videoModal");
+    const player = document.getElementById("nativeVideoPlayer");
+    const titleEl = document.getElementById("modalVideoTitle");
+    const csGoalEl = document.getElementById("csGoal");
+    const csRoleEl = document.getElementById("csRole");
+
     function playProject(index) {
       try {
         const data = projectsData[index];
         if (!data) return;
-
-        const modal = document.getElementById("videoModal");
-        const player = document.getElementById("nativeVideoPlayer");
-        const titleEl = document.getElementById("modalVideoTitle");
-        const csGoalEl = document.getElementById("csGoal");
-        const csRoleEl = document.getElementById("csRole");
 
         if (titleEl) titleEl.textContent = (currentLang === 'ar') ? data.title_ar : data.title_en;
         if (csGoalEl) csGoalEl.textContent = (currentLang === 'ar') ? data.goal_ar : data.goal_en;
@@ -1903,7 +2142,6 @@
     }
 
     function closeModalOnBackdrop(e) {
-      const modal = document.getElementById("videoModal");
       if (e.target === modal) {
         closeVideo();
       }
